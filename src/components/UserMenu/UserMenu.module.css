@@ -1,0 +1,15 @@
+.box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.email {
+    font-size: 20px;
+    color: rgb(0, 0, 90);
+}
+
+.button {
+    font-size: 20px;
+    padding: 5px 10px;
+}
