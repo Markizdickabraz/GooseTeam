@@ -6,6 +6,8 @@ import { refreshUser } from '../redux/authorization/operations';
 
 import { Routes, Route } from 'react-router-dom';
 
+// import  Layout  from './Layout/Layout';
+
 const Start = lazy(() => import('../pages/Start'));
 const Register = lazy(() => import('../pages/Register'));
 const Login = lazy(() => import('../pages/Login'));
