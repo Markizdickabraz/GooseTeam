@@ -1,17 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// import {
-//     persistStore,
-//     persistReducer,
-//     FLUSH,
-//     REHYDRATE,
-//     PAUSE,
-//     PERSIST,
-//     PURGE,
-//     REGISTER,
-//   } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
-
 import { register, logIn, logOut, refreshUser } from './operations';
 
 const authSlice = createSlice({
@@ -53,5 +41,3 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
-
-

@@ -4,18 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectIsRefreshing } from '../redux/authorization/selectors';
 import { refreshUser } from '../redux/authorization/operations';
 
-// import { ContactForm } from './ContactForm/ContactForm';
-// import { Filter } from './Filter/Filter';
-// import { ContactList } from './ContactList/ContactList';
-
 import { Routes, Route } from 'react-router-dom';
 
-import { Layout } from './Layout/Layout';
-
+const Start = lazy(() => import('../pages/Start'));
 const Register = lazy(() => import('../pages/Register'));
 const Login = lazy(() => import('../pages/Login'));
-const Contacts = lazy(() => import('../pages/Contacts'));
-const HomePage = lazy(() => import('../pages/HomePage'));
+const Layout = lazy(() => import('./Layout/Layout'));
+const User = lazy(() => import('../pages/User'));
+const Statistics = lazy(() => import('../pages/Statistics'));
+const Calendar = lazy(() => import('../pages/Calendar'));
+const Day = lazy(() => import('../pages/Day'));
+const NotFound = lazy(() => import('../pages/NotFound'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -25,38 +24,24 @@ const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
-    // <div
-    //   style={{
-    //     display: 'flex',
-    //     flexDirection: 'column',
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     fontSize: 40,
-    //     color: '#010101',
-    //   }}
-    // >
-    //   <h1>Phonebook</h1>
-    //   <ContactForm />
-    //   <h2>Contacts</h2>
-    //   <Filter />
-    //   <ContactList />
-    // </div>
+  return isRefreshing ? (
+    <b>Loading...</b>
+  ) : (
+    <Routes>
+      <Route path="/" element={<Start />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
 
-    isRefreshing ? (
-      <b>Refreshing user...</b>
-    ) : (
-      
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/contacts" element={<Contacts />} />
-          </Route>
-        </Routes>
-      
-    )
+      <Route path="/" element={<Layout />}>
+        <Route path="account" element={<User />} />
+        <Route path="statistics" element={<Statistics />} />
+        {/* <Route path="calendar" element={<Calendar />} /> */}
+        <Route path="calendar/month/:currentDate" element={<Calendar />} />
+        <Route path="calendar/day/:currentDay" element={<Day />} />
+      </Route>
+
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 };
 
