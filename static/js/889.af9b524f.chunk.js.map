@@ -1,1 +1,1 @@
-{"version":3,"file":"static/js/889.af9b524f.chunk.js","mappings":"0JAIE,UAJiB,WACf,OAAO,uBACR,C","sources":["pages/Statistics.jsx"],"sourcesContent":["const Statistics = () => {\n    return <></>;\n  };\n  \n  export default Statistics;"],"names":[],"sourceRoot":""}
+{"version":3,"file":"static/js/889.af9b524f.chunk.js","mappings":"0JAIE,UAJiB,WACf,OAAOA,EAAAA,EAAAA,KAAAC,EAAAA,SAAA,GACT,C","sources":["pages/Statistics.jsx"],"sourcesContent":["const Statistics = () => {\n    return <></>;\n  };\n  \n  export default Statistics;"],"names":["_jsx","_Fragment"],"sourceRoot":""}
