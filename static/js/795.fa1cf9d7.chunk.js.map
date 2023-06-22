@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/795.fa1cf9d7.chunk.js","mappings":"0JAIE,UAJW,WACT,OAAO,uBACR,C","sources":["pages/User.jsx"],"sourcesContent":["const User = () => {\n    return <></>;\n  };\n  \n  export default User;"],"names":[],"sourceRoot":""}

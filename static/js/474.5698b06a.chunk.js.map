@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/474.5698b06a.chunk.js","mappings":"0JAIE,UAJY,WACV,OAAO,uBACR,C","sources":["pages/Start.jsx"],"sourcesContent":["const Start = () => {\n    return <></>;\n  };\n  \n  export default Start;"],"names":[],"sourceRoot":""}
