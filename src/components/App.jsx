@@ -1,5 +1,5 @@
+import "modern-normalize";
 import { lazy,  Suspense } from 'react';
-
 import { Routes, Route } from 'react-router-dom';
 
 import Month from 'components/calendar/Month';
