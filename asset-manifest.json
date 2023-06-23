@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/GooseTeam/static/css/main.e28fea7b.css",
+    "main.css": "/GooseTeam/static/css/main.7dcf2b35.css",
     "main.js": "/GooseTeam/static/js/main.32443a50.js",
     "static/js/474.5698b06a.chunk.js": "/GooseTeam/static/js/474.5698b06a.chunk.js",
     "static/js/285.40869456.chunk.js": "/GooseTeam/static/js/285.40869456.chunk.js",
@@ -9,8 +9,13 @@
     "static/js/889.af9b524f.chunk.js": "/GooseTeam/static/js/889.af9b524f.chunk.js",
     "static/js/393.d9e250ef.chunk.js": "/GooseTeam/static/js/393.d9e250ef.chunk.js",
     "static/js/805.3cf3a531.chunk.js": "/GooseTeam/static/js/805.3cf3a531.chunk.js",
+    "static/media/Inter-Bold.ttf": "/GooseTeam/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
+    "static/media/Inter-SemiBold.ttf": "/GooseTeam/static/media/Inter-SemiBold.4d56bb21f2399db8ad48.ttf",
+    "static/media/Inter-Medium.ttf": "/GooseTeam/static/media/Inter-Medium.6dcbc9bed1ec438907ee.ttf",
+    "static/media/Inter-Regular.ttf": "/GooseTeam/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
+    "static/media/Coolvetica-Regular.ttf": "/GooseTeam/static/media/Coolvetica-Regular.8b00c1ffef613c4a9dfa.ttf",
     "index.html": "/GooseTeam/index.html",
-    "main.e28fea7b.css.map": "/GooseTeam/static/css/main.e28fea7b.css.map",
+    "main.7dcf2b35.css.map": "/GooseTeam/static/css/main.7dcf2b35.css.map",
     "main.32443a50.js.map": "/GooseTeam/static/js/main.32443a50.js.map",
     "474.5698b06a.chunk.js.map": "/GooseTeam/static/js/474.5698b06a.chunk.js.map",
     "285.40869456.chunk.js.map": "/GooseTeam/static/js/285.40869456.chunk.js.map",
@@ -21,7 +26,7 @@
     "805.3cf3a531.chunk.js.map": "/GooseTeam/static/js/805.3cf3a531.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e28fea7b.css",
+    "static/css/main.7dcf2b35.css",
     "static/js/main.32443a50.js"
   ]
 }
