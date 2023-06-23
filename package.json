@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "@babel/plugin-proposal-private-property-in-object": "^7.15.0"
   }
 }
