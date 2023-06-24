@@ -3,7 +3,6 @@ import { Formik } from 'formik';
 import { FormContainer } from './Account.styled';
 import { UserSchema } from './UserSchema';
 import Thumb from './Avatar';
-import SmallCalendar from 'components/small-calendar/SmallCalendar';
 import { DatePickerField } from './Calendar';
 
 export const UserForm = () => {
