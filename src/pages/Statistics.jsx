@@ -1,6 +1,6 @@
 import React from 'react';
-import PeriodPaginator from '../PeriodPaginator/PeriodPaginator';
-import StatisticsChart from '../StatisticsChart/StatisticsChart';
+import PeriodPaginator from '../components/PeriodPaginator/PeriodPaginator';
+import StatisticsChart from '../components/StatisticsChart/StatisticsChart';
 import './StatisticsPage.css';
 
 const StatisticsPage = () => {
