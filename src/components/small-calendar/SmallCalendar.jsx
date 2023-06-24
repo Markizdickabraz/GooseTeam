@@ -12,17 +12,17 @@ const SmallCalendar = () => {
     </button>
   ));
 
+  
   return (
-    <DatePicker
-      selected={startDate}
-      onChange={date => setStartDate(date)}
+    <DatePicker selected={startDate}
+      onChange={(date) => setStartDate(date)}
       customInput={<CustomInput />}
       dateFormat="d MMM yyyy"
       calendarStartDay={1}
-      formatWeekDay={nameOfDay => nameOfDay.substr(0, 1)}
+      formatWeekDay={nameOfDay => nameOfDay.substr(0,1)}
       fixedHeight
-    />
+/>
   );
-};
+}
 
 export default SmallCalendar;
