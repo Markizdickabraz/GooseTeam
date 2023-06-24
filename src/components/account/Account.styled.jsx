@@ -1,5 +1,5 @@
-const { Form, Field } = require('formik');
-const { styled } = require('styled-components');
+import { Field, Form } from 'formik';
+import styled from 'styled-components';
 
 export const FormContainer = styled(Form)`
   display: flex;

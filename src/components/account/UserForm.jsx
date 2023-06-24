@@ -24,7 +24,7 @@ export const UserForm = () => {
           <div style={{ textAlign: 'center' }}>
             <img alt="avatar" src="" />
 
-            <label for="avatar">Choose images to upload (PNG, JPG)</label>
+            <label htmlFor="avatar">Choose images to upload (PNG, JPG)</label>
             <Field
               type="file"
               id="avatar"
