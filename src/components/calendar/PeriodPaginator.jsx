@@ -1,10 +1,6 @@
-import { format } from 'date-fns';
-import { Link, useNavigate } from 'react-router-dom';
-
 export const PeriodPaginator = ({
   currentDateMonth,
   currentDateDay,
-  currentDate,
   nextMonth,
   prevMonth,
   nextDay,
@@ -30,14 +26,8 @@ export const PeriodPaginator = ({
         {periodType === 'month' ? currentDateMonth : currentDateDay}
       </p>
       <div className="calendar-paginator">
-        <Link
-          to={`/calendar/${periodType}/${format(currentDate, 'd-MMM-yyyy')}`}
-          onClick={handleClickPrev()}
-        >{`<`}</Link>
-        <Link
-          to={`/calendar/${periodType}/${format(currentDate, 'd-MMM-yyyy')}`}
-          onClick={handleClickNext()}
-        >{`>`}</Link>
+        <button type="button" onClick={handleClickPrev()}>{`<`}</button>
+        <button type="button" onClick={handleClickNext()}>{`>`}</button>
       </div>
     </>
   );

@@ -1,16 +1,5 @@
 import { useState } from 'react';
-import {
-  startOfMonth,
-  endOfMonth,
-  endOfWeek,
-  eachDayOfInterval,
-  startOfWeek,
-  startOfToday,
-  format,
-  parse,
-  add,
-  sub,
-} from 'date-fns';
+import { startOfToday, format, add, sub } from 'date-fns';
 import { PeriodPaginator } from './PeriodPaginator';
 import { PeriodTypeSelect } from './PeriodTypeSelect';
 import { useNavigate } from 'react-router-dom';
@@ -49,7 +38,6 @@ export const CalendarToolbar = () => {
       <PeriodPaginator
         currentDateMonth={format(currentDate, 'MMMM yyyy')}
         currentDateDay={format(currentDate, 'd MMM yyyy')}
-        currentDate={currentDate}
         nextMonth={nextMonth}
         prevMonth={prevMonth}
         nextDay={nextDay}
