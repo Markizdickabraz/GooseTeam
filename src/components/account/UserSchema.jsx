@@ -10,9 +10,8 @@ export const UserSchema = Yup.object().shape({
     .min(2, 'Too short!')
     .max(16, 'Too long!')
     .required('Required'),
-  birthday: Yup.string()
-    .matches(dateReg, 'Invalid date of birth')
-    .required('Required'),
+  birthday: Yup.string().matches(dateReg, 'Invalid date of birth'),
+  // .required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
   phone: Yup.string().matches(phoneReg, 'Invalid phone').required('Required'),
   skype: Yup.string().min(2, 'Too short!').max(16, 'Too long!'),

@@ -3,6 +3,8 @@ import { Formik } from 'formik';
 import { FormContainer } from './Account.styled';
 import { UserSchema } from './UserSchema';
 import Thumb from './Avatar';
+import SmallCalendar from 'components/small-calendar/SmallCalendar';
+import { DatePickerField } from './Calendar';
 
 export const UserForm = () => {
   return (
@@ -18,6 +20,7 @@ export const UserForm = () => {
         }}
         validationSchema={UserSchema}
         onSubmit={values => {
+          console.log(values);
           const formData = new FormData();
           for (let value in values) {
             formData.append(value, values[value]);
@@ -39,7 +42,8 @@ export const UserForm = () => {
 
             <CustomInput label="User Name" name="username" />
 
-            <CustomInput label="Birthday" name="birthday" type="date" />
+            <label htmlFor="birthday">Birthday</label>
+            <DatePickerField name="birthday" />
 
             <CustomInput label="Email" name="email" type="email" />
 

@@ -28,7 +28,7 @@ export const Input = styled(Field)`
   }
 `;
 
-// Avatar button
+// Avatar
 export const UpdateAvatarButton = styled.button`
   background-color: ${buttonColors.blue};
   outline: none;
@@ -44,4 +44,61 @@ export const UpdateAvatarButton = styled.button`
   position: absolute;
   bottom: -4px;
   right: 15px;
+
+  font-size: 8px;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+`;
+
+export const AvatarContainer = styled.div`
+  margin: 0 auto;
+  position: relative;
+  width: 72px;
+  height: 72px;
+
+  @media (min-width: 768px) {
+    width: 124px;
+    height: 124px;
+  }
+`;
+
+export const AvatarImg = styled.img`
+  object-fit: cover;
+  border-radius: 72px;
+  border: 2px solid #3e85f3;
+  width: 72px;
+  height: 72px;
+
+  @media (min-width: 768px) {
+    width: 124px;
+    height: 124px;
+  }
+`;
+
+// Calendar
+export const CalendarInput = styled.input`
+  ::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+`;
+export const CalendarButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+`;
+
+export const DateInput = styled.div`
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    outline: none;
+  }
 `;

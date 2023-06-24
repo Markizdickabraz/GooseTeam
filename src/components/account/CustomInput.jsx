@@ -10,3 +10,13 @@ export const CustomInput = ({ label, name, ...rest }) => (
     <ErrorMessage name={name} component="div" />
   </InputContainer>
 );
+
+export const CustomInputData = ({ ...rest }) => (
+  <InputContainer>
+    <label htmlFor="birthday">Birthday</label>
+
+    <Input type="date" name={'birthday'} id={'birthday'} {...rest} />
+
+    <ErrorMessage name={'birthday'} component="div" />
+  </InputContainer>
+);
