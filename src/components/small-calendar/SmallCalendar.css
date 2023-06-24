@@ -76,6 +76,7 @@
 .react-datepicker__day-names {
   display: flex;
 }
+
 .react-datepicker__day-name {
   box-sizing: border-box;
   width: 48px;
@@ -115,15 +116,17 @@
   color: #3e85f3;
 }
 
+
+.react-datepicker__day--weekend {
+  opacity: 0.5;
+}
+
 .react-datepicker__day--today {
   border-radius: 24px;
   background: #fff;
   color: #3e85f3;
   font-weight: 400;
-}
-
-.react-datepicker__day--weekend {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .react-datepicker__day--outside-month {
