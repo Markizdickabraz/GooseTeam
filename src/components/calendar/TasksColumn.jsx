@@ -1,3 +1,3 @@
-export const TasksColumn = () => {
+export const TasksColumn = ({ title, todos }) => {
   return <></>;
 };

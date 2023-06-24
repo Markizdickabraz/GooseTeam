@@ -1,3 +1,11 @@
+import { TasksColumn } from './TasksColumn';
+
 export const TaskColumnsList = () => {
-  return <></>;
+  return (
+    <div>
+      <TasksColumn />
+      <TasksColumn />
+      <TasksColumn />
+    </div>
+  );
 };

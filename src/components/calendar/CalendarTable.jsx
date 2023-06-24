@@ -18,7 +18,6 @@ export const CalendarTable = () => {
     start: startOfWeek(startOfMonth(parsedCurrentDate), { weekStartsOn: 1 }),
     end: endOfWeek(endOfMonth(parsedCurrentDate), { weekStartsOn: 1 }),
   });
-  console.log(days);
   return (
     <ul className="calendar-table">
       {days.map((day, index) => {
