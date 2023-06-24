@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/795.de62e876.chunk.js","mappings":"4JAIE,UAJW,WACT,OAAOA,EAAAA,EAAAA,KAAAC,EAAAA,SAAA,GACT,C","sources":["pages/User.jsx"],"sourcesContent":["const User = () => {\n    return <></>;\n  };\n  \n  export default User;"],"names":["_jsx","_Fragment"],"sourceRoot":""}
