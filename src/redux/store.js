@@ -11,6 +11,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { filterDateReducer } from './filterdate/filterdate-slice';
 
 // import { contactsReduser } from './tasks/contactsSlice';
 // import { filterReduser } from './tasks/filterSlice';
@@ -25,6 +26,7 @@ const persistConfig = {
 const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
+    filterdate: filterDateReducer,
     // contacts: contactsReduser,
     // filter: filterReduser,
   },
