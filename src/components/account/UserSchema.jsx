@@ -5,9 +5,7 @@ const phoneReg =
   /^(\+?3?8?0?)?[-.\s]?(\(?[0-9]{3}\)?[-.\s]?){2}[-.\s]?[0-9]{2}[-.\s]?[0-9]{2}$/;
 
 export const UserSchema = Yup.object().shape({
-  avatar:
-    Yup.mixed()
-    .required('Required'),
+  avatar: Yup.mixed(),
   username: Yup.string()
     .min(2, 'Too short!')
     .max(16, 'Too long!')

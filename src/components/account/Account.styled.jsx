@@ -1,5 +1,6 @@
 import { Field, Form } from 'formik';
 import styled from 'styled-components';
+import { buttonColors } from '../../styles/variables';
 
 export const FormContainer = styled(Form)`
   display: flex;
@@ -20,4 +21,27 @@ export const Input = styled(Field)`
   padding: 12px 14px;
   border-radius: 8px;
   border: 1px solid rgba(17, 17, 17, 0.1);
+  outline: none;
+
+  :focus {
+    border: 1px solid #111;
+  }
+`;
+
+// Avatar button
+export const UpdateAvatarButton = styled.button`
+  background-color: ${buttonColors.blue};
+  outline: none;
+  border: none;
+  padding: 3px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  position: absolute;
+  bottom: -4px;
+  right: 15px;
 `;
