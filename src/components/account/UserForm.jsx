@@ -41,7 +41,6 @@ export const UserForm = () => {
 
             <CustomInput label="User Name" name="username" />
 
-            <label htmlFor="birthday">Birthday</label>
             <DatePickerField name="birthday" />
 
             <CustomInput label="Email" name="email" type="email" />
