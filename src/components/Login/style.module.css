@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(220, 235, 247);
+  background-image: url('../../images/login/goose_login@1x.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+.form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 424px;
+  width: 480px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+/* style for mobile */
+@media only screen and (max-width: 600px) {
+  .container {
+    background-image: none;
+  }
+  .form {
+    height: 376px;
+    width: 335px;
+  }
+}
+/* style for tablet */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .container {
+    background-image: none;
+  }
+}
