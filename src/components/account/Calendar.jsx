@@ -16,9 +16,7 @@ export const DatePickerField = ({ ...props }) => {
 
   return (
     <DateInput>
-      <label htmlFor="birthday" style={{ marginBottom: '8px' }}>
-        Birthday
-      </label>
+      <label htmlFor="birthday">Birthday</label>
 
       <DatePicker
         {...field}

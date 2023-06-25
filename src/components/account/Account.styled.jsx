@@ -5,10 +5,15 @@ import { buttonColors } from '../../styles/variables';
 export const FormContainer = styled(Form)`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 18px;
 
   max-width: 354px;
   margin: 40px auto 0 auto;
+
+  @media (min-width: 768px) {
+    gap: 24px;
+  }
 `;
 
 // CustomInput
@@ -25,6 +30,32 @@ export const Input = styled(Field)`
 
   :focus {
     border: 1px solid #111;
+  }
+`;
+
+// Calendar
+export const CalendarButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+`;
+
+export const DateInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    outline: none;
+
+    :focus {
+      border: 1px solid #111;
+    }
   }
 `;
 
@@ -74,36 +105,5 @@ export const AvatarImg = styled.img`
   @media (min-width: 768px) {
     width: 124px;
     height: 124px;
-  }
-`;
-
-// Calendar
-export const CalendarInput = styled.input`
-  ::-webkit-calendar-picker-indicator {
-    display: none;
-  }
-`;
-export const CalendarButton = styled.button`
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5px;
-`;
-
-export const DateInput = styled.div`
-  .react-datepicker-wrapper {
-    width: 100%;
-  }
-  .react-datepicker__aria-live {
-    display: none;
-  }
-  input {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 1px solid rgba(17, 17, 17, 0.1);
-    outline: none;
-
-    margin-top: 8px;
   }
 `;
