@@ -61,3 +61,17 @@ export const Button = styled.button`
     padding: 16px 23px;
   }
 `;
+
+export const MainWrapper = styled.div`
+//тема світла
+  background-color: #F7F6F9;
+  ${media({
+    padding: [
+      '24px 20px 40px',
+      '24px 20px 40px',
+      '24px 32px 42px',
+      '40px 32px 32px',
+    ],
+  })};
+  width: 100%;
+`;
