@@ -2,10 +2,10 @@ import { TasksColumn } from './TasksColumn';
 
 export const TaskColumnsList = () => {
   return (
-    <div>
-      <TasksColumn />
-      <TasksColumn />
-      <TasksColumn />
+    <div className='task-columns-list'>
+      <TasksColumn title={'To do'} />
+      <TasksColumn title={'In progress'} />
+      <TasksColumn title={'Done'} />
     </div>
   );
 };

@@ -1,3 +1,4 @@
+
 .month-calendar-head {
   display: flex;
   justify-content: center;
@@ -26,7 +27,6 @@
 }
 
 .calendar-paginator {
-  
 }
 
 .calendar-table-item {
@@ -36,7 +36,7 @@
 }
 
 .calendar-table-item::before {
-  content: " ";
+  content: ' ';
   position: absolute;
   width: 1px;
   height: 100%;
@@ -44,7 +44,7 @@
 }
 
 .calendar-table-item::after {
-  content: " ";
+  content: ' ';
   position: absolute;
   width: 100%;
   height: 1px;
@@ -85,4 +85,40 @@
 
 .calendar-type-change {
   margin-left: auto;
+}
+
+/* day calendar */
+.day-calendar-head {
+  display: flex;
+  gap: 128px;
+  width: 100%;
+  padding: 10px 46px;
+  list-style: none;
+  border: 1px solid black;
+}
+
+.day-calendar-head-item {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head-day {
+  padding: 4px 8px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.task-columns-list {
+  display: flex;
+  gap: 27px;
+}
+
+.task-column {
+  display: flex;
 }
