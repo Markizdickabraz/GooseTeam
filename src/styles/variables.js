@@ -12,6 +12,7 @@ export const backgroundColors = {
   lightBlue: '#e3f3ff',
   black: '#13151a',
   darkGrey: '#21222c',
+  lightBlueButton: '#dcebf7',
 };
 
 export const fontColors = {
