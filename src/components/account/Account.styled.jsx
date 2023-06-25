@@ -7,21 +7,38 @@ export const FormContainer = styled(Form)`
   flex-direction: column;
   gap: 40px;
 
-  max-width: 354px;
   margin: 40px auto 0 auto;
+  background-color: #fff;
 
-  background-color: #d39b9b;
   border-radius: 16px;
   padding: 18px;
+  padding-bottom: 40px;
 `;
 
 export const FormWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  margin: 0 auto;
   gap: 18px;
 
-  @media (min-width: 768px) {
-    gap: 24px;
+  @media (max-width: 1144px) {
+    flex-direction: column;
+    max-width: 354px;
+    width: 100%;
+  }
+
+  @media (min-width: 1144px) {
+    flex-direction: row;
+    align-items: start;
+    gap: 50px;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      width: 100%;
+      justify-content: center;
+      width: 354px;
+    }
   }
 `;
 
@@ -30,6 +47,8 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  max-width: 354px;
+  flex: 1;
 `;
 export const Input = styled(Field)`
   padding: 12px 14px;
@@ -39,6 +58,10 @@ export const Input = styled(Field)`
 
   :focus {
     border: 1px solid #111;
+  }
+
+  @media (min-width: 768px) {
+    padding: 14px 18px;
   }
 `;
 
@@ -54,6 +77,7 @@ export const DateInput = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  max-width: 354px;
 
   input {
     width: 100%;
@@ -80,23 +104,28 @@ export const UpdateAvatarButton = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  position: absolute;
-  bottom: -4px;
-  right: 15px;
-
   font-size: 8px;
 
   @media (min-width: 768px) {
     font-size: 18px;
+  }
+
+  position: absolute;
+  bottom: -4px;
+  right: 22px;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    bottom: -25px;
+    right: -22px;
   }
 `;
 
 export const AvatarContainer = styled.div`
   margin: 0 auto;
   position: relative;
-  width: 72px;
-  height: 72px;
+  width: 0px;
+  height: 0px;
 
   @media (min-width: 768px) {
     width: 124px;
@@ -105,6 +134,12 @@ export const AvatarContainer = styled.div`
 `;
 
 export const AvatarImg = styled.img`
+  @media (max-width: 768px) {
+    position: absolute;
+    top: -50px;
+    left: -35px;
+  }
+
   object-fit: cover;
   border-radius: 72px;
   border: 2px solid #3e85f3;
@@ -114,5 +149,23 @@ export const AvatarImg = styled.img`
   @media (min-width: 768px) {
     width: 124px;
     height: 124px;
+  }
+`;
+
+export const UserInfo = styled.div`
+  text-align: center;
+
+  p {
+    margin-top: 40px;
+    @media (min-width: 768px) {
+      margin-top: 20px;
+    }
+  }
+
+  p:last-child {
+    margin-top: 4px;
+    @media (min-width: 768px) {
+      margin-top: 8px;
+    }
   }
 `;

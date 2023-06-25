@@ -1,6 +1,6 @@
 import { CustomInput } from 'components/account/CustomInput';
 import { Formik } from 'formik';
-import { FormContainer, FormWrapper } from './Account.styled';
+import { FormContainer, FormWrapper, UserInfo } from './Account.styled';
 import { UserSchema } from './UserSchema';
 import Thumb from './Avatar';
 import { DatePickerField } from './Calendar';
@@ -32,23 +32,27 @@ export const UserForm = () => {
       >
         {({ values, setFieldValue }) => (
           <FormContainer>
-            <div style={{ textAlign: 'center' }}>
+            <UserInfo>
               <Thumb file={values.avatar} setFieldValue={setFieldValue} />
 
-              <p style={{ marginTop: 18 }}>Nadiia Doe</p>
-              <p style={{ marginTop: 4 }}>User</p>
-            </div>
+              <p>Nadiia Doe</p>
+              <p>User</p>
+            </UserInfo>
 
             <FormWrapper>
-              <CustomInput label="User Name" name="username" />
+              <div>
+                <CustomInput label="User Name" name="username" />
 
-              <DatePickerField name="birthday" />
+                <DatePickerField name="birthday" />
 
-              <CustomInput label="Email" name="email" type="email" />
+                <CustomInput label="Email" name="email" type="email" />
+              </div>
 
-              <CustomInput label="Phone" name="phone" type="tel" />
+              <div>
+                <CustomInput label="Phone" name="phone" type="tel" />
 
-              <CustomInput label="Skype" name="skype" />
+                <CustomInput label="Skype" name="skype" />
+              </div>
             </FormWrapper>
 
             <button type="submit">Save changes</button>

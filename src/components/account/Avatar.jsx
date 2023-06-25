@@ -42,6 +42,7 @@ export const Thumb = ({ file, setFieldValue }) => {
         }}
         style={{ display: 'none' }}
       />
+
       <div>
         <UpdateAvatarButton
           type="button"
