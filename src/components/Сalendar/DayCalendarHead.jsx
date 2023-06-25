@@ -14,7 +14,7 @@ export const DayCalendarHead = () => {
     <ul className="day-calendar-head">
       {days.map((day, index) => {
         return (
-          <li className="day-calendar-head-item">
+          <li key={index} className="day-calendar-head-item">
             <p className="head-week">{format(day, 'EEE')}</p>
             <p
               style={{

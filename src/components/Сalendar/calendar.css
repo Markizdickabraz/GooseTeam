@@ -120,21 +120,9 @@
 
 .task-column {
   display: flex;
-  flex-direction: column;
 }
 
 .todo-btn {
   display: flex;
-  align-items: center;
   background-color: aqua;
-}
-
-.column-head-bar {
-  display: flex;
-  align-items: center;
-}
-
-.column-head-bar-btn {
-  width: 24px;
-  height: 24px;
 }

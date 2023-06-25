@@ -1,4 +1,4 @@
-import { CalendarToolbar } from 'components/calendar/CalendarToolbar';
+import { CalendarToolbar } from 'components/Сalendar/CalendarToolbar';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import {
