@@ -43,7 +43,10 @@ export const UserForm = () => {
               <div>
                 <CustomInput label="User Name" name="username" />
 
-                <DatePickerField name="birthday" />
+                <DatePickerField
+                  name="birthday"
+                  setFieldValue={setFieldValue}
+                />
 
                 <CustomInput label="Email" name="email" type="email" />
               </div>
