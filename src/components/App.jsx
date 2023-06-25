@@ -12,6 +12,7 @@ const User = lazy(() => import('../pages/User'));
 const Statistics = lazy(() => import('../pages/Statistics'));
 const Calendar = lazy(() => import('../pages/Calendar'));
 const NotFound = lazy(() => import('../pages/NotFound'));
+const VerifyPage = lazy(() => import('../pages/VerifyPage'));
 
 const App = () => {
   return (
@@ -20,6 +21,8 @@ const App = () => {
         <Route path="/" element={<Start />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/verify/:verificationToken" element={<VerifyPage />} />
+
         <Route
           path="/account"
           element={
