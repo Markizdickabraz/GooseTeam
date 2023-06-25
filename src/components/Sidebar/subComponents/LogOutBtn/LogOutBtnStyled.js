@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { DEVICE_SIZE } from 'styles/deviceWidth';
 
 export const Wrap = styled.div`

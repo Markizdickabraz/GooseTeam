@@ -1,8 +1,7 @@
 //import { useDispatch } from 'react-redux';
 import { Svg, Button } from 'styles/components';
-import { Wrap } from './LogoutBtn.styled';
-//шлях до спрайту потрібен
-import sprite from 'icons/sprite.svg';
+import { Wrap } from './LogOutBtnStyled';
+import sprite from 'images/svg/sprite.svg';
 
 const LogoutBtn = () => {
   

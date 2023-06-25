@@ -1,9 +1,9 @@
 import { LogoutBtn } from './subComponents/LogOutBtn';
 import { UserNav } from './subComponents/UserNav';
-//додати лого гуся відповідного
-import goose from 'goose.svg';
-//потрібно додати шлях до спрайт
-import sprite from 'sprite.svg';
+import sprite from 'images/svg/sprite.svg';
+
+import gooseLogo1x from 'images/sidebar/goose_logo@1x.png';
+import gooseLogo2x from 'images/sidebar/goose_logo@2x.png';
 
 import {
   SidebarTitle,
@@ -18,13 +18,16 @@ const SideBar = ({ onToggle }) => {
   return (
     <SidebarWrapper>
       <SidebarLogo>
-        <GooseImg src={goose} alt="goose" />
+        <GooseImg
+          srcSet={`${gooseLogo1x} 1x, ${gooseLogo2x} 2x`}
+          alt="goose"
+        />
         <SidebarTitle>Goose Track</SidebarTitle>
         <CloseIcon
           onClick={() => {
             onToggle();
           }}
-              >
+        >
           <use href={`${sprite}#x-close`} />
         </CloseIcon>
       </SidebarLogo>
