@@ -1,5 +1,5 @@
 import { Field, Form } from 'formik';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { buttonColors } from '../../styles/variables';
 
 export const FormContainer = styled(Form)`
@@ -24,6 +24,12 @@ export const FormWrapper = styled.div`
     flex-direction: column;
     max-width: 354px;
     width: 100%;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
   }
 
   @media (min-width: 1144px) {
@@ -34,7 +40,7 @@ export const FormWrapper = styled.div`
     > div {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 24px;
       width: 100%;
       justify-content: center;
       width: 354px;
@@ -44,6 +50,8 @@ export const FormWrapper = styled.div`
 
 // CustomInput
 export const InputContainer = styled.div`
+  position: relative;
+
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -55,6 +63,9 @@ export const Input = styled(Field)`
   border-radius: 8px;
   border: 1px solid rgba(17, 17, 17, 0.1);
   outline: none;
+  background-color: #fff;
+
+  font-size: 14px;
 
   :focus {
     border: 1px solid #111;
@@ -62,7 +73,39 @@ export const Input = styled(Field)`
 
   @media (min-width: 768px) {
     padding: 14px 18px;
+    font-size: 16px;
   }
+`;
+export const Label = styled.label`
+  color: ${({ error, isValid }) =>
+    error ? 'red' : isValid ? 'green' : 'inherit'};
+
+  font-size: 12px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+`;
+export const IconWrapper = styled.div`
+  position: absolute;
+  right: 18px;
+  top: 43%;
+`;
+export const MessageWrapper = styled.div`
+  p {
+    margin-left: 14px;
+    font-size: 12px;
+
+    @media (min-width: 768px) {
+      margin-left: 18px;
+    }
+  }
+`;
+export const ErrorText = styled.p`
+  color: red;
+`;
+export const SuccessText = styled.p`
+  color: green;
 `;
 
 // Calendar

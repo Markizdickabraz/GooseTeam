@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react';
 import { ErrorMessage, useField } from 'formik';
 import DatePicker from 'react-datepicker';
-import { DateInput } from './Account.styled';
+import { DateInput, ErrorText, Label } from './Account.styled';
 import 'components/SmallCalendar/SmallCalendar';
 
 export const DatePickerField = ({ ...props }) => {
-  const [field, , { setValue }] = useField(props);
+  const [field, meta, { setValue }] = useField(props);
+  const error = meta.touched && meta.error;
+
   const newDate = useMemo(() => new Date(), []);
 
   React.useEffect(() => {
@@ -16,7 +18,9 @@ export const DatePickerField = ({ ...props }) => {
 
   return (
     <DateInput>
-      <label htmlFor="birthday">Birthday</label>
+      <Label htmlFor="birthday" error={error}>
+        Birthday
+      </Label>
 
       <DatePicker
         {...field}
@@ -29,7 +33,7 @@ export const DatePickerField = ({ ...props }) => {
         dateFormat="DD-MM-YYYY"
       />
 
-      <ErrorMessage name="birthday" component="div" />
+      <ErrorMessage name="birthday" component={ErrorText} />
     </DateInput>
   );
 };
