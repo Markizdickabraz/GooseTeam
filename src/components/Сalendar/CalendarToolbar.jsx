@@ -15,7 +15,7 @@ export const CalendarToolbar = () => {
       return navigate(`${periodType}/${format(currentDate, 'd-MMM-yyyy')}`);
     }
     navigate(`${periodType}/${format(currentDate, 'd-MMM-yyyy')}`);
-  }, [periodType, currentDate]);
+  }, [periodType, currentDate, navigate]);
 
   const nextMonth = () => {
     const currentDateNextMonth = add(currentDate, { months: 1 });

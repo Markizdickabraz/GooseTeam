@@ -1,3 +1,4 @@
+/* month calendar */
 .month-calendar-head {
   display: flex;
   justify-content: center;
@@ -25,7 +26,7 @@
   border-bottom: 1px solid #ddd;
 }
 
-.calendar-paginator {
+.period-paginator {
 }
 
 .calendar-table-item {
@@ -121,20 +122,34 @@
 .task-column {
   display: flex;
   flex-direction: column;
+  padding: 18px 20px 28px 20px;
 }
 
-.todo-btn {
+.add-todo-btn {
   display: flex;
   align-items: center;
-  background-color: aqua;
+  justify-content: center;
+  min-width: 300px;
+  height: 52px;
+  background-color: rgb(62, 133, 243);
+  cursor: pointer;
 }
 
 .column-head-bar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 7px 0;
 }
 
 .column-head-bar-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
   width: 24px;
   height: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

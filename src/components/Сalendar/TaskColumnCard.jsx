@@ -1,3 +1,10 @@
+import { TaskToolbar } from './TaskToolbar';
+
 export const TaskColumnCard = () => {
-  return <></>;
+  return (
+    <li>
+      Картка завдання
+      <TaskToolbar />
+    </li>
+  );
 };

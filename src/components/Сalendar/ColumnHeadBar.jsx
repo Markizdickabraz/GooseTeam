@@ -6,7 +6,7 @@ export const ColumnHeadBar = ({ title }) => {
       <h2>{title}</h2>
 
       <button type="button" className="column-head-bar-btn">
-        <FiPlusCircle size={18} />
+        <FiPlusCircle size={24} />
       </button>
     </div>
   );

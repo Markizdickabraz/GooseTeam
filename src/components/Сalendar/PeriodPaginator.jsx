@@ -25,7 +25,7 @@ export const PeriodPaginator = ({
       <p style={{ width: 120, marginRight: 20 }}>
         {periodType === 'month' ? currentDateMonth : currentDateDay}
       </p>
-      <div className="calendar-paginator">
+      <div className="period-paginator">
         <button type="button" onClick={handleClickPrev()}>{`<`}</button>
         <button type="button" onClick={handleClickNext()}>{`>`}</button>
       </div>

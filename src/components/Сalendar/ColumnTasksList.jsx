@@ -1,3 +1,13 @@
+import { TaskColumnCard } from './TaskColumnCard';
+
 export const ColumnTasksList = () => {
-  return <></>;
+  return (
+    <ul>
+      <TaskColumnCard />
+      <TaskColumnCard />
+      <TaskColumnCard />
+      <TaskColumnCard />
+      <TaskColumnCard />
+    </ul>
+  );
 };
