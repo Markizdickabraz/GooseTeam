@@ -1,5 +1,7 @@
+import RegisterComponent from '../components/Register';
+
 const Register = () => {
-    return <></>;
-  };
-  
-  export default Register;
+  return <RegisterComponent />;
+};
+
+export default Register;
