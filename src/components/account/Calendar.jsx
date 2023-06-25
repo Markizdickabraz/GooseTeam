@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useField } from 'formik';
+import { ErrorMessage, useField } from 'formik';
 import DatePicker from 'react-datepicker';
 import { DateInput } from './Account.styled';
 import 'components/SmallCalendar/SmallCalendar';
@@ -30,6 +30,8 @@ export const DatePickerField = ({ ...props }) => {
         }}
         dateFormat="DD-MM-YYYY"
       />
+
+      <ErrorMessage name="birthday" component="div" />
     </DateInput>
   );
 };
