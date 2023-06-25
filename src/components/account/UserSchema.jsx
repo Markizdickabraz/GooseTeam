@@ -19,7 +19,9 @@ export const UserSchema = Yup.object().shape({
       }
     )
     .required('Required'),
-  email: Yup.string().email('Invalid email').required('Required'),
-  phone: Yup.string().matches(phoneReg, 'Invalid phone').required('Required'),
+  email: Yup.string().email('This is an ERROR email').required('Required'),
+  phone: Yup.string()
+    .matches(phoneReg, 'This is an ERROR phone')
+    .required('Required'),
   skype: Yup.string().min(2, 'Too short!').max(16, 'Too long!'),
 });

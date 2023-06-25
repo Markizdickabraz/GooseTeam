@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
-import { ErrorMessage } from 'formik';
+import { ErrorMessage, useField } from 'formik';
 import DatePicker from 'react-datepicker';
-import { DateInput, ErrorText, Label } from './Account.styled';
+import { DateInput, ErrorText, Label, MessageWrapper } from './Account.styled';
 import 'components/SmallCalendar/SmallCalendar';
 
-export const DatePickerField = ({ setFieldValue }) => {
+export const DatePickerField = ({ name, setFieldValue }) => {
   const [startDate, setStartDate] = useState(new Date());
+
+  const [, meta] = useField(name);
+  const error = meta.touched && meta.error;
+  const isValid = meta.touched && !meta.error;
 
   return (
     <DateInput>
-      <Label htmlFor="birthday">Birthday</Label>
+      <Label htmlFor="birthday" error={error} isValid={isValid}>
+        Birthday
+      </Label>
 
       <DatePicker
         selected={startDate}
@@ -19,7 +25,9 @@ export const DatePickerField = ({ setFieldValue }) => {
         }}
       />
 
-      <ErrorMessage name="birthday" component={ErrorText} />
+      <MessageWrapper>
+        <ErrorMessage name={name} component={ErrorText} />
+      </MessageWrapper>
     </DateInput>
   );
 };

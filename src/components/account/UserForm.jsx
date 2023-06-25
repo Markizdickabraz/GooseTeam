@@ -4,6 +4,7 @@ import { FormContainer, FormWrapper, UserInfo } from './Account.styled';
 import { UserSchema } from './UserSchema';
 import Thumb from './Avatar';
 import { DatePickerField } from './Calendar';
+import { Button } from 'styles/components';
 
 export const UserForm = () => {
   return (
@@ -57,7 +58,12 @@ export const UserForm = () => {
               </div>
             </FormWrapper>
 
-            <button type="submit">Save changes</button>
+            <Button
+              style={{ cursor: 'pointer', margin: '0 auto' }}
+              type="submit"
+            >
+              Save changes
+            </Button>
           </FormContainer>
         )}
       </Formik>

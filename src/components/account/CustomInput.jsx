@@ -6,15 +6,15 @@ import {
   InputContainer,
   Label,
   MessageWrapper,
-  // SuccessText,
+  SuccessText,
 } from './Account.styled';
 import { BiErrorCircle } from 'react-icons/bi';
+import { MdDoneOutline } from 'react-icons/md';
 
 export const CustomInput = ({ label, name, ...rest }) => {
   const [field, meta] = useField(name);
   const error = meta.touched && meta.error;
-  const isValid = meta.touched && !meta.error;
-  // const showSuccess = meta.touched && !error && helpers.value !== '';
+  const isValid = meta.touched && !meta.error && meta.value !== '';
 
   return (
     <InputContainer>
@@ -27,28 +27,18 @@ export const CustomInput = ({ label, name, ...rest }) => {
       <MessageWrapper>
         {error && <ErrorMessage>{meta.error}</ErrorMessage>}
 
-        {/* {showSuccess && <SuccessText>This is a CORRECT email</SuccessText>} */}
+        {isValid && <SuccessText>This is a CORRECT {name}</SuccessText>}
 
         <ErrorMessage name={name} component={ErrorText} />
       </MessageWrapper>
 
-      {/* {error ? (
-        <IconWrapper>
+      <IconWrapper>
+        {error ? (
           <BiErrorCircle color="red" size={18} />
-        </IconWrapper>
-      ) : (
-        isValid && (
-          <IconWrapper>
-            <BiErrorCircle color="green" size={18} />
-          </IconWrapper>
-        )
-      )} */}
-
-      {error && (
-        <IconWrapper>
-          <BiErrorCircle color="red" size={18} />
-        </IconWrapper>
-      )}
+        ) : (
+          isValid && <MdDoneOutline color="green" size={18} />
+        )}
+      </IconWrapper>
     </InputContainer>
   );
 };
