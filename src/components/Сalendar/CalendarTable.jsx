@@ -9,10 +9,9 @@ import {
   isSameMonth,
   isSameDay,
 } from 'date-fns';
-import { useNavigate, useParams, useOutletContext } from 'react-router-dom';
+import { redirect, useParams, useOutletContext } from 'react-router-dom';
 
 export const CalendarTable = () => {
-  const navigate = useNavigate();
   const { setPeriodType, setCurrentDate } = useOutletContext();
   const { currentDate } = useParams();
   const parsedCurrentDate = parse(currentDate, 'd-MMM-yyyy', new Date());
@@ -20,7 +19,7 @@ export const CalendarTable = () => {
     start: startOfWeek(startOfMonth(parsedCurrentDate), { weekStartsOn: 1 }),
     end: endOfWeek(endOfMonth(parsedCurrentDate), { weekStartsOn: 1 }),
   });
-  const handleClickNavigate = e => {
+  const handleClickRedirect = e => {
     if (
       !isSameMonth(
         parse(e.currentTarget.dataset.date, 'd-MMM-yyyy', new Date()),
@@ -29,7 +28,7 @@ export const CalendarTable = () => {
     ) {
       return;
     }
-    navigate(`../day/${e.currentTarget.dataset.date}`, {
+    redirect(`../day/${e.currentTarget.dataset.date}`, {
       replace: true,
     });
     setPeriodType('day');
@@ -43,7 +42,7 @@ export const CalendarTable = () => {
         return (
           <li
             data-date={format(day, 'd-MMM-yyyy')}
-            onClick={handleClickNavigate}
+            onClick={handleClickRedirect}
             key={format(day, 'd-MMM-yyyy')}
             className="calendar-table-item"
           >
