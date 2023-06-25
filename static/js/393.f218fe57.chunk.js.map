@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/393.f218fe57.chunk.js","mappings":"4JAIA,UAJiB,WACf,OAAOA,EAAAA,EAAAA,KAAAC,EAAAA,SAAA,GACT,C","sources":["pages/Calendar.jsx"],"sourcesContent":["const Calendar = () => {\n  return <></>;\n};\n\nexport default Calendar;\n"],"names":["_jsx","_Fragment"],"sourceRoot":""}
