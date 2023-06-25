@@ -1,5 +1,5 @@
 export const validateFormLogin = values => {
-  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
   const passwordRegex = /^.{6,}$/;
 
   const errors = {};
@@ -19,7 +19,7 @@ export const validateFormLogin = values => {
   return errors;
 };
 export const validateFormSingup = values => {
-  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
   const nameRegex = /^[A-Za-z]{2,}$/;
   const passwordRegex = /^.{6,}$/;
 
