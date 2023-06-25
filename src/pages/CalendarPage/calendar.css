@@ -33,6 +33,7 @@
   position: relative;
   width: calc(100% / 7);
   height: 125px;
+  cursor: pointer;
 }
 
 .calendar-table-item::before {
@@ -152,4 +153,17 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.task-column-card {
+  width: 100%;
+  background-color: yellow;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  list-style: none;
+  padding: 0;
 }

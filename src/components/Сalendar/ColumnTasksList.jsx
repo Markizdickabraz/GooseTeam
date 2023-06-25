@@ -2,7 +2,7 @@ import { TaskColumnCard } from './TaskColumnCard';
 
 export const ColumnTasksList = () => {
   return (
-    <ul>
+    <ul className='tasks-list'>
       <TaskColumnCard />
       <TaskColumnCard />
       <TaskColumnCard />

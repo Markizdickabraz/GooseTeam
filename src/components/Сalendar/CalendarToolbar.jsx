@@ -1,21 +1,25 @@
 import { useState } from 'react';
-import { startOfToday, format, add, sub } from 'date-fns';
+import { startOfToday, format, add, sub, parse } from 'date-fns';
 import { PeriodPaginator } from './PeriodPaginator';
 import { PeriodTypeSelect } from './PeriodTypeSelect';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 
-export const CalendarToolbar = () => {
+export const CalendarToolbar = ({
+  periodType,
+  setPeriodType,
+  currentDate,
+  setCurrentDate,
+}) => {
+
   const navigate = useNavigate();
-  const [periodType, setPeriodType] = useState('month');
-  const [currentDate, setCurrentDate] = useState(startOfToday());
 
   useEffect(() => {
     if (periodType === 'month') {
       return navigate(`${periodType}/${format(currentDate, 'd-MMM-yyyy')}`);
     }
     navigate(`${periodType}/${format(currentDate, 'd-MMM-yyyy')}`);
-  }, [periodType, currentDate, navigate]);
+  }, [periodType, currentDate]);
 
   const nextMonth = () => {
     const currentDateNextMonth = add(currentDate, { months: 1 });
