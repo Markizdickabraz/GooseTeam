@@ -1,10 +1,7 @@
 import * as Yup from 'yup';
 
 const dateReg = /^\d{4}-\d{2}-\d{2}$/;
-const phoneReg =
-  /^(\+?3?8?0?)?[-.\s]?(\(?[0-9]{3}\)?[-.\s]?){2}[-.\s]?[0-9]{2}[-.\s]?[0-9]{2}$/;
-const maxDate = new Date();
-maxDate.setHours(23, 59, 59, 999);
+const phoneReg = /^\+?\d{1,3}\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$/;
 
 export const UserSchema = Yup.object().shape({
   avatar: Yup.mixed(),

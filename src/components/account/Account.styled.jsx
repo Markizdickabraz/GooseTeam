@@ -5,11 +5,20 @@ import { buttonColors } from '../../styles/variables';
 export const FormContainer = styled(Form)`
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  gap: 18px;
+  gap: 40px;
 
   max-width: 354px;
   margin: 40px auto 0 auto;
+
+  background-color: #d39b9b;
+  border-radius: 16px;
+  padding: 18px;
+`;
+
+export const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 
   @media (min-width: 768px) {
     gap: 24px;
