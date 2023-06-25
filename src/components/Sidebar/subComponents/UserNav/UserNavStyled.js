@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const NavList = styled.nav`
@@ -10,7 +10,7 @@ export const NavList = styled.nav`
 export const StyledLink = styled(NavLink)`
   color: #111;
   width: 185px;
-  
+
   font-weight: 600;
   font-size: 14px;
   padding: 10px 14px;
