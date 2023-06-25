@@ -7,7 +7,7 @@ const media = facepaint(BREAKPOINTS.map(bp => `@media (min-width: ${bp}px)`));
 
 export const Svg = styled.svg`
   fill: transparent;
-  stroke: #FFFFFF;
+  stroke: #ffffff;
 
   @keyframes scale-up-hor-left {
     0% {
@@ -38,7 +38,7 @@ export const Button = styled.button`
   width: 141px;
   margin-top: 0.5rem;
 
-  background-color: #3E85F3;
+  background-color: #3e85f3;
   box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
   border-radius: 16px;
 
@@ -50,7 +50,7 @@ export const Button = styled.button`
   font-size: 0.875rem;
   line-height: 1.125rem;
   letter-spacing: -0.02em;
-  color: #FFFFFF;
+  color: #ffffff;
 
   &:hover ${Svg} {
     animation: scale-up-hor-left 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both;

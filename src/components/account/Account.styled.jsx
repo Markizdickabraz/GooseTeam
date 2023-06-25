@@ -1,5 +1,5 @@
 import { Field, Form } from 'formik';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { buttonColors } from '../../styles/variables';
 
 export const FormContainer = styled(Form)`

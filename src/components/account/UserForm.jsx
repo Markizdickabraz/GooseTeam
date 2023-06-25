@@ -19,7 +19,6 @@ export const UserForm = () => {
         }}
         validationSchema={UserSchema}
         onSubmit={values => {
-          console.log(values);
           const formData = new FormData();
           for (let value in values) {
             formData.append(value, values[value]);
