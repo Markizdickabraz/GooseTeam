@@ -1,14 +1,15 @@
 import { ErrorMessage, useField } from 'formik';
-import {
-  ErrorText,
-  IconWrapper,
-  Input,
-  InputContainer,
-  Label,
-  MessageWrapper,
-} from './Account.styled';
+
 import { BsExclamationCircle } from 'react-icons/bs';
 import { BsCheckCircle } from 'react-icons/bs';
+import {
+  InputContainer,
+  Label,
+  Input,
+  MessageWrapper,
+  ErrorText,
+  IconWrapper,
+} from './styles/CustomInput.styled';
 
 export const CustomInput = ({ label, name, ...rest }) => {
   const [field, meta] = useField(name);

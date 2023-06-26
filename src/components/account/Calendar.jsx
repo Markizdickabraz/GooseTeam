@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { ErrorMessage, useField } from 'formik';
 import DatePicker from 'react-datepicker';
-import { ErrorText, Label, MessageWrapper } from './Account.styled';
 import 'components/SmallCalendar/SmallCalendar';
 import { getMonth, getYear } from 'date-fns';
 import { ControlWrapper, DateInput, Selects } from './styles/Calendar.styled';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
+import { Label, MessageWrapper, ErrorText } from './styles/CustomInput.styled';
 
 function range(start, end, step = 1) {
   const result = [];

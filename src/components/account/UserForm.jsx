@@ -1,6 +1,6 @@
 import { CustomInput } from 'components/account/CustomInput';
 import { Formik } from 'formik';
-import { FormContainer, FormWrapper, UserInfo } from './Account.styled';
+import { FormContainer, FormWrapper, UserInfo } from './styles/Account.styled';
 import { UserSchema } from './UserSchema';
 import Thumb from './Avatar';
 import { DatePickerField } from './Calendar';
