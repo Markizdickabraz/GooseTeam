@@ -71,13 +71,13 @@
   flex-wrap: wrap;
 }
 
-.calendar {
+/* .calendar {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
   margin-left: 250px;
   width: 1087px;
-}
+} */
 
 .calendar-toolbar {
   display: flex;

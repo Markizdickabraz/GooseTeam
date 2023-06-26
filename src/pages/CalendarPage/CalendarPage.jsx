@@ -5,6 +5,9 @@ import { startOfToday, format } from 'date-fns';
 import { redirect } from 'react-router-dom';
 import { useEffect } from 'react';
 import './calendar.css';
+import { Container } from './CalendarSection.styled';
+
+
 
 const CalendarPage = () => {
   const [currentDate, setCurrentDate] = useState(startOfToday());
@@ -15,7 +18,8 @@ const CalendarPage = () => {
   }, []);
 
   return (
-    <div className="calendar">
+    
+    <Container>
       <CalendarToolbar
         currentDate={currentDate}
         setCurrentDate={setCurrentDate}
@@ -25,7 +29,8 @@ const CalendarPage = () => {
       <Suspense fallback="Loading...">
         <Outlet context={{ setPeriodType, setCurrentDate }} />
       </Suspense>
-    </div>
+      </Container>
+      
   );
 };
 

@@ -8,8 +8,14 @@ import {
   format,
   isSameMonth,
   isSameDay,
+  startOfDay,
+  endOfDay
 } from 'date-fns';
 import { redirect, useParams, useOutletContext } from 'react-router-dom';
+import { useState, useEffect } from "react";
+
+import { getTasks } from '../../exampleTask';
+import { Day, Event } from './CalendarTable.styled';
 
 export const CalendarTable = () => {
   const { setPeriodType, setCurrentDate } = useOutletContext();
@@ -36,6 +42,17 @@ export const CalendarTable = () => {
       parse(e.currentTarget.dataset.date, 'd-MMMM-yyyy', new Date())
     );
   };
+
+  // with file for example
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const tasks = getTasks();
+    const filteredTasks = tasks.filter(task => isSameMonth(new Date(task.date), new Date(currentDate)));
+    setEvents(filteredTasks);
+}, [currentDate])
+
+
   return (
     <ul className="calendar-table">
       {days.map((day, index) => {
@@ -47,7 +64,7 @@ export const CalendarTable = () => {
             className="calendar-table-item"
           >
             {isSameMonth(day, parsedCurrentDate) && (
-              <p
+              <Day
                 style={{
                   color: isSameDay(day, parsedCurrentDate) ? 'white' : 'black',
                   backgroundColor: isSameDay(day, parsedCurrentDate)
@@ -57,8 +74,20 @@ export const CalendarTable = () => {
                 className="date-number"
               >
                 {format(day, 'd')}
-              </p>
+              </Day>
             )}
+
+            
+            <div>
+              <Event>{events
+                .filter(event => new Date(event.date) >= startOfDay(day) && new Date(event.date) <= endOfDay(day))
+                .map(event => (
+                  <div key={event.id}>
+                    {event.title}
+                  </div>
+
+                ))}</Event>
+            </div>
           </li>
         );
       })}

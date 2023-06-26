@@ -10,7 +10,9 @@ const Register = lazy(() => import('../pages/Register'));
 const Login = lazy(() => import('../pages/Login'));
 const User = lazy(() => import('../pages/User'));
 const Statistics = lazy(() => import('../pages/Statistics'));
-// const Calendar = lazy(() => import('../pages/Calendar'));
+const CalendarPage = lazy(() => import('../pages/CalendarPage/CalendarPage'));
+const ChoosedMonth = lazy(() => import('../pages/CalendarPage/ChoosedMonth'));
+const ChoosedDay = lazy(() => import('../pages/CalendarPage/ChoosedDay'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 const VerifyPage = lazy(() => import('../pages/VerifyPage'));
 
@@ -32,10 +34,10 @@ const App = () => {
           }
         />
         <Route path="statistics" element={<Statistics />} />
-        {/* <Route path="calendar" element={<Calendar />}>
-          <Route path="calendar/month/:currentDate" element={<Month />} />
-          <Route path="calendar/day/:currentDay" element={<Day />} />
-        </Route> */}
+        <Route path="calendar" element={<CalendarPage />}>
+          <Route path="month/:currentDate" element={<ChoosedMonth />} />
+          <Route path="day/:currentDay" element={<ChoosedDay/>} />
+        </Route>
 
         <Route path="*" element={<NotFound />} />
       </Routes>

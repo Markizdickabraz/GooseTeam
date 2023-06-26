@@ -11,6 +11,7 @@ export const DatePickerField = ({ name, setFieldValue }) => {
   const error = meta.touched && meta.error;
   const isValid = meta.touched && !meta.error;
 
+
   return (
     <DateInput>
       <Label htmlFor="birthday" error={error} isValid={isValid}>
