@@ -7,13 +7,14 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { App } from 'components/App';
 
-import './index.css';
+import GlobalStyle from 'styles/GlobalStyle';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="/GooseTeam">
+          <GlobalStyle />
           <App />
         </BrowserRouter>
       </PersistGate>
