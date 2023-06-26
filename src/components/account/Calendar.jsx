@@ -45,14 +45,6 @@ export const DatePickerField = ({ name, setFieldValue }) => {
       </Label>
 
       <DatePicker
-        selected={startDate}
-        onChange={date => {
-          setFieldValue('birthday', date.toISOString().split('T')[0]);
-          setStartDate(date);
-        }}
-      />
-
-      <DatePicker
         renderCustomHeader={({
           date,
           changeYear,

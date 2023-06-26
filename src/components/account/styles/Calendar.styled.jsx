@@ -2,25 +2,26 @@ import styled from 'styled-components';
 
 export const Selects = styled.div`
   display: flex;
-  gap: 5px;
+  gap: 6px;
 
   select {
     padding: 6px;
     outline: none;
     border: 1px solid #fff;
     border-radius: 4px;
+    font-size: 16px;
   }
 `;
 
 export const ControlWrapper = styled.div`
   button {
-    text-align: center;
+    display: flex;
     background-color: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
 
-    font-size: 25px;
+    font-size: 30px;
 
     color: #fff;
 
