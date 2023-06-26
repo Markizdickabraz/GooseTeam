@@ -6,7 +6,6 @@ import {
   InputContainer,
   Label,
   MessageWrapper,
-  SuccessText,
 } from './Account.styled';
 import { BsExclamationCircle } from 'react-icons/bs';
 import { BsCheckCircle } from 'react-icons/bs';
@@ -34,7 +33,7 @@ export const CustomInput = ({ label, name, ...rest }) => {
       <MessageWrapper>
         {error && <ErrorMessage>{meta.error}</ErrorMessage>}
 
-        {isValid && <SuccessText>This is a CORRECT {name}</SuccessText>}
+        {/* {isValid && <SuccessText>This is a CORRECT {name}</SuccessText>} */}
 
         <ErrorMessage name={name} component={ErrorText} />
       </MessageWrapper>

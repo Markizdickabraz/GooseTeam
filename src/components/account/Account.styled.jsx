@@ -86,7 +86,7 @@ export const Label = styled.label`
 export const IconWrapper = styled.div`
   position: absolute;
   right: 18px;
-  top: 42%;
+  top: 50%;
   font-size: 16px;
 
   @media (min-width: 768px) {
