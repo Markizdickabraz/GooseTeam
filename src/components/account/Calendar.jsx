@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ErrorMessage, useField } from 'formik';
 import DatePicker from 'react-datepicker';
 import 'components/SmallCalendar/SmallCalendar';
@@ -21,6 +21,12 @@ export const DatePickerField = ({ name, setFieldValue }) => {
   const [, meta] = useField(name);
   const error = meta.touched && meta.error;
   const isValid = meta.touched && !meta.error;
+
+  useEffect(() => {
+    const initialDate = new Date();
+    setStartDate(initialDate);
+    setFieldValue(name, initialDate.toISOString().split('T')[0]);
+  }, [name, setFieldValue]);
 
   const years = range(1990, getYear(new Date()) + 1, 1);
   const months = [
