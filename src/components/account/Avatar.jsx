@@ -6,8 +6,6 @@ import {
 } from './Account.styled';
 import { AiOutlinePlus } from 'react-icons/ai';
 
-// import Sprite from '../../../images/svg/sprite.svg';
-
 export const Thumb = ({ file, setFieldValue }) => {
   const [thumb, setThumb] = useState(undefined);
   const inputFileRef = useRef(null);
@@ -51,10 +49,6 @@ export const Thumb = ({ file, setFieldValue }) => {
           onClick={() => inputFileRef.current.click()}
         >
           <AiOutlinePlus color="white" />
-
-          {/* <span width="13" height="13">
-            <use href={`${Sprite}#log-in`}></use>
-          </span> */}
         </UpdateAvatarButton>
       </div>
     </AvatarContainer>

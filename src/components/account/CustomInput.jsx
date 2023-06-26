@@ -8,8 +8,8 @@ import {
   MessageWrapper,
   SuccessText,
 } from './Account.styled';
-import { BiErrorCircle } from 'react-icons/bi';
-import { MdDoneOutline } from 'react-icons/md';
+import { BsExclamationCircle } from 'react-icons/bs';
+import { BsCheckCircle } from 'react-icons/bs';
 
 export const CustomInput = ({ label, name, ...rest }) => {
   const [field, meta] = useField(name);
@@ -34,9 +34,9 @@ export const CustomInput = ({ label, name, ...rest }) => {
 
       <IconWrapper>
         {error ? (
-          <BiErrorCircle color="red" size={18} />
+          <BsExclamationCircle color="red" />
         ) : (
-          isValid && <MdDoneOutline color="green" size={18} />
+          isValid && <BsCheckCircle color="green" />
         )}
       </IconWrapper>
     </InputContainer>
