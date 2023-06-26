@@ -10,6 +10,7 @@ const Register = lazy(() => import('../pages/Register'));
 const Login = lazy(() => import('../pages/Login'));
 const User = lazy(() => import('../pages/User'));
 const Statistics = lazy(() => import('../pages/Statistics'));
+const ResendVerify = lazy(() => import('../pages/ResendVerify'));
 // const Calendar = lazy(() => import('../pages/Calendar'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 const VerifyPage = lazy(() => import('../pages/VerifyPage'));
@@ -19,9 +20,10 @@ const App = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<Start />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="/verify/:verificationToken" element={<VerifyPage />} />
+        <Route path="/register/resend-email" element={<ResendVerify />} />
 
         <Route
           path="/account"
