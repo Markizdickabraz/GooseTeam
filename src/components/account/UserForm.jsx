@@ -5,8 +5,11 @@ import { UserSchema } from './UserSchema';
 import Thumb from './Avatar';
 import { DatePickerField } from './Calendar';
 import { Button } from 'styles/components';
+import { useState } from 'react';
 
 export const UserForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   return (
     <>
       <Formik
@@ -28,9 +31,11 @@ export const UserForm = () => {
           for (const pair of formData.entries()) {
             console.log(`${pair[0]}, ${pair[1]}`);
           }
+
+          setIsSubmitting(true);
         }}
       >
-        {({ values, setFieldValue }) => (
+        {({ values, setFieldValue, dirty }) => (
           <FormContainer>
             <UserInfo>
               <Thumb file={values.avatar} setFieldValue={setFieldValue} />
@@ -59,8 +64,12 @@ export const UserForm = () => {
             </FormWrapper>
 
             <Button
-              style={{ cursor: 'pointer', margin: '0 auto' }}
+              style={{
+                margin: '0 auto',
+                cursor: dirty && !isSubmitting ? 'pointer' : 'default',
+              }}
               type="submit"
+              disabled={!dirty || isSubmitting}
             >
               Save changes
             </Button>
