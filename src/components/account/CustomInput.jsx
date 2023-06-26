@@ -38,7 +38,7 @@ export const CustomInput = ({ label, name, ...rest }) => {
         <ErrorMessage name={name} component={ErrorText} />
       </MessageWrapper>
 
-      <IconWrapper>
+      <IconWrapper error={error}>
         {error ? (
           <BsExclamationCircle color="red" />
         ) : (
