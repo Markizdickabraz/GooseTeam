@@ -40,7 +40,7 @@ export const IconWrapper = styled.div`
   position: absolute;
   right: 18px;
 
-  top: ${({ error }) => (error ? '43%' : '50%')};
+  top: ${({ error }) => (error ? '42%' : '50%')};
   font-size: 16px;
 
   @media (min-width: 768px) {
