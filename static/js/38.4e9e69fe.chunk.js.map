@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/38.4e9e69fe.chunk.js","mappings":"2JAIE,UAJY,WACV,OAAOA,EAAAA,EAAAA,KAAAC,EAAAA,SAAA,GACT,C","sources":["pages/Login.jsx"],"sourcesContent":["const Login = () => {\n    return <></>;\n  };\n  \n  export default Login;"],"names":["_jsx","_Fragment"],"sourceRoot":""}
