@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/GooseTeam/static/css/main.7cda0caf.css",
-    "main.js": "/GooseTeam/static/js/main.cff7be80.js",
+    "main.js": "/GooseTeam/static/js/main.8b839936.js",
     "static/js/345.a75d75a6.chunk.js": "/GooseTeam/static/js/345.a75d75a6.chunk.js",
     "static/css/682.4cbacee2.chunk.css": "/GooseTeam/static/css/682.4cbacee2.chunk.css",
     "static/js/682.b4f57f1d.chunk.js": "/GooseTeam/static/js/682.b4f57f1d.chunk.js",
     "static/css/405.4ee5ac11.chunk.css": "/GooseTeam/static/css/405.4ee5ac11.chunk.css",
     "static/js/405.9cd6a05e.chunk.js": "/GooseTeam/static/js/405.9cd6a05e.chunk.js",
-    "static/css/98.6b255a81.chunk.css": "/GooseTeam/static/css/98.6b255a81.chunk.css",
-    "static/js/98.8a2cbc4b.chunk.js": "/GooseTeam/static/js/98.8a2cbc4b.chunk.js",
+    "static/css/606.e72442e5.chunk.css": "/GooseTeam/static/css/606.e72442e5.chunk.css",
+    "static/js/606.4d87e46e.chunk.js": "/GooseTeam/static/js/606.4d87e46e.chunk.js",
     "static/css/797.4491bd36.chunk.css": "/GooseTeam/static/css/797.4491bd36.chunk.css",
     "static/js/797.f87a14bd.chunk.js": "/GooseTeam/static/js/797.f87a14bd.chunk.js",
     "static/js/805.1c699ab4.chunk.js": "/GooseTeam/static/js/805.1c699ab4.chunk.js",
@@ -18,7 +18,7 @@
     "static/css/153.0fff40db.chunk.css": "/GooseTeam/static/css/153.0fff40db.chunk.css",
     "static/js/153.94f658a8.chunk.js": "/GooseTeam/static/js/153.94f658a8.chunk.js",
     "static/js/141.23fd793c.chunk.js": "/GooseTeam/static/js/141.23fd793c.chunk.js",
-    "static/js/377.c9702840.chunk.js": "/GooseTeam/static/js/377.c9702840.chunk.js",
+    "static/js/23.0ed123b0.chunk.js": "/GooseTeam/static/js/23.0ed123b0.chunk.js",
     "static/js/988.834adca4.chunk.js": "/GooseTeam/static/js/988.834adca4.chunk.js",
     "static/media/Inter-VariableFont_slnt,wght.ttf": "/GooseTeam/static/media/Inter-VariableFont_slnt,wght.aadb65ac45347ff46699.ttf",
     "static/media/calendarTablet@2x.png": "/GooseTeam/static/media/calendarTablet@2x.d0c338b0d05aefed530a.png",
@@ -40,14 +40,14 @@
     "index.html": "/GooseTeam/index.html",
     "static/media/IconLogin.svg": "/GooseTeam/static/media/IconLogin.e77e85dd4703c7ecf995b84341f1f543.svg",
     "main.7cda0caf.css.map": "/GooseTeam/static/css/main.7cda0caf.css.map",
-    "main.cff7be80.js.map": "/GooseTeam/static/js/main.cff7be80.js.map",
+    "main.8b839936.js.map": "/GooseTeam/static/js/main.8b839936.js.map",
     "345.a75d75a6.chunk.js.map": "/GooseTeam/static/js/345.a75d75a6.chunk.js.map",
     "682.4cbacee2.chunk.css.map": "/GooseTeam/static/css/682.4cbacee2.chunk.css.map",
     "682.b4f57f1d.chunk.js.map": "/GooseTeam/static/js/682.b4f57f1d.chunk.js.map",
     "405.4ee5ac11.chunk.css.map": "/GooseTeam/static/css/405.4ee5ac11.chunk.css.map",
     "405.9cd6a05e.chunk.js.map": "/GooseTeam/static/js/405.9cd6a05e.chunk.js.map",
-    "98.6b255a81.chunk.css.map": "/GooseTeam/static/css/98.6b255a81.chunk.css.map",
-    "98.8a2cbc4b.chunk.js.map": "/GooseTeam/static/js/98.8a2cbc4b.chunk.js.map",
+    "606.e72442e5.chunk.css.map": "/GooseTeam/static/css/606.e72442e5.chunk.css.map",
+    "606.4d87e46e.chunk.js.map": "/GooseTeam/static/js/606.4d87e46e.chunk.js.map",
     "797.4491bd36.chunk.css.map": "/GooseTeam/static/css/797.4491bd36.chunk.css.map",
     "797.f87a14bd.chunk.js.map": "/GooseTeam/static/js/797.f87a14bd.chunk.js.map",
     "805.1c699ab4.chunk.js.map": "/GooseTeam/static/js/805.1c699ab4.chunk.js.map",
@@ -57,11 +57,11 @@
     "153.0fff40db.chunk.css.map": "/GooseTeam/static/css/153.0fff40db.chunk.css.map",
     "153.94f658a8.chunk.js.map": "/GooseTeam/static/js/153.94f658a8.chunk.js.map",
     "141.23fd793c.chunk.js.map": "/GooseTeam/static/js/141.23fd793c.chunk.js.map",
-    "377.c9702840.chunk.js.map": "/GooseTeam/static/js/377.c9702840.chunk.js.map",
+    "23.0ed123b0.chunk.js.map": "/GooseTeam/static/js/23.0ed123b0.chunk.js.map",
     "988.834adca4.chunk.js.map": "/GooseTeam/static/js/988.834adca4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.cff7be80.js"
+    "static/js/main.8b839936.js"
   ]
 }
