@@ -54,7 +54,7 @@ export const Button = styled.button`
   &:hover ${Svg} {
     animation: ${scaleUpHorLeft} 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   }
-  
+
   padding: 14px 28px;
 
   @media (min-width: 765px) {

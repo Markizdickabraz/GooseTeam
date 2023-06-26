@@ -1,9 +1,10 @@
 import { CustomInput } from 'components/account/CustomInput';
 import { Formik } from 'formik';
-import { FormContainer } from './Account.styled';
+import { FormContainer, FormWrapper, UserInfo } from './Account.styled';
 import { UserSchema } from './UserSchema';
 import Thumb from './Avatar';
 import { DatePickerField } from './Calendar';
+import { Button } from 'styles/components';
 
 export const UserForm = () => {
   return (
@@ -19,7 +20,6 @@ export const UserForm = () => {
         }}
         validationSchema={UserSchema}
         onSubmit={values => {
-          console.log(values);
           const formData = new FormData();
           for (let value in values) {
             formData.append(value, values[value]);
@@ -32,24 +32,38 @@ export const UserForm = () => {
       >
         {({ values, setFieldValue }) => (
           <FormContainer>
-            <div style={{ textAlign: 'center' }}>
+            <UserInfo>
               <Thumb file={values.avatar} setFieldValue={setFieldValue} />
 
-              <p style={{ marginTop: 18 }}>Nadiia Doe</p>
-              <p style={{ marginTop: 4 }}>User</p>
-            </div>
+              <p>Nadiia Doe</p>
+              <p>User</p>
+            </UserInfo>
 
-            <CustomInput label="User Name" name="username" />
+            <FormWrapper>
+              <div>
+                <CustomInput label="User Name" name="username" />
 
-            <DatePickerField name="birthday" />
+                <DatePickerField
+                  name="birthday"
+                  setFieldValue={setFieldValue}
+                />
 
-            <CustomInput label="Email" name="email" type="email" />
+                <CustomInput label="Email" name="email" type="email" />
+              </div>
 
-            <CustomInput label="Phone" name="phone" type="tel" />
+              <div>
+                <CustomInput label="Phone" name="phone" type="tel" />
 
-            <CustomInput label="Skype" name="skype" />
+                <CustomInput label="Skype" name="skype" />
+              </div>
+            </FormWrapper>
 
-            <button type="submit">Save changes</button>
+            <Button
+              style={{ cursor: 'pointer', margin: '0 auto' }}
+              type="submit"
+            >
+              Save changes
+            </Button>
           </FormContainer>
         )}
       </Formik>
