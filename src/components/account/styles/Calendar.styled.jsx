@@ -13,8 +13,15 @@ export const DateInput = styled.div`
     border: 1px solid rgba(17, 17, 17, 0.1);
     outline: none;
 
+    font-size: 14px;
+
     :focus {
       border: 1px solid #111;
+    }
+
+    @media (min-width: 768px) {
+      padding: 14px 18px;
+      font-size: 16px;
     }
 
     border-color: ${({ color }) => color};
