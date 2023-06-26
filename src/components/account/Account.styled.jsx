@@ -77,9 +77,6 @@ export const Input = styled(Field)`
   }
 `;
 export const Label = styled.label`
-  color: ${({ error, isValid }) =>
-    error ? 'red' : isValid ? 'green' : 'inherit'};
-
   font-size: 12px;
 
   @media (min-width: 768px) {
@@ -111,33 +108,6 @@ export const ErrorText = styled.p`
 `;
 export const SuccessText = styled.p`
   color: green;
-`;
-
-// Calendar
-export const CalendarButton = styled.button`
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5px;
-`;
-
-export const DateInput = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  max-width: 354px;
-
-  input {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 1px solid rgba(17, 17, 17, 0.1);
-    outline: none;
-
-    :focus {
-      border: 1px solid #111;
-    }
-  }
 `;
 
 // Avatar

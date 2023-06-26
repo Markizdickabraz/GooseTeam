@@ -16,13 +16,20 @@ export const CustomInput = ({ label, name, ...rest }) => {
   const error = meta.touched && meta.error;
   const isValid = meta.touched && !meta.error && meta.value !== '';
 
+  const color = error ? 'red' : isValid ? 'green' : 'default-color';
+
   return (
     <InputContainer>
-      <Label htmlFor={name} error={error} isValid={isValid}>
+      <Label htmlFor={name} style={{ color }}>
         {label}
       </Label>
 
-      <Input {...field} {...rest} placeholder={`Your ${name}`} />
+      <Input
+        {...field}
+        {...rest}
+        placeholder={`Your ${name}`}
+        style={{ borderColor: color }}
+      />
 
       <MessageWrapper>
         {error && <ErrorMessage>{meta.error}</ErrorMessage>}

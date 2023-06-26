@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ErrorMessage, useField } from 'formik';
 import DatePicker from 'react-datepicker';
-import { DateInput, ErrorText, Label, MessageWrapper } from './Account.styled';
+import { ErrorText, Label, MessageWrapper } from './Account.styled';
 import 'components/SmallCalendar/SmallCalendar';
 import { getMonth, getYear } from 'date-fns';
-import { ControlWrapper, Selects } from './styles/Calendar.styled';
+import { ControlWrapper, DateInput, Selects } from './styles/Calendar.styled';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 
 function range(start, end, step = 1) {
@@ -38,11 +38,11 @@ export const DatePickerField = ({ name, setFieldValue }) => {
     'December',
   ];
 
+  const color = error ? 'red' : isValid ? 'green' : 'default-color';
+
   return (
-    <DateInput>
-      <Label htmlFor="birthday" error={error} isValid={isValid}>
-        Birthday
-      </Label>
+    <DateInput color={color}>
+      <Label htmlFor="birthday">Birthday</Label>
 
       <DatePicker
         renderCustomHeader={({

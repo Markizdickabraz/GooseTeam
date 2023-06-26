@@ -1,5 +1,30 @@
 import styled from 'styled-components';
 
+export const DateInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 354px;
+
+  input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    outline: none;
+
+    :focus {
+      border: 1px solid #111;
+    }
+
+    border-color: ${({ color }) => color};
+  }
+
+  label {
+    color: ${({ color }) => color};
+  }
+`;
+
 export const Selects = styled.div`
   display: flex;
   gap: 6px;
