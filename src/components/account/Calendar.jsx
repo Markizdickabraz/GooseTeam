@@ -3,9 +3,15 @@ import { ErrorMessage, useField } from 'formik';
 import DatePicker from 'react-datepicker';
 import 'components/SmallCalendar/SmallCalendar';
 import { getMonth, getYear } from 'date-fns';
-import { ControlWrapper, DateInput, Selects } from './styles/Calendar.styled';
+import {
+  ControlWrapper,
+  DateInput,
+  IconWrapper,
+  Selects,
+} from './styles/Calendar.styled';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 import { Label, MessageWrapper, ErrorText } from './styles/CustomInput.styled';
+import { AiOutlineDown } from 'react-icons/ai';
 
 function range(start, end, step = 1) {
   const result = [];
@@ -17,6 +23,7 @@ function range(start, end, step = 1) {
 
 export const DatePickerField = ({ name, setFieldValue }) => {
   const [startDate, setStartDate] = useState(new Date());
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
   const [, meta] = useField(name);
   const error = meta.touched && meta.error;
@@ -45,27 +52,6 @@ export const DatePickerField = ({ name, setFieldValue }) => {
   ];
 
   const color = error ? 'red' : isValid ? 'green' : 'default-color';
-
-  const handleInputChange = event => {
-    const inputDate = event.target.value;
-    if (inputDate) {
-      const formatted = inputDate
-        .replace(/\D/g, '')
-        .slice(0, 8)
-        .replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
-
-      if (formatted.length === 10) {
-        const month = parseInt(formatted.slice(0, 2), 10) - 1;
-        const day = parseInt(formatted.slice(3, 5), 10);
-        const year = parseInt(formatted.slice(6, 10), 10);
-        const newDate = new Date(year, month, day);
-        setStartDate(newDate);
-        setFieldValue(name, newDate.toISOString().split('T')[0]);
-      } else {
-        setFieldValue(name, '');
-      }
-    }
-  };
 
   return (
     <DateInput color={color}>
@@ -142,12 +128,17 @@ export const DatePickerField = ({ name, setFieldValue }) => {
             setStartDate(null);
           }
         }}
-        onChangeRaw={handleInputChange}
+        onCalendarOpen={() => setIsCalendarOpen(true)} // Установка состояния открытия календаря
+        onCalendarClose={() => setIsCalendarOpen(false)} //
       />
 
       <MessageWrapper>
         <ErrorMessage name={name} component={ErrorText} />
       </MessageWrapper>
+
+      <IconWrapper isCalendarOpen={isCalendarOpen}>
+        <AiOutlineDown color={color} />
+      </IconWrapper>
     </DateInput>
   );
 };

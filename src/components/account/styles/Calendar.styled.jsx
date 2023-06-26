@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const DateInput = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -61,5 +62,21 @@ export const ControlWrapper = styled.div`
     :hover {
       color: #dce3e5cc;
     }
+  }
+`;
+
+export const IconWrapper = styled.div`
+  pointer-events: ${({ isCalendarOpen }) => (isCalendarOpen ? 'auto' : 'none')};
+  cursor: pointer;
+
+  position: absolute;
+  right: 18px;
+
+  top: 35px;
+  font-size: 16px;
+
+  @media (min-width: 768px) {
+    top: 40px;
+    font-size: 18px;
   }
 `;
