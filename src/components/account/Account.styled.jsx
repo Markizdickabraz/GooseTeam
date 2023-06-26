@@ -177,6 +177,8 @@ export const AvatarContainer = styled.div`
 `;
 
 export const AvatarImg = styled.img`
+  max-width: none;
+
   @media (max-width: 768px) {
     position: absolute;
     top: -50px;
@@ -188,9 +190,6 @@ export const AvatarImg = styled.img`
   border: 2px solid #3e85f3;
   width: 72px;
   height: 72px;
-
-  width: 124px;
-  height: 124px;
 
   @media (min-width: 768px) {
     width: 124px;
