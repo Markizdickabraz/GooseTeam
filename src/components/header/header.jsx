@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ThemeToggler } from './components/ThemeToggler/ThemeToggler';
 import { UserInfo } from './components/UserInfo/UserInfo';
 import { useLocation } from 'react-router-dom';
@@ -13,9 +14,21 @@ import {
 
 } from './Header.styled';
 
+import AddFeedbackModal from './AddFeedbackModal/AddFeedbackModal';
+
 export const Header = () => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const [modalIsOpened, setModalIsOpened] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpened(true);
+  }
+
+  const closeModal = () => {
+    console.log('Hello!');
+    setModalIsOpened(false);
+  }
 
   let title = '';
   if (currentPath.startsWith('/account')) {
@@ -25,6 +38,7 @@ export const Header = () => {
   } else {
     title = '';
   }
+
   return (
     <>
       <Wrapper>
@@ -38,13 +52,13 @@ export const Header = () => {
         <Toggler>
           <use href={`${sprite}#menu`} />
         </Toggler>
-        <FeedbackBtn>Feedback</FeedbackBtn>
+        <FeedbackBtn onClick={openModal}>Feedback</FeedbackBtn>
         <Info>
           <ThemeToggler />
           <UserInfo />
         </Info>
       </Wrapper>
-      
+      {modalIsOpened && <AddFeedbackModal close={closeModal} />}
     </>
   );
 };
