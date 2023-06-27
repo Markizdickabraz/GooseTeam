@@ -21,7 +21,7 @@ function range(start, end, step = 1) {
   return result;
 }
 
-export const DatePickerField = ({ name, setFieldValue }) => {
+export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
@@ -127,6 +127,8 @@ export const DatePickerField = ({ name, setFieldValue }) => {
             setFieldValue('birthday', '');
             setStartDate(null);
           }
+
+          setIsFormDirty(true);
         }}
         onCalendarOpen={() => setIsCalendarOpen(true)} // Установка состояния открытия календаря
         onCalendarClose={() => setIsCalendarOpen(false)} //

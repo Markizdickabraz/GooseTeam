@@ -7,7 +7,7 @@ import {
   UpdateAvatarButton,
 } from './styles/Avatar.styled';
 
-export const Thumb = ({ file, setFieldValue }) => {
+export const Thumb = ({ file, setFieldValue, setIsFormDirty }) => {
   const [thumb, setThumb] = useState(undefined);
   const inputFileRef = useRef(null);
 
@@ -40,6 +40,7 @@ export const Thumb = ({ file, setFieldValue }) => {
         type="file"
         onChange={event => {
           setFieldValue('avatar', event.currentTarget.files[0]);
+          setIsFormDirty(true);
         }}
         style={{ display: 'none' }}
       />
