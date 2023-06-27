@@ -2,6 +2,7 @@ import 'modern-normalize';
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
+
 import Header from './header/header';
 
 // import CalendarPage from 'pages/CalendarPage/CalendarPage';
@@ -14,6 +15,7 @@ const Statistics = lazy(() => import('../pages/Statistics'));
 const CalendarPage = lazy(() => import('../pages/CalendarPage/CalendarPage'));
 const ChoosedMonth = lazy(() => import('../pages/CalendarPage/ChoosedMonth'));
 const ChoosedDay = lazy(() => import('../pages/CalendarPage/ChoosedDay'));
+
 const NotFound = lazy(() => import('../pages/NotFound'));
 const VerifyPage = lazy(() => import('../pages/VerifyPage'));
 
@@ -30,15 +32,17 @@ const App = () => {
           path="/account"
           element={
             <Suspense fallback={<div>Loading...</div>}>
-             <Header/> <User />
+              <Header /> <User />
             </Suspense>
           }
         />
+
         <Route path="statistics" element={<><Header/><Statistics /></>} />
         <Route path="calendar" element={<><Header/><CalendarPage /></>}>
           <Route path="month/:currentDate" element={<ChoosedMonth />} />
           <Route path="day/:currentDay" element={<ChoosedDay />} />
 </Route>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
