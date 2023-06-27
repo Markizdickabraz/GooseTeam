@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
- 
+
 import Coolvetica from './fonts/Coolvetica/Coolvetica-Regular.ttf';
 import Inter from './fonts/Inter/Inter-VariableFont_slnt,wght.ttf';
 

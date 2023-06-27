@@ -1,42 +1,49 @@
 import { ErrorMessage, useField } from 'formik';
+
+import { BsExclamationCircle } from 'react-icons/bs';
+import { BsCheckCircle } from 'react-icons/bs';
 import {
-  ErrorText,
-  IconWrapper,
-  Input,
   InputContainer,
   Label,
+  Input,
   MessageWrapper,
-  SuccessText,
-} from './Account.styled';
-import { BiErrorCircle } from 'react-icons/bi';
-import { MdDoneOutline } from 'react-icons/md';
+  ErrorText,
+  IconWrapper,
+} from './styles/CustomInput.styled';
 
 export const CustomInput = ({ label, name, ...rest }) => {
   const [field, meta] = useField(name);
   const error = meta.touched && meta.error;
   const isValid = meta.touched && !meta.error && meta.value !== '';
 
+  const color = error ? 'red' : isValid ? 'green' : 'default-color';
+
   return (
     <InputContainer>
-      <Label htmlFor={name} error={error} isValid={isValid}>
+      <Label htmlFor={name} style={{ color }}>
         {label}
       </Label>
 
-      <Input {...field} {...rest} placeholder={`Your ${name}`} />
+      <Input
+        {...field}
+        {...rest}
+        placeholder={`Your ${name}`}
+        style={{ borderColor: color }}
+      />
 
       <MessageWrapper>
         {error && <ErrorMessage>{meta.error}</ErrorMessage>}
 
-        {isValid && <SuccessText>This is a CORRECT {name}</SuccessText>}
+        {/* {isValid && <SuccessText>This is a CORRECT {name}</SuccessText>} */}
 
         <ErrorMessage name={name} component={ErrorText} />
       </MessageWrapper>
 
-      <IconWrapper>
+      <IconWrapper error={error}>
         {error ? (
-          <BiErrorCircle color="red" size={18} />
+          <BsExclamationCircle color="red" />
         ) : (
-          isValid && <MdDoneOutline color="green" size={18} />
+          isValid && <BsCheckCircle color="green" />
         )}
       </IconWrapper>
     </InputContainer>

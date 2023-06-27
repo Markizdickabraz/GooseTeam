@@ -4,7 +4,6 @@ import logoTab from '../../../images/start_page/Tablet/goose_logoTablet@1x.png';
 import logoTab2x from '../../../images/start_page/Tablet/goose_logoTablet@2x.png';
 import logoMob from '../../../images/start_page/Mobile/goose_logoMobile@1x.png';
 import logoMob2x from '../../../images/start_page/Mobile/goose_logoMobile@2x.png';
-// import Sprite from '../../../images/svg/sprite.svg';
 
 import {
   Section,
@@ -19,7 +18,6 @@ import {
   SignUpMob,
   SvgLogIn,
 } from './AuthSection.styled';
-// import { ReactComponent as LogoLogin } from '../../../images/start_page/IconLogin.svg';
 
 const AuthSection = () => {
   return (
@@ -45,9 +43,6 @@ const AuthSection = () => {
                 marginLeft: '8px',
               }}
             />
-            {/* <SvgLogIn width="13" height="13">
-              <use href={`${Sprite}#log-in`}></use>
-            </SvgLogIn> */}
           </LogIn>
           <SignUpMob to={'/register'}>Sign Up</SignUpMob>
         </NavBox>

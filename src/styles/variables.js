@@ -27,6 +27,7 @@ export const iconColors = {
   red: '#EA3D65',
   blue: '#3e85f3',
   orange: '#FFAC33',
+  greyDisableStar: ' #cec9c1',
 };
 
 export const taskColors = {
