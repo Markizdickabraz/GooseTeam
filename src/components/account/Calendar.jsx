@@ -53,26 +53,6 @@ export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
 
   const color = error ? 'red' : isValid ? 'green' : 'default-color';
 
-  const handleInputChange = event => {
-    const inputDate = event.target.value;
-    if (inputDate) {
-      const formatted = inputDate
-        .replace(/\D/g, '')
-        .slice(0, 8)
-        .replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
-      if (formatted.length === 10) {
-        const day = parseInt(formatted.slice(0, 2), 10);
-        const month = parseInt(formatted.slice(3, 5), 10) - 1;
-        const year = parseInt(formatted.slice(6, 10), 10);
-        const newDate = new Date(year, month, day);
-        setStartDate(newDate);
-        setFieldValue(name, newDate.toISOString().split('T')[0]);
-      } else {
-        setFieldValue(name, '');
-      }
-    }
-  };
-
   return (
     <DateInput color={color}>
       <Label htmlFor="birthday">Birthday</Label>
@@ -151,9 +131,8 @@ export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
 
           setIsFormDirty(true);
         }}
-        onCalendarOpen={() => setIsCalendarOpen(true)} // Установка состояния открытия календаря
-        onCalendarClose={() => setIsCalendarOpen(false)} //
-        onChangeRaw={handleInputChange}
+        onCalendarOpen={() => setIsCalendarOpen(true)}
+        onCalendarClose={() => setIsCalendarOpen(false)}
       />
 
       <MessageWrapper>
