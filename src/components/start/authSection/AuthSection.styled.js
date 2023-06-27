@@ -11,7 +11,7 @@ const media = {
 
 export const Section = styled.section`
   margin: 0;
-  height: 100vh;
+  height: window.innerHeight;
   width: 100vw;
   background-color: ${Variables.backgroundColors.blue};
 `;
@@ -22,6 +22,7 @@ export const Container = styled.div`
   padding-right: 20.8vw;
   padding-bottom: 10.8vh;
   text-align: center;
+
   ${media.tablet} {
     padding-top: 31.3vh;
     padding-left: 11.2vw;
@@ -44,6 +45,7 @@ export const Img = styled.img`
   ${media.tablet} {
     width: 150px;
   }
+  @media (min-device-);
 `;
 
 export const MainTitle = styled.h1`
@@ -57,10 +59,8 @@ export const MainTitle = styled.h1`
   //   line-height: 48px;
 
   ${media.tablet} {
-    // margin-bottom: 40px;
     // font-size: 14.6vh;
     font-size: 120px;
-    // line-height: 150px;
   }
 `;
 
@@ -70,15 +70,15 @@ export const MainTitleSpan = styled.span`
 
 export const NavBox = styled.div`
   display: flex;
-  //   flex-wrap: wrap;
-  //   max-width: 262px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  //   //   align-content: space-between;
-  gap: 20.8vh;
+  gap: 20.6vh;
+
+  text-align: center;
 
   ${media.tablet} {
+    display: flex;
     flex-direction: row;
     align-items: center;
     gap: 24px;
@@ -87,46 +87,53 @@ export const NavBox = styled.div`
 
 export const SignUp = styled(Link)`
   display: none;
-
   ${media.tablet} {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 121px;
-    height: 46px;
+
     margin: 0;
     color: ${Variables.fontColors.white};
     font-family: ${Variables.fonts.primary};
     font-weight: 600;
     font-size: 14px;
     transition: color ${Variables.animation},
-      background-color ${Variables.animation};
+    scale ${Variables.animation},
+      // background-color ${Variables.animation};
     border: 0;
     border-radius: 15px;
-    text-decoration: underline;
+    text-decoration: none;
 
-    // &::after {
-    //   content: '';
-    //   width: 121px;
-    //   height: 1px;
-    //   display: block;
-    //   position: absolute;
-    //   bottom: 1px;
-    //   left: 0;
-    //   background-color: ${Variables.fontColors.white};
-    //   border-radius: 1px;
-    // }
+    &::after {
+      content: ' ';
+      width: 50px;
+      height: 1px;
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      background-color: ${Variables.fontColors.white};
+      border-radius: 1px;
+      &:focus, &:hover  {background-color: ${Variables.fontColors.black};}
+    }
 
     &:focus {
       text-decoration: none;
       color: ${Variables.fontColors.black};
-      background-color: ${Variables.fontColors.white};
+      scale:1.2;
+      // background-color: ${Variables.fontColors.white};
+      // width: 121px;
+      // height: 46px;
     }
 
     &:hover {
       text-decoration: none;
       color: ${Variables.fontColors.black};
-      background-color: ${Variables.fontColors.white};
+      scale:1.2;
+      // background-color: ${Variables.fontColors.white};
+      // width: 121px;
+      // height: 46px;
     }
   }
 `;
@@ -134,6 +141,11 @@ export const SignUp = styled(Link)`
 export const SvgLogIn = styled(LogoLogin)`
   fill: none;
   transition: color ${Variables.animation};
+  width: 13px;
+  height: 13px;
+  margin-left: 8px;
+  fill: none;
+  stroke: ${Variables.fontColors.blue};
 `;
 
 export const LogIn = styled(Link)`
@@ -143,7 +155,7 @@ export const LogIn = styled(Link)`
   padding: 0;
   border: 0;
   border-radius: 15px;
-  color: ${Variables.fontColors.black};
+  color: ${Variables.fontColors.blue};
   font-family: ${Variables.fonts.primary};
   font-weight: 600;
   font-size: 14px;
@@ -152,55 +164,72 @@ export const LogIn = styled(Link)`
   align-items: center;
   display: flex;
   justify-content: center;
-  transition: color ${Variables.animation},
-    background-color ${Variables.animation};
+  transition: color ${Variables.animation}, fill ${Variables.animation};
 
   &:hover ${SvgLogIn} {
-    stroke: ${Variables.backgroundColors.black};
+    stroke: ${Variables.backgroundColors.white};
+    fill: ${Variables.iconColors.orange};
   }
   &:focus ${SvgLogIn} {
-    stroke: ${Variables.backgroundColors.black};
+    stroke: ${Variables.backgroundColors.white};
+    fill: ${Variables.iconColors.orange};
   }
   &:focus {
-    text-decoration: underline;
-    color: ${Variables.fontColors.blue};
-    // background-color: ${Variables.backgroundColors.blue};
+    color: ${Variables.fontColors.black};
   }
   &:hover {
-    text-decoration: underline;
-    color: ${Variables.fontColors.blue};
-    // background-color: ${Variables.backgroundColors.blue};
+    color: ${Variables.fontColors.black};
   }
-
-  //   ${media.tablet} {
-  //     margin: 0;
-  //     padding: 14px 22px;
-  //     border: 0;
-  //     border-radius: 15px;
-  //     color: var(--accent-background-color);
-  //     font-family: 'Inter', sans-serif;
-  //     font-weight: 600;
-  //     font-size: 14px;
-  //     line-height: 18px;
-  //   }
 `;
 
 export const SignUpMob = styled(Link)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 121px;
-  height: 46px;
-  margin: 0;
-  color: ${Variables.fontColors.white};
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  transition: color ${Variables.animation},
-    background-color ${Variables.animation};
-  border: 0;
-  border-radius: 15px;
-  text-decoration: underline;
+  position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    color: ${Variables.fontColors.white};
+    font-family: ${Variables.fonts.primary};
+    font-weight: 600;
+    font-size: 14px;
+    transition: color ${Variables.animation},
+    scale ${Variables.animation},
+      // background-color ${Variables.animation};
+    border: 0;
+    border-radius: 15px;
+    text-decoration: none;
+
+    &::after {
+      content: ' ';
+      width: 50px;
+      height: 1px;
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      background-color: ${Variables.fontColors.white};
+      border-radius: 1px;
+      &:focus, &:hover  {background-color: ${Variables.fontColors.black};}
+    }
+
+    &:focus {
+      text-decoration: none;
+      color: ${Variables.fontColors.black};
+      scale:1.2;
+      // background-color: ${Variables.fontColors.white};
+      // width: 121px;
+      // height: 46px;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: ${Variables.fontColors.black};
+      scale:1.2;
+      // background-color: ${Variables.fontColors.white};
+      // width: 121px;
+      // height: 46px;
+    }
 
   ${media.tablet} {
     display: none;
