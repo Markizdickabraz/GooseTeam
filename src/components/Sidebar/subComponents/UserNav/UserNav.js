@@ -1,7 +1,7 @@
 import sprite from 'images/svg/sprite.svg';
 import { NavList, StyledLink, NavIcon } from './UserNavStyled';
 //додати відповідні шляхи
-import { account, calendar } from 'routes';
+import { account, calendar, statistics } from 'routes';
 
 const UserNav = () => {
   
@@ -25,6 +25,15 @@ const UserNav = () => {
             <use href={`${sprite}#calendar-check`} />
           </NavIcon>
           <span>Calendar</span>
+        </StyledLink>
+         <StyledLink
+          to={statistics}
+          //onClick
+        >
+          <NavIcon>
+            <use href={`${sprite}#chart`} />
+          </NavIcon>
+          <span>Statistics</span>
         </StyledLink>
       </NavList>
     </>
