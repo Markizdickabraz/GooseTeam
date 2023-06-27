@@ -1,8 +1,19 @@
-.statistics__container{
+.statistics__container {
     display: flex;
+    flex-direction: column;
     border: solid #E3F3FF;
     margin-right: auto;
+    margin-left: auto;
     border-radius: 29px;
     width: 860px;
     height: 440px;
+    padding: 40px;
+}
+
+.statistics__title {
+    color: #343434;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    margin: 0;
 }

@@ -85,16 +85,15 @@ const StatisticsChart = () => {
 
   return (
     <div className="statistics__container">
+      <p className="statistics__title">Tasks</p>
       <BarChart
-        width={860}
-        height={440}
+        width={780}
+        height={360}
         data={data}
         margin={{
-          top: 85,
-          right: 40,
-          left: 40,
-          bottom: 69,
+          top: 24,
         }}
+        barGap={14}
       >
         <defs>
           <linearGradient id="colorDv" x1="0" y1="0" x2="0" y2="1">
@@ -107,11 +106,13 @@ const StatisticsChart = () => {
           </linearGradient>
         </defs>
         <CartesianGrid vertical={false} stroke="#E3F3FF" />
-        <XAxis dataKey="name" axisLine={false} tickLine={false} />
+        <XAxis dataKey="name" axisLine={false} tickLine={false} height={40} />
         <YAxis
-          label={{ value: 'Index', position: 'top' }}
           axisLine={false}
           tickLine={false}
+          width={40}
+          allowDecimals={false}
+          tickMargin={20}
         />
         <Tooltip />
         <Bar dataKey="dv" fill="url(#colorDv)" barSize={27}>
