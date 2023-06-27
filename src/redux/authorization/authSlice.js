@@ -11,7 +11,7 @@ import {
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: { name: null, email: null },
+    user: { name: null, email: null, id: null },
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
@@ -38,7 +38,7 @@ const authSlice = createSlice({
     },
 
     [logOut.fulfilled](state) {
-      state.user = { name: null, email: null };
+      state.user = { name: null, email: null, id: null };
       state.token = null;
       state.isLoggedIn = false;
     },
