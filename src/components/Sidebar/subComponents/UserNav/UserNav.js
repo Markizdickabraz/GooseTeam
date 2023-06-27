@@ -1,7 +1,12 @@
 import sprite from 'images/svg/sprite.svg';
 import { NavList, StyledLink, NavIcon } from './UserNavStyled';
 //додати відповідні шляхи
-import { account, calendar, statistics } from 'routes';
+// import { account, calendar, statistics } from 'routes';
+
+// тимчасове рішення)
+const account = "/account";
+const calendar = "/calendar";
+const statistics = "/statistics";
 
 const UserNav = () => {
   

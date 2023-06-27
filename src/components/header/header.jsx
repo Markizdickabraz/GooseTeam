@@ -15,19 +15,28 @@ import {
 } from './Header.styled';
 
 import AddFeedbackModal from './AddFeedbackModal/AddFeedbackModal';
+import {MobileSidebar} from './components/MobileSidebar';
 
 export const Header = () => {
   const location = useLocation();
   const currentPath = location.pathname;
   const [modalIsOpened, setModalIsOpened] = useState(false);
+  const [sidebarIsOpened, setSidebarlIsOpened] = useState(false);
 
   const openModal = () => {
     setModalIsOpened(true);
   }
 
   const closeModal = () => {
-    console.log('Hello!');
     setModalIsOpened(false);
+  }
+
+  const showSidebar = () => {
+    setSidebarlIsOpened(true);
+  }
+
+  const hideSidebar = () => {
+    setSidebarlIsOpened(false);
   }
 
   let title = '';
@@ -49,7 +58,7 @@ export const Header = () => {
             Let go of the past and focus on the present!
           </MotivationTask>
         </div>
-        <Toggler>
+        <Toggler onClick={showSidebar}>
           <use href={`${sprite}#menu`} />
         </Toggler>
         <FeedbackBtn onClick={openModal}>Feedback</FeedbackBtn>
@@ -59,6 +68,7 @@ export const Header = () => {
         </Info>
       </Wrapper>
       {modalIsOpened && <AddFeedbackModal close={closeModal} />}
+      {sidebarIsOpened && <MobileSidebar close={hideSidebar} />}
     </>
   );
 };
