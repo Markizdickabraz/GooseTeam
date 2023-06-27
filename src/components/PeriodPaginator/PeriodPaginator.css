@@ -1,3 +1,10 @@
+.paginator__box {
+    display: flex;
+    align-items: center;
+    padding: 134px 154px 0 153px;
+    margin-bottom: 40px;
+}
+
 .custom-input {
     padding: 8px 12px;
     border-radius: 8px;
@@ -131,4 +138,94 @@
 .react-datepicker__day--outside-month {
     color: transparent;
     pointer-events: none;
+}
+
+.paginator__btn--box {
+    display: flex;
+    outline: 1px solid #DCE3E5;
+    margin-left: 8px;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.paginator__btn--box:hover,
+.paginator__btn--box:focus {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.arrow__btn {
+    display: flex;
+    height: 34px;
+    width: 37px;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+
+}
+
+.arrow__btn:not(:last-child) {
+    border-right: 1px solid #DCE3E5;
+    box-sizing: border-box;
+    border-bottom-right-radius: 0px;
+
+}
+
+.arrow {
+    fill: none;
+    stroke: #343434;
+    width: 18px;
+}
+
+.arrow:hover,
+.arrow:focus {
+    cursor: pointer;
+}
+
+.arrow__disabled {
+    fill: none;
+    stroke: #dce3e5;
+    width: 18px;
+}
+
+.chart__legend--box {
+    margin-left: auto;
+}
+
+.chart__legend--list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chart__legend--item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.chart__legend--text {
+    color: #343434;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+}
+
+.chart__legend--text::before {
+    display: block;
+    content: ' ';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #FFD2DD;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.other__color::before {
+    background-color: #3E85F3;
 }

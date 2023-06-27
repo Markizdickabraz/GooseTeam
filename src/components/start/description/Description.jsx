@@ -32,6 +32,27 @@ import ImageSidebarM2x from '../../../images/start_page/Tablet/sidebarTablet@2x.
 import ImageAllinOneM from '../../../images/start_page/Tablet/all_inTablet@1x.png';
 import ImageAllinOneM2x from '../../../images/start_page/Tablet/all_inTablet@2x.png';
 
+import ImageCalendarD_wp from '../../../images/start_page/Desktop/calendarDesktop@1x.webp';
+import ImageCalendarD2x_wp from '../../../images/start_page/Desktop/calendarDesktop@2x.webp';
+import ImageSidebarD_wp from '../../../images/start_page/Desktop/sidebarDesktop@1x.webp';
+import ImageSidebarD2x_wp from '../../../images/start_page/Desktop/sidebarDesktop@2x.webp';
+import ImageAllinOneD_wp from '../../../images/start_page/Desktop/all_inDecktop@1x.webp';
+import ImageAllinOneD2x_wp from '../../../images/start_page/Desktop/all_inDecktop@2x.webp';
+
+import ImageCalendarT_wp from '../../../images/start_page/Tablet/calendarTablet@1x.webp';
+import ImageCalendarT2x_wp from '../../../images/start_page/Tablet/calendarTablet@2x.webp';
+import ImageSidebarT_wp from '../../../images/start_page/Tablet/sidebarTablet@1x.webp';
+import ImageSidebarT2x_wp from '../../../images/start_page/Tablet/sidebarTablet@2x.webp';
+import ImageAllinOneT_wp from '../../../images/start_page/Tablet/all_inTablet@1x.webp';
+import ImageAllinOneT2x_wp from '../../../images/start_page/Tablet/all_inTablet@2x.webp';
+
+import ImageCalendarM_wp from '../../../images/start_page/Tablet/calendarTablet@1x.webp';
+import ImageCalendarM2x_wp from '../../../images/start_page/Tablet/calendarTablet@2x.webp';
+import ImageSidebarM_wp from '../../../images/start_page/Tablet/sidebarTablet@1x.webp';
+import ImageSidebarM2x_wp from '../../../images/start_page/Tablet/sidebarTablet@2x.webp';
+import ImageAllinOneM_wp from '../../../images/start_page/Tablet/all_inTablet@1x.webp';
+import ImageAllinOneM2x_wp from '../../../images/start_page/Tablet/all_inTablet@2x.webp';
+
 const Description = () => {
   return (
     <MainContainer>
@@ -46,11 +67,19 @@ const Description = () => {
             visually appealing and intuitive layout.
           </AboutText>
         </DescriptionLeft>
-        <Image
-          alt="Callendar view"
-          srcSet={`${ImageCalendarD} 1440w, ${ImageCalendarD2x} 2880w,  ${ImageCalendarT} 768w, ${ImageCalendarT2x} 1536w, ${ImageCalendarM} 375w, ${ImageCalendarM2x} 750w,`}
-          src={ImageCalendarM}
-        />
+        <picture>
+          <source
+            type="image/webp"
+            alt="Callendar view"
+            srcSet={`${ImageCalendarD_wp} 1440w, ${ImageCalendarD2x_wp} 2880w,  ${ImageCalendarT_wp} 768w, ${ImageCalendarT2x_wp} 1536w, ${ImageCalendarM_wp} 375w, ${ImageCalendarM2x_wp} 750w,`}
+            src={ImageCalendarM_wp}
+          />
+          <Image
+            alt="Callendar view"
+            srcSet={`${ImageCalendarD} 1440w, ${ImageCalendarD2x} 2880w,  ${ImageCalendarT} 768w, ${ImageCalendarT2x} 1536w, ${ImageCalendarM} 375w, ${ImageCalendarM2x} 750w,`}
+            src={ImageCalendarM}
+          />
+        </picture>
       </Container>
       <ContainerReverse>
         <DescriptionRight>
@@ -63,11 +92,19 @@ const Description = () => {
             quick and convenient way to view your upcoming events and tasks.
           </AboutText>
         </DescriptionRight>
-        <Image
-          alt="Sidebar view"
-          srcSet={`${ImageSidebarD} 1440w, ${ImageSidebarD2x} 2880w,  ${ImageSidebarT} 768w, ${ImageSidebarT2x} 1536w, ${ImageSidebarM} 375w, ${ImageSidebarM2x} 750w,`}
-          src={ImageSidebarM}
-        />
+        <picture>
+          <source
+            type="image/webp"
+            alt="Sidebar view"
+            srcSet={`${ImageSidebarD_wp} 1440w, ${ImageSidebarD2x_wp} 2880w,  ${ImageSidebarT_wp} 768w, ${ImageSidebarT2x_wp} 1536w, ${ImageSidebarM_wp} 375w, ${ImageSidebarM2x_wp} 750w,`}
+            src={ImageSidebarM_wp}
+          />
+          <Image
+            alt="Sidebar view"
+            srcSet={`${ImageSidebarD} 1440w, ${ImageSidebarD2x} 2880w,  ${ImageSidebarT} 768w, ${ImageSidebarT2x} 1536w, ${ImageSidebarM} 375w, ${ImageSidebarM2x} 750w,`}
+            src={ImageSidebarM}
+          />
+        </picture>
       </ContainerReverse>
       <Container>
         <DescriptionLeft>
@@ -80,11 +117,19 @@ const Description = () => {
             to-do lists and hello to streamlined productivity with GooseTrack.
           </AboutText>
         </DescriptionLeft>
-        <Image
-          alt="All in view"
-          srcSet={`${ImageAllinOneD} 1440w, ${ImageAllinOneD2x} 2880w,  ${ImageAllinOneT} 768w, ${ImageAllinOneT2x} 1536w, ${ImageAllinOneM} 375w, ${ImageAllinOneM2x} 750w,`}
-          src={ImageAllinOneM}
-        />
+        <picture>
+          <source
+            type="image/webp"
+            alt="All in view"
+            srcSet={`${ImageAllinOneD_wp} 1440w, ${ImageAllinOneD2x_wp} 2880w,  ${ImageAllinOneT_wp} 768w, ${ImageAllinOneT2x_wp} 1536w, ${ImageAllinOneM_wp} 375w, ${ImageAllinOneM2x_wp} 750w,`}
+            src={ImageAllinOneM_wp}
+          />
+          <Image
+            alt="All in view"
+            srcSet={`${ImageAllinOneD} 1440w, ${ImageAllinOneD2x} 2880w,  ${ImageAllinOneT} 768w, ${ImageAllinOneT2x} 1536w, ${ImageAllinOneM} 375w, ${ImageAllinOneM2x} 750w,`}
+            src={ImageAllinOneM}
+          />
+        </picture>
       </Container>
     </MainContainer>
   );

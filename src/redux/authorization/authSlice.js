@@ -8,10 +8,20 @@ import {
   resendEmail,
 } from './operations';
 
+const BASE_STATE = {
+  name: null,
+  email: null,
+  id: null,
+  avatarURL: '',
+  birthday: '',
+  phone: '',
+  skype: '',
+};
+
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: { name: null, email: null },
+    user: BASE_STATE,
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
@@ -24,12 +34,12 @@ const authSlice = createSlice({
   },
   extraReducers: {
     [register.fulfilled](state, action) {
-      state.user = action.payload.user;
+      state.user = { ...state.user, ...action.payload.payload };
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
     [logIn.fulfilled](state, action) {
-      state.user = action.payload.user;
+      state.user = { ...state.user, ...action.payload.payload };
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
@@ -38,7 +48,7 @@ const authSlice = createSlice({
     },
 
     [logOut.fulfilled](state) {
-      state.user = { name: null, email: null };
+      state.user = BASE_STATE;
       state.token = null;
       state.isLoggedIn = false;
     },
@@ -46,7 +56,7 @@ const authSlice = createSlice({
       state.isRefreshing = true;
     },
     [refreshUser.fulfilled](state, action) {
-      state.user = action.payload;
+      state.user = { ...state.user, ...action.payload.payload };
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },
