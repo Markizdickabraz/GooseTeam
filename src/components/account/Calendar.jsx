@@ -61,7 +61,6 @@ export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
         .replace(/\D/g, '')
         .slice(0, 8)
         .replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
-
       if (formatted.length === 10) {
         const month = parseInt(formatted.slice(0, 2), 10) - 1;
         const day = parseInt(formatted.slice(3, 5), 10);
@@ -144,8 +143,7 @@ export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
         selected={startDate}
         onChange={date => {
           if (date) {
-            const formattedDate = format(date, 'MM/dd/yyyy'); // Форматирование даты
-            setFieldValue('birthday', formattedDate);
+            setFieldValue('birthday', date.toISOString().split('T')[0]);
             setStartDate(date);
           } else {
             setFieldValue('birthday', '');
