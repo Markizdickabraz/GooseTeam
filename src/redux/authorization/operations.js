@@ -49,6 +49,21 @@ export const logIn = createAsyncThunk(
   }
 );
 
+// * POST @ /users/verify
+//  *
+//  */
+export const resendEmail = createAsyncThunk(
+  'auth/verify',
+  async (credentials, thunkAPI) => {
+    try {
+      await axios.post('/auth/verify', credentials);
+      return credentials;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
 /*
  * POST @ /users/logout
  * headers: Authorization: Bearer token

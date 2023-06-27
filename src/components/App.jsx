@@ -2,7 +2,6 @@ import 'modern-normalize';
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-
 import Header from './header/header';
 
 // import CalendarPage from 'pages/CalendarPage/CalendarPage';
@@ -12,6 +11,8 @@ const Register = lazy(() => import('../pages/Register'));
 const Login = lazy(() => import('../pages/Login'));
 const User = lazy(() => import('../pages/User'));
 const Statistics = lazy(() => import('../pages/Statistics'));
+const ResendVerify = lazy(() => import('../pages/ResendVerify'));
+// const Calendar = lazy(() => import('../pages/Calendar'));
 const CalendarPage = lazy(() => import('../pages/CalendarPage/CalendarPage'));
 const ChoosedMonth = lazy(() => import('../pages/CalendarPage/ChoosedMonth'));
 const ChoosedDay = lazy(() => import('../pages/CalendarPage/ChoosedDay'));
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/verify/:verificationToken" element={<VerifyPage />} />
+        <Route path="/register/resend-email" element={<ResendVerify />} />
 
         <Route
           path="/account"
@@ -37,11 +39,27 @@ const App = () => {
           }
         />
 
-        <Route path="statistics" element={<><Header/><Statistics /></>} />
-        <Route path="calendar" element={<><Header/><CalendarPage /></>}>
+        <Route
+          path="statistics"
+          element={
+            <>
+              <Header />
+              <Statistics />
+            </>
+          }
+        />
+        <Route
+          path="calendar"
+          element={
+            <>
+              <Header />
+              <CalendarPage />
+            </>
+          }
+        >
           <Route path="month/:currentDate" element={<ChoosedMonth />} />
           <Route path="day/:currentDay" element={<ChoosedDay />} />
-</Route>
+        </Route>
 
         <Route path="*" element={<NotFound />} />
       </Routes>

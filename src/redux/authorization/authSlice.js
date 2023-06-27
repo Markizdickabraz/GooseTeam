@@ -1,6 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { register, logIn, logOut, refreshUser } from './operations';
+import {
+  register,
+  logIn,
+  logOut,
+  refreshUser,
+  resendEmail,
+} from './operations';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -9,6 +15,12 @@ const authSlice = createSlice({
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
+    resendEmain: null,
+  },
+  reducers: {
+    setResendEmail: (state, action) => {
+      state.resendEmain = action.payload;
+    },
   },
   extraReducers: {
     [register.fulfilled](state, action) {
@@ -21,6 +33,10 @@ const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
+    [resendEmail.fulfilled](state, action) {
+      state.resendEmain = action.payload.resendEmain;
+    },
+
     [logOut.fulfilled](state) {
       state.user = { name: null, email: null };
       state.token = null;
@@ -39,5 +55,7 @@ const authSlice = createSlice({
     },
   },
 });
+
+export const { setResendEmail } = authSlice.actions;
 
 export const authReducer = authSlice.reducer;
