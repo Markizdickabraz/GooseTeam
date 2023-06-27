@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
+
+import { AiOutlinePlus } from 'react-icons/ai';
 import {
   AvatarContainer,
   AvatarImg,
   UpdateAvatarButton,
-} from './Account.styled';
-import { AiOutlinePlus } from 'react-icons/ai';
+} from './styles/Avatar.styled';
 
 export const Thumb = ({ file, setFieldValue }) => {
   const [thumb, setThumb] = useState(undefined);
@@ -42,6 +43,7 @@ export const Thumb = ({ file, setFieldValue }) => {
         }}
         style={{ display: 'none' }}
       />
+
       <div>
         <UpdateAvatarButton
           type="button"
