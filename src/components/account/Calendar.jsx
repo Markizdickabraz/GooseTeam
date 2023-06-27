@@ -32,11 +32,10 @@ export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
   useEffect(() => {
     const initialDate = new Date();
     setStartDate(initialDate);
-    console.log(initialDate);
     setFieldValue(name, initialDate.toISOString().split('T')[0]);
   }, [name, setFieldValue]);
 
-  const years = range(1990, getYear(new Date()) + 1, 1);
+  const years = range(1950, getYear(new Date()) + 1, 1);
   const months = [
     'January',
     'February',
@@ -62,8 +61,8 @@ export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
         .slice(0, 8)
         .replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
       if (formatted.length === 10) {
-        const month = parseInt(formatted.slice(0, 2), 10) - 1;
-        const day = parseInt(formatted.slice(3, 5), 10);
+        const day = parseInt(formatted.slice(0, 2), 10);
+        const month = parseInt(formatted.slice(3, 5), 10) - 1;
         const year = parseInt(formatted.slice(6, 10), 10);
         const newDate = new Date(year, month, day);
         setStartDate(newDate);
@@ -79,7 +78,7 @@ export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
       <Label htmlFor="birthday">Birthday</Label>
 
       <DatePicker
-        // dateFormat="MM/dd/yyyy"
+        dateFormat="dd/MM/yyyy"
         renderCustomHeader={({
           date,
           changeYear,
