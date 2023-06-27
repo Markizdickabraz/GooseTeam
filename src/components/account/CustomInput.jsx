@@ -1,22 +1,51 @@
-import { ErrorMessage } from 'formik';
-import { Input, InputContainer } from './Account.styled';
+import { ErrorMessage, useField } from 'formik';
 
-export const CustomInput = ({ label, name, ...rest }) => (
-  <InputContainer>
-    <label htmlFor={name}>{label}</label>
+import { BsExclamationCircle } from 'react-icons/bs';
+import { BsCheckCircle } from 'react-icons/bs';
+import {
+  InputContainer,
+  Label,
+  Input,
+  MessageWrapper,
+  ErrorText,
+  IconWrapper,
+} from './styles/CustomInput.styled';
 
-    <Input type="text" name={name} id={name} {...rest} />
+export const CustomInput = ({ label, name, ...rest }) => {
+  const [field, meta] = useField(name);
+  const error = meta.touched && meta.error;
+  const isValid = meta.touched && !meta.error && meta.value !== '';
 
-    <ErrorMessage name={name} component="div" />
-  </InputContainer>
-);
+  const color = error ? 'red' : isValid ? 'green' : 'default-color';
 
-export const CustomInputData = ({ ...rest }) => (
-  <InputContainer>
-    <label htmlFor="birthday">Birthday</label>
+  return (
+    <InputContainer>
+      <Label htmlFor={name} style={{ color }}>
+        {label}
+      </Label>
 
-    <Input type="date" name={'birthday'} id={'birthday'} {...rest} />
+      <Input
+        {...field}
+        {...rest}
+        placeholder={`Your ${name}`}
+        style={{ borderColor: color }}
+      />
 
-    <ErrorMessage name={'birthday'} component="div" />
-  </InputContainer>
-);
+      <MessageWrapper>
+        {error && <ErrorMessage>{meta.error}</ErrorMessage>}
+
+        {/* {isValid && <SuccessText>This is a CORRECT {name}</SuccessText>} */}
+
+        <ErrorMessage name={name} component={ErrorText} />
+      </MessageWrapper>
+
+      <IconWrapper error={error}>
+        {error ? (
+          <BsExclamationCircle color="red" />
+        ) : (
+          isValid && <BsCheckCircle color="green" />
+        )}
+      </IconWrapper>
+    </InputContainer>
+  );
+};
