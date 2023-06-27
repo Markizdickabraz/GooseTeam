@@ -43,12 +43,12 @@ export const SectionTitle = styled.h2`
 `;
 
 export const RewievContainer = styled.div`
-  heigth: 252px;
+  height: 252px;
   ${media.tablet} {
-    heigth: 266px;
+    height: 266px;
   }
   ${media.desktop} {
-    heigth: 280px;
+    height: 280px;
   }
 `;
 
@@ -92,7 +92,8 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Arrow = styled.button`
-  width: 61px;
+
+width: 61px;
   height: 61px;
   background-color: inherit;
   border: none;
@@ -107,28 +108,28 @@ export const Arrow = styled.button`
   }
   ${media.desktop} {
   }
+
 `;
 
 export const Name = styled.h3`
-   {
+   
     font-weight: 700;
     font-size: 18px;
     line-height: 1;
     margin-bottom: 13px;
-  }
+  
 `;
 
 export const Comment = styled.p`
-   {
+   
     font-weight: 500;
     font-size: 14px;
     line-height: 1;
     margin-bottom: 13px;
-  }
+  
 `;
 
 export const ImgContainer = styled.div`
-   {
     width: 50px;
     height: 50px;
     border-radius: 50%;

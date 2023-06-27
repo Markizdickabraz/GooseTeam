@@ -8,7 +8,7 @@ import {
   Arrow,
   ButtonContainer,
   SectionTitle,
-} from './reviewSection.styled';
+} from './reviewSectionStyled';
 
 import { ReactComponent as Right } from '../../../images/start_page/right-arrow.svg';
 import { ReactComponent as Left } from '../../../images/start_page/left-arrow.svg';

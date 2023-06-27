@@ -4,7 +4,7 @@ import {
   Name,
   Comment,
   ImgContainer,
-} from './reviewSection.styled';
+} from './reviewSectionStyled';
 import { BsFillStarFill } from 'react-icons/bs';
 
 export const RewievGalleryItem = ({ item }) => {
