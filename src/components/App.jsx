@@ -2,9 +2,8 @@ import 'modern-normalize';
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Header from './header/Header';
-import Month from 'components/calendar/Month';
-import Day from 'components/calendar/Day';
+import Header from './header/header';
+
 // import CalendarPage from 'pages/CalendarPage/CalendarPage';
 
 const Start = lazy(() => import('../pages/Start'));
@@ -12,7 +11,9 @@ const Register = lazy(() => import('../pages/Register'));
 const Login = lazy(() => import('../pages/Login'));
 const User = lazy(() => import('../pages/User'));
 const Statistics = lazy(() => import('../pages/Statistics'));
-const CalendarPage = lazy(() => import('../pages/CalendarPage'));
+const CalendarPage = lazy(() => import('../pages/CalendarPage/CalendarPage'));
+const ChoosedMonth = lazy(() => import('../pages/CalendarPage/ChoosedMonth'));
+const ChoosedDay = lazy(() => import('../pages/CalendarPage/ChoosedDay'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 const VerifyPage = lazy(() => import('../pages/VerifyPage'));
 
@@ -35,8 +36,8 @@ const App = () => {
         />
         <Route path="statistics" element={<><Header/><Statistics /></>} />
         <Route path="calendar" element={<><Header/><CalendarPage /></>}>
-          <Route path="calendar/month/:currentDate" element={<Month />} />
-          <Route path="calendar/day/:currentDay" element={<Day />} />
+          <Route path="month/:currentDate" element={<ChoosedMonth />} />
+          <Route path="day/:currentDay" element={<ChoosedDay />} />
 </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
