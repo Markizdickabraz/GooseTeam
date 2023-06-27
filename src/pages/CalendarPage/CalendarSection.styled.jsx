@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { DEVICE_SIZE } from '../../styles/deviceWidth';
 
+
 const media = {
   tablet: `@media screen and (min-width: ${DEVICE_SIZE.tablet})`,
   desktop: `@media screen and (min-width: ${DEVICE_SIZE.desktop})`,
@@ -14,6 +15,8 @@ export const Container = styled.section`
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #F7F6F9;
+  height: 100vh;
   ${media.tablet} {
     max-width: 768px;
     padding-top: 64px;

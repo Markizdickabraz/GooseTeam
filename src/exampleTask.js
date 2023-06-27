@@ -41,7 +41,7 @@ const tasks = [
     start: '09:05',
     end: '09:35',
     priority: 'medium',
-    date: '2023-06-23',
+    date: '2023-06-30',
     category: 'in-progress',
   },
   {

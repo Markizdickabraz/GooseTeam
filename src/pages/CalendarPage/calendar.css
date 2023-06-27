@@ -29,7 +29,7 @@
 .period-paginator {
 }
 
-.calendar-table-item {
+/* .calendar-table-item {
   position: relative;
   width: calc(100% / 7);
   height: 125px;
@@ -50,7 +50,7 @@
   width: 100%;
   height: 1px;
   background-color: #ddd;
-}
+} */
 
 .date-number {
   position: absolute;
