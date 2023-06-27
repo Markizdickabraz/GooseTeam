@@ -89,8 +89,10 @@ export const UserForm = () => {
             </FormWrapper>
 
             <Button
-              style={{ cursor: 'pointer', margin: '0 auto' }}
-              // type="submit"
+              style={{
+                cursor: isFormDirty ? 'pointer' : 'auto',
+                margin: '0 auto',
+              }}
               type={isFormDirty ? 'submit' : 'button'}
               disabled={!isFormDirty}
             >

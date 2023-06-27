@@ -29,6 +29,7 @@ export const CustomInput = ({ label, name, setIsFormDirty, ...rest }) => {
         {...rest}
         placeholder={`Your ${name}`}
         style={{ borderColor: color }}
+        value={rest.value}
         onChange={event => {
           field.onChange(event);
           setIsFormDirty(true);
