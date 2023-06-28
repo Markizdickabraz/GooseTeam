@@ -8,7 +8,7 @@ import {
   resendEmail,
 } from './operations';
 
-const BASE_STATE = {
+const INIT_STATE = {
   name: null,
   email: null,
   id: null,
@@ -21,7 +21,7 @@ const BASE_STATE = {
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: BASE_STATE,
+    user: INIT_STATE,
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
@@ -33,30 +33,30 @@ const authSlice = createSlice({
     },
   },
   extraReducers: {
-    [register.fulfilled](state, action) {
-      state.user = { ...state.user, ...action.payload.payload };
-      state.token = action.payload.token;
+    [register.fulfilled](state, { payload }) {
+      state.user = { ...state.user, ...payload.user };
+      state.token = payload.token;
       state.isLoggedIn = true;
     },
-    [logIn.fulfilled](state, action) {
-      state.user = { ...state.user, ...action.payload.payload };
-      state.token = action.payload.token;
+    [logIn.fulfilled](state, { payload }) {
+      state.user = { ...state.user, ...payload.user };
+      state.token = payload.token;
       state.isLoggedIn = true;
     },
-    [resendEmail.fulfilled](state, action) {
-      state.resendEmain = action.payload.resendEmain;
+    [resendEmail.fulfilled](state, { payload }) {
+      state.resendEmain = payload.resendEmain;
     },
 
     [logOut.fulfilled](state) {
-      state.user = BASE_STATE;
+      state.user = INIT_STATE;
       state.token = null;
       state.isLoggedIn = false;
     },
     [refreshUser.pending](state) {
       state.isRefreshing = true;
     },
-    [refreshUser.fulfilled](state, action) {
-      state.user = { ...state.user, ...action.payload.payload };
+    [refreshUser.fulfilled](state, { payload }) {
+      state.user = { ...state.user, ...payload };
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },
