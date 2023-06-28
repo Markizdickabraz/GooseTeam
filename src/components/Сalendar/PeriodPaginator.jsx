@@ -1,3 +1,8 @@
+import { CurrentDate, Paginator, ButtonsTab, Arrow, ArrowButton } from "./PeriodPaginator.styled";
+import sprite from '../../images/svg/sprite.svg';
+
+
+
 export const PeriodPaginator = ({
   currentDateMonth,
   currentDateDay,
@@ -21,14 +26,22 @@ export const PeriodPaginator = ({
   };
 
   return (
-    <>
-      <p style={{ width: 120, marginRight: 20 }}>
+    <Paginator>
+      <CurrentDate>
         {periodType === 'month' ? currentDateMonth : currentDateDay}
-      </p>
-      <div className="period-paginator">
-        <button type="button" onClick={handleClickPrev()}>{`<`}</button>
-        <button type="button" onClick={handleClickNext()}>{`>`}</button>
-      </div>
-    </>
+      </CurrentDate>
+      <ButtonsTab>
+        <ArrowButton type="button" onClick={handleClickPrev()}>
+        <Arrow width="16" height="16">
+            <use href={`${sprite}#chevron-left`}></use>
+        </Arrow>
+        </ArrowButton>
+        <ArrowButton type="button" onClick={handleClickNext()}>
+          <Arrow width="16" height="16">
+            <use href={`${sprite}#chevron-right`}></use>
+        </Arrow>
+        </ArrowButton>
+      </ButtonsTab>
+    </Paginator>
   );
 };

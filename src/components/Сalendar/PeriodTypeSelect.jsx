@@ -1,17 +1,18 @@
+import { PeriodButton, PeriodTab } from "./PeriodTypeSelect.styled";
 
 export const PeriodTypeSelect = ({ setPeriodType }) => {
   return (
-    <div className="calendar-type-change">
-      <button
+    <PeriodTab>
+      <PeriodButton
         type="button"
         value="month"
         onClick={() => setPeriodType('month')}
       >
         Month
-      </button>
-      <button type="button" value="day" onClick={() => setPeriodType('day')}>
+      </PeriodButton>
+      <PeriodButton type="button" value="day" onClick={() => setPeriodType('day')}>
         Day
-      </button>
-    </div>
+      </PeriodButton>
+    </PeriodTab>
   );
 };

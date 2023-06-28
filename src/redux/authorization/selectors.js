@@ -5,3 +5,4 @@ export const selectIsRefreshing = state => state.auth.isRefreshing;
 export const selectAccessToken = state => state.auth.token;
 export const tokenUser = state => state.auth.token;
 
+export const emailUser = state => state.auth.resendEmain;

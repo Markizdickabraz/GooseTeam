@@ -3,6 +3,7 @@ import { PeriodPaginator } from './PeriodPaginator';
 import { PeriodTypeSelect } from './PeriodTypeSelect';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Toolbar } from './CalendarToolbar.styled';
 
 export const CalendarToolbar = ({
   periodType,
@@ -36,7 +37,7 @@ export const CalendarToolbar = ({
     setCurrentDate(currentDatePrevDay);
   };
   return (
-    <div className="calendar-toolbar">
+    <Toolbar>
       <PeriodPaginator
         currentDateMonth={format(currentDate, 'MMMM yyyy')}
         currentDateDay={format(currentDate, 'd MMM yyyy')}
@@ -47,6 +48,6 @@ export const CalendarToolbar = ({
         periodType={periodType}
       />
       <PeriodTypeSelect setPeriodType={setPeriodType} />
-    </div>
+    </Toolbar>
   );
 };
