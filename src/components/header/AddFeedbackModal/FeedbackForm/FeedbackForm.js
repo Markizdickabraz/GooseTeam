@@ -7,13 +7,13 @@ const FeedbackForm = ({close, fetchData, setOnModal}) => {
     const [newRate, setNewRate] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
 
-    const onStarClickClick = (nextValue) => {
-    changeRate(nextValue);
-    };
+    // const onStarClickClick = (nextValue) => {
+    // changeRate(nextValue);
+    // };
     
-    const changeRate = (value) => {
-    setNewRate(value);
-    };
+    // const changeRate = (value) => {
+    // setNewRate(value);
+    // };
     
     const addReview = async () => {
       let newReview = {

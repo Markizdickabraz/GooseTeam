@@ -11,18 +11,18 @@ const FeedbackEdit = ({close, isOpened, toFetch, updateItem, onModal, setOnModal
         setUpdatedItem(updateItem);
     }, [updateItem]);
 
-    const onStarClickClick = (nextValue) => {
-      changeRate(nextValue);
-    };
+    // const onStarClickClick = (nextValue) => {
+    //   changeRate(nextValue);
+    // };
     
-    const changeRate = (value) => {
-      let newReview = {
-      _id: updatedItem._id,
-      comment: updatedItem.comment,
-      rating: value,
-    };
-      setUpdatedItem(newReview);
-    };
+    // const changeRate = (value) => {
+    //   let newReview = {
+    //   _id: updatedItem._id,
+    //   comment: updatedItem.comment,
+    //   rating: value,
+    // };
+    //   setUpdatedItem(newReview);
+    // };
 
     const changeComment = (value) => {
     let newReview = {
