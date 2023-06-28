@@ -94,10 +94,10 @@ export const CalendarTable = () => {
             {isSameMonth(day, parsedCurrentDate) && (
               <Day
                 style={{
-                  color: isSameDay(day, parsedCurrentDate) ? 'white' : 'black',
+                  color: isSameDay(day, parsedCurrentDate) ? '#FFFFFF' : '#343434',
                   backgroundColor: isSameDay(day, parsedCurrentDate)
                     ? '#3E85F3'
-                    : 'white',
+                    : '#FFFFFF',
                 }}
               >
                 {format(day, 'd')}

@@ -1,10 +1,13 @@
 import { FiPlus } from 'react-icons/fi';
+import { Button, ButtonText } from './AddTaskBtn.styled';
 
 export const AddTaskBtn = () => {
   return (
-    <button type="button" className="add-todo-btn">
-      <FiPlus size={24} />
-      <p className="button-text">Add task</p>
-    </button>
+    <Button type="button">
+      <div style={{ height: 24 }}>
+        <FiPlus size={24} />
+      </div>
+      <ButtonText>Add task</ButtonText>
+    </Button>
   );
 };
