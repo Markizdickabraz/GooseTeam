@@ -1,5 +1,5 @@
-import { LogoutBtn } from './subComponents/LogOutBtn';
-import { UserNav } from './subComponents/UserNav';
+import  LogoutBtn  from './subComponents/LogOutBtn';
+import  UserNav  from './subComponents/UserNav';
 import sprite from 'images/svg/sprite.svg';
 
 import gooseLogo1x from 'images/sidebar/goose_logo@1x.png';

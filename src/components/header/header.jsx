@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ThemeToggler } from './components/ThemeToggler/ThemeToggler';
 import { UserInfo } from './components/UserInfo/UserInfo';
 import { useLocation } from 'react-router-dom';
@@ -13,9 +14,30 @@ import {
 
 } from './Header.styled';
 
+import AddFeedbackModal from './AddFeedbackModal/AddFeedbackModal';
+import {MobileSidebar} from './components/MobileSidebar';
+
 export const Header = () => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const [modalIsOpened, setModalIsOpened] = useState(false);
+  const [sidebarIsOpened, setSidebarlIsOpened] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpened(true);
+  }
+
+  const closeModal = () => {
+    setModalIsOpened(false);
+  }
+
+  const showSidebar = () => {
+    setSidebarlIsOpened(true);
+  }
+
+  const hideSidebar = () => {
+    setSidebarlIsOpened(false);
+  }
 
   let title = '';
   if (currentPath.startsWith('/account')) {
@@ -25,6 +47,7 @@ export const Header = () => {
   } else {
     title = '';
   }
+
   return (
     <>
       <Wrapper>
@@ -35,16 +58,17 @@ export const Header = () => {
             Let go of the past and focus on the present!
           </MotivationTask>
         </div>
-        <Toggler>
+        <Toggler onClick={showSidebar}>
           <use href={`${sprite}#menu`} />
         </Toggler>
-        <FeedbackBtn>Feedback</FeedbackBtn>
+        <FeedbackBtn onClick={openModal}>Feedback</FeedbackBtn>
         <Info>
           <ThemeToggler />
           <UserInfo />
         </Info>
       </Wrapper>
-      
+      {modalIsOpened && <AddFeedbackModal close={closeModal} />}
+      {sidebarIsOpened && <MobileSidebar close={hideSidebar} />}
     </>
   );
 };
