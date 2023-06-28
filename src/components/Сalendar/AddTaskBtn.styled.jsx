@@ -12,6 +12,7 @@ export const Button = styled.button`
   border: 1px dashed ${Variables.buttonColors.blue};
   background: ${Variables.buttonColors.lightBlue};
   cursor: pointer;
+  margin-top: 32px;
 `;
 
 export const ButtonText = styled.p`

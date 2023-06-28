@@ -5,6 +5,7 @@ import {
   Box,
   Avatar,
   Level,
+  Wrapper,
 } from './TaskColumnCard.styled';
 
 export const TaskColumnCard = () => {
@@ -12,8 +13,10 @@ export const TaskColumnCard = () => {
     <TaskCard>
       <TaskTitle>Картка завдання</TaskTitle>
       <Box>
-        <Avatar>Avatar</Avatar>
-        <Level>Level</Level>
+        <Wrapper>
+          <Avatar></Avatar>
+          <Level>Level</Level>
+        </Wrapper>
         <TaskToolbar />
       </Box>
     </TaskCard>

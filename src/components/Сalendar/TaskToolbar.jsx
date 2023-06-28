@@ -1,3 +1,3 @@
 export const TaskToolbar = () => {
-  return <div>Кнопочки для редагування</div>;
+  return <div>Кнопочки</div>;
 };
