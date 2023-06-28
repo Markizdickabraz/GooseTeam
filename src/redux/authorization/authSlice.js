@@ -8,7 +8,7 @@ import {
   resendEmail,
 } from './operations';
 
-const BASE_STATE = {
+const INIT_STATE = {
   name: null,
   email: null,
   id: null,
@@ -21,7 +21,7 @@ const BASE_STATE = {
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: BASE_STATE,
+    user: INIT_STATE,
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
@@ -43,12 +43,12 @@ const authSlice = createSlice({
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
-    [resendEmail.fulfilled](state, action) {
-      state.resendEmain = action.payload.resendEmain;
+    [resendEmail.fulfilled](state, { payload }) {
+      state.resendEmain = payload.resendEmain;
     },
 
     [logOut.fulfilled](state) {
-      state.user = BASE_STATE;
+      state.user = INIT_STATE;
       state.token = null;
       state.isLoggedIn = false;
     },

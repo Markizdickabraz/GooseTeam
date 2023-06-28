@@ -48,7 +48,7 @@ const ReviewSection = () => {
 
   return (
     <MainContainer>
-      <SectionTitle>Rewievs</SectionTitle>
+      <SectionTitle>Reviews</SectionTitle>
       <RewievContainer>
         <ReactSwipe
           ref={el => (reactSwipeEl = el)}
