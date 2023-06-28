@@ -6,11 +6,10 @@ import Thumb from './Avatar';
 import { DatePickerField } from './Calendar';
 import { Button } from 'styles/components';
 import { useState } from 'react';
-import { useAuth } from 'hooks/useAuth';
 
 export const UserForm = () => {
-  const { name, userImgUrl } = useAuth();
-  console.log(userImgUrl);
+  // const { name, userImgUrl } = useAuth();
+  // console.log(userImgUrl);
 
   const [isFormDirty, setIsFormDirty] = useState(false);
 
@@ -26,11 +25,12 @@ export const UserForm = () => {
 
     setIsFormDirty(false);
   };
+
   return (
     <>
       <Formik
         initialValues={{
-          username: '',
+          username: '456',
           birthday: '',
           email: '',
           phone: '',
@@ -45,13 +45,13 @@ export const UserForm = () => {
           <FormContainer>
             <UserInfo>
               <Thumb
-                avatar={userImgUrl}
+                // avatar={userImgUrl}
                 file={values.avatar}
                 setFieldValue={setFieldValue}
                 setIsFormDirty={setIsFormDirty}
               />
 
-              <p>{name}</p>
+              {/* <p>{name}</p>  */}
               <p>User</p>
             </UserInfo>
 

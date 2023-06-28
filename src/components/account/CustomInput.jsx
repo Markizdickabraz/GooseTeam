@@ -29,7 +29,6 @@ export const CustomInput = ({ label, name, setIsFormDirty, ...rest }) => {
         {...rest}
         placeholder={`Your ${name}`}
         style={{ borderColor: color }}
-        value={rest.value}
         onChange={event => {
           field.onChange(event);
           setIsFormDirty(true);
@@ -38,8 +37,6 @@ export const CustomInput = ({ label, name, setIsFormDirty, ...rest }) => {
 
       <MessageWrapper>
         {error && <ErrorMessage>{meta.error}</ErrorMessage>}
-
-        {/* {isValid && <SuccessText>This is a CORRECT {name}</SuccessText>} */}
 
         <ErrorMessage name={name} component={ErrorText} />
       </MessageWrapper>
