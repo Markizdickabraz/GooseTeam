@@ -7,6 +7,7 @@ import { DatePickerField } from './Calendar';
 import { Button } from 'styles/components';
 import { useState } from 'react';
 import { useAuth } from 'hooks/useAuth';
+import { Input } from './styles/CustomInput.styled';
 
 export const UserForm = () => {
   const { name, email, phone, birthday, skype, avatarURL } = useAuth();
@@ -71,12 +72,7 @@ export const UserForm = () => {
                     setIsFormDirty={setIsFormDirty}
                   />
 
-                  <CustomInput
-                    label="Email"
-                    name="email"
-                    type="email"
-                    setIsFormDirty={setIsFormDirty}
-                  />
+                  <Input name="email" type="email" disabled />
                 </div>
 
                 <div>
