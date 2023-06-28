@@ -6,11 +6,10 @@ import Thumb from './Avatar';
 import { DatePickerField } from './Calendar';
 import { Button } from 'styles/components';
 import { useState } from 'react';
+import { useAuth } from 'hooks/useAuth';
 
 export const UserForm = () => {
-  // const { name, userImgUrl } = useAuth();
-  // console.log(userImgUrl);
-
+  const { name, email, phone, birthday, skype, avatarURL } = useAuth();
   const [isFormDirty, setIsFormDirty] = useState(false);
 
   const handleSubmit = values => {
@@ -26,86 +25,90 @@ export const UserForm = () => {
     setIsFormDirty(false);
   };
 
+  const initialValues = {
+    username: name ? name : '',
+    birthday: birthday ? birthday : '',
+    email: email ? email : '',
+    phone: phone ? phone : '',
+    skype: skype ? skype : '',
+    avatar: '',
+  };
+
   return (
     <>
-      <Formik
-        initialValues={{
-          username: '456',
-          birthday: '',
-          email: '',
-          phone: '',
-          skype: '',
-          avatar: '',
-        }}
-        validationSchema={UserSchema}
-        onSubmit={handleSubmit}
-        onChange={() => setIsFormDirty(true)}
-      >
-        {({ values, setFieldValue }) => (
-          <FormContainer>
-            <UserInfo>
-              <Thumb
-                // avatar={userImgUrl}
-                file={values.avatar}
-                setFieldValue={setFieldValue}
-                setIsFormDirty={setIsFormDirty}
-              />
-
-              {/* <p>{name}</p>  */}
-              <p>User</p>
-            </UserInfo>
-
-            <FormWrapper>
-              <div>
-                <CustomInput
-                  setIsFormDirty={setIsFormDirty}
-                  label="User Name"
-                  name="username"
-                />
-
-                <DatePickerField
-                  name="birthday"
+      {name && (
+        <Formik
+          initialValues={initialValues}
+          validationSchema={UserSchema}
+          onSubmit={handleSubmit}
+          onChange={() => setIsFormDirty(true)}
+        >
+          {({ values, setFieldValue }) => (
+            <FormContainer>
+              <UserInfo>
+                <Thumb
+                  avatar={avatarURL}
+                  file={values.avatar}
                   setFieldValue={setFieldValue}
                   setIsFormDirty={setIsFormDirty}
                 />
 
-                <CustomInput
-                  label="Email"
-                  name="email"
-                  type="email"
-                  setIsFormDirty={setIsFormDirty}
-                />
-              </div>
+                <p>{name}</p>
+                <p>User</p>
+              </UserInfo>
 
-              <div>
-                <CustomInput
-                  label="Phone"
-                  name="phone"
-                  type="tel"
-                  setIsFormDirty={setIsFormDirty}
-                />
+              <FormWrapper>
+                <div>
+                  <CustomInput
+                    setIsFormDirty={setIsFormDirty}
+                    label="User Name"
+                    name="username"
+                  />
 
-                <CustomInput
-                  label="Skype"
-                  name="skype"
-                  setIsFormDirty={setIsFormDirty}
-                />
-              </div>
-            </FormWrapper>
+                  <DatePickerField
+                    name="birthday"
+                    setFieldValue={setFieldValue}
+                    setIsFormDirty={setIsFormDirty}
+                  />
 
-            <Button
-              style={{
-                cursor: isFormDirty ? 'pointer' : 'auto',
-                margin: '0 auto',
-              }}
-              type={isFormDirty ? 'submit' : 'button'}
-              disabled={!isFormDirty}
-            >
-              Save changes
-            </Button>
-          </FormContainer>
-        )}
-      </Formik>
+                  <CustomInput
+                    label="Email"
+                    name="email"
+                    type="email"
+                    setIsFormDirty={setIsFormDirty}
+                  />
+                </div>
+
+                <div>
+                  <CustomInput
+                    label="Phone"
+                    name="phone"
+                    type="tel"
+                    setIsFormDirty={setIsFormDirty}
+                  />
+
+                  <CustomInput
+                    label="Skype"
+                    name="skype"
+                    setIsFormDirty={setIsFormDirty}
+                  />
+                </div>
+              </FormWrapper>
+
+              <Button
+                style={{
+                  cursor: isFormDirty ? 'pointer' : 'auto',
+                  margin: '0 auto',
+                }}
+                type={isFormDirty ? 'submit' : 'button'}
+                disabled={!isFormDirty}
+              >
+                Save changes
+              </Button>
+            </FormContainer>
+          )}
+        </Formik>
+      )}
     </>
   );
 };

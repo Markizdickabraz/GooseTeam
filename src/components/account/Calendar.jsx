@@ -129,7 +129,7 @@ export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
             setStartDate(null);
           }
 
-          // setIsFormDirty(true);
+          setIsFormDirty(true);
         }}
         onCalendarOpen={() => setIsCalendarOpen(true)}
         onCalendarClose={() => setIsCalendarOpen(false)}
