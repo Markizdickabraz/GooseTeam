@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ErrorMessage, useField } from 'formik';
 import DatePicker from 'react-datepicker';
 import 'components/SmallCalendar/SmallCalendar';
-import { format, getMonth, getYear } from 'date-fns';
+import { getMonth, getYear } from 'date-fns';
 import {
   ControlWrapper,
   DateInput,

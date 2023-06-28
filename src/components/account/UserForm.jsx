@@ -6,8 +6,12 @@ import Thumb from './Avatar';
 import { DatePickerField } from './Calendar';
 import { Button } from 'styles/components';
 import { useState } from 'react';
+import { useAuth } from 'hooks/useAuth';
 
 export const UserForm = () => {
+  const { name, userImgUrl } = useAuth();
+  console.log(userImgUrl);
+
   const [isFormDirty, setIsFormDirty] = useState(false);
 
   const handleSubmit = values => {
@@ -41,12 +45,13 @@ export const UserForm = () => {
           <FormContainer>
             <UserInfo>
               <Thumb
+                avatar={userImgUrl}
                 file={values.avatar}
                 setFieldValue={setFieldValue}
                 setIsFormDirty={setIsFormDirty}
               />
 
-              <p>Nadiia Doe</p>
+              <p>{name}</p>
               <p>User</p>
             </UserInfo>
 
