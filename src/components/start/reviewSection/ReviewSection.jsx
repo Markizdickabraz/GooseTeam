@@ -8,6 +8,7 @@ import {
   Arrow,
   ButtonContainer,
   SectionTitle,
+  RewiewStyled,
 } from './reviewSectionStyled';
 
 import { ReactComponent as Right } from '../../../images/start_page/right-arrow.svg';
@@ -38,38 +39,49 @@ const ReviewSection = () => {
     speed: 1000,
     disableScroll: true,
     continuous: true,
-    callback() {
-      // console.log('slide changed');
-    },
-    transitionEnd() {
-      // console.log('ended transition');
-    },
+    callback() {},
+    transitionEnd() {},
   };
 
   return (
     <MainContainer>
       <SectionTitle>Reviews</SectionTitle>
       <RewievContainer>
-        <ReactSwipe
-          ref={el => (reactSwipeEl = el)}
-          className="mySwipe"
-          swipeOptions={swipeOptions}
-        >
-          {searchRewievs.map(item => (
-            <div key={item.id} style={{ display: 'flex', gap: '20px' }}>
-              <RewievGalleryItem item={item} />
-            </div>
-          ))}
-        </ReactSwipe>
-
-        <ButtonContainer>
-          <Arrow onClick={() => reactSwipeEl.next()}>
-            <Left />
-          </Arrow>
-          <Arrow onClick={() => reactSwipeEl.prev()}>
-            <Right />
-          </Arrow>
-        </ButtonContainer>
+        {searchRewievs.length === 0 ? (
+          <RewiewStyled
+            style={{
+              fontSize: '30px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            {' '}
+            No any reviews yet
+          </RewiewStyled>
+        ) : (
+          <>
+            <ReactSwipe
+              ref={el => (reactSwipeEl = el)}
+              className="mySwipe"
+              swipeOptions={swipeOptions}
+            >
+              {searchRewievs.map(item => (
+                <div key={item.id} style={{ display: 'flex', gap: '20px' }}>
+                  <RewievGalleryItem item={item} />
+                </div>
+              ))}
+            </ReactSwipe>
+            <ButtonContainer>
+              <Arrow onClick={() => reactSwipeEl.next()}>
+                <Left />
+              </Arrow>
+              <Arrow onClick={() => reactSwipeEl.prev()}>
+                <Right />
+              </Arrow>
+            </ButtonContainer>
+          </>
+        )}
       </RewievContainer>
     </MainContainer>
   );
