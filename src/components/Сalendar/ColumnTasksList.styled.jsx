@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { DEVICE_SIZE } from '../../styles/deviceWidth';
-import * as Variables from '../../styles/variables';
 
 const media = {
   tablet: `@media screen and (min-width: ${DEVICE_SIZE.tablet})`,
@@ -8,10 +7,12 @@ const media = {
 };
 
 export const TasksList = styled.ul`
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   gap: 14px;
   max-height: 372px;
   padding: 0;
+  ${media.desktop} {
+    gap: 18px;
+  }
 `;

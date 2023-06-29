@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { DEVICE_SIZE } from '../../styles/deviceWidth';
-import * as Variables from '../../styles/variables';
 
 const media = {
   tablet: `@media screen and (min-width: ${DEVICE_SIZE.tablet})`,
@@ -8,14 +7,14 @@ const media = {
 };
 
 export const TaskColumn = styled.div`
-  width: 100%;
+  flex: none;
+  width: 335px;
   padding: 18px 18px 20px 18px;
-  padding-top: 18px;
-  padding-right: 18px;
-  padding-bottom: 20px;
-  padding-left: 18px;
+  border-radius: 8px;
+  border: 1px solid rgba(220, 227, 229, 0.8);
+
   ${media.tablet} {
     width: 344px;
-    padding-bottom: 28px;
+    padding: 20px 20px 28px 20px;
   }
 `;

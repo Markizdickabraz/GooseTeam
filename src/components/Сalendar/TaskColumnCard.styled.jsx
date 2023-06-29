@@ -14,6 +14,7 @@ export const TaskCard = styled.li`
   background-color: #f7f6f9;
   border: 1px solid rgba(220, 227, 229, 0.8);
   border-radius: 8px;
+
   ${media.tablet} {
     height: 112px;
   }
