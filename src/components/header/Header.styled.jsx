@@ -15,18 +15,6 @@ export const Wrapper = styled.header`
     padding-top: 40px;
     padding-bottom: 40px;
   }
-
-  // display: flex;
-  // justify-content: space-between;
-  // padding: 24px 20px;
-
-  // @media (min-width: 768px) {
-  //   padding: 24px 32px;
-  // }
-
-  // @media (min-width: 1440px) {
-  //   padding: 24px 34px;
-  // }
 `;
 
 export const Container = styled.div`
@@ -86,19 +74,12 @@ export const Info = styled.div`
 `;
 
 export const SectionTitle = styled.h1`
-  // display: none;
   color: ${fontColors.black};
-  // @media (min-width: 1440px) {
   display: block;
-  // display: inline;
   font-weight: 700;
   font-size: 32px;
   text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
     0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
-  // }
-  // @media (max-width: 1023px) {
-  //   display: none;
-  // }
 `;
 
 export const Toggler = styled.svg`
@@ -120,17 +101,14 @@ export const Toggler = styled.svg`
 `;
 
 export const MotivationTask = styled.p`
-  // display: none;
   color: ${fontColors.black};
 
-  // @media (min-width: 1440px) {
   display: block;
   font-family: 'Inter';
 
   font-weight: 600;
   font-size: 14px;
   line-height: 1.3;
-  // }
 `;
 
 export const FeedbackBtn = styled.button`
@@ -144,7 +122,6 @@ export const FeedbackBtn = styled.button`
   font-family: Inter;
   font-weight: 600;
   line-height: 16px;
-  // margin-left: 55%;
 
   @media screen and (min-width: 768px) {
     border-radius: 14px;
