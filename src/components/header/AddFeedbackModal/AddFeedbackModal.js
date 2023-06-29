@@ -11,7 +11,7 @@ const AddFeedbackModal = ({ close, isOpened }) => {
     const [onModal, setOnModal] = useState(isOpened);
 
     const fetchData = async () => {
-    const response = await axios.get(`api/reviews`);
+    const response = await axios.get(`https://goosetrack-backend-2lsp.onrender.com/api/reviews`);
     setReviews(response.data.data);
     };
     
@@ -21,10 +21,10 @@ const AddFeedbackModal = ({ close, isOpened }) => {
     
     return createPortal(
         <Modal close={close} >
-            <FeedbackForm
+            {/* <FeedbackForm
                     fetchData={fetchData}
                     setOnModal={setOnModal}
-                    close={close}/>
+                    close={close}/> */}
             <FeedbackList
                     fetchData={fetchData}
                     setReviewsList={reviews}
