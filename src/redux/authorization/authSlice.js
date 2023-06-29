@@ -33,14 +33,14 @@ const authSlice = createSlice({
     },
   },
   extraReducers: {
-    [register.fulfilled](state, action) {
-      state.user = { ...state.user, ...action.payload.user };
-      state.token = action.payload.token;
+    [register.fulfilled](state, { payload }) {
+      state.user = { ...state.user, ...payload.user };
+      state.token = payload.token;
       state.isLoggedIn = true;
     },
-    [logIn.fulfilled](state, action) {
-      state.user = { ...state.user, ...action.payload.user };
-      state.token = action.payload.token;
+    [logIn.fulfilled](state, { payload }) {
+      state.user = { ...state.user, ...payload.user };
+      state.token = payload.token;
       state.isLoggedIn = true;
     },
     [resendEmail.fulfilled](state, { payload }) {
@@ -55,8 +55,8 @@ const authSlice = createSlice({
     [refreshUser.pending](state) {
       state.isRefreshing = true;
     },
-    [refreshUser.fulfilled](state, action) {
-      state.user = { ...state.user, ...action.payload.user };
+    [refreshUser.fulfilled](state, { payload }) {
+      state.user = { ...state.user, ...payload };
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },
