@@ -1,10 +1,24 @@
 import { TaskToolbar } from './TaskToolbar';
+import {
+  TaskCard,
+  TaskTitle,
+  Box,
+  Avatar,
+  Level,
+  Wrapper,
+} from './TaskColumnCard.styled';
 
 export const TaskColumnCard = () => {
   return (
-    <li className="task-column-card">
-      Картка завдання
-      <TaskToolbar />
-    </li>
+    <TaskCard>
+      <TaskTitle>Картка завдання</TaskTitle>
+      <Box>
+        <Wrapper>
+          <Avatar></Avatar>
+          <Level>Level</Level>
+        </Wrapper>
+        <TaskToolbar />
+      </Box>
+    </TaskCard>
   );
 };

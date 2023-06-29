@@ -4,7 +4,6 @@ import { Outlet } from 'react-router-dom';
 import { startOfToday, format } from 'date-fns';
 import { redirect } from 'react-router-dom';
 import { useEffect } from 'react';
-import './calendar.css';
 import { Container } from './CalendarSection.styled';
 
 
