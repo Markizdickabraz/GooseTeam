@@ -59,7 +59,6 @@ export const LeftSubsection = styled.div`
 export const GooseImg = styled.img`
   width: 64px;
   height: 60px;
-  // display: block;
 `;
 
 export const RightSubsection = styled.div`
