@@ -1,21 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-// import { Rating } from 'react-simple-star-rating';
-import { useSelector } from 'react-redux';
+import { Rating } from 'react-simple-star-rating';
+
 import FeedbackEdit from '../FeedbackEdit/FeedbackEdit';
-import { selectUser } from '../../../../redux/authorization/selectors';
+
 import Icons from '../../../../images/svg/sprite.svg';
 
 const FeedbackList = ({fetchData, setReviewsList, onModal, setOnModal}) => {
     const [updateReview, setUpdateReview] = useState('');
     const [isOpened, setIsOpened] = useState(false);
 
-    const { name, avatarURL } = useSelector(selectUser);
-
-    const firstLetter = name?.charAt(0).toUpperCase();
-
     const deleteReview = async (item) => {
-    await axios.delete(`api/reviews/${item._id}`).then(() => {
+    await axios.delete(`https://goosetrack-backend-2lsp.onrender.com/api/reviews/${item._id}`).then(() => {
       fetchData();
     });
     };
@@ -48,20 +44,15 @@ const FeedbackList = ({fetchData, setReviewsList, onModal, setOnModal}) => {
                 </button>
             </div>
 
-             {avatarURL ? (
-                <img src={item.owner.avatarURL} alt="user avatar" />) : (
-                <div>{firstLetter}</div>)}
-            
             <div>
-                <p>{item.owner.name}</p>
+                {/* <p>{item.owner.name}</p> */}
 
-            {/* <Rating
-              onClick={e => onStarClickClick(e)}
+            <Rating
               initialValue={item.rating}
               iconsCount={5}
               transition={true}
               size={24}
-            /> */}
+            />
                 <p>{item.comment}</p>
             </div>
             </div>

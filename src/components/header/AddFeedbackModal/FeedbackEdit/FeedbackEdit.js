@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-// import { Rating } from 'react-simple-star-rating';
+import { Rating } from 'react-simple-star-rating';
 
 
 const FeedbackEdit = ({close, isOpened, toFetch, updateItem, onModal, setOnModal }) => {
@@ -11,18 +11,18 @@ const FeedbackEdit = ({close, isOpened, toFetch, updateItem, onModal, setOnModal
         setUpdatedItem(updateItem);
     }, [updateItem]);
 
-    // const onStarClickClick = (nextValue) => {
-    //   changeRate(nextValue);
-    // };
+    const onStarClickClick = (nextValue) => {
+      changeRate(nextValue);
+    };
     
-    // const changeRate = (value) => {
-    //   let newReview = {
-    //   _id: updatedItem._id,
-    //   comment: updatedItem.comment,
-    //   rating: value,
-    // };
-    //   setUpdatedItem(newReview);
-    // };
+    const changeRate = (value) => {
+      let newReview = {
+      _id: updatedItem._id,
+      comment: updatedItem.comment,
+      rating: value,
+    };
+      setUpdatedItem(newReview);
+    };
 
     const changeComment = (value) => {
     let newReview = {
@@ -39,7 +39,7 @@ const FeedbackEdit = ({close, isOpened, toFetch, updateItem, onModal, setOnModal
       comment: updatedItem.comment,
       rating: updatedItem.rating,
     };
-    await axios.put(`api/reviews/${updatedItem._id}`, newReview).then(() => {
+    await axios.patch(`https://goosetrack-backend-2lsp.onrender.com/api/reviews/${updatedItem._id}`, newReview).then(() => {
       setUpdatedItem('');
       toFetch();
       close();
@@ -51,13 +51,13 @@ const FeedbackEdit = ({close, isOpened, toFetch, updateItem, onModal, setOnModal
             <div>
                 <form>
                     <p>Rating</p>
-            {/* <Rating
+            <Rating
               onClick={e => onStarClickClick(e)}
-              initialValue={newRate}
+              initialValue={updatedItem.rating}
               iconsCount={5}
               transition={true}
               size={24}
-            /> */}
+            />
                 {/* {isVisible && (
                   <p>
                     Rating is a required field
