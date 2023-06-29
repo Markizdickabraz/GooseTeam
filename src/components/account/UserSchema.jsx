@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
+import { parseDateString } from './helpers/date';
 
-const dateReg = /^\d{4}-\d{2}-\d{2}$/;
+const dateReg = /^((0[1-9]|[12]\d|3[01])\/(0[1-9]|1[012])\/\d{4})$/;
 const phoneReg = /^\+?\d{1,3}\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$/;
 
 export const UserSchema = Yup.object().shape({
@@ -15,7 +16,8 @@ export const UserSchema = Yup.object().shape({
       'max-date',
       'Date of birth cannot be in the future',
       function (value) {
-        return !value || new Date(value) <= new Date();
+        const parsedNewDate = new Date(parseDateString(value));
+        return !value || parsedNewDate <= new Date();
       }
     )
     .required('Required'),

@@ -3,23 +3,16 @@ import { ErrorMessage, useField } from 'formik';
 import DatePicker from 'react-datepicker';
 import 'components/SmallCalendar/SmallCalendar';
 import { getMonth, getYear } from 'date-fns';
+import { formatDateToCustomFormat, getMonthNames, range } from './helpers/date';
 import {
   ControlWrapper,
   DateInput,
   IconWrapper,
   Selects,
 } from './styles/Calendar.styled';
-import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 import { Label, MessageWrapper, ErrorText } from './styles/CustomInput.styled';
+import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 import { AiOutlineDown } from 'react-icons/ai';
-
-function range(start, end, step = 1) {
-  const result = [];
-  for (let i = start; i < end; i += step) {
-    result.push(i);
-  }
-  return result;
-}
 
 export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
   const [startDate, setStartDate] = useState(new Date());
@@ -32,24 +25,11 @@ export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
   useEffect(() => {
     const initialDate = new Date();
     setStartDate(initialDate);
-    setFieldValue(name, initialDate.toISOString().split('T')[0]);
+    setFieldValue(name, formatDateToCustomFormat(initialDate));
   }, [name, setFieldValue]);
 
   const years = range(1950, getYear(new Date()) + 1, 1);
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ];
+  const months = getMonthNames();
 
   const color = error ? 'red' : isValid ? 'green' : 'default-color';
 
@@ -122,7 +102,7 @@ export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
         selected={startDate}
         onChange={date => {
           if (date) {
-            setFieldValue('birthday', date.toISOString().split('T')[0]);
+            setFieldValue('birthday', formatDateToCustomFormat(date));
             setStartDate(date);
           } else {
             setFieldValue('birthday', '');

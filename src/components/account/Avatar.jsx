@@ -22,9 +22,16 @@ export const Thumb = ({ avatar, file, setFieldValue, setIsFormDirty }) => {
     reader.readAsDataURL(file);
   }, [file]);
 
+  let avatarUrl;
+  if (avatar.match(/^https:\/\/.*/)) {
+    avatarUrl = `${avatar}`;
+  } else {
+    avatarUrl = `https://${avatar}`;
+  }
+
   return (
     <AvatarContainer>
-      <AvatarImg src={file ? thumb : `https://${avatar}`} alt="avatar" />
+      <AvatarImg src={file ? thumb : avatarUrl} alt="avatar" />
 
       <input
         ref={inputFileRef}
