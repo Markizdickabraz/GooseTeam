@@ -17,5 +17,5 @@ export const ToggleButton = styled.button`
   background-color: transparent;
   border: none;
   padding: 0px;
-  margin-right: 16px;
+  // margin-right: 16px;
 `;

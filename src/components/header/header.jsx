@@ -6,16 +6,18 @@ import sprite from '../../images/svg/sprite.svg';
 
 import {
   Wrapper,
+  Container,
   Info,
   SectionTitle,
   Toggler,
   FeedbackBtn,
   MotivationTask,
-
+  LeftSubsection,
+  RightSubsection,
 } from './Header.styled';
 
 import AddFeedbackModal from './AddFeedbackModal/AddFeedbackModal';
-import {MobileSidebar} from './components/MobileSidebar';
+import { MobileSidebar } from './components/MobileSidebar';
 
 export const Header = () => {
   const location = useLocation();
@@ -25,19 +27,19 @@ export const Header = () => {
 
   const openModal = () => {
     setModalIsOpened(true);
-  }
+  };
 
   const closeModal = () => {
     setModalIsOpened(false);
-  }
+  };
 
   const showSidebar = () => {
     setSidebarlIsOpened(true);
-  }
+  };
 
   const hideSidebar = () => {
     setSidebarlIsOpened(false);
-  }
+  };
 
   let title = '';
   if (currentPath.startsWith('/account')) {
@@ -48,24 +50,37 @@ export const Header = () => {
     title = '';
   }
 
+  let motivate = false;
+  if (currentPath.startsWith('/calendar/day')) {
+    motivate = true;
+  }
+
   return (
     <>
       <Wrapper>
-        <div>
-          <SectionTitle>{title}</SectionTitle>
+        <Container>
+          <LeftSubsection>
+            
+            <SectionTitle>{title}</SectionTitle>
+            {motivate && (
+              <MotivationTask>
+                Let go of the past and focus on the present!
+              </MotivationTask>
+            )}
+          </LeftSubsection>
+          <Toggler onClick={showSidebar}>
+            <use href={`${sprite}#menu`} />
+          </Toggler>
 
-          <MotivationTask>
-            Let go of the past and focus on the present!
-          </MotivationTask>
-        </div>
-        <Toggler onClick={showSidebar}>
-          <use href={`${sprite}#menu`} />
-        </Toggler>
-        <FeedbackBtn onClick={openModal}>Feedback</FeedbackBtn>
-        <Info>
-          <ThemeToggler />
-          <UserInfo />
-        </Info>
+          <RightSubsection>
+            <FeedbackBtn onClick={openModal}>Feedback</FeedbackBtn>
+
+            <Info>
+              <ThemeToggler />
+              <UserInfo />
+            </Info>
+          </RightSubsection>
+        </Container>
       </Wrapper>
       {modalIsOpened && <AddFeedbackModal close={closeModal} />}
       {sidebarIsOpened && <MobileSidebar close={hideSidebar} />}
