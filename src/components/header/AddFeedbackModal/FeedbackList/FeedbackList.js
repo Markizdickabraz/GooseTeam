@@ -10,7 +10,7 @@ const FeedbackList = ({fetchData, setReviewsList, onModal, setOnModal}) => {
     const [updateReview, setUpdateReview] = useState('');
     const [isOpened, setIsOpened] = useState(false);
 
-    const deleteReview = async (item) => {
+  const deleteReview = async (item) => {
     await axios.delete(`https://goosetrack-backend-2lsp.onrender.com/api/reviews/${item._id}`).then(() => {
       fetchData();
     });
@@ -27,9 +27,10 @@ const FeedbackList = ({fetchData, setReviewsList, onModal, setOnModal}) => {
     return (
       <div>
         
-        {setReviewsList && setReviewsList.map((item, index) => {
+        {setReviewsList && setReviewsList.map((item) => {
+          console.log(item.owner._id);
               return (
-                <div key={index}> 
+                <div key={item.owner._id}> 
                 <div>
                 <button
                     type="button"
