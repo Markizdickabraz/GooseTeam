@@ -27,11 +27,11 @@ align-items: center;
     border-radius: 8px 0px 0px 8px;
     border-right: 1px solid rgba(62, 133, 243, 0.20);
     box-sizing: border-box;
-}
+};
 &:last-child {
     border-radius: 0px 8px 8px 0px;
     box-sizing: border-box;
-}
+};
 text-align: center;
 font-size: 14px;
 font-weight: 500;
@@ -39,7 +39,10 @@ line-height: 18px;
 color: ${Variables.fontColors.blue};
 &:hover{
 background-color: #CAE8FF;
-}
+};
+&:active{
+background-color: #CAE8FF;
+};
 ${media.tablet} {
 width: 82px;
 font-size: 16px;
