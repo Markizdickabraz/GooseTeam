@@ -21,10 +21,10 @@ const AddFeedbackModal = ({ close, isOpened }) => {
     
     return createPortal(
         <Modal close={close} >
-            {/* <FeedbackForm
+            <FeedbackForm
                     fetchData={fetchData}
                     setOnModal={setOnModal}
-                    close={close}/> */}
+                    close={close}/>
             <FeedbackList
                     fetchData={fetchData}
                     setReviewsList={reviews}
