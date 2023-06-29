@@ -1,7 +1,8 @@
 import ReactSwipe from 'react-swipe';
 import { useState, useEffect } from 'react';
 import { FeatchRewievs } from '../../../servises/ApiGetRewievs';
-import { RewievGalleryItem } from './RewievGalleryItem';
+import { RewievGalleryItemDesk } from './RewievGalleryItemDesk';
+import { RewievGalleryItem } from './ReviewGalleryItem';
 import {
   MainContainer,
   RewievContainer,
@@ -31,6 +32,14 @@ const ReviewSection = () => {
     FeatchDataRewievs();
   }, []);
 
+  // Make a massive of two objects for sliding two element on the screen
+  const slide = [];
+
+  for (let i = 0; i < searchRewievs.length; i += 2) {
+    const p = { hit: searchRewievs[i], hit2: searchRewievs[i + 1] };
+    slide.push(p);
+  }
+  // SwipeOptions appointment
   const startSlide = 0;
   const swipeOptions = {
     startSlide:
@@ -61,17 +70,35 @@ const ReviewSection = () => {
           </RewiewStyled>
         ) : (
           <>
-            <ReactSwipe
-              ref={el => (reactSwipeEl = el)}
-              className="mySwipe"
-              swipeOptions={swipeOptions}
-            >
-              {searchRewievs.map(item => (
-                <div key={item.id} style={{ display: 'flex', gap: '20px' }}>
-                  <RewievGalleryItem item={item} />
-                </div>
-              ))}
-            </ReactSwipe>
+            {window.screen.width > 1439 && (
+              <ReactSwipe
+                ref={el => (reactSwipeEl = el)}
+                className="mySwipe"
+                swipeOptions={swipeOptions}
+              >
+                {slide.map(item => (
+                  <div
+                    key={item.hit.id}
+                    style={{ display: 'flex', gap: '20px' }}
+                  >
+                    <RewievGalleryItemDesk item={item} />
+                  </div>
+                ))}
+              </ReactSwipe>
+            )}
+            {window.screen.width <= 1439 && (
+              <ReactSwipe
+                ref={el => (reactSwipeEl = el)}
+                className="mySwipe"
+                swipeOptions={swipeOptions}
+              >
+                {searchRewievs.map(item => (
+                  <div key={item.id}>
+                    <RewievGalleryItem item={item} />
+                  </div>
+                ))}
+              </ReactSwipe>
+            )}
             <ButtonContainer>
               <Arrow onClick={() => reactSwipeEl.next()}>
                 <Left />
