@@ -5,68 +5,106 @@ import { UserSchema } from './UserSchema';
 import Thumb from './Avatar';
 import { DatePickerField } from './Calendar';
 import { Button } from 'styles/components';
+import { useState } from 'react';
+import { useAuth } from 'hooks/useAuth';
+import { Input } from './styles/CustomInput.styled';
 
 export const UserForm = () => {
+  const { name, email, phone, birthday, skype, avatarURL } = useAuth();
+  const [isFormDirty, setIsFormDirty] = useState(false);
+
+  const handleSubmit = values => {
+    const formData = new FormData();
+    for (let value in values) {
+      formData.append(value, values[value]);
+    }
+
+    for (const pair of formData.entries()) {
+      console.log(`${pair[0]}, ${pair[1]}`);
+    }
+
+    setIsFormDirty(false);
+  };
+
+  const initialValues = {
+    username: name ? name : '',
+    birthday: birthday ? birthday : '',
+    email: email ? email : '',
+    phone: phone ? phone : '',
+    skype: skype ? skype : '',
+    avatar: '',
+  };
+
   return (
     <>
-      <Formik
-        initialValues={{
-          username: '',
-          birthday: '',
-          email: '',
-          phone: '',
-          skype: '',
-          avatar: '',
-        }}
-        validationSchema={UserSchema}
-        onSubmit={values => {
-          const formData = new FormData();
-          for (let value in values) {
-            formData.append(value, values[value]);
-          }
-
-          for (const pair of formData.entries()) {
-            console.log(`${pair[0]}, ${pair[1]}`);
-          }
-        }}
-      >
-        {({ values, setFieldValue }) => (
-          <FormContainer>
-            <UserInfo>
-              <Thumb file={values.avatar} setFieldValue={setFieldValue} />
-
-              <p>Nadiia Doe</p>
-              <p>User</p>
-            </UserInfo>
-
-            <FormWrapper>
-              <div>
-                <CustomInput label="User Name" name="username" />
-
-                <DatePickerField
-                  name="birthday"
+      {name && (
+        <Formik
+          initialValues={initialValues}
+          validationSchema={UserSchema}
+          onSubmit={handleSubmit}
+          onChange={() => setIsFormDirty(true)}
+        >
+          {({ values, setFieldValue }) => (
+            <FormContainer>
+              <UserInfo>
+                <Thumb
+                  avatar={avatarURL}
+                  file={values.avatar}
                   setFieldValue={setFieldValue}
+                  setIsFormDirty={setIsFormDirty}
                 />
 
-                <CustomInput label="Email" name="email" type="email" />
-              </div>
+                <p>{name}</p>
+                <p>User</p>
+              </UserInfo>
 
-              <div>
-                <CustomInput label="Phone" name="phone" type="tel" />
+              <FormWrapper>
+                <div>
+                  <CustomInput
+                    setIsFormDirty={setIsFormDirty}
+                    label="User Name"
+                    name="username"
+                  />
 
-                <CustomInput label="Skype" name="skype" />
-              </div>
-            </FormWrapper>
+                  <DatePickerField
+                    name="birthday"
+                    setFieldValue={setFieldValue}
+                    setIsFormDirty={setIsFormDirty}
+                  />
 
-            <Button
-              style={{ cursor: 'pointer', margin: '0 auto' }}
-              type="submit"
-            >
-              Save changes
-            </Button>
-          </FormContainer>
-        )}
-      </Formik>
+                  <Input name="email" type="email" disabled />
+                </div>
+
+                <div>
+                  <CustomInput
+                    label="Phone"
+                    name="phone"
+                    type="tel"
+                    setIsFormDirty={setIsFormDirty}
+                  />
+
+                  <CustomInput
+                    label="Skype"
+                    name="skype"
+                    setIsFormDirty={setIsFormDirty}
+                  />
+                </div>
+              </FormWrapper>
+
+              <Button
+                style={{
+                  cursor: isFormDirty ? 'pointer' : 'auto',
+                  margin: '0 auto',
+                }}
+                type={isFormDirty ? 'submit' : 'button'}
+                disabled={!isFormDirty}
+              >
+                Save changes
+              </Button>
+            </FormContainer>
+          )}
+        </Formik>
+      )}
     </>
   );
 };

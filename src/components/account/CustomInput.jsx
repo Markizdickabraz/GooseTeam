@@ -11,7 +11,7 @@ import {
   IconWrapper,
 } from './styles/CustomInput.styled';
 
-export const CustomInput = ({ label, name, ...rest }) => {
+export const CustomInput = ({ label, name, setIsFormDirty, ...rest }) => {
   const [field, meta] = useField(name);
   const error = meta.touched && meta.error;
   const isValid = meta.touched && !meta.error && meta.value !== '';
@@ -29,12 +29,14 @@ export const CustomInput = ({ label, name, ...rest }) => {
         {...rest}
         placeholder={`Your ${name}`}
         style={{ borderColor: color }}
+        onChange={event => {
+          field.onChange(event);
+          setIsFormDirty(true);
+        }}
       />
 
       <MessageWrapper>
         {error && <ErrorMessage>{meta.error}</ErrorMessage>}
-
-        {/* {isValid && <SuccessText>This is a CORRECT {name}</SuccessText>} */}
 
         <ErrorMessage name={name} component={ErrorText} />
       </MessageWrapper>
