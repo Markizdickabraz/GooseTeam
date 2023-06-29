@@ -23,9 +23,8 @@ export const MainContainer = styled.section`
     padding: 0px 32px 100px 32px;
   }
   ${media.desktop} {
-    // width: 1440px;
-    // padding: 0px 128px 118px 0px;
-    max-width: 1000px;
+    width: 1440px;
+    padding: 0px 128px 118px 128px;
   }
 `;
 
@@ -134,6 +133,7 @@ export const ImgContainer = styled.div`
   align-items: center;
   background-color: ${Variables.backgroundColors.lightBlue};
   margin-right: 18px;
+  overflow: hidden;
 `;
 
 export const StarContainer = styled.ul`
