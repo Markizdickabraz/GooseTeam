@@ -46,9 +46,19 @@ export const Container = styled.div`
 `;
 
 export const LeftSubsection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
   @media (max-width: 1023px) {
     display: none;
   }
+`;
+
+export const GooseImg = styled.img`
+  width: 64px;
+  height: 60px;
 `;
 
 export const RightSubsection = styled.div`
