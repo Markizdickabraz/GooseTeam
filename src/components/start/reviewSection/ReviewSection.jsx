@@ -48,7 +48,7 @@ const ReviewSection = () => {
 
   return (
     <MainContainer>
-      {/* <SectionTitle>Reviews</SectionTitle>
+      <SectionTitle>Reviews</SectionTitle>
       <RewievContainer>
         <ReactSwipe
           ref={el => (reactSwipeEl = el)}
@@ -70,7 +70,7 @@ const ReviewSection = () => {
             <Right />
           </Arrow>
         </ButtonContainer>
-      </RewievContainer> */}
+      </RewievContainer>
     </MainContainer>
   );
 };
