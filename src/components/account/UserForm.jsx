@@ -79,6 +79,7 @@ export const UserForm = () => {
                   />
 
                   <DatePickerField
+                    value={birthday}
                     name="birthday"
                     setFieldValue={setFieldValue}
                     setIsFormDirty={setIsFormDirty}

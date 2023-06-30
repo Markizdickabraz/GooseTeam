@@ -14,7 +14,12 @@ import { Label, MessageWrapper, ErrorText } from './styles/CustomInput.styled';
 import { MdNavigateBefore, MdNavigateNext } from 'react-icons/md';
 import { AiOutlineDown } from 'react-icons/ai';
 
-export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
+export const DatePickerField = ({
+  value,
+  name,
+  setFieldValue,
+  setIsFormDirty,
+}) => {
   const [startDate, setStartDate] = useState(new Date());
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
@@ -23,10 +28,10 @@ export const DatePickerField = ({ name, setFieldValue, setIsFormDirty }) => {
   const isValid = meta.touched && !meta.error;
 
   useEffect(() => {
-    const initialDate = new Date();
+    const initialDate = new Date(value);
     setStartDate(initialDate);
     setFieldValue(name, formatDateToCustomFormat(initialDate));
-  }, [name, setFieldValue]);
+  }, [name, setFieldValue, value]);
 
   const years = range(1950, getYear(new Date()) + 1, 1);
   const months = getMonthNames();
