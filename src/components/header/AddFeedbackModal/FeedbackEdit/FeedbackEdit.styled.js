@@ -69,7 +69,7 @@ export const BtnEdit = styled.button`
   background: #3e85f3;
   border: none;
   border-radius: 8px;
-  transition: ;
+  /* transition: ; */
 
   &:hover,
   :focus {
@@ -101,7 +101,7 @@ export const BtnCancel = styled.button`
   background: #E5EDFA;
   border: none;
   border-radius: 8px;
-  transition: ;
+  /* transition: ; */
 
   &:hover,
   &:focus {

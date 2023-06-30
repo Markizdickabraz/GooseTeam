@@ -68,7 +68,7 @@ export const Image = styled.img`
     // width: 704px;
   }
   ${media.desktop} {
-    width: 604px; 
+    width: 604px; }
   `;
 
 export const Number = styled.p`

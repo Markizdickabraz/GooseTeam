@@ -69,7 +69,7 @@ export const HomePage = styled(Link)`
     color: #3e85f3;
     font-size: 20px;
   }
-  &: hover {
+  &:hover {
     color: #3e85f3;
     font-size: 20px;
   }
