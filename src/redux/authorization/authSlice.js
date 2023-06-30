@@ -49,8 +49,7 @@ const authSlice = createSlice({
     },
 
     [updateUser.fulfilled](state, { payload }) {
-      console.log(payload);
-      state.user = { ...state.user, ...payload.result };
+      state.user = { ...state.user, ...payload.data.result };
     },
 
     [logOut.fulfilled](state) {
