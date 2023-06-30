@@ -1,7 +1,6 @@
+import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
-import { useEffect, useRef } from 'react';
-
 import SideBar from '../../Sidebar/Sidebar';
 
 const Wrapper = styled.div`
@@ -14,20 +13,20 @@ const Wrapper = styled.div`
 `;
 
 const MobileSidebar = ({ close }) => {
-    const wrapperRef = useRef();
+  const wrapperRef = useRef();
 
-    useEffect(() => {
-        setTimeout(() => {
-            wrapperRef.current.style.transform = "translateX(0)";
-        }, 5);
-    }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      wrapperRef.current.style.transform = 'translateX(0)';
+    }, 5);
+  }, []);
 
   return createPortal(
     <Wrapper ref={wrapperRef}>
       <SideBar onToggle={close} />
     </Wrapper>,
-    document.body
+    document.getElementById('root')
   );
 };
 
-export { MobileSidebar };
+export default MobileSidebar;

@@ -1,6 +1,6 @@
 import ReactSwipe from 'react-swipe';
 import { useState, useEffect } from 'react';
-import { FeatchRewievs } from '../../../servises/ApiGetRewievs';
+import { FeatchRewievs } from '../../../services/ApiGetRewievs';
 import { RewievGalleryItem } from './RewievGalleryItem';
 import {
   MainContainer,

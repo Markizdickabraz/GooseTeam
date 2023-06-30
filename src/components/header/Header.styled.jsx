@@ -11,7 +11,7 @@ export const Wrapper = styled.header`
   padding-top: 24px;
   padding-bottom: 24px;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1440px) {
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -40,8 +40,8 @@ export const Container = styled.div`
     padding-right: 20px;
   }
 
-  @media screen and (min-width: 1024px) {
-    width: 1024px;
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
   }
 `;
 
@@ -51,7 +51,7 @@ export const LeftSubsection = styled.div`
   justify-content: center;
   gap: 8px;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1439px) {
     display: none;
   }
 `;
@@ -105,7 +105,7 @@ export const Toggler = styled.svg`
     width: 34px;
     margin-right: 16px;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     display: none;
   }
 `;

@@ -25,11 +25,11 @@ const authSlice = createSlice({
     token: null,
     isLoggedIn: false,
     isRefreshing: false,
-    resendEmain: null,
+    resendEmail: null,
   },
   reducers: {
     setResendEmail: (state, action) => {
-      state.resendEmain = action.payload;
+      state.resendEmail = action.payload;
     },
   },
   extraReducers: {
@@ -44,7 +44,7 @@ const authSlice = createSlice({
       state.isLoggedIn = true;
     },
     [resendEmail.fulfilled](state, { payload }) {
-      state.resendEmain = payload.resendEmain;
+      state.resendEmail = payload.resendEmail;
     },
 
     [logOut.fulfilled](state) {

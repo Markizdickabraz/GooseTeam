@@ -4,6 +4,6 @@ export const Wrapper = styled.div`
   display: flex;
 `;
 
-export const WrapperForFixSideBar = styled.div`
+export const WrapperForSideBar = styled.div`
   background-color: #FFF;
 `;

@@ -18,21 +18,28 @@ export const SidebarTitle = styled.h2`
   }
 `;
 
+
 export const SidebarWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100%;
   max-width: 289px;
   padding: 24px 32px;
-  //тема біла
+  // тема біла
   background-color: #fff;
+  z-index: 9999;
+  padding-top: 80px;//перевірити
 
   @media (max-width: 1439px) {
     position: absolute;
-    z-index: 5000;
   }
 `;
+
+
 
 export const SidebarLogo = styled.div`
   display: flex;
@@ -81,4 +88,14 @@ export const SidebarSubTitle = styled.h3`
     font-size: 14px;
     margin-bottom: 32px;
   }
+`;
+
+export const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 289px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 9998;
 `;

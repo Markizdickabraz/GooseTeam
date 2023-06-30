@@ -1,3 +1,6 @@
+import React from 'react';
+//import { useSelector } from 'react-redux';
+import { useAuth } from 'hooks/useAuth';
 import {
   Wrapper,
   UserName,
@@ -5,7 +8,6 @@ import {
   UserNameIcon,
   BackgroundName,
 } from './UserInfo.styled';
-import { useAuth } from 'hooks/useAuth';
 
 export const UserInfo = () => {
   const { name, avatarURL } = useAuth();
@@ -17,6 +19,7 @@ export const UserInfo = () => {
       <UserNameIcon>{name}</UserNameIcon>
     </BackgroundName>
   );
+
   return (
     <Wrapper>
       <UserName>{name || 'Name'}</UserName>

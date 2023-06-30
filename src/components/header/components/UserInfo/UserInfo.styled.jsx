@@ -32,7 +32,7 @@ export const UserNameIcon = styled.p`
   font-weight: 700;
   line-height: 1.3;
 
-  color: ${fontColors.black}
+  color: ${fontColors.black};
 `;
 
 export const UserPicture = styled.div`

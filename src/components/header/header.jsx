@@ -20,9 +20,9 @@ import {
 } from './Header.styled';
 
 import AddFeedbackModal from './AddFeedbackModal/AddFeedbackModal';
-import { MobileSidebar } from './components/MobileSidebar';
+import MobileSidebar from './components/MobileSidebar';
 
-export const Header = () => {
+const Header = () => {
   const location = useLocation();
   const currentPath = location.pathname;
   const [modalIsOpened, setModalIsOpened] = useState(false);

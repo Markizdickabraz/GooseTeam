@@ -2,7 +2,7 @@ import 'modern-normalize';
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Header from './header/header';
+import Header from './header/Header';
 
 // import CalendarPage from 'pages/CalendarPage/CalendarPage';
 
