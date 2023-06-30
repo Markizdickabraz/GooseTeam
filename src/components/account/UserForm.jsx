@@ -28,6 +28,7 @@ export const UserForm = () => {
         formData.append(key, values[key]);
       }
     }
+
     dispatch(updateUser(formData));
 
     for (const pair of formData.entries()) {
