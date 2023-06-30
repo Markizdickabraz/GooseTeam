@@ -1,8 +1,11 @@
 import 'modern-normalize';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Header from './header/header';
+import { useDispatch } from 'react-redux';
+import { useAuth } from 'hooks/useAuth';
+import { refreshUser } from 'redux/authorization/operations';
 
 // import CalendarPage from 'pages/CalendarPage/CalendarPage';
 
@@ -21,7 +24,16 @@ const NotFound = lazy(() => import('../pages/NotFound'));
 const VerifyPage = lazy(() => import('../pages/VerifyPage'));
 
 const App = () => {
-  return (
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<Start />} />
