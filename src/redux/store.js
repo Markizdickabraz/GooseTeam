@@ -16,6 +16,7 @@ import { filterDateReducer } from './filterdate/filterdate-slice';
 // import { contactsReduser } from './tasks/contactsSlice';
 // import { filterReduser } from './tasks/filterSlice';
 import { authReducer } from './authorization/authSlice';
+// import { tasksReducer } from './tasks/tasksSlice';
 
 const persistConfig = {
   key: 'root',
@@ -27,6 +28,7 @@ const store = configureStore({
   reducer: {
     auth: persistReducer(persistConfig, authReducer),
     filterdate: filterDateReducer,
+    // tasks: tasksReducer
     // contacts: contactsReduser,
     // filter: filterReduser,
   },

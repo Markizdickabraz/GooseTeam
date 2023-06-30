@@ -10,6 +10,7 @@ export const getTasks = createAsyncThunk(
     try {
       const { id } = selectUser();
       const res = await axios.get(`/task/${id}`);
+      
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

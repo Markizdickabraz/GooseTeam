@@ -47,10 +47,12 @@ export const CalendarTable = () => {
   // with file for example
   const [events, setEvents] = useState([]);
 
+
   useEffect(() => {
     const tasks = getTasks();
-    const filteredTasks = tasks.filter(task => isSameMonth(new Date(task.date), new Date(currentDate)));
-    setEvents(filteredTasks);
+      const filteredTasks = tasks.filter(task => isSameMonth(new Date(task.date), new Date(currentDate)));
+      setEvents(filteredTasks);
+    
 }, [currentDate])
 
   
@@ -81,6 +83,21 @@ export const CalendarTable = () => {
 }
 
 
+  // color of events 
+
+  const getEventColor = (priority) => {
+    switch (priority) {
+      case 'low':
+        return { backgroundColor: "#CEEEFD", color: "#3E85F3" }; 
+      case 'medium':
+        return { backgroundColor: "#FCF0D4", color: "#F3B249" }; 
+      case 'high':
+        return { backgroundColor: "#FFD2DD", color: "#EA3D65" }; 
+      default:
+        return '#000000'; 
+    }
+  };
+
   return (
     <Calendar>
       {days.map((day, index) => {
@@ -107,31 +124,31 @@ export const CalendarTable = () => {
             
             <div>
               {windowWidth < 768 &&
-                <Event>{events
+                <div>{events
                   .filter(event => new Date(event.date) >= startOfDay(day) && new Date(event.date) <= endOfDay(day))
                   .map(event => (
-                    <div key={event.id}>
+                    <Event key={event.id} style={getEventColor(event.priority)}>
                       <AbbreviatedText text={event.title} maxLength={4} />
-                    </div>
+                    </Event>
 
-                  ))}</Event>}
+                  ))}</div>}
                 {windowWidth >= 768 && windowWidth < 1440 && 
-                <Event>{events
+                <div>{events
                   .filter(event => new Date(event.date) >= startOfDay(day) && new Date(event.date) <= endOfDay(day))
                   .map(event => (
-                    <div key={event.id}>
+                    <Event key={event.id} style={getEventColor(event.priority)}>
                       <AbbreviatedText text={event.title} maxLength={5} />
-                    </div>
-                  ))}</Event>}
+                    </Event>
+                  ))}</div>}
               
               {windowWidth >= 1440 &&
-                <Event>{events
+                <div>{events
                   .filter(event => new Date(event.date) >= startOfDay(day) && new Date(event.date) <= endOfDay(day))
                   .map(event => (
-                    <div key={event.id}>
+                    <Event key={event.id} style={getEventColor(event.priority)}>
                       <AbbreviatedText text={event.title} maxLength={10} />
-                    </div>
-                  ))}</Event>}
+                    </Event>
+                  ))}</div>}
             </div>
           </CalendarItem>
         );
