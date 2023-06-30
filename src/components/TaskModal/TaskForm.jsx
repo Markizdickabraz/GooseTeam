@@ -1,22 +1,40 @@
-// import styled from 'styled-components';
-// import axios from 'axios';
-// axios.defaults.baseURL = 'https://goosetrack-backend-2lsp.onrender.com/api/';
-
 import { useFormik } from 'formik';
 
-// import { validate } from './utility/validateTaskForm';
+import { AiOutlinePlus } from 'react-icons/ai';
+import { BsPencil } from 'react-icons/bs';
+
+import { validate } from './utility/validateTaskForm';
+
+import {
+  Label,
+  Input,
+  TimeContainer,
+  RadioContainer,
+  RadioButton,
+  RadioLabel,
+  ButtonContainer,
+  Button,
+  LightButton,
+  Err
+} from './TaskForm.styled';
 
 const TaskForm = ({ close, create, task }) => {
   const formik = useFormik({
     initialValues: {
-      title: task.title || '',
+      title: task.title || 'Enter text',
       start: task.start || '09:00',
       end: task.end || '09:30',
       priority: task.priority || 'low',
     },
-    // validate,
+    validate,
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
+
+      // if (create) {
+      //   addHandler();
+      // } else {
+      //   editHandler();
+      // }
     },
   });
 
@@ -25,37 +43,16 @@ const TaskForm = ({ close, create, task }) => {
     console.log(formik.errors);
   };
 
-  const addHandler = async evt => {
-    // temporarily
-    // const {start, date} = task;
-    // const title = 'to do something';
-    // const end = '12:30';
-    // const priority = 'low';
-    // const category = 'to-do';
-    // console.log("request created");
-    // const response = await axios.post('https://goosetrack-backend-2lsp.onrender.com/api/task', {title, start, end, priority, date, category});
-    // console.log(response);
-    // console.log("task created!");
-    // console.log(response.data);
-    // console.log("task created! 2");
-    // console.log(response.message);
-  };
+  const addHandler = async evt => {};
 
-  const editHandler = async evt => {
-    // temporarily
-    // const {title, start, end, priority, date, category} = task;
-    // const response = await axios.patch(`/tasks/${task.id}`, {title, start, end, priority, date, category});
-    // console.log(response);
-    // console.log(response.data);
-    // console.log("task changed!");
-  };
+  const editHandler = async evt => {};
 
   return (
     <form onSubmit={formik.handleSubmit}>
       <div role="group">
-        <label>
+        <Label>
           Title
-          <input
+          <Input
             id="title"
             name="title"
             type="text"
@@ -63,76 +60,80 @@ const TaskForm = ({ close, create, task }) => {
             value={formik.values.title}
             placeholder="Enter text"
           />
-        </label>
-        <div>
-          <label>
+          {formik.errors.title && <Err>{formik.errors.title}</Err>}
+        </Label>
+        <TimeContainer>
+          <Label>
             Start
-            <input
+            <Input
               id="start"
               name="start"
               type="text"
               onChange={formik.handleChange}
               value={formik.values.start}
             />
-          </label>
-          <label>
+            {formik.errors.start && <Err>{formik.errors.start}</Err>}
+          </Label>
+          <Label>
             End
-            <input
+            <Input
               id="end"
               name="end"
               type="text"
               onChange={formik.handleChange}
               value={formik.values.end}
             />
-          </label>
-        </div>
+            {formik.errors.end && <Err>{formik.errors.end}</Err>}
+          </Label>
+        </TimeContainer>
 
-        <label>
-          Low
-          <input
+        <RadioContainer>
+          <RadioButton
+            id="low"
             name="priority"
             type="radio"
             onChange={formik.handleChange}
             value="low"
             checked={formik.values.priority === 'low'}
           />
-        </label>
-        <label>
-          Medium
-          <input
+          <RadioLabel htmlFor="low">Low</RadioLabel>
+          <RadioButton
+            id="medium"
             name="priority"
             type="radio"
             onChange={formik.handleChange}
             value="medium"
             checked={formik.values.priority === 'medium'}
           />
-        </label>
-        <label>
-          High
-          <input
+          <RadioLabel htmlFor="medium">Medium</RadioLabel>
+          <RadioButton
+            id="high"
             name="priority"
             type="radio"
             onChange={formik.handleChange}
             value="high"
             checked={formik.values.priority === 'high'}
           />
-        </label>
-        {/* <p>{formik.values.priority}</p> */}
+          <RadioLabel htmlFor="high">High</RadioLabel>
+        </RadioContainer>
+        {formik.errors.priority && <Err>{formik.errors.priority}</Err>}
       </div>
 
       {create ? (
-        <>
-          <button type="submit" onClick={addHandler}>
+        <ButtonContainer>
+          <Button type="submit" onClick={addHandler}>
+            <AiOutlinePlus />
             Add
-          </button>
-          <button type="button" onClick={closeHandler}>
+          </Button>
+          <LightButton type="button" onClick={closeHandler}>
             Cansel
-          </button>
-        </>
+          </LightButton>
+        </ButtonContainer>
       ) : (
-        <button type="submit" onClick={editHandler}>
+        <Button type="submit" onClick={editHandler}>
+          <BsPencil />
           Edit
-        </button>
+        </Button>
       )}
     </form>
   );
