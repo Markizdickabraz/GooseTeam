@@ -45,7 +45,7 @@ export const SectionTitle = styled.h2`
 export const RewievContainer = styled.div`
   height: 252px;
   ${media.tablet} {
-     max-width: 570px
+     max-width: 570px;
     height: 266px;
   }
   ${media.desktop} {    
