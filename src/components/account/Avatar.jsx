@@ -22,9 +22,16 @@ export const Thumb = ({ avatar, file, setFieldValue, setIsFormDirty }) => {
     reader.readAsDataURL(file);
   }, [file]);
 
+  let avatarUrl;
+  if (avatar.match(/^https:\/\/.*/)) {
+    avatarUrl = `${avatar}`;
+  } else {
+    avatarUrl = `https://${avatar}`;
+  }
+
   return (
     <AvatarContainer>
-      <AvatarImg src={file ? thumb : `https://${avatar}`} alt="avatar" />
+      <AvatarImg src={file ? thumb : avatarUrl} alt="avatar" />
 
       <input
         ref={inputFileRef}
@@ -32,7 +39,8 @@ export const Thumb = ({ avatar, file, setFieldValue, setIsFormDirty }) => {
         name="avatar"
         type="file"
         onChange={event => {
-          setFieldValue('avatar', event.currentTarget.files[0]);
+          console.log(event.currentTarget.files[0]);
+          setFieldValue('avatarURL', event.currentTarget.files[0]);
           setIsFormDirty(true);
         }}
         style={{ display: 'none' }}

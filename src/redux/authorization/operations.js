@@ -96,3 +96,20 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
+/*
+ * PATCH @ /users/updateUser
+ * headers: Authorization: Bearer token
+ */
+export const updateUser = createAsyncThunk(
+  'auth/updateUser',
+  async (credentials, thunkAPI) => {
+    try {
+      const res = await axios.patch('/auth/updateUser', credentials);
+      console.log(res);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

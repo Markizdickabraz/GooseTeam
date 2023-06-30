@@ -8,16 +8,28 @@ import { Button } from 'styles/components';
 import { useState } from 'react';
 import { useAuth } from 'hooks/useAuth';
 import { Input } from './styles/CustomInput.styled';
+import { useDispatch } from 'react-redux';
+import { updateUser } from 'redux/authorization/operations';
 
 export const UserForm = () => {
   const { name, email, phone, birthday, skype, avatarURL } = useAuth();
   const [isFormDirty, setIsFormDirty] = useState(false);
+  const dispatch = useDispatch();
 
   const handleSubmit = values => {
     const formData = new FormData();
-    for (let value in values) {
-      formData.append(value, values[value]);
+    for (let key in values) {
+      if (key === 'avatarURL') {
+        formData.append(
+          key,
+          values[key] instanceof File ? values[key] : avatarURL
+        );
+      } else {
+        formData.append(key, values[key]);
+      }
     }
+
+    dispatch(updateUser(formData));
 
     for (const pair of formData.entries()) {
       console.log(`${pair[0]}, ${pair[1]}`);
@@ -27,12 +39,12 @@ export const UserForm = () => {
   };
 
   const initialValues = {
-    username: name ? name : '',
+    name: name ? name : '',
     birthday: birthday ? birthday : '',
     email: email ? email : '',
     phone: phone ? phone : '',
     skype: skype ? skype : '',
-    avatar: '',
+    avatarURL: '',
   };
 
   return (
@@ -49,7 +61,7 @@ export const UserForm = () => {
               <UserInfo>
                 <Thumb
                   avatar={avatarURL}
-                  file={values.avatar}
+                  file={values.avatarURL}
                   setFieldValue={setFieldValue}
                   setIsFormDirty={setIsFormDirty}
                 />
@@ -63,7 +75,7 @@ export const UserForm = () => {
                   <CustomInput
                     setIsFormDirty={setIsFormDirty}
                     label="User Name"
-                    name="username"
+                    name="name"
                   />
 
                   <DatePickerField

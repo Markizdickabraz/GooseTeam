@@ -6,6 +6,7 @@ import {
   logOut,
   refreshUser,
   resendEmail,
+  updateUser,
 } from './operations';
 
 const INIT_STATE = {
@@ -45,6 +46,10 @@ const authSlice = createSlice({
     },
     [resendEmail.fulfilled](state, { payload }) {
       state.resendEmain = payload.resendEmain;
+    },
+
+    [updateUser.fulfilled](state, { payload }) {
+      state.user = { ...state.user, ...payload.data.result };
     },
 
     [logOut.fulfilled](state) {
