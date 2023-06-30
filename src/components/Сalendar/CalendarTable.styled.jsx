@@ -79,16 +79,19 @@ border-radius: 8px;
 font-size: 10px;
 font-weight: 700;
 line-height: 14px;
-background-color: yellow;
 font-size: 10px;
 font-weight: 700;
 line-height: 14px;
+height: 22px;
+padding: 4px 8px 4px;
 ${media.tablet} {
  width: 92px;  
  top: 58px;
 left: 4px; 
 font-size: 14px;
 line-height: 18px;
+height: 26px;
+padding: 4px 12px 4px;
 }
 ${media.desktop} {
  width: 139px;  
