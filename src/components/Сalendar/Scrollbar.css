@@ -1,0 +1,107 @@
+.os-scrollbar.os-scrollbar-vertical {
+  --os-size: 8px;
+
+  --os-padding-perpendicular: 0;
+
+  --os-padding-axis: 0;
+
+  --os-track-border-radius: 0;
+
+  --os-track-bg: none;
+
+  --os-track-bg-hover: none;
+
+  --os-track-bg-active: none;
+
+  --os-track-border: none;
+
+  --os-track-border-hover: none;
+
+  --os-track-border-active: none;
+
+  --os-handle-border-radius: 12px;
+
+  --os-handle-bg: #e7e5e5;
+
+  --os-handle-bg-hover: #e7e5e5;
+
+  --os-handle-bg-active: #e7e5e5;
+
+  --os-handle-border: none;
+
+  --os-handle-border-hover: none;
+
+  --os-handle-border-active: none;
+
+  --os-handle-min-size: 112px;
+
+  --os-handle-max-size: 112px;
+
+  --os-handle-perpendicular-size: 100%;
+
+  --os-handle-perpendicular-size-hover: 100%;
+
+  --os-handle-perpendicular-size-active: 100%;
+
+  --os-handle-interactive-area-offset: 0;
+}
+
+.os-scrollbar.os-scrollbar-vertical {
+  right: -14px;
+}
+
+.os-scrollbar.os-scrollbar-horizontal {
+  --os-size: 14px;
+
+  --os-padding-perpendicular: 0;
+
+  --os-padding-axis: 0;
+
+  --os-track-border-radius: 0;
+
+  --os-track-bg: none;
+
+  --os-track-bg-hover: none;
+
+  --os-track-bg-active: none;
+
+  --os-track-border: none;
+
+  --os-track-border-hover: none;
+
+  --os-track-border-active: none;
+
+  --os-handle-border-radius: 12px;
+
+  --os-handle-bg: #e7e5e5;
+
+  --os-handle-bg-hover: #e7e5e5;
+
+  --os-handle-bg-active: #e7e5e5;
+
+  --os-handle-border: none;
+
+  --os-handle-border-hover: none;
+
+  --os-handle-border-active: none;
+
+  --os-handle-min-size: 50%;
+
+  --os-handle-max-size: 50%;
+
+  --os-handle-perpendicular-size: 100%;
+
+  --os-handle-perpendicular-size-hover: 100%;
+
+  --os-handle-perpendicular-size-active: 100%;
+
+  --os-handle-interactive-area-offset: 0;
+}
+
+.os-scrollbar.os-scrollbar-horizontal {
+  bottom: -20%;
+}
+
+[data-overlayscrollbars~='host'] {
+  overflow: visible;
+}

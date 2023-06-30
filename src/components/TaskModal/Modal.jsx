@@ -9,13 +9,19 @@ const Container = styled.div`
   z-index: 1000;
   transform: translate(-50%, -50%) scale(1);
   background-color: #ffffff;
-  padding-left: 28px;
-  padding-right: 28px;
-  padding-top: 40px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 48px;
   padding-bottom: 40px;
   border: 1px solid #dce3e5cc;
   border-radius: 8px;
   box-shadow: 0px 4px 16px 0px #1111111a;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 40px;
+  }
 `;
 
 const CloseBtn = styled.button`

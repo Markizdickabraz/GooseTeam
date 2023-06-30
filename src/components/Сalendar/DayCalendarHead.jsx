@@ -1,11 +1,20 @@
 import { format, isSameDay } from 'date-fns';
 import { parse, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns/esm';
+import { useEffect, useState } from 'react';
 import { useParams, redirect, useOutletContext } from 'react-router-dom';
+import {
+  ListOfDays,
+  ListOfDaysItem,
+  Week,
+  Day,
+} from './DayCalendarHead.styled';
 
 export const DayCalendarHead = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const { currentDay } = useParams();
   const { setCurrentDate } = useOutletContext();
   const parsedCurrentDay = parse(currentDay, 'd-MMM-yyyy', new Date());
+
   const days = eachDayOfInterval({
     start: startOfWeek(parsedCurrentDay, { weekStartsOn: 1 }),
     end: endOfWeek(parsedCurrentDay, { weekStartsOn: 1 }),
@@ -18,31 +27,44 @@ export const DayCalendarHead = () => {
       parse(e.currentTarget.dataset.date, 'd-MMMM-yyyy', new Date())
     );
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [windowWidth]);
+
   return (
-    <ul className="day-calendar-head">
+    <ListOfDays>
       {days.map((day, index) => {
         return (
-          <li
+          <ListOfDaysItem
             data-date={format(day, 'd-MMM-yyyy')}
             onClick={handleClickRedirect}
             key={format(day, 'd-MMM-yyyy')}
-            className="day-calendar-head-item"
           >
-            <p className="head-week">{format(day, 'EEE')}</p>
-            <p
+            <Week>
+              {windowWidth < 768 ? format(day, 'EEEEE') : format(day, 'EEE')}
+            </Week>
+            <Day
               style={{
-                color: isSameDay(day, parsedCurrentDay) ? 'white' : 'black',
+                color: isSameDay(day, parsedCurrentDay) ? '#FFFFFF' : '#343434',
                 backgroundColor: isSameDay(day, parsedCurrentDay)
                   ? '#3E85F3'
-                  : 'white',
+                  : '#FFFFFF',
               }}
-              className="head-day"
             >
               {format(day, 'd')}
-            </p>
-          </li>
+            </Day>
+          </ListOfDaysItem>
         );
       })}
-    </ul>
+    </ListOfDays>
   );
 };

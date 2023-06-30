@@ -11,8 +11,9 @@ const AddFeedbackModal = ({ close, isOpened }) => {
     const [onModal, setOnModal] = useState(isOpened);
 
     const fetchData = async () => {
-    const response = await axios.get(`api/reviews`);
-    setReviews(response.data.data);
+        const response = await axios.get(`https://goosetrack-backend-2lsp.onrender.com/api/reviews/id`);
+        // console.log(response.data[0]);
+        setReviews(response.data);
     };
     
     useEffect(() => {

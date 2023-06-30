@@ -1,13 +1,15 @@
 import ReactSwipe from 'react-swipe';
 import { useState, useEffect } from 'react';
 import { FeatchRewievs } from '../../../servises/ApiGetRewievs';
-import { RewievGalleryItem } from './RewievGalleryItem';
+import { RewievGalleryItemDesk } from './RewievGalleryItemDesk';
+import { RewievGalleryItem } from './ReviewGalleryItem';
 import {
   MainContainer,
   RewievContainer,
   Arrow,
   ButtonContainer,
   SectionTitle,
+  RewiewStyled,
 } from './reviewSectionStyled';
 
 import { ReactComponent as Right } from '../../../images/start_page/right-arrow.svg';
@@ -30,6 +32,14 @@ const ReviewSection = () => {
     FeatchDataRewievs();
   }, []);
 
+  // Make a massive of two objects for sliding two element on the screen
+  const slide = [];
+
+  for (let i = 0; i < searchRewievs.length; i += 2) {
+    const p = { hit: searchRewievs[i], hit2: searchRewievs[i + 1] };
+    slide.push(p);
+  }
+  // SwipeOptions appointment
   const startSlide = 0;
   const swipeOptions = {
     startSlide:
@@ -38,38 +48,67 @@ const ReviewSection = () => {
     speed: 1000,
     disableScroll: true,
     continuous: true,
-    callback() {
-      // console.log('slide changed');
-    },
-    transitionEnd() {
-      // console.log('ended transition');
-    },
+    callback() {},
+    transitionEnd() {},
   };
 
   return (
     <MainContainer>
       <SectionTitle>Reviews</SectionTitle>
       <RewievContainer>
-        <ReactSwipe
-          ref={el => (reactSwipeEl = el)}
-          className="mySwipe"
-          swipeOptions={swipeOptions}
-        >
-          {searchRewievs.map(item => (
-            <div key={item.id} style={{ display: 'flex', gap: '20px' }}>
-              <RewievGalleryItem item={item} />
-            </div>
-          ))}
-        </ReactSwipe>
-
-        <ButtonContainer>
-          <Arrow onClick={() => reactSwipeEl.next()}>
-            <Left />
-          </Arrow>
-          <Arrow onClick={() => reactSwipeEl.prev()}>
-            <Right />
-          </Arrow>
-        </ButtonContainer>
+        {searchRewievs.length === 0 ? (
+          <RewiewStyled
+            style={{
+              fontSize: '30px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            {' '}
+            No any reviews yet
+          </RewiewStyled>
+        ) : (
+          <>
+            {window.screen.width > 1439 && (
+              <ReactSwipe
+                ref={el => (reactSwipeEl = el)}
+                className="mySwipe"
+                swipeOptions={swipeOptions}
+              >
+                {slide.map(item => (
+                  <div
+                    key={item.hit.id}
+                    style={{ display: 'flex', gap: '20px' }}
+                  >
+                    <RewievGalleryItemDesk item={item} />
+                  </div>
+                ))}
+              </ReactSwipe>
+            )}
+            {window.screen.width <= 1439 && (
+              <ReactSwipe
+                ref={el => (reactSwipeEl = el)}
+                className="mySwipe"
+                swipeOptions={swipeOptions}
+              >
+                {searchRewievs.map(item => (
+                  <div key={item.id}>
+                    <RewievGalleryItem item={item} />
+                  </div>
+                ))}
+              </ReactSwipe>
+            )}
+            <ButtonContainer>
+              <Arrow onClick={() => reactSwipeEl.next()}>
+                <Left />
+              </Arrow>
+              <Arrow onClick={() => reactSwipeEl.prev()}>
+                <Right />
+              </Arrow>
+            </ButtonContainer>
+          </>
+        )}
       </RewievContainer>
     </MainContainer>
   );

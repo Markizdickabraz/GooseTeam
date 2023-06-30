@@ -1,13 +1,9 @@
 .statistics__container {
-    display: flex;
-    flex-direction: column;
     border: solid #E3F3FF;
     margin-right: auto;
     margin-left: auto;
-    border-radius: 29px;
-    width: 860px;
-    height: 440px;
-    padding: 40px;
+    border-radius: 20px;
+    padding: 40px 14px;
 }
 
 .statistics__title {
@@ -16,4 +12,43 @@
     font-weight: 600;
     line-height: 150%;
     margin: 0;
+}
+
+@media screen and (min-width: 375px) {
+    .statistics__container {
+        width: 307px;
+        height: 413px;
+    }
+
+    .bar__chart {
+        width: 279px;
+        height: 333px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .statistics__container {
+        width: 640px;
+        height: 424px;
+        border-radius: 29px;
+        padding: 32px 32px;
+    }
+
+    .bar__chart {
+        width: 576px;
+        height: 360px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .statistics__container {
+        width: 860px;
+        height: 440px;
+        padding: 40px 40px;
+    }
+
+    .bar__chart {
+        width: 780px;
+        height: 360px;
+    }
 }

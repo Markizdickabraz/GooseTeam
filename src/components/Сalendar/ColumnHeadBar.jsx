@@ -1,13 +1,13 @@
 import { FiPlusCircle } from 'react-icons/fi';
+import { ColumnHead, Title, Button } from './ColumnHeadBar.styled';
 
 export const ColumnHeadBar = ({ title }) => {
   return (
-    <div className="column-head-bar">
-      <h2>{title}</h2>
-
-      <button type="button" className="column-head-bar-btn">
+    <ColumnHead>
+      <Title>{title}</Title>
+      <Button type="button">
         <FiPlusCircle size={24} />
-      </button>
-    </div>
+      </Button>
+    </ColumnHead>
   );
 };

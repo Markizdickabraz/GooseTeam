@@ -24,7 +24,7 @@ export const MainContainer = styled.section`
   }
   ${media.desktop} {
     width: 1440px;
-    padding: 0px 128px 118px 0px;
+    padding: 0px 128px 118px 128px;
   }
 `;
 
@@ -45,9 +45,10 @@ export const SectionTitle = styled.h2`
 export const RewievContainer = styled.div`
   height: 252px;
   ${media.tablet} {
+     max-width: 570px
     height: 266px;
   }
-  ${media.desktop} {
+  ${media.desktop} {    
     height: 280px;
   }
 `;
@@ -66,7 +67,7 @@ export const RewiewStyled = styled.div`
   border: 1px solid ${Variables.iconColors.greyDisableStar};
   border-radius: 8px;
   ${media.tablet} {
-    width: 580px;
+    width: 570px;
     height: auto;
     padding: 32px;
     margin-bottom: 18px;
@@ -92,8 +93,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Arrow = styled.button`
-
-width: 61px;
+  width: 61px;
   height: 61px;
   background-color: inherit;
   border: none;
@@ -108,37 +108,32 @@ width: 61px;
   }
   ${media.desktop} {
   }
-
 `;
 
 export const Name = styled.h3`
-   
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 1;
-    margin-bottom: 13px;
-  
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 13px;
 `;
 
 export const Comment = styled.p`
-   
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1;
-    margin-bottom: 13px;
-  
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 13px;
 `;
 
 export const ImgContainer = styled.div`
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background-color: ${Variables.backgroundColors.lightBlue};
-    margin-right: 18px;
-   
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${Variables.backgroundColors.lightBlue};
+  margin-right: 18px;
+  overflow: hidden;
 `;
 
 export const StarContainer = styled.ul`

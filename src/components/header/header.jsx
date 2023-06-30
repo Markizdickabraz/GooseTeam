@@ -3,6 +3,8 @@ import { ThemeToggler } from './components/ThemeToggler/ThemeToggler';
 import { UserInfo } from './components/UserInfo/UserInfo';
 import { useLocation } from 'react-router-dom';
 import sprite from '../../images/svg/sprite.svg';
+import gooseLogo1x from 'images/calendar/goose_logo@1x.png';
+import gooseLogo2x from 'images/calendar/goose_logo@2x.png';
 
 import {
   Wrapper,
@@ -14,6 +16,7 @@ import {
   MotivationTask,
   LeftSubsection,
   RightSubsection,
+  GooseImg,
 } from './Header.styled';
 
 import AddFeedbackModal from './AddFeedbackModal/AddFeedbackModal';
@@ -60,13 +63,20 @@ export const Header = () => {
       <Wrapper>
         <Container>
           <LeftSubsection>
-            
-            <SectionTitle>{title}</SectionTitle>
             {motivate && (
-              <MotivationTask>
-                Let go of the past and focus on the present!
-              </MotivationTask>
+              <GooseImg
+                srcSet={`${gooseLogo1x} 1x, ${gooseLogo2x} 2x`}
+                alt="goose"
+              />
             )}
+            <div>
+              <SectionTitle>{title}</SectionTitle>
+              {motivate && (
+                <MotivationTask>
+                  Let go of the past and focus on the present!
+                </MotivationTask>
+              )}
+            </div>
           </LeftSubsection>
           <Toggler onClick={showSidebar}>
             <use href={`${sprite}#menu`} />
