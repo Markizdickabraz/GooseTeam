@@ -9,6 +9,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
 } from 'recharts';
 import './StatisticsChart.css';
 
@@ -86,42 +87,49 @@ const StatisticsChart = () => {
   return (
     <div className="statistics__container">
       <p className="statistics__title">Tasks</p>
-      <BarChart
-        width={780}
-        height={360}
-        data={data}
-        margin={{
-          top: 24,
-        }}
-        barGap={14}
-      >
-        <defs>
-          <linearGradient id="colorDv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#FFD2DD" stopOpacity={0} />
-            <stop offset="95%" stopColor="#FFD2DD" stopOpacity={0.8} />
-          </linearGradient>
-          <linearGradient id="colorMv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#3E85F3" stopOpacity={0} />
-            <stop offset="95%" stopColor="#3E85F3" stopOpacity={0.8} />
-          </linearGradient>
-        </defs>
-        <CartesianGrid vertical={false} stroke="#E3F3FF" />
-        <XAxis dataKey="name" axisLine={false} tickLine={false} height={40} />
-        <YAxis
-          axisLine={false}
-          tickLine={false}
-          width={40}
-          allowDecimals={false}
-          tickMargin={20}
-        />
-        <Tooltip />
-        <Bar dataKey="dv" fill="url(#colorDv)" barSize={27}>
-          <LabelList dataKey="dp" position="top" />
-        </Bar>
-        <Bar dataKey="mv" fill="url(#colorMv)" barSize={27}>
-          <LabelList dataKey="mp" position="top" />
-        </Bar>
-      </BarChart>
+      <div className="bar__chart">
+        <ResponsiveContainer>
+          <BarChart
+            data={data}
+            margin={{
+              top: 24,
+            }}
+            barGap={14}
+          >
+            <defs>
+              <linearGradient id="colorDv" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#FFD2DD" stopOpacity={0} />
+                <stop offset="95%" stopColor="#FFD2DD" stopOpacity={0.8} />
+              </linearGradient>
+              <linearGradient id="colorMv" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor="#3E85F3" stopOpacity={0} />
+                <stop offset="95%" stopColor="#3E85F3" stopOpacity={0.8} />
+              </linearGradient>
+            </defs>
+            <CartesianGrid vertical={false} stroke="#E3F3FF" />
+            <XAxis
+              dataKey="name"
+              axisLine={false}
+              tickLine={false}
+              height={40}
+            />
+            <YAxis
+              axisLine={false}
+              tickLine={false}
+              width={40}
+              allowDecimals={false}
+              tickMargin={20}
+            />
+            <Tooltip />
+            <Bar dataKey="dv" fill="url(#colorDv)" barSize={27}>
+              <LabelList dataKey="dp" position="top" />
+            </Bar>
+            <Bar dataKey="mv" fill="url(#colorMv)" barSize={27}>
+              <LabelList dataKey="mp" position="top" />
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };

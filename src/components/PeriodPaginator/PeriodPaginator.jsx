@@ -53,7 +53,7 @@ const PeriodPaginator = () => {
         selected={filterdate}
         onChange={handleChange}
         customInput={<CustomInput />}
-        dateFormat="d MMM yyyy"
+        dateFormat="d MMMM yyyy"
         calendarStartDay={1}
         formatWeekDay={nameOfDay => nameOfDay.substr(0, 1)}
         fixedHeight

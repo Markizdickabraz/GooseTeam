@@ -11,7 +11,7 @@ const media = {
 
 export const Section = styled.section`
   margin: 0;
-  height: window.innerHeight;
+  height: ${window.innerHeight};
   width: 100vw;
   background-color: ${Variables.backgroundColors.blue};
 `;
@@ -45,7 +45,7 @@ export const Img = styled.img`
   ${media.tablet} {
     width: 150px;
   }
-  @media (min-device-);
+  /* @media (min-device-); */
 `;
 
 export const MainTitle = styled.h1`
@@ -98,8 +98,8 @@ export const SignUp = styled(Link)`
     font-family: ${Variables.fonts.primary};
     font-weight: 600;
     font-size: 14px;
-    transition: color ${Variables.animation},
-    scale ${Variables.animation},
+    transition: color ${Variables.animation};
+    scale: ${Variables.animation};
       // background-color ${Variables.animation};
     border: 0;
     border-radius: 15px;
@@ -193,8 +193,8 @@ export const SignUpMob = styled(Link)`
     font-family: ${Variables.fonts.primary};
     font-weight: 600;
     font-size: 14px;
-    transition: color ${Variables.animation},
-    scale ${Variables.animation},
+    transition: color ${Variables.animation};
+    scale: ${Variables.animation};
       // background-color ${Variables.animation};
     border: 0;
     border-radius: 15px;

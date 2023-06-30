@@ -26,7 +26,7 @@ export const Label = styled.label`
   font-size: 12px;
   margin-top: 18px;
   line-height: 14px;
-  color: ;
+  /* color: ; */
 `;
 
 export const CommentText = styled.textarea`
@@ -69,7 +69,7 @@ export const BtnSave = styled.button`
   background: #3e85f3;
   border: none;
   border-radius: 8px;
-  transition: ;
+  /* transition: ; */
 
   &:hover,
   :focus {
@@ -101,7 +101,7 @@ export const BtnCancel = styled.button`
   background: #E5EDFA;
   border: none;
   border-radius: 8px;
-  transition: ;
+  /* transition: ; */
 
   &:hover,
   &:focus {
