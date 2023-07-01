@@ -78,7 +78,7 @@ const ReviewSection = () => {
               >
                 {slide.map(item => (
                   <div
-                    key={item.hit.id}
+                    key={item.hit._id}
                     style={{ display: 'flex', gap: '20px' }}
                   >
                     <RewievGalleryItemDesk item={item} />
