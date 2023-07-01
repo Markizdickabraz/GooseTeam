@@ -14,13 +14,14 @@ import {
   Toggler,
   FeedbackBtn,
   MotivationTask,
+  MotivationSpan,
   LeftSubsection,
   RightSubsection,
   GooseImg,
 } from './Header.styled';
 
 import AddFeedbackModal from './AddFeedbackModal/AddFeedbackModal';
-import { MobileSidebar } from './components/MobileSidebar';
+import { MobileSidebar } from './components/MobileSidebar/MobileSidebar';
 
 export const Header = () => {
   const location = useLocation();
@@ -73,7 +74,7 @@ export const Header = () => {
               <SectionTitle>{title}</SectionTitle>
               {motivate && (
                 <MotivationTask>
-                  Let go of the past and focus on the present!
+                  <MotivationSpan>Let go</MotivationSpan> of the past and focus on the present!
                 </MotivationTask>
               )}
             </div>

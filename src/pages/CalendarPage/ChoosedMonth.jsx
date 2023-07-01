@@ -3,10 +3,11 @@ import { MonthCalendarHead } from '../../components/Сalendar/MonthCalendarHead'
 
 
 const ChoosedMonth = () => {
+  
   return (
     <div>
       <MonthCalendarHead />
-      <CalendarTable />
+      <CalendarTable/>
     </div>
   );
 };
