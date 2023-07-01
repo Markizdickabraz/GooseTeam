@@ -26,7 +26,7 @@ export const RewievGalleryItem = ({ item }) => {
           </ImgContainer>
           <div>
             <Name>{item.owner.name.trim()}</Name>
-            <StarContainer value={item.reting}>
+            <StarContainer value={item.rating}>
               <li>
                 <BsFillStarFill />
               </li>
