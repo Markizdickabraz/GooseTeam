@@ -1,6 +1,5 @@
 import sprite from 'images/svg/sprite.svg';
 import { NavList, StyledLink, NavIcon } from './UserNavStyled';
-
 //додати відповідні шляхи
 // import { account, calendar, statistics } from 'routes';
 
