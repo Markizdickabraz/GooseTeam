@@ -30,6 +30,7 @@ export const TaskColumnCard = ({
     date,
     category,
   };
+  
   const { avatarURL } = useSelector(selectUser);
   const handleClick = () => {
     setIsModalOpen(false);
@@ -46,6 +47,7 @@ export const TaskColumnCard = ({
           <Level priority={task.priority}>{task.priority}</Level>
         </Wrapper>
         <TaskToolbar
+          taskId={task._id}
           setIsNewTask={setIsNewTask}
           setIsModalOpen={setIsModalOpen}
         />

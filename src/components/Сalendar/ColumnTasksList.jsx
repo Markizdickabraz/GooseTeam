@@ -30,7 +30,7 @@ export const ColumnTasksList = ({
         {tasks.map(task => {
           return isSameDay(new Date(currentDay), new Date(task.date)) ? (
             <TaskColumnCard
-              key={task.id}
+              key={task._id}
               task={task}
               isNewTask={isNewTask}
               setIsNewTask={setIsNewTask}

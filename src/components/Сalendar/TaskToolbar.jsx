@@ -1,7 +1,10 @@
+import { useDispatch } from 'react-redux';
+import { deleteTask } from '../../redux/tasks/operations';
 import sprite from '../../images/svg/sprite.svg';
 import { Wrapper, Button, Svg } from './TaskToolbar.styled';
 
-export const TaskToolbar = ({ setIsModalOpen, setIsNewTask }) => {
+export const TaskToolbar = ({ setIsModalOpen, setIsNewTask, taskId }) => {
+  const dispatch = useDispatch();
   const handleClick = () => {
     setIsModalOpen(true);
     setIsNewTask(false);
@@ -18,7 +21,7 @@ export const TaskToolbar = ({ setIsModalOpen, setIsNewTask }) => {
           <use href={sprite + '#pencil'} />
         </Svg>
       </Button>
-      <Button type="button">
+      <Button onClick={() => dispatch(deleteTask(taskId))} type="button">
         <Svg>
           <use href={sprite + '#trash'} />
         </Svg>
