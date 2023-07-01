@@ -1,7 +1,7 @@
 import sprite from '../../images/svg/sprite.svg';
 import { Wrapper, Button, Svg } from './TaskToolbar.styled';
 
-export const TaskToolbar = () => {
+export const TaskToolbar = ({ setIsModalOpen }) => {
   return (
     <Wrapper>
       <Button type="button">
@@ -9,7 +9,7 @@ export const TaskToolbar = () => {
           <use href={sprite + '#arrow-circle'} />
         </Svg>
       </Button>
-      <Button type="button">
+      <Button onClick={() => setIsModalOpen(true)} type="button">
         <Svg>
           <use href={sprite + '#pencil'} />
         </Svg>

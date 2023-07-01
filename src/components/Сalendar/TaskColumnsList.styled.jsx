@@ -8,7 +8,7 @@ const media = {
 
 export const ColumnsList = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 
   ${media.tablet} {
     gap: 16px;

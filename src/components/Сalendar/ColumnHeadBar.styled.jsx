@@ -15,6 +15,9 @@ export const ColumnHead = styled.div`
   ${media.tablet} {
     margin-bottom: 28px;
   }
+  ${media.desktop} {
+    margin-bottom: 35px;
+  }
 `;
 
 export const Title = styled.h2`
