@@ -71,7 +71,7 @@ export const RewiewStyled = styled.div`
   color: ${Variables.fontColors.black};
   border: 1px solid ${Variables.iconColors.greyDisableStar};
   border-radius: 8px;
-  overflow: scroll;
+  overflow-y: scroll;
   ${media.tablet} {
     width: 570px;
     // height: auto;

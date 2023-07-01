@@ -17,7 +17,7 @@ import { ReactComponent as Left } from '../../../images/start_page/left-arrow.sv
 
 const ReviewSection = () => {
   const [searchRewievs, setSearchRewievs] = useState([]);
-  const [windowWidth, setWindowWidth] = useState(window.screen.width);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   let reactSwipeEl;
 
@@ -51,7 +51,7 @@ const ReviewSection = () => {
     continuous: true,
     callback() {},
     transitionEnd() {
-      setWindowWidth(window.screen.width);
+      setWindowWidth(window.innerWidth);
     },
   };
 
@@ -74,7 +74,7 @@ const ReviewSection = () => {
           </RewiewStyled>
         ) : (
           <>
-            {window.screen.width > 1439 && (
+            {window.innerWidth > 1439 && (
               <ReactSwipe
                 ref={el => (reactSwipeEl = el)}
                 className="mySwipe"
@@ -87,7 +87,7 @@ const ReviewSection = () => {
                 ))}
               </ReactSwipe>
             )}
-            {window.screen.width <= 1439 && (
+            {window.innerWidth <= 1439 && (
               <ReactSwipe
                 ref={el => (reactSwipeEl = el)}
                 className="mySwipe"
