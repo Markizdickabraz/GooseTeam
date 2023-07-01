@@ -3,7 +3,7 @@ import {
   StyleLoginContainer,
   LinkStyled,
   TextVerify,
-} from './style.module.css';
+} from './VerifyPage.styled.jsx';
 import { verifyUser } from './helpers';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
