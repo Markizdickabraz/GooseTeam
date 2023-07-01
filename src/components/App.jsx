@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './header/header';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../hooks/useAuth';
-import { refreshUser } from 'redux/authorization/operations';
+import { refreshUser } from '../redux/authorization/operations';
 
 // import CalendarPage from 'pages/CalendarPage/CalendarPage';
 
