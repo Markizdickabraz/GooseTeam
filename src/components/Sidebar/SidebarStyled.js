@@ -5,16 +5,6 @@ import { BREAKPOINTS } from 'styles/deviceWidth';
 
 const media = facepaint(BREAKPOINTS.map(bp => `@media (min-width: ${bp}px)`));
 
-export const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 289px;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 1);
-  z-index: 9998;
-`;
-
 export const SidebarTitle = styled.h2`
   font-family: Coolvetica;
   font-weight: 400;
@@ -29,9 +19,6 @@ export const SidebarTitle = styled.h2`
 `;
 
 export const SidebarWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -43,7 +30,7 @@ export const SidebarWrapper = styled.div`
 
   @media (max-width: 1439px) {
     position: absolute;
-    z-index: 9999;
+    z-index: 5000;
   }
 `;
 
@@ -66,9 +53,6 @@ export const GooseImg = styled.img`
 `;
 
 export const CloseIcon = styled.svg`
-
- fill: transparent;
-  stroke: #ffffff;
 //тема біла
   fill: #343434;
   margin-left: auto;
