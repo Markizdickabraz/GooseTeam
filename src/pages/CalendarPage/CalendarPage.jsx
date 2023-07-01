@@ -1,4 +1,4 @@
-import { CalendarToolbar } from 'components/Сalendar/CalendarToolbar';
+import { CalendarToolbar } from '../../components/Сalendar/CalendarToolbar';
 import { Suspense, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { startOfToday, format } from 'date-fns';
