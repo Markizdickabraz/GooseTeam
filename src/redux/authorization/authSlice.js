@@ -52,11 +52,12 @@ const authSlice = createSlice({
       state.user = { ...state.user, ...payload.data.result };
     },
 
-    [logOut.fulfilled](state) {
+    [logOut.pending](state) {
       state.user = INIT_STATE;
       state.token = null;
       state.isLoggedIn = false;
     },
+
     [refreshUser.pending](state) {
       state.isRefreshing = true;
     },

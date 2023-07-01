@@ -1,5 +1,5 @@
-import { CalendarTable } from 'components/Сalendar/CalendarTable';
-import { MonthCalendarHead } from 'components/Сalendar/MonthCalendarHead';
+import { CalendarTable } from '../../components/Сalendar/CalendarTable';
+import { MonthCalendarHead } from '../../components/Сalendar/MonthCalendarHead';
 
 
 const ChoosedMonth = () => {

@@ -59,6 +59,7 @@ export const MessageWrapper = styled.div`
 `;
 export const ErrorText = styled.p`
   color: red;
+  font-size: 12px;
 `;
 export const SuccessText = styled.p`
   color: green;
