@@ -70,6 +70,7 @@ export const resendEmail = createAsyncThunk(
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('/auth/logout');
+    toast.success('Log out successfully');
 
     clearAuthHeader();
   } catch (error) {

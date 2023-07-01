@@ -37,9 +37,13 @@ const App = () => {
   ) : (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route path="/" element={<Start />} />
-        {/* <Route path="/register" element={<Register />} /> */}
-        {/* <Route path="/login" element={<Login />} /> */}
+        <Route
+          path="/"
+          element={
+            <RestrictedRoute redirectTo="/account" component={<Start />} />
+          }
+        />
+
         <Route
           path="/register"
           element={
@@ -98,7 +102,7 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
 
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster position="bottom-right" reverseOrder={false} />
     </Suspense>
   );
 };
