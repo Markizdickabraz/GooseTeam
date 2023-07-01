@@ -1,11 +1,22 @@
 import { PeriodButton, PeriodTab } from "./PeriodTypeSelect.styled";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-export const PeriodTypeSelect = ({ setPeriodType }) => {
-const [activeButton, setActiveButton] = useState('month');
+export const PeriodTypeSelect = ({ setPeriodType}) => {
+const [activeButtonLocal, setActiveButtonLocal] = useState('month');
+  const location = useLocation();
+
+  useEffect(() => {
+     const path = location.pathname;
+    if (path.includes("month")) {
+      setActiveButtonLocal("month");
+    } else if (path.includes("day")) {
+      setActiveButtonLocal("day");
+    }
+  }, [location]);
 
   const handleButtonClick = (periodType) => {
-    setActiveButton(periodType);
+    setActiveButtonLocal(periodType);
     setPeriodType(periodType);
   };
   
@@ -17,14 +28,14 @@ const [activeButton, setActiveButton] = useState('month');
         value="month"
         onClick={() => handleButtonClick('month')}
         style={{
-          backgroundColor: activeButton === 'month' ? '#CAE8FF' : '',
+          backgroundColor: activeButtonLocal === 'month' ? '#CAE8FF' : '',
         }}
       >
         Month
       </PeriodButton>
       <PeriodButton type="button" value="day" onClick={() => handleButtonClick('day')}
         style={{
-          backgroundColor: activeButton === 'day' ? '#CAE8FF' : '',
+          backgroundColor: activeButtonLocal === 'day' ? '#CAE8FF' : '',
         }}>
         Day
       </PeriodButton>

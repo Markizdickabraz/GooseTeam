@@ -9,7 +9,7 @@ export const CalendarToolbar = ({
   periodType,
   setPeriodType,
   currentDate,
-  setCurrentDate,
+  setCurrentDate
 }) => {
   const navigate = useNavigate();
 
