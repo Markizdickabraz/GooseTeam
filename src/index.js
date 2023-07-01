@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { App } from 'components/App';
 
-import GlobalStyle from 'styles/GlobalStyle';
+import GlobalStyle from './styles/GlobalStyle';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
