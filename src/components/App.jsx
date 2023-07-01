@@ -6,6 +6,7 @@ import Header from './header/header';
 import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/authorization/operations';
+import { Toaster } from 'react-hot-toast';
 
 // import CalendarPage from 'pages/CalendarPage/CalendarPage';
 
@@ -75,6 +76,8 @@ const App = () => {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
+
+      <Toaster position="top-right" reverseOrder={false} />
     </Suspense>
   );
 };
