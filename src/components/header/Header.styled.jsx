@@ -1,17 +1,12 @@
 import styled from 'styled-components';
 import { fontColors, iconColors, backgroundColors } from 'styles/variables';
 
-// < 375 - mob small
-// 375 - 767 - mob
-// 768 - 1023 - tablet
-// 1024+ - desk
-
 export const Wrapper = styled.header`
   background-color: ${backgroundColors.grey};
   padding-top: 24px;
   padding-bottom: 24px;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1440px) {
     padding-top: 40px;
     padding-bottom: 40px;
   }
@@ -40,8 +35,8 @@ export const Container = styled.div`
     padding-right: 20px;
   }
 
-  @media screen and (min-width: 1024px) {
-    width: 1024px;
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
   }
 `;
 
@@ -51,7 +46,7 @@ export const LeftSubsection = styled.div`
   justify-content: center;
   gap: 8px;
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1439px) {
     display: none;
   }
 `;
@@ -105,7 +100,7 @@ export const Toggler = styled.svg`
     width: 34px;
     margin-right: 16px;
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 1440px) {
     display: none;
   }
 `;
