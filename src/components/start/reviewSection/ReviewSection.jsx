@@ -14,6 +14,7 @@ import {
 
 import { ReactComponent as Right } from '../../../images/start_page/right-arrow.svg';
 import { ReactComponent as Left } from '../../../images/start_page/left-arrow.svg';
+import { nanoid } from 'nanoid';
 
 const ReviewSection = () => {
   const [searchRewievs, setSearchRewievs] = useState([]);
@@ -77,10 +78,7 @@ const ReviewSection = () => {
                 swipeOptions={swipeOptions}
               >
                 {slide.map(item => (
-                  <div
-                    key={item.hit._id}
-                    style={{ display: 'flex', gap: '20px' }}
-                  >
+                  <div key={nanoid()} style={{ display: 'flex', gap: '20px' }}>
                     <RewievGalleryItemDesk item={item} />
                   </div>
                 ))}

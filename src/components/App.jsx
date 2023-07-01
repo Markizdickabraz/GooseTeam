@@ -75,7 +75,7 @@ const App = () => {
         />
 
         <Route
-          path="statistics"
+          path="/statistics"
           element={
             <>
               <Header />
