@@ -1,4 +1,4 @@
-import VerifyComponent from 'components/VerifyPage';
+import VerifyComponent from '../components/VerifyPage';
 
 const VerifyPage = () => {
   return <VerifyComponent />;
