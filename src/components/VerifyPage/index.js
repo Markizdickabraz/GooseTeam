@@ -1,3 +1,5 @@
+export { default } from './VerifyPage';
+
 /*import React from 'react';
 import styleLogin from '../Login/style.module.css';
 import style from './style.module.css';
