@@ -44,6 +44,10 @@ background: ${Variables.backgroundColors.white};
 box-sizing: border-box;
 &:hover{
 box-shadow: 0 4px 4px 0 rgba(0,0,0,.25)};
+height: 30px;
+${media.tablet} {
+  height: 34px;
+}
 `
 
 export const ArrowButton = styled.button`

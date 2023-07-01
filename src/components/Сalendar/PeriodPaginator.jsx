@@ -1,7 +1,6 @@
 import { CurrentDate, Paginator, ButtonsTab, Arrow, ArrowButton } from "./PeriodPaginator.styled";
 import sprite from '../../images/svg/sprite.svg';
-import { isBefore } from 'date-fns';
-// import { useState } from "react";
+
 
 export const PeriodPaginator = ({
   currentDateMonth,
@@ -15,6 +14,7 @@ export const PeriodPaginator = ({
 
  const currentDate = new Date();
   const currentMonth = currentDate.getMonth();
+  const currentYear = currentDate.getFullYear();
   const firstDayOfPreviousMonth = new Date(currentDate.getFullYear(), currentMonth - 1, 1);
 
   
@@ -36,12 +36,14 @@ export const PeriodPaginator = ({
 
 const isBackButtonDisabled = () => {
 if (periodType === 'month') {
-      const selectedMonth = new Date(currentDateMonth).getMonth();
-      return isBefore(selectedMonth, currentMonth);
+  const selectedMonth = new Date(currentDateMonth).getMonth();
+  const selectedYear = new Date(currentDateMonth).getFullYear();
+      return (selectedYear < currentYear) || (selectedYear === currentYear && selectedMonth < currentMonth);
     }
     if (periodType === 'day') {
-    const selectedDate = new Date(currentDateDay);
-      return isBefore(selectedDate, firstDayOfPreviousMonth);
+      const selectedDate = new Date(currentDateDay);
+      const selectedYear = new Date(currentDateMonth).getFullYear();
+      return (selectedYear < currentYear) || (selectedYear === currentYear && selectedDate <= firstDayOfPreviousMonth);
     }
     return false;
   };
