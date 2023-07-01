@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { GrClose } from 'react-icons/gr';
 
@@ -7,7 +7,7 @@ const Container = styled.div`
   left: 50%;
   top: 50%;
   z-index: 1000;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(0.1);
   background-color: #ffffff;
   padding-left: 18px;
   padding-right: 18px;
@@ -16,6 +16,7 @@ const Container = styled.div`
   border: 1px solid #dce3e5cc;
   border-radius: 8px;
   box-shadow: 0px 4px 16px 0px #1111111a;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @media screen and (min-width: 768px) {
     padding-left: 28px;
@@ -35,7 +36,13 @@ const CloseBtn = styled.button`
 `;
 
 const Modal = ({ close, children }) => {
+  const containerRef = useRef();
+
   const closeHandler = evt => {
+    // containerRef.current.style.transform = 'translate(-50%, -50%) scale(0.1)';
+    // setTimeout(() => {
+    //   close();
+    // }, 251);
     close();
   };
 
@@ -48,13 +55,17 @@ const Modal = ({ close, children }) => {
 
     document.addEventListener('keydown', escHandler);
 
+    setTimeout(() => {
+      containerRef.current.style.transform = 'translate(-50%, -50%) scale(1)';
+    }, 1);
+
     return () => {
       document.removeEventListener('keydown', escHandler);
     };
   }, [close]);
 
   return (
-    <Container>
+    <Container ref={containerRef}>
       <CloseBtn onClick={closeHandler}>
         <GrClose size={12} />
       </CloseBtn>
