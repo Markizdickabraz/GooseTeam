@@ -1,6 +1,4 @@
-export { default } from './VerifyPage';
-
-/*import React from 'react';
+import React from 'react';
 import styleLogin from '../Login/style.module.css';
 import style from './style.module.css';
 import { verifyUser } from './helpers';
@@ -26,6 +24,6 @@ const VerifyPage = () => {
   );
 };
 
-export default VerifyPage;*/
+export default VerifyPage;
 
 
