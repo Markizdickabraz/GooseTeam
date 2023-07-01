@@ -5,6 +5,16 @@ import { BREAKPOINTS } from 'styles/deviceWidth';
 
 const media = facepaint(BREAKPOINTS.map(bp => `@media (min-width: ${bp}px)`));
 
+export const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 990;
+`;
+
 export const SidebarTitle = styled.h2`
   font-family: Coolvetica;
   font-weight: 400;
@@ -22,13 +32,14 @@ export const SidebarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100%;
+  width: 300px;
   max-width: 289px;
   padding: 24px 32px;
   //тема біла
   background-color: #fff;
 
   @media (max-width: 1439px) {
+    background-color: #f3faff;
     position: absolute;
     z-index: 5000;
   }
