@@ -7,6 +7,9 @@ import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/authorization/operations';
 import { Toaster } from 'react-hot-toast';
+import { RestrictedRoute } from './routes/RestrictedRoute';
+import { PrivateRoute } from './routes/PrivateRoute';
+import { ResendEmainRoute } from './routes/ResendEmailRoute';
 
 const Start = lazy(() => import('../pages/Start'));
 const Register = lazy(() => import('../pages/Register'));
@@ -35,16 +38,38 @@ const App = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<Start />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/register" element={<Register />} /> */}
+        {/* <Route path="/login" element={<Login />} /> */}
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute redirectTo="/account" component={<Register />} />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/account" component={<Login />} />
+          }
+        />
         <Route path="/verify/:verificationToken" element={<VerifyPage />} />
-        <Route path="/register/resend-email" element={<ResendVerify />} />
+
+        <Route
+          path="/register/resend-email"
+          element={
+            <ResendEmainRoute
+              redirectTo="/register"
+              component={<ResendVerify />}
+            />
+          }
+        />
 
         <Route
           path="/account"
           element={
             <Suspense fallback={<div>Loading...</div>}>
-              <Header /> <User />
+              <Header />
+              <PrivateRoute redirectTo="/login" component={<User />} />
             </Suspense>
           }
         />
@@ -54,7 +79,7 @@ const App = () => {
           element={
             <>
               <Header />
-              <Statistics />
+              <PrivateRoute redirectTo="/login" component={<Statistics />} />
             </>
           }
         />
@@ -63,14 +88,13 @@ const App = () => {
           element={
             <>
               <Header />
-              <CalendarPage />
+              <PrivateRoute redirectTo="/login" component={<CalendarPage />} />
             </>
           }
         >
           <Route path="month/:currentDate" element={<ChoosedMonth />} />
           <Route path="day/:currentDay" element={<ChoosedDay />} />
         </Route>
-
         <Route path="*" element={<NotFound />} />
       </Routes>
 
