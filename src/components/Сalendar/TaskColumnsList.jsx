@@ -1,6 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
-import { selectTasks } from '../../redux/tasks/selectors';
+import {
+  selectDoneTasks,
+  selectInProgressTasks,
+  selectTasks,
+  selectToDoTasks,
+} from '../../redux/tasks/selectors';
 import { TasksColumn } from './TasksColumn';
 import { ColumnsList } from './TaskColumnsList.styled';
 import 'overlayscrollbars/overlayscrollbars.css';
@@ -10,12 +15,9 @@ import { getTasks } from '../../redux/tasks/operations';
 
 export const TaskColumnsList = () => {
   const dispatch = useDispatch();
-  const allTasks = useSelector(selectTasks);
-  const toDoTasks = allTasks.filter(task => task.category === 'to-do');
-  const inProgressTasks = allTasks.filter(
-    task => task.category === 'in-progress'
-  );
-  const doneTasks = allTasks.filter(task => task.category === 'done');
+  const toDoTasks = useSelector(selectToDoTasks);
+  const inProgressTasks = useSelector(selectInProgressTasks);
+  const doneTasks = useSelector(selectDoneTasks);
   useEffect(() => {
     dispatch(getTasks());
   }, [dispatch]);

@@ -3,12 +3,8 @@ import { deleteTask } from '../../redux/tasks/operations';
 import sprite from '../../images/svg/sprite.svg';
 import { Wrapper, Button, Svg } from './TaskToolbar.styled';
 
-export const TaskToolbar = ({ setIsModalOpen, setIsNewTask, taskId }) => {
+export const TaskToolbar = ({ setIsModalOpen, taskId }) => {
   const dispatch = useDispatch();
-  const handleClick = () => {
-    setIsModalOpen(true);
-    setIsNewTask(false);
-  };
   return (
     <Wrapper>
       <Button type="button">
@@ -16,7 +12,7 @@ export const TaskToolbar = ({ setIsModalOpen, setIsNewTask, taskId }) => {
           <use href={sprite + '#arrow-circle'} />
         </Svg>
       </Button>
-      <Button onClick={handleClick} type="button">
+      <Button onClick={() => setIsModalOpen(true)} type="button">
         <Svg>
           <use href={sprite + '#pencil'} />
         </Svg>

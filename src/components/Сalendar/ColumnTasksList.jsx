@@ -2,19 +2,24 @@ import { TasksList } from './ColumnTasksList.styled';
 import { TaskColumnCard } from './TaskColumnCard';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 import { useParams } from 'react-router-dom';
-import { isSameDay } from 'date-fns';
+import { format, isSameDay } from 'date-fns';
 import 'overlayscrollbars/overlayscrollbars.css';
 import './Scrollbar.css';
+import TaskModal from '../TaskModal/TaskModal';
 
 export const ColumnTasksList = ({
   tasks,
-  isNewTask,
-  setIsNewTask,
   category,
   isAddModalOpen,
   setIsAddModalOpen,
 }) => {
   const { currentDay } = useParams();
+  const date = format(new Date(currentDay), 'yyyy-MM-dd');
+  const newTask = {
+    date,
+    category,
+  };
+
   return (
     <OverlayScrollbarsComponent
       element="div"
@@ -32,16 +37,19 @@ export const ColumnTasksList = ({
             <TaskColumnCard
               key={task._id}
               task={task}
-              isNewTask={isNewTask}
-              setIsNewTask={setIsNewTask}
               category={category}
-              isAddModalOpen={isAddModalOpen}
-              setIsAddModalOpen={setIsAddModalOpen}
             />
           ) : (
             false
           );
         })}
+        {isAddModalOpen && (
+          <TaskModal
+            close={() => setIsAddModalOpen(false)}
+            create={true}
+            task={newTask}
+          />
+        )}
       </TasksList>
     </OverlayScrollbarsComponent>
   );
