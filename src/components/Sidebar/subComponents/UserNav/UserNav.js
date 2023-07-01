@@ -1,12 +1,7 @@
 import sprite from 'images/svg/sprite.svg';
 import { NavList, StyledLink, NavIcon } from './UserNavStyled';
-//додати відповідні шляхи
-// import { account, calendar, statistics } from 'routes';
-
-// тимчасове рішення)
-const account = "/account";
-const calendar = "/calendar";
-const statistics = "/statistics";
+import { account, calendar, statistics } from 'services/routes/routes';
+import { useWindowSize } from 'hooks/useWindowSize';
 
 const UserNav = () => {
   

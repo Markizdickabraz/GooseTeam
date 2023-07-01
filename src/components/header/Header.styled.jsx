@@ -1,20 +1,19 @@
 import styled from 'styled-components';
 import { fontColors, iconColors, backgroundColors } from 'styles/variables';
+import { BREAKPOINTS } from 'styles/deviceWidth';
+import facepaint from 'facepaint';
 
-// < 375 - mob small
-// 375 - 767 - mob
-// 768 - 1023 - tablet
-// 1024+ - desk
+const media = facepaint(BREAKPOINTS.map(bp => `@media (min-width: ${bp}px)`));
 
 export const Wrapper = styled.header`
   background-color: ${backgroundColors.grey};
   padding-top: 24px;
   padding-bottom: 24px;
 
-  @media screen and (min-width: 1024px) {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+  ${media({
+    paddingTop: ['24px', '24px', '40px'],
+    paddingBottom: ['24px', '24px', '40px'],
+  })}
 `;
 
 export const Container = styled.div`
@@ -29,20 +28,11 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (min-width: 375px) {
-    width: 375px;
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 768px;
-
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    width: 1024px;
-  }
+  ${media({
+    width: ['375px', '768px', '1024px'],
+    paddingLeft: ['20px', '20px', '20px'],
+    paddingRight: ['20px', '20px', '20px'],
+  })}
 `;
 
 export const LeftSubsection = styled.div`
@@ -51,14 +41,19 @@ export const LeftSubsection = styled.div`
   justify-content: center;
   gap: 8px;
 
-  @media (max-width: 1023px) {
-    display: none;
-  }
+  ${media({
+    display: ['none', 'none', 'flex'],
+  })}
 `;
 
 export const GooseImg = styled.img`
   width: 64px;
   height: 60px;
+
+  ${media({
+    width: ['64px', '64px', '64px'],
+    height: ['60px', '60px', '60px'],
+  })}
 `;
 
 export const RightSubsection = styled.div`
@@ -67,9 +62,9 @@ export const RightSubsection = styled.div`
   justify-content: center;
   gap: 18px;
 
-  @media screen and (min-width: 768px) {
-    gap: 24px;
-  }
+  ${media({
+    gap: ['18px', '18px', '24px'],
+  })}
 `;
 
 export const Info = styled.div`
@@ -78,9 +73,9 @@ export const Info = styled.div`
   justify-content: center;
   gap: 8px;
 
-  @media screen and (min-width: 768px) {
-    gap: 14px;
-  }
+  ${media({
+    gap: ['8px', '8px', '14px'],
+  })}
 `;
 
 export const SectionTitle = styled.h1`
@@ -90,6 +85,10 @@ export const SectionTitle = styled.h1`
   font-size: 32px;
   text-shadow: 0px 47px 355px rgba(0, 0, 0, 0.07),
     0px 9.4px 57.6875px rgba(0, 0, 0, 0.035);
+
+  ${media({
+    fontSize: ['32px', '32px', '32px'],
+  })}
 `;
 
 export const Toggler = styled.svg`
@@ -100,14 +99,15 @@ export const Toggler = styled.svg`
   height: 24px;
   width: 24px;
 
-  @media (min-width: 765px) {
-    height: 34px;
-    width: 34px;
-    margin-right: 16px;
-  }
-  @media (min-width: 1024px) {
-    display: none;
-  }
+  ${media({
+    height: ['24px', '24px', '34px'],
+    width: ['24px', '24px', '34px'],
+    marginRight: ['8px', '8px', '16px'],
+  })}
+
+  ${media({
+    display: ['none', 'none', 'none'],
+  })}
 `;
 
 export const MotivationTask = styled.p`
@@ -119,6 +119,10 @@ export const MotivationTask = styled.p`
   font-weight: 600;
   font-size: 14px;
   line-height: 1.3;
+
+  ${media({
+    fontSize: ['14px', '14px', '14px'],
+  })}
 `;
 
 export const FeedbackBtn = styled.button`
@@ -133,10 +137,11 @@ export const FeedbackBtn = styled.button`
   font-weight: 600;
   line-height: 16px;
 
-  @media screen and (min-width: 768px) {
-    border-radius: 14px;
-    padding: 12px 32px;
-    font-size: 14px;
-    line-height: 18px;
-  }
+  ${media({
+    borderRadius: ['10px', '10px', '14px'],
+    padding: ['8px 20px', '8px 20px', '12px 32px'],
+    fontSize: ['12px', '12px', '14px'],
+    lineHeight: ['16px', '16px', '18px'],
+  })}
 `;
+
