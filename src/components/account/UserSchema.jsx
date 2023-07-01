@@ -5,7 +5,16 @@ const dateReg = /^((0[1-9]|[12]\d|3[01])\/(0[1-9]|1[012])\/\d{4})$/;
 const phoneReg = /^\+?\d{1,3}\s?\d{2}\s?\d{3}\s?\d{2}\s?\d{2}$/;
 
 export const UserSchema = Yup.object().shape({
-  avatarURL: Yup.mixed(),
+  avatarURL: Yup.mixed()
+    .test('fileType', 'Invalid file format', value => {
+      if (!value) return true;
+      const supportedFormats = ['image/jpeg', 'image/png'];
+      return supportedFormats.includes(value.type);
+    })
+    .test('fileSize', 'The file is too large', value => {
+      if (!value) return true;
+      return value.size < 50000000; // 500 KB
+    }),
   name: Yup.string()
     .min(2, 'Too short!')
     .max(16, 'Too long!')

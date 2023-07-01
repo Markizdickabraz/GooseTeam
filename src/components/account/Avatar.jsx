@@ -6,6 +6,8 @@ import {
   AvatarImg,
   UpdateAvatarButton,
 } from './styles/Avatar.styled';
+import { ErrorMessage } from 'formik';
+import { ErrorText } from './styles/CustomInput.styled';
 
 export const Thumb = ({ avatar, file, setFieldValue, setIsFormDirty }) => {
   const [thumb, setThumb] = useState(undefined);
@@ -30,31 +32,35 @@ export const Thumb = ({ avatar, file, setFieldValue, setIsFormDirty }) => {
   }
 
   return (
-    <AvatarContainer>
-      <AvatarImg src={file ? thumb : avatarUrl} alt="avatar" />
+    <>
+      <AvatarContainer>
+        <AvatarImg src={file ? thumb : avatarUrl} alt="avatar" />
 
-      <input
-        ref={inputFileRef}
-        id="avatar"
-        name="avatar"
-        type="file"
-        onChange={event => {
-          console.log(event.currentTarget.files[0]);
-          setFieldValue('avatarURL', event.currentTarget.files[0]);
-          setIsFormDirty(true);
-        }}
-        style={{ display: 'none' }}
-      />
+        <input
+          ref={inputFileRef}
+          id="avatar"
+          name="avatar"
+          type="file"
+          onChange={event => {
+            console.log(event.currentTarget.files[0]);
+            setFieldValue('avatarURL', event.currentTarget.files[0]);
+            setIsFormDirty(true);
+          }}
+          style={{ display: 'none' }}
+        />
 
-      <div>
-        <UpdateAvatarButton
-          type="button"
-          onClick={() => inputFileRef.current.click()}
-        >
-          <AiOutlinePlus color="white" />
-        </UpdateAvatarButton>
-      </div>
-    </AvatarContainer>
+        <div>
+          <UpdateAvatarButton
+            type="button"
+            onClick={() => inputFileRef.current.click()}
+          >
+            <AiOutlinePlus color="white" />
+          </UpdateAvatarButton>
+        </div>
+      </AvatarContainer>
+
+      <ErrorMessage name="avatarURL" component={ErrorText} />
+    </>
   );
 };
 
