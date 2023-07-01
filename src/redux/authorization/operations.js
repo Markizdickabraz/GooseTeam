@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+import toast from 'react-hot-toast';
 axios.defaults.baseURL = 'https://goosetrack-backend-2lsp.onrender.com/api';
 
 const setAuthHeader = token => {
@@ -66,9 +67,11 @@ export const resendEmail = createAsyncThunk(
  */
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
-    await axios.post('/users/logout');
+    await axios.post('/auth/logout');
+
     clearAuthHeader();
   } catch (error) {
+    toast.error('Something went wrong🤔');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
