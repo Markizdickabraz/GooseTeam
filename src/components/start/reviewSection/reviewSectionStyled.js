@@ -45,7 +45,7 @@ export const SectionTitle = styled.h2`
   }
 `;
 
-export const RewievContainer = styled.div`
+export const ReviewContainer = styled.div`
   width: 350px;
   max-height: 252px;
   ${media.tablet} {
@@ -58,7 +58,7 @@ export const RewievContainer = styled.div`
   }
 `;
 
-export const RewiewStyled = styled.div`
+export const ReviewStyled = styled.div`
   display: flex;
   flex-direction: column;
   padding: 24px;

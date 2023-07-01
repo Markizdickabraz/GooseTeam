@@ -1,40 +1,35 @@
 import sprite from 'images/svg/sprite.svg';
 import { NavList, StyledLink, NavIcon } from './UserNavStyled';
-//додати відповідні шляхи
-// import { account, calendar, statistics } from 'routes';
+ import { account, calendar, statistics } from '../../../../services/routes';
 
-// тимчасове рішення)
-const account = "/account";
-const calendar = "/calendar";
-const statistics = "/statistics";
 
-const UserNav = () => {
+import { useMediaQuery } from 'react-responsive';
+
+const UserNav = ({ onLinkClick }) => {
+  const isMobile = useMediaQuery({ maxWidth: 1439 });
+
+  const handleLinkClick = () => {
+    if (isMobile) {
+      onLinkClick();
+    }
+  };
   
   return (
     <>
       <NavList>
-        <StyledLink
-          to={account}
-          //onClick={}
-        >
+        <StyledLink to={account} onClick={handleLinkClick}>
           <NavIcon>
             <use href={`${sprite}#user-check`} />
           </NavIcon>
           <span>My account</span>
         </StyledLink>
-        <StyledLink
-          to={calendar}
-          //onClick
-        >
+        <StyledLink to={calendar} onClick={handleLinkClick}>
           <NavIcon>
             <use href={`${sprite}#calendar-check`} />
           </NavIcon>
           <span>Calendar</span>
         </StyledLink>
-         <StyledLink
-          to={statistics}
-          //onClick
-        >
+        <StyledLink to={statistics} onClick={handleLinkClick}>
           <NavIcon>
             <use href={`${sprite}#chart`} />
           </NavIcon>

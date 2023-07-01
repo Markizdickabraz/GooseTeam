@@ -1,5 +1,5 @@
 import {
-  RewiewStyled,
+  ReviewStyled,
   StarContainer,
   Name,
   Comment,
@@ -7,11 +7,11 @@ import {
 } from './reviewSectionStyled';
 import { BsFillStarFill } from 'react-icons/bs';
 
-export const RewievGalleryItemDesk = ({ item }) => {
+export const ReviewGalleryItemDesk = ({ item }) => {
   // const FirstLetterAvatar = item.owner.hit.name.split('')[0].toUpperCase();
   return (
     <>
-      <RewiewStyled>
+      <ReviewStyled>
         <div style={{ display: 'flex' }}>
           <ImgContainer>
             {item.hit.owner.avatarURL ? (
@@ -46,10 +46,10 @@ export const RewievGalleryItemDesk = ({ item }) => {
           </div>
         </div>
         <Comment> {item.hit.comment}</Comment>
-      </RewiewStyled>
+      </ReviewStyled>
       {item.hit2 && (
         <div styled={{ marginLeft: '20px' }}>
-          <RewiewStyled>
+          <ReviewStyled>
             <div style={{ display: 'flex' }}>
               <ImgContainer>
                 {item.hit2.owner.avatarURL ? (
@@ -84,7 +84,7 @@ export const RewievGalleryItemDesk = ({ item }) => {
               </div>
             </div>
             <Comment> {item.hit2.comment}</Comment>
-          </RewiewStyled>
+          </ReviewStyled>
         </div>
       )}
     </>
