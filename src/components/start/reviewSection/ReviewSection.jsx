@@ -17,6 +17,7 @@ import { ReactComponent as Left } from '../../../images/start_page/left-arrow.sv
 
 const ReviewSection = () => {
   const [searchRewievs, setSearchRewievs] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.screen.width);
 
   let reactSwipeEl;
 
@@ -30,7 +31,7 @@ const ReviewSection = () => {
       }
     }
     FeatchDataRewievs();
-  }, []);
+  }, [windowWidth]);
 
   // Make a massive of two objects for sliding two element on the screen
   const slide = [];
@@ -44,12 +45,14 @@ const ReviewSection = () => {
   const swipeOptions = {
     startSlide:
       startSlide < searchRewievs.length && startSlide >= 0 ? startSlide : 0,
-    auto: 1000,
-    speed: 1000,
+    auto: 1500,
+    speed: 1500,
     disableScroll: true,
     continuous: true,
     callback() {},
-    transitionEnd() {},
+    transitionEnd() {
+      setWindowWidth(window.screen.width);
+    },
   };
 
   return (
@@ -63,6 +66,7 @@ const ReviewSection = () => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
+              gap: '20px',
             }}
           >
             {' '}
@@ -77,10 +81,7 @@ const ReviewSection = () => {
                 swipeOptions={swipeOptions}
               >
                 {slide.map(item => (
-                  <div
-                    key={item.hit.id}
-                    style={{ display: 'flex', gap: '20px' }}
-                  >
+                  <div key={item.hit.id} style={{ display: 'flex' }}>
                     <RewievGalleryItemDesk item={item} />
                   </div>
                 ))}
