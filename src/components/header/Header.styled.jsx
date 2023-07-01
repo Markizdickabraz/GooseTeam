@@ -105,7 +105,7 @@ export const Toggler = styled.svg`
   }
 `;
 
-export const MotivationTask = styled.p`
+export const MotivationTask = styled.strong`
   color: ${fontColors.black};
 
   display: block;
@@ -114,6 +114,12 @@ export const MotivationTask = styled.p`
   font-weight: 600;
   font-size: 14px;
   line-height: 1.3;
+
+  margin-top: 8px;
+`;
+
+export const MotivationSpan = styled.span`
+  color: ${fontColors.blue};
 `;
 
 export const FeedbackBtn = styled.button`

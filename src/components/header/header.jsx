@@ -14,6 +14,7 @@ import {
   Toggler,
   FeedbackBtn,
   MotivationTask,
+  MotivationSpan,
   LeftSubsection,
   RightSubsection,
   GooseImg,
@@ -73,7 +74,7 @@ export const Header = () => {
               <SectionTitle>{title}</SectionTitle>
               {motivate && (
                 <MotivationTask>
-                  Let go of the past and focus on the present!
+                  <MotivationSpan>Let go</MotivationSpan> of the past and focus on the present!
                 </MotivationTask>
               )}
             </div>
