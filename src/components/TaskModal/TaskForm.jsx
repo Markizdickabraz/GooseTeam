@@ -3,8 +3,9 @@ import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { addTask, updateTask } from '../../redux/tasks/operations';
 
-import { AiOutlinePlus } from 'react-icons/ai';
-import { BsPencil } from 'react-icons/bs';
+// import { AiOutlinePlus } from 'react-icons/ai';
+// import { BsPencil } from 'react-icons/bs';
+import sprite from 'images/svg/sprite.svg';
 
 import { validate } from './utility/validateTaskForm';
 
@@ -19,6 +20,7 @@ import {
   Button,
   LightButton,
   Err,
+  Svg,
 } from './TaskForm.styled';
 
 const TaskForm = ({ close, create, task }) => {
@@ -42,7 +44,7 @@ const TaskForm = ({ close, create, task }) => {
     onSubmit: values => {
       // alert(JSON.stringify(values, null, 2));
       // console.log(values);
-      const newTask = {...values, date, category};
+      const newTask = { ...values, date, category };
       // console.log(newTask);
       if (create) {
         addHandler(newTask);
@@ -140,7 +142,10 @@ const TaskForm = ({ close, create, task }) => {
       {create ? (
         <ButtonContainer>
           <Button type="submit" onClick={addHandler}>
-            <AiOutlinePlus />
+            {/* <AiOutlinePlus /> */}
+            <Svg width="24px" height="24px">
+              <use href={`${sprite}#plus`} />
+            </Svg>
             Add
           </Button>
           <LightButton type="button" onClick={closeHandler}>
@@ -149,7 +154,10 @@ const TaskForm = ({ close, create, task }) => {
         </ButtonContainer>
       ) : (
         <Button type="submit" onClick={editHandler}>
-          <BsPencil />
+          {/* <BsPencil /> */}
+          <Svg width="16px" height="16px">
+            <use href={`${sprite}#pencil`} />
+          </Svg>
           Edit
         </Button>
       )}
