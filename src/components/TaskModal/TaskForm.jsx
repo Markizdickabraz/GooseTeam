@@ -1,5 +1,8 @@
 import { useFormik } from 'formik';
 
+import { useDispatch } from 'react-redux';
+import { addTask, updateTask } from '../../redux/tasks/operations';
+
 import { AiOutlinePlus } from 'react-icons/ai';
 import { BsPencil } from 'react-icons/bs';
 
@@ -15,37 +18,52 @@ import {
   ButtonContainer,
   Button,
   LightButton,
-  Err
+  Err,
 } from './TaskForm.styled';
 
 const TaskForm = ({ close, create, task }) => {
+  const dispatch = useDispatch();
+
+  // const date = task.date || '2023-06-23';
+  // const category = task.category || 'to-do';
+  // const id = task.id || '64956a30022ac250ec769b01';
+  const date = task.date;
+  const category = task.category;
+  const id = task.id;
+
   const formik = useFormik({
     initialValues: {
-      title: task.title || 'Enter text',
-      start: task.start || '09:00',
+      title: task.title || 'Enter text8',
+      start: task.start || '08:00',
       end: task.end || '09:30',
       priority: task.priority || 'low',
     },
     validate,
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-
-      // if (create) {
-      //   addHandler();
-      // } else {
-      //   editHandler();
-      // }
+      // alert(JSON.stringify(values, null, 2));
+      // console.log(values);
+      const newTask = {...values, date, category};
+      // console.log(newTask);
+      if (create) {
+        addHandler(newTask);
+      } else {
+        editHandler(id, newTask);
+      }
     },
   });
 
   const closeHandler = evt => {
     close();
-    console.log(formik.errors);
+    // console.log(formik.errors);
   };
 
-  const addHandler = async evt => {};
+  const addHandler = newTask => {
+    dispatch(addTask(newTask));
+  };
 
-  const editHandler = async evt => {};
+  const editHandler = (taskId, newTask) => {
+    dispatch(updateTask({ taskId, newTask }));
+  };
 
   return (
     <form onSubmit={formik.handleSubmit}>
