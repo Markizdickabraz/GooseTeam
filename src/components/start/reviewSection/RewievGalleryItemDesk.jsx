@@ -26,7 +26,7 @@ export const RewievGalleryItemDesk = ({ item }) => {
           </ImgContainer>
           <div>
             <Name>{item.hit.owner.name.trim()}</Name>
-            <StarContainer value={item.hit.reting}>
+            <StarContainer value={item.hit.rating}>
               <li>
                 <BsFillStarFill />
               </li>
@@ -64,7 +64,7 @@ export const RewievGalleryItemDesk = ({ item }) => {
               </ImgContainer>
               <div>
                 <Name>{item.hit2.owner.name.trim()}</Name>
-                <StarContainer value={item.hit2.reting}>
+                <StarContainer value={item.hit2.rating}>
                   <li>
                     <BsFillStarFill />
                   </li>
