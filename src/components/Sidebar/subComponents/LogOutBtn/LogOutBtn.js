@@ -11,10 +11,6 @@ const LogoutBtn = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    //очистити перед виходом
-    //  dispatch(auth...);
-    //функція виходу
-    //logOut();
     dispatch(logOut());
 
     navigate('/');

@@ -8,15 +8,12 @@ import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/authorization/operations';
 import { Toaster } from 'react-hot-toast';
 
-// import CalendarPage from 'pages/CalendarPage/CalendarPage';
-
 const Start = lazy(() => import('../pages/Start'));
 const Register = lazy(() => import('../pages/Register'));
 const Login = lazy(() => import('../pages/Login'));
 const User = lazy(() => import('../pages/User'));
 const Statistics = lazy(() => import('../pages/Statistics'));
 const ResendVerify = lazy(() => import('../pages/ResendVerify'));
-// const Calendar = lazy(() => import('../pages/Calendar'));
 const CalendarPage = lazy(() => import('../pages/CalendarPage/CalendarPage'));
 const ChoosedMonth = lazy(() => import('../pages/CalendarPage/ChoosedMonth'));
 const ChoosedDay = lazy(() => import('../pages/CalendarPage/ChoosedDay'));
