@@ -1,100 +1,102 @@
 import ReactSwipe from 'react-swipe';
 import { useState, useEffect } from 'react';
-import { FeatchRewievs } from '../../../servises/ApiGetRewievs';
-import { RewievGalleryItemDesk } from './RewievGalleryItemDesk';
-import { RewievGalleryItem } from './ReviewGalleryItem';
+import { FetchReviews } from '../../../services/ApiGetReviews';
+import { ReviewGalleryItemDesk } from './ReviewGalleryItemDesk';
+import { ReviewGalleryItem } from './ReviewGalleryItem';
 import {
   MainContainer,
-  RewievContainer,
+  ReviewContainer,
   Arrow,
   ButtonContainer,
   SectionTitle,
-  RewiewStyled,
+  ReviewStyled,
 } from './reviewSectionStyled';
 
 import { ReactComponent as Right } from '../../../images/start_page/right-arrow.svg';
 import { ReactComponent as Left } from '../../../images/start_page/left-arrow.svg';
+import { nanoid } from 'nanoid';
 
 const ReviewSection = () => {
-  const [searchRewievs, setSearchRewievs] = useState([]);
+  const [searchReviews, setSearchReviews] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   let reactSwipeEl;
 
   useEffect(() => {
-    async function FeatchDataRewievs() {
+    async function FetchDataReviews() {
       try {
-        const galleryReviews = await FeatchRewievs();
-        setSearchRewievs(prev => [...prev, ...galleryReviews]);
+        const galleryReviews = await FetchReviews();
+        setSearchReviews(prev => [...prev, ...galleryReviews]);
       } catch (error) {
         console.log(error);
       }
     }
-    FeatchDataRewievs();
-  }, []);
+    FetchDataReviews();
+  }, [windowWidth]);
 
   // Make a massive of two objects for sliding two element on the screen
   const slide = [];
 
-  for (let i = 0; i < searchRewievs.length; i += 2) {
-    const p = { hit: searchRewievs[i], hit2: searchRewievs[i + 1] };
+  for (let i = 0; i < searchReviews.length; i += 2) {
+    const p = { hit: searchReviews[i], hit2: searchReviews[i + 1] };
     slide.push(p);
   }
   // SwipeOptions appointment
   const startSlide = 0;
   const swipeOptions = {
     startSlide:
-      startSlide < searchRewievs.length && startSlide >= 0 ? startSlide : 0,
-    auto: 1000,
-    speed: 1000,
+      startSlide < searchReviews.length && startSlide >= 0 ? startSlide : 0,
+    auto: 1500,
+    speed: 1500,
     disableScroll: true,
     continuous: true,
     callback() {},
-    transitionEnd() {},
+    transitionEnd() {
+      setWindowWidth(window.innerWidth);
+    },
   };
 
   return (
     <MainContainer>
       <SectionTitle>Reviews</SectionTitle>
-      <RewievContainer>
-        {searchRewievs.length === 0 ? (
-          <RewiewStyled
+      <ReviewContainer>
+        {searchReviews.length === 0 ? (
+          <ReviewStyled
             style={{
               fontSize: '30px',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
+              gap: '20px',
             }}
           >
             {' '}
             No any reviews yet
-          </RewiewStyled>
+          </ReviewStyled>
         ) : (
           <>
-            {window.screen.width > 1439 && (
+            {window.innerWidth > 1439 && (
               <ReactSwipe
                 ref={el => (reactSwipeEl = el)}
                 className="mySwipe"
                 swipeOptions={swipeOptions}
               >
                 {slide.map(item => (
-                  <div
-                    key={item.hit.id}
-                    style={{ display: 'flex', gap: '20px' }}
-                  >
-                    <RewievGalleryItemDesk item={item} />
+                  <div key={nanoid()} style={{ display: 'flex' }}>
+                    <ReviewGalleryItemDesk item={item} />
                   </div>
                 ))}
               </ReactSwipe>
             )}
-            {window.screen.width <= 1439 && (
+            {window.innerWidth <= 1439 && (
               <ReactSwipe
                 ref={el => (reactSwipeEl = el)}
                 className="mySwipe"
                 swipeOptions={swipeOptions}
               >
-                {searchRewievs.map(item => (
-                  <div key={item.id}>
-                    <RewievGalleryItem item={item} />
+                {searchReviews.map(item => (
+                  <div key={nanoid()}>
+                    <ReviewGalleryItem item={item} />
                   </div>
                 ))}
               </ReactSwipe>
@@ -109,7 +111,7 @@ const ReviewSection = () => {
             </ButtonContainer>
           </>
         )}
-      </RewievContainer>
+      </ReviewContainer>
     </MainContainer>
   );
 };

@@ -4,6 +4,7 @@ import {
   selectUser,
   selectIsRefreshing,
   selectAccessToken,
+  emailUser,
 } from '../redux/authorization/selectors';
 
 export const useAuth = () => {
@@ -12,6 +13,8 @@ export const useAuth = () => {
     useSelector(selectUser);
   const isRefreshing = useSelector(selectIsRefreshing);
   const accessToken = useSelector(selectAccessToken);
+
+  const resendEmail = useSelector(emailUser);
 
   return {
     isRefreshing,
@@ -23,5 +26,6 @@ export const useAuth = () => {
     skype,
     avatarURL,
     accessToken,
+    resendEmail,
   };
 };

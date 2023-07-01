@@ -42,7 +42,6 @@ export const Thumb = ({ avatar, file, setFieldValue, setIsFormDirty }) => {
           name="avatar"
           type="file"
           onChange={event => {
-            console.log(event.currentTarget.files[0]);
             setFieldValue('avatarURL', event.currentTarget.files[0]);
             setIsFormDirty(true);
           }}

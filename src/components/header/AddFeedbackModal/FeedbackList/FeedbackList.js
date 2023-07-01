@@ -1,53 +1,86 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Rating } from 'react-simple-star-rating';
 
 import Icons from '../../../../images/svg/sprite.svg';
 
-import { BtnSvgWrapper, EditWrapper, BtnPencil, BtnPencilIcon, BtnTrash, BtnTrashIcon, BtnWrapper, BtnEdit, BtnEditText, BtnCancel, BtnCancelText, CommentTextList } from './FeedbackList.styled';
+import {
+  EditWrapper,
+  BtnSvgWrapper,
+  BtnPencil,
+  BtnPencilIcon,
+  BtnTrash,
+  BtnTrashIcon,
+  BtnWrapper,
+  BtnEdit,
+  BtnEditText,
+  BtnCancel,
+  BtnCancelText,
+  CommentTextList,
+} from './FeedbackList.styled';
 
 import { RatingText, Label } from '../FeedbackForm/FeedbackForm.styled';
 
-const FeedbackList = ({  fetchData,  setReviewsList,  onModal,  setOnModal,  close,}) => { 
-  //const [updateReview, setUpdateReview] = useState('');
-  
+const FeedbackList = ({
+  fetchData,
+  setReviewsList,
+  close,
+}) => {
   const [isOpened, setIsOpened] = useState(false);
-  const [isVisibleEdit, setIsisVisibleEdit] = useState(false);
+  const [isVisibleEdit, setIsVisibleEdit] = useState(false);
   const [newComment, setNewComment] = useState(setReviewsList.comment);
+  const modalRef = useRef(null);
 
-  const deleteReview = async item => {
-    await axios
-      .delete(
-        `https://goosetrack-backend-2lsp.onrender.com/api/reviews/${item._id}`
-      )
-      .then(() => {
-        fetchData();
-      });
+  const deleteReview = async (item) => {
+    await axios.delete(
+      `https://goosetrack-backend-2lsp.onrender.com/api/reviews/${item._id}`
+    );
+    fetchData();
   };
-
-  // const forUpdateRaview = item => {
-  //   setNewComment(item);
-  // };
 
   const handleToggleModal = () => {
     setIsOpened(!isOpened);
   };
 
-  const editReview = async item => {
-    console.log(newComment);
-    if (!(newComment === '')) {
-
+  const editReview = async (item) => {
+    if (newComment !== '') {
       let updateReview = {
-        comment: newComment || '',
+        comment: newComment,
       };
 
-      await axios.patch(`https://goosetrack-backend-2lsp.onrender.com/api/reviews/${item._id}`, updateReview)
-        .then(() => { fetchData(); })
-    };
+      await axios.patch(
+        `https://goosetrack-backend-2lsp.onrender.com/api/reviews/${item._id}`,
+        updateReview
+      );
+      fetchData();
+      setIsVisibleEdit(false); // Close the edit section after submission
+    }
   };
 
-  return (
-    <EditWrapper>
+  useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      close();
+    }
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Escape') {
+      close();
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+  document.addEventListener('keydown', handleKeyPress);
+
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+    document.removeEventListener('keydown', handleKeyPress);
+  };
+}, [close]);
+
+return (
+    <EditWrapper ref={modalRef}>
       <Rating
         initialValue={setReviewsList.rating}
         iconsCount={5}
@@ -57,29 +90,30 @@ const FeedbackList = ({  fetchData,  setReviewsList,  onModal,  setOnModal,  clo
 
       <BtnSvgWrapper>
         <BtnPencil
-        type="button"
-        onClick={() => {
-         // forUpdateRaview(setReviewsList);
-          handleToggleModal();
-          setIsisVisibleEdit(!isVisibleEdit);
-        }}>
-        <BtnPencilIcon width="16" height="16">
-          <use href={`${Icons}#pencil`} />
-        </BtnPencilIcon>
-      </BtnPencil>
+          type="button"
+          onClick={() => {
+            handleToggleModal();
+            setIsVisibleEdit(!isVisibleEdit);
+          }}
+        >
+          <BtnPencilIcon width="16" height="16">
+            <use href={`${Icons}#pencil`} />
+          </BtnPencilIcon>
+        </BtnPencil>
 
-      <BtnTrash
-        type="button"
-        onClick={() => {
-          deleteReview(setReviewsList);
-          close();
-        }}>
-        <BtnTrashIcon width="16" height="16">
-          <use href={`${Icons}#trash`} />
-        </BtnTrashIcon>
-      </BtnTrash>
+        <BtnTrash
+          type="button"
+          onClick={() => {
+            deleteReview(setReviewsList);
+            close();
+          }}
+        >
+          <BtnTrashIcon width="16" height="16">
+            <use href={`${Icons}#trash`} />
+          </BtnTrashIcon>
+        </BtnTrash>
       </BtnSvgWrapper>
-      
+
       <Label>
         <RatingText>Review</RatingText>
         <CommentTextList
@@ -89,14 +123,16 @@ const FeedbackList = ({  fetchData,  setReviewsList,  onModal,  setOnModal,  clo
           id="feedback-text"
           cols="30"
           rows="10"
-          onChange={event => {
+          onChange={(event) => {
             setNewComment(event.target.value);
-          }}></CommentTextList>
+          }}
+          readOnly={!isVisibleEdit}
+        ></CommentTextList>
       </Label>
 
       {isVisibleEdit && (
         <BtnWrapper>
-          <BtnEdit type="submit" onClick={() => {editReview(setReviewsList)}}>
+          <BtnEdit type="submit" onClick={() => editReview(setReviewsList)}>
             <BtnEditText>Edit</BtnEditText>
           </BtnEdit>
           <BtnCancel type="button" onClick={close}>
@@ -104,7 +140,6 @@ const FeedbackList = ({  fetchData,  setReviewsList,  onModal,  setOnModal,  clo
           </BtnCancel>
         </BtnWrapper>
       )}
-
     </EditWrapper>
   );
 };

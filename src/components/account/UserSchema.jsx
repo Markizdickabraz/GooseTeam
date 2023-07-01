@@ -13,7 +13,7 @@ export const UserSchema = Yup.object().shape({
     })
     .test('fileSize', 'The file is too large', value => {
       if (!value) return true;
-      return value.size < 50000000; // 500 KB
+      return value.size < 500000; // 500 KB
     }),
   name: Yup.string()
     .min(2, 'Too short!')

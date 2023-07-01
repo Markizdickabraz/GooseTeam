@@ -1,5 +1,5 @@
 import {
-  RewiewStyled,
+  ReviewStyled,
   StarContainer,
   Name,
   Comment,
@@ -7,11 +7,11 @@ import {
 } from './reviewSectionStyled';
 import { BsFillStarFill } from 'react-icons/bs';
 
-export const RewievGalleryItem = ({ item }) => {
+export const ReviewGalleryItem = ({ item }) => {
   const FirstLetterAvatar = item.owner.name.split('')[0].toUpperCase();
   return (
     <>
-      <RewiewStyled>
+      <ReviewStyled>
         <div style={{ display: 'flex' }}>
           <ImgContainer>
             {item.owner.avatarURL ? (
@@ -26,7 +26,7 @@ export const RewievGalleryItem = ({ item }) => {
           </ImgContainer>
           <div>
             <Name>{item.owner.name.trim()}</Name>
-            <StarContainer value={item.reting}>
+            <StarContainer value={item.rating}>
               <li>
                 <BsFillStarFill />
               </li>
@@ -46,7 +46,7 @@ export const RewievGalleryItem = ({ item }) => {
           </div>
         </div>
         <Comment> {item.comment}</Comment>
-      </RewiewStyled>
+      </ReviewStyled>
     </>
   );
 };

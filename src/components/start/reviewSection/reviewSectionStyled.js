@@ -14,6 +14,9 @@ const media = {
 };
 
 export const MainContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 375px;
   padding: 0px 20px 64px 20px;
   margin-left: auto;
@@ -42,23 +45,25 @@ export const SectionTitle = styled.h2`
   }
 `;
 
-export const RewievContainer = styled.div`
-  height: 252px;
+export const ReviewContainer = styled.div`
+  width: 350px;
+  max-height: 252px;
   ${media.tablet} {
-     max-width: 570px;
-    height: 266px;
+    width: 590px;
+    max-height: 266px;
   }
-  ${media.desktop} {    
-    height: 280px;
+  ${media.desktop} {
+    width: 1184px;
+    max-height: 280px;
   }
 `;
 
-export const RewiewStyled = styled.div`
+export const ReviewStyled = styled.div`
   display: flex;
   flex-direction: column;
   padding: 24px;
-  width: 335px;
-  min-height: 187px;
+  width: 330px;
+  height: 187px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 8px;
@@ -66,9 +71,10 @@ export const RewiewStyled = styled.div`
   color: ${Variables.fontColors.black};
   border: 1px solid ${Variables.iconColors.greyDisableStar};
   border-radius: 8px;
+  overflow-y: scroll;
   ${media.tablet} {
     width: 570px;
-    height: auto;
+    // height: auto;
     padding: 32px;
     margin-bottom: 18px;
   }
