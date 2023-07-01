@@ -17,8 +17,10 @@ const RegisterComponent = () => {
   const dispatch = useDispatch();
   const initialValues = { password: '', email: '', name: '' };
 
-  const onSubmit = (values, { setSubmitting }) => {
-    dispatch(register(values));
+  const onSubmit = async (values, { setSubmitting }) => {
+    const data = await dispatch(register(values));
+    if (data.meta.requestStatus !== 'fulfilled') return;
+
     dispatch(setResendEmail(values.email));
     setSubmitting(false);
     navigate('/register/resend-email');
