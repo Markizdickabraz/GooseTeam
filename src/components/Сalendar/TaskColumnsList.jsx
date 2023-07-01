@@ -64,7 +64,7 @@ const tasks = [
   },
   {
     id: '7',
-    title: 'Start page 1',
+    title: 'Start page 7',
     start: '09:00',
     end: '09:30',
     priority: 'low',
@@ -73,7 +73,7 @@ const tasks = [
   },
   {
     id: '8',
-    title: 'Start page 2',
+    title: 'Start page 8',
     start: '09:02',
     end: '09:32',
     priority: 'medium',
@@ -82,7 +82,7 @@ const tasks = [
   },
   {
     id: '9',
-    title: 'Start page 3',
+    title: 'Start page 9',
     start: '09:03',
     end: '09:33',
     priority: 'high',
@@ -91,7 +91,7 @@ const tasks = [
   },
   {
     id: '10',
-    title: 'Start page 4',
+    title: 'Start page 10',
     start: '09:04',
     end: '09:34',
     priority: 'low',
@@ -100,7 +100,7 @@ const tasks = [
   },
   {
     id: '11',
-    title: 'Start page 5',
+    title: 'Start page 11',
     start: '09:05',
     end: '09:35',
     priority: 'medium',
@@ -109,7 +109,7 @@ const tasks = [
   },
   {
     id: '12',
-    title: 'Start page 6',
+    title: 'Start page 12',
     start: '09:06',
     end: '09:36',
     priority: 'high',
@@ -118,7 +118,7 @@ const tasks = [
   },
   {
     id: '13',
-    title: 'Start page 6',
+    title: 'Start page 13',
     start: '09:06',
     end: '09:36',
     priority: 'high',
@@ -127,7 +127,7 @@ const tasks = [
   },
   {
     id: '14',
-    title: 'Start page 6',
+    title: 'Start page 14',
     start: '09:06',
     end: '09:36',
     priority: 'high',

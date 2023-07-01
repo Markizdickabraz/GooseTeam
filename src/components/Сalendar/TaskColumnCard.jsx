@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { selectUser } from '../../redux/authorization/selectors';
 import { TaskToolbar } from './TaskToolbar';
 import TaskModal from '../TaskModal/TaskModal';
@@ -11,9 +12,29 @@ import {
   Level,
   Wrapper,
 } from './TaskColumnCard.styled';
+import { format } from 'date-fns';
+import { useState } from 'react';
 
-export const TaskColumnCard = ({ task, isModalOpen, setIsModalOpen }) => {
+export const TaskColumnCard = ({
+  task,
+  isNewTask,
+  setIsNewTask,
+  category,
+  isAddModalOpen,
+  setIsAddModalOpen,
+}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { currentDay } = useParams();
+  const date = format(new Date(currentDay), 'yyyy-MM-dd');
+  const newTask = {
+    date,
+    category,
+  };
   const { avatarURL } = useSelector(selectUser);
+  const handleClick = () => {
+    setIsModalOpen(false);
+    setIsAddModalOpen(false);
+  };
   return (
     <TaskCard>
       <TaskTitle>{task.title}</TaskTitle>
@@ -24,13 +45,16 @@ export const TaskColumnCard = ({ task, isModalOpen, setIsModalOpen }) => {
           </AvatarWrapper>
           <Level priority={task.priority}>{task.priority}</Level>
         </Wrapper>
-        <TaskToolbar setIsModalOpen={setIsModalOpen} />
+        <TaskToolbar
+          setIsNewTask={setIsNewTask}
+          setIsModalOpen={setIsModalOpen}
+        />
       </Box>
-      {isModalOpen && (
+      {(isModalOpen || isAddModalOpen) && (
         <TaskModal
-          close={() => setIsModalOpen(false)}
-          create={false}
-          task={task}
+          close={handleClick}
+          create={isNewTask}
+          task={isNewTask ? newTask : task}
         />
       )}
     </TaskCard>

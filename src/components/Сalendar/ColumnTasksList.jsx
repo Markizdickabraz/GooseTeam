@@ -6,7 +6,14 @@ import { isSameDay } from 'date-fns';
 import 'overlayscrollbars/overlayscrollbars.css';
 import './Scrollbar.css';
 
-export const ColumnTasksList = ({ tasks, isModalOpen, setIsModalOpen }) => {
+export const ColumnTasksList = ({
+  tasks,
+  isNewTask,
+  setIsNewTask,
+  category,
+  isAddModalOpen,
+  setIsAddModalOpen,
+}) => {
   const { currentDay } = useParams();
   return (
     <OverlayScrollbarsComponent
@@ -25,8 +32,11 @@ export const ColumnTasksList = ({ tasks, isModalOpen, setIsModalOpen }) => {
             <TaskColumnCard
               key={task.id}
               task={task}
-              isModalOpen={isModalOpen}
-              setIsModalOpen={setIsModalOpen}
+              isNewTask={isNewTask}
+              setIsNewTask={setIsNewTask}
+              category={category}
+              isAddModalOpen={isAddModalOpen}
+              setIsAddModalOpen={setIsAddModalOpen}
             />
           ) : (
             false

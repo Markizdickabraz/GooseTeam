@@ -5,19 +5,23 @@ import { ColumnTasksList } from './ColumnTasksList';
 import { TaskColumn } from './TasksColumn.styled';
 
 export const TasksColumn = ({ title, tasks, category }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const closeModal = () => {
-    return setIsModalOpen(false);
-  };
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isNewTask, setIsNewTask] = useState(false);
   return (
     <TaskColumn>
       <ColumnHeadBar title={title} />
       <ColumnTasksList
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
         tasks={tasks}
+        isNewTask={isNewTask}
+        setIsNewTask={setIsNewTask}
+        category={category}
+        isAddModalOpen={isAddModalOpen}
+        setIsAddModalOpen={setIsAddModalOpen}
       />
-      <AddTaskBtn category={category} setIsModalOpen={setIsModalOpen} />
+      <AddTaskBtn
+        setIsNewTask={setIsNewTask}
+        setIsAddModalOpen={setIsAddModalOpen}
+      />
     </TaskColumn>
   );
 };
