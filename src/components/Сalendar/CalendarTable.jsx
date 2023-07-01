@@ -14,9 +14,10 @@ import {
 import { redirect, useParams, useOutletContext } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
-import { getTasks } from '../../exampleTask';
+// import { getTasks } from '../../exampleTask';
 import { CalendarItem, Day, Event, Calendar } from './CalendarTable.styled';
-
+import { selectTasks } from 'redux/tasks/selectors';
+import { useSelector } from 'react-redux';
 
 export const CalendarTable = () => {
   const { setPeriodType, setCurrentDate } = useOutletContext();
@@ -46,14 +47,14 @@ export const CalendarTable = () => {
 
   // with file for example
   const [events, setEvents] = useState([]);
-
+  const tasks = useSelector(selectTasks)
 
   useEffect(() => {
-    const tasks = getTasks();
+    
       const filteredTasks = tasks.filter(task => isSameMonth(new Date(task.date), new Date(currentDate)));
       setEvents(filteredTasks);
     
-}, [currentDate])
+}, [currentDate, tasks])
 
   
   // size of viewport
@@ -109,7 +110,7 @@ export const CalendarTable = () => {
             className="calendar-table-item"
           >
             {isSameMonth(day, parsedCurrentDate) && (
-              <Day
+              <Day 
                 style={{
                   color: isSameDay(day, parsedCurrentDate) ? '#FFFFFF' : '#343434',
                   backgroundColor: isSameDay(day, parsedCurrentDate)
