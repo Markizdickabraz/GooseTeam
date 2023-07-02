@@ -45,4 +45,9 @@ export const Button = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: color 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  &:hover,
+  &:focus {
+    color: ${Variables.iconColors.blue};
+  }
 `;
