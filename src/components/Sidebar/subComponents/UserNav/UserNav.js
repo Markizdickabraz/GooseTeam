@@ -1,5 +1,5 @@
 import sprite from 'images/svg/sprite.svg';
-import { NavList, StyledLink, NavIcon } from './UserNavStyled';
+import { NavList, StyledLink, NavIcon, StyledLinkStatistic } from './UserNavStyled';
  import { account, calendar, statistics } from '../../../../services/routes';
 
 
@@ -29,12 +29,12 @@ const UserNav = ({ onLinkClick }) => {
           </NavIcon>
           <span>Calendar</span>
         </StyledLink>
-        <StyledLink to={statistics} onClick={handleLinkClick}>
+        <StyledLinkStatistic to={statistics} onClick={handleLinkClick}>
           <NavIcon>
             <use href={`${sprite}#chart`} />
           </NavIcon>
           <span>Statistics</span>
-        </StyledLink>
+        </StyledLinkStatistic>
       </NavList>
     </>
   );
