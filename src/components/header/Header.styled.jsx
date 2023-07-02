@@ -1,14 +1,18 @@
 import styled from 'styled-components';
-import { fontColors, iconColors, backgroundColors } from 'styles/variables';
+import {
+  fontColors,
+  iconColors,
+  backgroundColors,
+  themeColors,
+} from 'styles/variables';
 
 export const Wrapper = styled.header`
-  background-color: ${backgroundColors.grey};
+  background-color: ${themeColors.mainBackground};
   padding-top: 24px;
-  padding-bottom: 24px;
+  color: ${themeColors.main};
 
   @media screen and (min-width: 1440px) {
     padding-top: 40px;
-    padding-bottom: 40px;
   }
 `;
 
@@ -79,7 +83,6 @@ export const Info = styled.div`
 `;
 
 export const SectionTitle = styled.h1`
-  color: ${fontColors.black};
   display: block;
   font-weight: 700;
   font-size: 32px;

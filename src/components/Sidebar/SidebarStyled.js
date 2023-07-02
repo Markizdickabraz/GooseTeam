@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import facepaint from 'facepaint';
 
 import { BREAKPOINTS } from 'styles/deviceWidth';
+import { themeColors } from 'styles/variables';
 
 const media = facepaint(BREAKPOINTS.map(bp => `@media (min-width: ${bp}px)`));
 
@@ -39,7 +40,7 @@ export const SidebarWrapper = styled.div`
   background-color: #fff;
 
   @media (max-width: 1439px) {
-    background-color: #f3faff;
+    background-color: ${themeColors.sidebarBackground};
     position: absolute;
     z-index: 5000;
   }
@@ -64,7 +65,7 @@ export const GooseImg = styled.img`
 `;
 
 export const CloseIcon = styled.svg`
-//тема біла
+  //тема біла
   fill: #343434;
   margin-left: auto;
   height: 24px;
@@ -80,7 +81,7 @@ export const CloseIcon = styled.svg`
 `;
 
 export const SidebarSubTitle = styled.h3`
-//тема біла
+  //тема біла
   color: rgba(52, 52, 52, 0.5);
   font-family: Inter;
   font-weight: 600;

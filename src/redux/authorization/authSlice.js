@@ -27,10 +27,14 @@ const authSlice = createSlice({
     isLoggedIn: false,
     isRefreshing: false,
     resendEmain: null,
+    theme: 'light',
   },
   reducers: {
     setResendEmail: (state, action) => {
       state.resendEmain = action.payload;
+    },
+    toggleTheme: state => {
+      state.theme = state.theme === 'light' ? 'dark' : 'light';
     },
   },
   extraReducers: {
@@ -72,6 +76,6 @@ const authSlice = createSlice({
   },
 });
 
-export const { setResendEmail } = authSlice.actions;
+export const { setResendEmail, toggleTheme } = authSlice.actions;
 
 export const authReducer = authSlice.reducer;

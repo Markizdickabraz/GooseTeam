@@ -5,17 +5,20 @@ import { store, persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { App } from './components/App';
-
+import { Theme } from 'components/header/components/ThemeToggler/Theme';
 import GlobalStyle from 'styles/GlobalStyle';
+
+import { App } from './components/App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter basename="/GooseTeam">
-          <GlobalStyle />
-          <App />
+          <Theme>
+            <GlobalStyle />
+            <App />
+          </Theme>
         </BrowserRouter>
       </PersistGate>
     </Provider>

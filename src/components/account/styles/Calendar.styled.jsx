@@ -11,7 +11,6 @@ export const DateInput = styled.div`
     width: 100%;
     padding: 12px 14px;
     border-radius: 8px;
-    border: 1px solid rgba(17, 17, 17, 0.1);
     outline: none;
 
     font-size: 14px;
