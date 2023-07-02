@@ -136,6 +136,9 @@
     letter-spacing: -0.28px;
     padding: 0;
 }
+.react-datepicker__day:not(:last-child) {
+    margin-right: 5px;
+}
 
 .react-datepicker__day:hover {
     border-radius: 24px;
@@ -164,10 +167,6 @@
     background: #fff;
     color: #3e85f3;
     font-weight: 400;
-}
-
-.react-datepicker__day--weekend {
-    opacity: 0.5;
 }
 
 .react-datepicker__day--outside-month {
