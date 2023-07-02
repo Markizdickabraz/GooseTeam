@@ -29,6 +29,7 @@
     border-radius: 8px;
     background: #3e85f3;
     border: 0;
+    padding: 0;
 }
 
 .react-datepicker__header {
