@@ -29,7 +29,7 @@ export const TaskColumnCard = ({ task, category }) => {
         </Wrapper>
         <TaskToolbar
           category={category}
-          taskId={task._id}
+          task={task}
           setIsModalOpen={setIsModalOpen}
         />
       </Box>

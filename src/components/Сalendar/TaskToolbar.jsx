@@ -6,7 +6,7 @@ import { Wrapper, Button, Svg } from './TaskToolbar.styled';
 import { useState } from 'react';
 import { useRef } from 'react';
 
-export const TaskToolbar = ({ setIsModalOpen, taskId, category }) => {
+export const TaskToolbar = ({ setIsModalOpen, task, category }) => {
   const dispatch = useDispatch();
   const [isContextMenu, setIsContextMenu] = useState(false);
   const contextMenuRef = useRef(null);
@@ -27,14 +27,14 @@ export const TaskToolbar = ({ setIsModalOpen, taskId, category }) => {
           <use href={sprite + '#pencil'} />
         </Svg>
       </Button>
-      <Button onClick={() => dispatch(deleteTask(taskId))} type="button">
+      <Button onClick={() => dispatch(deleteTask(task._id))} type="button">
         <Svg>
           <use href={sprite + '#trash'} />
         </Svg>
       </Button>
       {isContextMenu && (
         <ContextMenu
-          taskId={taskId}
+          task={task}
           category={category}
           contextMenuRef={contextMenuRef}
           setIsContextMenu={setIsContextMenu}

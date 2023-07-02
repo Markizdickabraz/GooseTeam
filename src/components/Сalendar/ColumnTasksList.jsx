@@ -9,14 +9,25 @@ import './Scrollbar.css';
 export const ColumnTasksList = ({ tasks, category }) => {
   const { currentDay } = useParams();
   return (
-    <TasksList>
-      {tasks.map(task => {
-        return isSameDay(new Date(currentDay), new Date(task.date)) ? (
-          <TaskColumnCard key={task._id} task={task} category={category} />
-        ) : (
-          false
-        );
-      })}
-    </TasksList>
+    <OverlayScrollbarsComponent
+      element="div"
+      options={{
+        overflow: {
+          y: 'scroll',
+          x: 'hidden',
+        },
+      }}
+      defer
+    >
+      <TasksList>
+        {tasks.map(task => {
+          return isSameDay(new Date(currentDay), new Date(task.date)) ? (
+            <TaskColumnCard key={task._id} task={task} category={category} />
+          ) : (
+            false
+          );
+        })}
+      </TasksList>
+    </OverlayScrollbarsComponent>
   );
 };

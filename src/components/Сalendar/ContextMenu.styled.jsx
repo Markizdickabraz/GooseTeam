@@ -9,8 +9,8 @@ const media = {
 
 export const Menu = styled.menu`
   position: absolute;
-  top: 38px;
-  left: 0;
+  top: -50px;
+  left: -152px;
   margin: 0;
   max-width: 147px;
   padding: 14px;

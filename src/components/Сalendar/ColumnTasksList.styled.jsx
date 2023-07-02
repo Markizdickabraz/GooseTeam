@@ -9,13 +9,11 @@ const media = {
 export const TasksList = styled.ul`
   display: flex;
   flex-direction: column;
+  max-height: 372px;
 
   gap: 14px;
   padding: 0;
-  margin-bottom: 14px;
-  ${media.tablet} {
-    margin-bottom: 32px;
-  }
+  
   ${media.desktop} {
     gap: 18px;
   }

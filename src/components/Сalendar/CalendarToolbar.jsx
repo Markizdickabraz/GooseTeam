@@ -4,14 +4,19 @@ import { PeriodTypeSelect } from './PeriodTypeSelect';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Toolbar } from './CalendarToolbar.styled';
-
+import { useDispatch } from 'react-redux';
+import { getTasks } from 'redux/tasks/operations';
 export const CalendarToolbar = ({
   periodType,
   setPeriodType,
   currentDate,
-  setCurrentDate
+  setCurrentDate,
 }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getTasks());
+  }, [dispatch]);
 
   useEffect(() => {
     if (periodType === 'month') {

@@ -1,5 +1,11 @@
 import styled from 'styled-components';
+import { DEVICE_SIZE } from '../../styles/deviceWidth';
 import * as Variables from '../../styles/variables';
+
+const media = {
+  tablet: `@media screen and (min-width: ${DEVICE_SIZE.tablet})`,
+  desktop: `@media screen and (min-width: ${DEVICE_SIZE.desktop})`,
+};
 
 export const Button = styled.button`
   width: 100%;
@@ -12,7 +18,10 @@ export const Button = styled.button`
   border: 1px dashed ${Variables.buttonColors.blue};
   background: ${Variables.buttonColors.lightBlue};
   cursor: pointer;
-  
+  margin-top: 14px;
+  ${media.tablet} {
+    margin-top: 32px;
+  }
 `;
 
 export const ButtonText = styled.p`
