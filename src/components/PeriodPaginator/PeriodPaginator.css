@@ -86,7 +86,8 @@
     margin: 0;
     padding: 0;
     line-height: 1.7rem;
-    color: rgba(255, 255, 255, 0.50)
+    color: rgba(255, 255, 255, 0.50);
+    width: 24px;
 }
 
 .react-datepicker__current-month {
