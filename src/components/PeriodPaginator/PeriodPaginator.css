@@ -29,6 +29,7 @@
     border-radius: 8px;
     background: #3e85f3;
     border: 0;
+    padding: 0;
 }
 
 .react-datepicker__header {
@@ -43,6 +44,7 @@
     font-weight: 600;
     padding-bottom: 15px;
     letter-spacing: -0.32px;
+    line-height:normal;
 }
 
 .react-datepicker__navigation--previous {
@@ -78,6 +80,9 @@
     font-weight: 500;
     letter-spacing: -0.28px;
     margin: 0;
+    padding: 0;
+    line-height: 1.7rem;
+    width: 1.7rem;
 }
 
 .react-datepicker__current-month {
@@ -129,12 +134,19 @@
     font-size: 14px;
     line-height: 18px;
     letter-spacing: -0.28px;
+    padding: 0;
 }
 
 .react-datepicker__day:hover {
     border-radius: 24px;
     background-color: #216ba5;
     color: #fff;
+}
+.react-datepicker__day::after{
+    box-sizing: content-box
+}
+.react-datepicker__day::before {
+    box-sizing: content-box
 }
 
 .react-datepicker__day--selected {
