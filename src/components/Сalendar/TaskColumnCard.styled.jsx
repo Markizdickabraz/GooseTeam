@@ -45,7 +45,7 @@ export const AvatarWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 32px;
-  height: 32px; 
+  height: 32px;
   background-color: ${Variables.iconColors.blue};
   border-radius: 32px;
 `;

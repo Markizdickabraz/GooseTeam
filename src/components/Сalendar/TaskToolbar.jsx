@@ -7,13 +7,17 @@ import { useState } from 'react';
 import { useRef } from 'react';
 
 export const TaskToolbar = ({ setIsModalOpen, taskId }) => {
+  const dispatch = useDispatch();
   const [isContextMenu, setIsContextMenu] = useState(false);
   const contextMenuRef = useRef(null);
-  const dispatch = useDispatch();
+  const handleClick = e => {
+    e.stopPropagation();
+    setIsContextMenu(prevState => !prevState);
+  };
 
   return (
     <Wrapper>
-      <Button onClick={() => setIsContextMenu(true)} type="button">
+      <Button onClick={handleClick} type="button">
         <Svg>
           <use href={sprite + '#arrow-circle'} />
         </Svg>

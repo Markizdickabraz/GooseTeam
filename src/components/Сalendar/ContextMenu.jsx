@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { List, Menu } from './ContextMenu.styled';
 
 export const ContextMenu = ({ contextMenuRef, setIsContextMenu }) => {
   useEffect(() => {
@@ -12,14 +13,16 @@ export const ContextMenu = ({ contextMenuRef, setIsContextMenu }) => {
     document.addEventListener('click', handler);
     return () => {
       document.removeEventListener('click', handler);
+
+      console.log('размонт');
     };
-  });
+  }, [contextMenuRef, setIsContextMenu]);
   return (
-    <menu ref={contextMenuRef}>
-      <ul>
+    <Menu ref={contextMenuRef}>
+      <List>
         <li>Список</li>
         <li>Список</li>
-      </ul>
-    </menu>
+      </List>
+    </Menu>
   );
 };
