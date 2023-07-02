@@ -50,16 +50,11 @@ const AuthSection = () => {
         </LogoSection>
         <NavBox>
           <SignUp to={'/register'}>Sign Up</SignUp>
+
           <LogIn to={'/login'}>
-            Log in{' '}
-            <SvgLogIn
-              style={{
-                width: '13px',
-                height: '13px',
-                marginLeft: '8px',
-              }}
-            />
+            Log in <SvgLogIn />
           </LogIn>
+
           <SignUpMob to={'/register'}>Sign Up</SignUpMob>
         </NavBox>
       </Container>
