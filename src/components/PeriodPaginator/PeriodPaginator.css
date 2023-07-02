@@ -86,7 +86,7 @@
     margin: 0;
     padding: 0;
     line-height: 1.7rem;
-    width: 1.7rem;
+    color: rgba(255, 255, 255, 0.50)
 }
 
 .react-datepicker__current-month {
@@ -118,10 +118,6 @@
     padding-bottom: 7px;
 }
 
-.react-datepicker__day-name{
-    color: rgba(255, 255, 255, 0.50);
-}
-
 .react-datepicker__day {
     box-sizing: border-box;
     display: flex;
@@ -142,6 +138,8 @@
 .react-datepicker__day--weekend{
     opacity: 1;
 }
+
+.react-datepicker__day-name,
 .react-datepicker__day:not(:last-child) {
     margin-right: 5px;
 }
