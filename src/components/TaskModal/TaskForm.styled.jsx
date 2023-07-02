@@ -1,4 +1,4 @@
-import  styled  from 'styled-components';
+import styled from 'styled-components';
 import { taskColors, buttonColors } from '../../styles/variables';
 
 const Label = styled.label`
@@ -170,6 +170,10 @@ const Err = styled.p`
   color: red;
 `;
 
+const Svg = styled.svg`
+  stroke: #343434;
+`;
+
 export {
   Label,
   Input,
@@ -181,4 +185,5 @@ export {
   Button,
   LightButton,
   Err,
+  Svg,
 };
