@@ -31,7 +31,6 @@ const PeriodPaginator = () => {
   };
 
   const nextDate = () => {
-    console.log('+1');
     dispatch(
       setFilterDate(
         addOneDay(new Date(filterdate))[Symbol.toPrimitive]('number')
@@ -39,7 +38,6 @@ const PeriodPaginator = () => {
     );
   };
   const previousDate = () => {
-    console.log('-1');
     dispatch(
       setFilterDate(
         previousOneDay(new Date(filterdate))[Symbol.toPrimitive]('number')
@@ -59,12 +57,8 @@ const PeriodPaginator = () => {
         fixedHeight
       />
       <div className="paginator__btn--box">
-        <button className="arrow__btn">
-          <svg
-            viewBox="0 0 18 18"
-            className="arrow"
-            onClick={() => previousDate()}
-          >
+        <button className="arrow__btn" onClick={() => previousDate()}>
+          <svg viewBox="0 0 18 18" className="arrow">
             <use xlinkHref={`${Icons}#chevron-left`} />
           </svg>
         </button>
