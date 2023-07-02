@@ -29,7 +29,17 @@ const FeedbackList = ({
   const [isOpened, setIsOpened] = useState(false);
   const [isVisibleEdit, setIsVisibleEdit] = useState(false);
   const [newComment, setNewComment] = useState(setReviewsList.comment);
+  const [newRate, setNewRate] = useState(setReviewsList.rating);
   const modalRef = useRef(null);
+  
+  const onStarClickClick = nextValue => {
+    changeRate(nextValue);
+  };
+
+  const changeRate = value => {
+    setNewRate(value);
+  };
+
 
   const deleteReview = async (item) => {
     await axios.delete(
@@ -43,9 +53,11 @@ const FeedbackList = ({
   };
 
   const editReview = async (item) => {
-    if (newComment !== '') {
+    if ((!(newComment === '') && !(newRate === 0))) {
       let updateReview = {
         comment: newComment,
+        rating: newRate 
+
       };
 
       await axios.patch(
@@ -81,12 +93,13 @@ const FeedbackList = ({
 
 return (
     <EditWrapper ref={modalRef}>
-      <Rating
-        initialValue={setReviewsList.rating}
-        iconsCount={5}
-        transition={true}
-        size={24}
-      />
+   <Rating
+          onClick={e => onStarClickClick(e)}
+          initialValue={newRate}
+          iconsCount={5}
+          transition={true}
+          size={24}
+        />
 
       <BtnSvgWrapper>
         <BtnPencil
