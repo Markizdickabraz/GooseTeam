@@ -1,12 +1,15 @@
+import { useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+
 import { useFormik } from 'formik';
 
-import { useDispatch } from 'react-redux';
 import { addTask, updateTask } from '../../redux/tasks/operations';
-
-import { AiOutlinePlus } from 'react-icons/ai';
-import { BsPencil } from 'react-icons/bs';
-
 import { validate } from './utility/validateTaskForm';
+import { autocomplete } from './utility/autocompleteTaskForm';
+
+// import { AiOutlinePlus } from 'react-icons/ai';
+// import { BsPencil } from 'react-icons/bs';
+import sprite from 'images/svg/sprite.svg';
 
 import {
   Label,
@@ -19,10 +22,14 @@ import {
   Button,
   LightButton,
   Err,
+  Svg,
 } from './TaskForm.styled';
 
 const TaskForm = ({ close, create, task }) => {
   const dispatch = useDispatch();
+
+  const prevStartRef = useRef('');
+  const prevEndRef = useRef('');
 
   // const date = task.date || '2023-06-23';
   // const category = task.category || 'to-do';
@@ -40,10 +47,7 @@ const TaskForm = ({ close, create, task }) => {
     },
     validate,
     onSubmit: values => {
-      // alert(JSON.stringify(values, null, 2));
-      // console.log(values);
-      const newTask = {...values, date, category};
-      // console.log(newTask);
+      const newTask = { ...values, date, category };
       if (create) {
         addHandler(newTask);
       } else {
@@ -52,9 +56,24 @@ const TaskForm = ({ close, create, task }) => {
     },
   });
 
+  useEffect(() => {
+    let currentStart = formik.values.start;
+    if (currentStart.length > prevStartRef.current.length) {
+      currentStart = autocomplete(currentStart);
+      formik.values.start = currentStart;
+    }
+    prevStartRef.current = currentStart;
+
+    let currentEnd = formik.values.end;
+    if (currentEnd.length > prevEndRef.current.length) {
+      currentEnd = autocomplete(currentEnd);
+      formik.values.end = currentEnd;
+    }
+    prevEndRef.current = currentStart;
+  });
+
   const closeHandler = evt => {
     close();
-    // console.log(formik.errors);
   };
 
   const addHandler = newTask => {
@@ -89,6 +108,7 @@ const TaskForm = ({ close, create, task }) => {
               type="text"
               onChange={formik.handleChange}
               value={formik.values.start}
+              placeholder="XX:YY"
             />
             {formik.errors.start && <Err>{formik.errors.start}</Err>}
           </Label>
@@ -100,6 +120,7 @@ const TaskForm = ({ close, create, task }) => {
               type="text"
               onChange={formik.handleChange}
               value={formik.values.end}
+              placeholder="XX:YY"
             />
             {formik.errors.end && <Err>{formik.errors.end}</Err>}
           </Label>
@@ -140,7 +161,10 @@ const TaskForm = ({ close, create, task }) => {
       {create ? (
         <ButtonContainer>
           <Button type="submit" onClick={addHandler}>
-            <AiOutlinePlus />
+            {/* <AiOutlinePlus /> */}
+            <Svg width="24px" height="24px">
+              <use href={`${sprite}#plus`} />
+            </Svg>
             Add
           </Button>
           <LightButton type="button" onClick={closeHandler}>
@@ -149,7 +173,10 @@ const TaskForm = ({ close, create, task }) => {
         </ButtonContainer>
       ) : (
         <Button type="submit" onClick={editHandler}>
-          <BsPencil />
+          {/* <BsPencil /> */}
+          <Svg width="16px" height="16px">
+            <use href={`${sprite}#pencil`} />
+          </Svg>
           Edit
         </Button>
       )}
