@@ -6,6 +6,10 @@ export const buttonColors = {
 };
 
 export const backgroundColors = {
+  mainBackground: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#171820' : '#F7F6F9',
+  secondBackground: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#21222C' : '#fff',
   blue: '#3e85f3',
   white: '#ffffff',
   grey: 'rgba(220, 227, 229, 0.8)',
@@ -42,3 +46,11 @@ export const fonts = {
 };
 
 export const animation = '250ms cubic-bezier(0.4, 0, 0.2, 1)';
+
+export const darkTheme = {
+  theme: 'dark',
+};
+
+export const lightTheme = {
+  theme: 'light',
+};

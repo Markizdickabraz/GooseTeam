@@ -21,7 +21,7 @@ import { tasksReducer } from './tasks/tasksSlice';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['token'],
+  whitelist: ['token', 'theme'],
 };
 
 const store = configureStore({

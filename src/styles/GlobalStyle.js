@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import Coolvetica from './fonts/Coolvetica/Coolvetica-Regular.ttf';
 import Inter from './fonts/Inter/Inter-VariableFont_slnt,wght.ttf';
+import { backgroundColors } from './variables';
 
 const GlobalStyle = createGlobalStyle`
     /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -27,6 +28,7 @@ html {
  */
 
 body {
+  background-color: ${backgroundColors.mainBackground};
   margin: 0;
 }
 

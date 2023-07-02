@@ -1,5 +1,6 @@
 import { Form } from 'formik';
 import styled from 'styled-components';
+import { backgroundColors } from 'styles/variables';
 
 export const FormContainer = styled(Form)`
   display: flex;
@@ -7,7 +8,7 @@ export const FormContainer = styled(Form)`
   gap: 40px;
 
   margin: 40px auto 0 auto;
-  background-color: #fff;
+  background-color: ${backgroundColors.secondBackground};
 
   border-radius: 16px;
   padding: 18px;

@@ -1,14 +1,22 @@
-import sprite from '../../../../images/svg/sprite.svg';
-import { ThemeIcon, ToggleButton } from './ThemeToggler.styled';
+import { useDispatch } from 'react-redux';
+import { toggleTheme } from 'redux/authorization/authSlice';
 
 export const ThemeToggler = () => {
+  const dispatch = useDispatch();
+
+  const handletoggleTheme = () => {
+    dispatch(toggleTheme());
+  };
+
   return (
     <div>
-      <ToggleButton>
+      {/* <ToggleButton>
         <ThemeIcon>
           <use href={`${sprite}#moon`} />
         </ThemeIcon>
-      </ToggleButton>
+      </ToggleButton> */}
+
+      <button onClick={handletoggleTheme}>strhsths</button>
     </div>
   );
 };
