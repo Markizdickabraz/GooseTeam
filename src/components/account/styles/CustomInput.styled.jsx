@@ -1,5 +1,6 @@
 import { Field } from 'formik';
 import styled from 'styled-components';
+import { themeColors } from 'styles/variables';
 
 export const InputContainer = styled.div`
   position: relative;
@@ -14,15 +15,9 @@ export const InputContainer = styled.div`
 export const Input = styled(Field)`
   padding: 12px 14px;
   border-radius: 8px;
-  border: 1px solid rgba(17, 17, 17, 0.1);
   outline: none;
-  background-color: #fff;
 
   font-size: 14px;
-
-  :focus {
-    border: 1px solid #111;
-  }
 
   @media (min-width: 768px) {
     padding: 14px 18px;
@@ -31,6 +26,7 @@ export const Input = styled(Field)`
 `;
 export const Label = styled.label`
   font-size: 12px;
+  color: ${themeColors.label};
 
   @media (min-width: 768px) {
     font-size: 14px;

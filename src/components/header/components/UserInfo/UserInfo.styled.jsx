@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontColors } from 'styles/variables';
+import { fontColors, themeColors } from 'styles/variables';
 
 export const UserName = styled.p`
   font-size: 14px;
@@ -11,7 +11,7 @@ export const UserName = styled.p`
     font-size: 18px;
     line-height: 1;
   }
-  color: ${fontColors.black};
+  color: ${themeColors.main};
 `;
 
 export const BackgroundName = styled.div`
@@ -32,7 +32,7 @@ export const UserNameIcon = styled.p`
   font-weight: 700;
   line-height: 1.3;
 
-  color: ${fontColors.black}
+  color: ${fontColors.black};
 `;
 
 export const UserPicture = styled.div`
