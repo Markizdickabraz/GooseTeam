@@ -14,7 +14,7 @@ import {
 
 import { useState } from 'react';
 
-export const TaskColumnCard = ({ task }) => {
+export const TaskColumnCard = ({ task, category }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { avatarURL } = useSelector(selectUser);
   return (
@@ -28,6 +28,7 @@ export const TaskColumnCard = ({ task }) => {
           <Level priority={task.priority}>{task.priority}</Level>
         </Wrapper>
         <TaskToolbar
+          category={category}
           taskId={task._id}
           setIsModalOpen={setIsModalOpen}
         />

@@ -9,12 +9,13 @@ const media = {
 
 export const Menu = styled.menu`
   position: absolute;
-  top: 0;
+  top: 38px;
   left: 0;
   margin: 0;
+  max-width: 147px;
   padding: 14px;
   border-radius: 8px;
-  background: #dd0000;
+  background: #aa0000;
   box-shadow: 0px 4px 16px 0px rgba(17, 17, 17, 0.1);
 
   ${media.tablet} {
@@ -32,12 +33,24 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: ${Variables.fontColors.black};
+  width: 100px;
   font-size: 12px;
   font-weight: 500;
   line-height: 1.17;
+  cursor: pointer;
   ${media.tablet} {
     font-size: 14px;
     line-height: 1.29;
   }
+`;
+
+export const Svg = styled.svg`
+  stroke: #212121;
+  fill: transparent;
+  width: 16px;
+  height: 16px;
 `;

@@ -1,7 +1,15 @@
 import { useEffect } from 'react';
-import { List, Menu } from './ContextMenu.styled';
+import { List, Menu, ListItem, Svg } from './ContextMenu.styled';
+import { useDispatch } from 'react-redux';
 
-export const ContextMenu = ({ contextMenuRef, setIsContextMenu }) => {
+
+export const ContextMenu = ({
+  contextMenuRef,
+  setIsContextMenu,
+  category,
+  taskId,
+}) => {
+  const dispatch = useDispatch();
   useEffect(() => {
     function handler(e) {
       if (contextMenuRef.current) {
@@ -13,16 +21,11 @@ export const ContextMenu = ({ contextMenuRef, setIsContextMenu }) => {
     document.addEventListener('click', handler);
     return () => {
       document.removeEventListener('click', handler);
-
-      console.log('размонт');
     };
   }, [contextMenuRef, setIsContextMenu]);
   return (
     <Menu ref={contextMenuRef}>
-      <List>
-        <li>Список</li>
-        <li>Список</li>
-      </List>
+      <List>{/* Куда перекидать */}</List>
     </Menu>
   );
 };

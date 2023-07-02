@@ -6,7 +6,7 @@ import { Wrapper, Button, Svg } from './TaskToolbar.styled';
 import { useState } from 'react';
 import { useRef } from 'react';
 
-export const TaskToolbar = ({ setIsModalOpen, taskId }) => {
+export const TaskToolbar = ({ setIsModalOpen, taskId, category }) => {
   const dispatch = useDispatch();
   const [isContextMenu, setIsContextMenu] = useState(false);
   const contextMenuRef = useRef(null);
@@ -34,6 +34,8 @@ export const TaskToolbar = ({ setIsModalOpen, taskId }) => {
       </Button>
       {isContextMenu && (
         <ContextMenu
+          taskId={taskId}
+          category={category}
           contextMenuRef={contextMenuRef}
           setIsContextMenu={setIsContextMenu}
         />

@@ -11,7 +11,6 @@ export const TasksList = styled.ul`
   flex-direction: column;
 
   gap: 14px;
-  max-height: 372px;
   padding: 0;
   margin-bottom: 14px;
   ${media.tablet} {
