@@ -1,3 +1,19 @@
+export const themeColors = {
+  main: ({ theme: { theme } }) => (theme === 'dark' ? '#FFF' : '#111'),
+  label: ({ theme: { theme } }) =>
+    theme === 'dark' ? 'rgba(250, 250, 250, 0.30)' : '#111',
+
+  mainBackground: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#171820' : '#F7F6F9',
+  secondBackground: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#21222C' : '#fff',
+  sidebarBackground: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#13151A' : '#fff',
+
+  borderColor: ({ theme: { theme } }) =>
+    theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(17, 17, 17, 0.15)',
+};
+
 export const buttonColors = {
   blue: '#3e85f3',
   lightBlue: '#E5EDFA',
@@ -6,10 +22,6 @@ export const buttonColors = {
 };
 
 export const backgroundColors = {
-  mainBackground: ({ theme: { theme } }) =>
-    theme === 'dark' ? '#171820' : '#F7F6F9',
-  secondBackground: ({ theme: { theme } }) =>
-    theme === 'dark' ? '#21222C' : '#fff',
   blue: '#3e85f3',
   white: '#ffffff',
   grey: 'rgba(220, 227, 229, 0.8)',

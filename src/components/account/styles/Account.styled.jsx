@@ -1,6 +1,6 @@
 import { Form } from 'formik';
 import styled from 'styled-components';
-import { backgroundColors } from 'styles/variables';
+import { themeColors } from 'styles/variables';
 
 export const FormContainer = styled(Form)`
   display: flex;
@@ -8,11 +8,22 @@ export const FormContainer = styled(Form)`
   gap: 40px;
 
   margin: 40px auto 0 auto;
-  background-color: ${backgroundColors.secondBackground};
+  background-color: ${themeColors.secondBackground};
+  color: ${themeColors.main};
 
   border-radius: 16px;
   padding: 18px;
   padding-bottom: 40px;
+
+  input {
+    color: ${themeColors.main};
+    background-color: transparent;
+    border: 1px solid ${themeColors.borderColor};
+
+    :focus {
+      border: 1px solid ${themeColors.main};
+    }
+  }
 `;
 
 export const FormWrapper = styled.div`
