@@ -1,4 +1,3 @@
-import { backgroundColors } from 'styles/variables';
 import { UserForm } from '../components/account/UserForm';
 
 const User = () => {
@@ -6,7 +5,6 @@ const User = () => {
     <div
       style={{
         padding: 18,
-        // background: backgroundColors.secondBackground,
       }}
     >
       <UserForm />
