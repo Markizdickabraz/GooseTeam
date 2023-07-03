@@ -8,9 +8,7 @@ import {
   EditWrapper,
   BtnSvgWrapper,
   BtnPencil,
-  BtnPencilIcon,
   BtnTrash,
-  BtnTrashIcon,
   BtnWrapper,
   BtnEdit,
   BtnEditText,
@@ -98,14 +96,15 @@ return (
 
         <BtnSvgWrapper>
           <BtnPencil
+              isActive={isVisibleEdit}
               type="button"
               onClick={() => {
                 handleToggleModal();
                 setIsVisibleEdit(!isVisibleEdit);
           }}>
-            <BtnPencilIcon width="16" height="16">
+            <svg width="16" height="16">
               <use href={`${Icons}#pencil`} />
-            </BtnPencilIcon>
+            </svg>
           </BtnPencil>
 
           <BtnTrash
@@ -114,9 +113,9 @@ return (
                 deleteReview(setReviewsList);
                 close();
           }}>
-            <BtnTrashIcon width="16" height="16">
+            <svg width="16" height="16">
               <use href={`${Icons}#trash`} />
-            </BtnTrashIcon>
+            </svg>
           </BtnTrash>
         </BtnSvgWrapper>
 
