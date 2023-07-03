@@ -6,6 +6,7 @@ export const ThemeIcon = styled.svg`
   height: 24px;
   width: 24px;
   transition: fill ${animation};
+  cursor: pointer;
 
   &:hover,
   &:focus {

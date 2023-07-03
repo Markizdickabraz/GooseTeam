@@ -139,6 +139,7 @@ export const FeedbackBtn = styled.button`
   font-weight: 600;
   line-height: 16px;
   transition: background-color ${animation};
+  cursor: pointer;
 
   &:hover,
   &:focus {
