@@ -36,7 +36,7 @@ const TaskForm = ({ close, create, task }) => {
   // const id = task.id || '64956a30022ac250ec769b01';
   const date = task.date;
   const category = task.category;
-  const id = task.id;
+  const id = task._id;
 
   const formik = useFormik({
     initialValues: {
@@ -81,6 +81,7 @@ const TaskForm = ({ close, create, task }) => {
   };
 
   const editHandler = (taskId, newTask) => {
+    console.log(taskId, newTask);
     dispatch(updateTask({ taskId, newTask }));
   };
 

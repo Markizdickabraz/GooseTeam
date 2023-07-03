@@ -9,9 +9,11 @@ const media = {
 export const TasksList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 14px;
   max-height: 372px;
+
+  gap: 14px;
   padding: 0;
+  
   ${media.desktop} {
     gap: 18px;
   }
