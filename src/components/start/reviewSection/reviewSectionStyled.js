@@ -72,6 +72,11 @@ export const ReviewStyled = styled.div`
   border: 1px solid ${Variables.iconColors.greyDisableStar};
   border-radius: 8px;
   overflow-y: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
   ${media.tablet} {
     width: 570px;
     // height: auto;
