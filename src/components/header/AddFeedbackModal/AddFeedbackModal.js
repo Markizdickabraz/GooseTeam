@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { createPortal } from 'react-dom';
-// import { Rating } from 'react-simple-star-rating';
 import { Modal } from '../../TaskModal/Modal';
 import FeedbackForm from './FeedbackForm/FeedbackForm';
 import FeedbackList from './FeedbackList/FeedbackList';
 
 const AddFeedbackModal = ({ close, isOpened }) => {
+
   const [reviews, setReviews] = useState({});
   const [onModal, setOnModal] = useState(isOpened);
-
   const [isLoading, setIsloading] = useState(false);
 
   const fetchData = async () => {

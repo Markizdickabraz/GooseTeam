@@ -21,11 +21,8 @@ import {
 
 import { RatingText, Label } from '../FeedbackForm/FeedbackForm.styled';
 
-const FeedbackList = ({
-  fetchData,
-  setReviewsList,
-  close,
-}) => {
+const FeedbackList = ({ fetchData, setReviewsList, close }) => {
+  
   const [isOpened, setIsOpened] = useState(false);
   const [isVisibleEdit, setIsVisibleEdit] = useState(false);
   const [newComment, setNewComment] = useState(setReviewsList.comment);
@@ -39,7 +36,6 @@ const FeedbackList = ({
   const changeRate = value => {
     setNewRate(value);
   };
-
 
   const deleteReview = async (item) => {
     await axios.delete(
@@ -57,7 +53,6 @@ const FeedbackList = ({
       let updateReview = {
         comment: newComment,
         rating: newRate 
-
       };
 
       await axios.patch(
@@ -66,7 +61,7 @@ const FeedbackList = ({
       );
       fetchData();
       setIsVisibleEdit(false); // Close the edit section after submission
-    }
+    };
   };
 
   useEffect(() => {
@@ -93,7 +88,7 @@ const FeedbackList = ({
 
 return (
     <EditWrapper ref={modalRef}>
-   <Rating
+        <Rating
           onClick={e => onStarClickClick(e)}
           initialValue={newRate}
           iconsCount={5}
@@ -101,47 +96,43 @@ return (
           size={24}
         />
 
-      <BtnSvgWrapper>
-        <BtnPencil
-          type="button"
-          onClick={() => {
-            handleToggleModal();
-            setIsVisibleEdit(!isVisibleEdit);
-          }}
-        >
-          <BtnPencilIcon width="16" height="16">
-            <use href={`${Icons}#pencil`} />
-          </BtnPencilIcon>
-        </BtnPencil>
+        <BtnSvgWrapper>
+          <BtnPencil
+              type="button"
+              onClick={() => {
+                handleToggleModal();
+                setIsVisibleEdit(!isVisibleEdit);
+          }}>
+            <BtnPencilIcon width="16" height="16">
+              <use href={`${Icons}#pencil`} />
+            </BtnPencilIcon>
+          </BtnPencil>
 
-        <BtnTrash
-          type="button"
-          onClick={() => {
-            deleteReview(setReviewsList);
-            close();
-          }}
-        >
-          <BtnTrashIcon width="16" height="16">
-            <use href={`${Icons}#trash`} />
-          </BtnTrashIcon>
-        </BtnTrash>
-      </BtnSvgWrapper>
+          <BtnTrash
+              type="button"
+              onClick={() => {
+                deleteReview(setReviewsList);
+                close();
+          }}>
+            <BtnTrashIcon width="16" height="16">
+              <use href={`${Icons}#trash`} />
+            </BtnTrashIcon>
+          </BtnTrash>
+        </BtnSvgWrapper>
 
-      <Label>
-        <RatingText>Review</RatingText>
-        <CommentTextList
-          placeholder="Enter text"
-          value={newComment}
-          name=""
-          id="feedback-text"
-          cols="30"
-          rows="10"
-          onChange={(event) => {
-            setNewComment(event.target.value);
-          }}
-          readOnly={!isVisibleEdit}
-        ></CommentTextList>
-      </Label>
+        <Label>
+          <RatingText>Review</RatingText>
+          <CommentTextList
+              placeholder="Enter text"
+              value={newComment}
+              name=""
+              id="feedback-text"
+              cols="30"
+              rows="10"
+              onChange={(event) => {setNewComment(event.target.value)}}
+              readOnly={!isVisibleEdit}
+          ></CommentTextList>
+        </Label>
 
       {isVisibleEdit && (
         <BtnWrapper>

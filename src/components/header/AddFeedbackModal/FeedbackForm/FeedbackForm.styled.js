@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+const media = {
+  tablet: '@media screen and (min-width: 768px)',
+  desktop: '@media screen and (min-width: 1440px)',
+};
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -62,8 +67,8 @@ export const BtnSave = styled.button`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  height: 48px;
-  width: 198px;
+  height: 96%;
+  width: 96%;
   margin-top: 18px;
   cursor: pointer;
   background: #3e85f3;
@@ -75,6 +80,15 @@ export const BtnSave = styled.button`
   :focus {
     cursor: pointer;
     background-color: #3E85F3;
+  }
+
+  ${media.tablet} {
+    height: 48px;
+    width: 198px;
+  }
+  ${media.desktop} {
+    height: 48px;
+    width: 198px;
   }
 `;
 
@@ -94,8 +108,8 @@ export const BtnCancel = styled.button`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  height: 48px;
-  width: 198px;
+  height: 96%;
+  width: 96%;
   margin-top: 18px;
   cursor: pointer;
   background: #E5EDFA;
@@ -107,6 +121,15 @@ export const BtnCancel = styled.button`
   &:focus {
     cursor: pointer;
     background-color: #E5EDFA;
+  }
+
+  ${media.tablet} {
+    height: 48px;
+    width: 198px;
+  }
+  ${media.desktop} {
+    height: 48px;
+    width: 198px;
   }
 `;
 
