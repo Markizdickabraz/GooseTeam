@@ -13,44 +13,57 @@ import {
   GooseImg,
   CloseIcon,
   SidebarSubTitle,
-  Overlay,
+  // Overlay,
 } from './SidebarStyled';
 
-const SideBar = ({ onToggle }) => {
+const SideBar = ({ onToggle, opened }) => {
   const sidebarRef = useRef();
 
   useEffect(() => {
-    const handleOutsideClick = (event) => {
+    const handleOutsideClick = event => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
         onToggle();
       }
     };
 
-    const handleEscapeKey = (event) => {
+    const handleEscapeKey = event => {
       if (event.key === 'Escape') {
         onToggle();
+      }
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth < 1440) {
+        sidebarRef.current.style.transform = opened
+          ? 'translateX(0)'
+          : 'translateX(-290px)';
+      } else {
+        sidebarRef.current.style.transform = 'translateX(0)';
       }
     };
 
     document.addEventListener('mousedown', handleOutsideClick);
     document.addEventListener('keydown', handleEscapeKey);
 
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
       document.removeEventListener('keydown', handleEscapeKey);
+      window.removeEventListener('resize', handleResize);
     };
-  }, [onToggle]);
+  }, [onToggle, opened]);
 
- const handleLinkClick = () => {
-  if (window.innerWidth < 1440) {
-    onToggle();
-  }
-};
+  const handleLinkClick = () => {
+    if (window.innerWidth < 1440) {
+      onToggle();
+    }
+  };
 
- 
   return (
     <>
-      <Overlay onClick={onToggle} />
+      {/* <Overlay onClick={onToggle} /> */}
       <SidebarWrapper ref={sidebarRef}>
         <SidebarLogo>
           <GooseImg

@@ -6,15 +6,15 @@ import { themeColors } from 'styles/variables';
 
 const media = facepaint(BREAKPOINTS.map(bp => `@media (min-width: ${bp}px)`));
 
-export const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 1);
-  z-index: 990;
-`;
+// export const Overlay = styled.div`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(0, 0, 0, 1);
+//   z-index: 990;
+// `;
 
 export const SidebarTitle = styled.h2`
   font-family: Coolvetica;
@@ -29,6 +29,7 @@ export const SidebarTitle = styled.h2`
 `;
 
 export const SidebarWrapper = styled.div`
+  position: static;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -37,9 +38,13 @@ export const SidebarWrapper = styled.div`
   padding: 24px 32px;
   background-color: ${themeColors.sidebarBackground};
 
+  transform: translateX(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   @media (max-width: 1439px) {
     position: absolute;
     z-index: 5000;
+    transform: translateX(-290px);
   }
 `;
 
@@ -62,7 +67,7 @@ export const GooseImg = styled.img`
 `;
 
 export const CloseIcon = styled.svg`
-  fill: ${themeColors.closeIconColor};
+  stroke: ${themeColors.closeIconColor};
   margin-left: auto;
   height: 24px;
   width: 24px;
