@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { themeColors } from 'styles/variables';
 
 const media = {
   mobile: '@media screen and (max-width: 767px)',
@@ -64,7 +65,7 @@ export const HomePage = styled(Link)`
   text-decoration: none;
   font-size: 18px;
   padding-top: 40px;
-  color: rgba(17, 17, 17, 0.7);
+  color: ${themeColors.color404};
   &:focus {
     color: #3e85f3;
     font-size: 20px;
@@ -79,7 +80,7 @@ export const Error = styled.div`
   font-size: 14px;
   font-weight: 500;
   line-height: 28px;
-  color: rgba(17, 17, 17, 0.7);
+  color: ${themeColors.color404};
   text-align: center;
   margin-left: auto;
   margin-right: autox;
