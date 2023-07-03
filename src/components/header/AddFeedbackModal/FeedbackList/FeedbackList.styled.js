@@ -23,47 +23,33 @@ export const BtnPencil = styled.button`
   width: 30px;
   border-radius: 50%;
   border: none;
-  background: #DCEBF7;
+  background: ${({ isActive }) => (isActive ? "#3e85f3" : "#DCEBF7")};
+  stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#3E85F3")};
+  fill: transparent;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    background: #3e85f3;
+    background: ${({ isActive }) => (isActive ? "#3e85f3" : "#3e85f3")};
+    stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#FFFFFF")};
   }
 `;
   
-export const BtnPencilIcon = styled.svg`
-  width: 16px;
-  height: 16px;
-  fill: transparent;
-  stroke: #3E85F3;
-
-  &:hover,
-  &:focus {
-    stroke: #FFFFFF;
-  }
-`;
-
 export const BtnTrash = styled.button`
   height: 30px;
   width: 30px;
   border-radius: 50%;
   border: none;
   background: #FFD2DD;
-  cursor: pointer;
-`;
-
-export const BtnTrashIcon = styled.svg`
-  width: 16px;
-  height: 16px;
   fill: transparent;
   stroke: #EA3D65;
+  cursor: pointer;
 
   &:hover,
   &:focus {
     stroke: #EA3D65;
   }
-`;  
+`;
 
 export const BtnWrapper = styled.div`
   display: flex;
