@@ -163,7 +163,7 @@ const TaskForm = ({ close, create, task }) => {
         <ButtonContainer>
           <Button type="submit">
             {/* <AiOutlinePlus /> */}
-            <Svg width="24px" height="24px">
+            <Svg width="20px" height="20px">
               <use href={`${sprite}#plus`} />
             </Svg>
             Add

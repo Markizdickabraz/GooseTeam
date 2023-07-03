@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { taskColors, buttonColors } from '../../styles/variables';
+import { taskColors, buttonColors, animation } from '../../styles/variables';
 
 const Label = styled.label`
   display: block;
@@ -134,6 +134,11 @@ const buttonPlaceholder = `
   padding: 8px;
   border-radius: 8px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
   border: none;
   outline: none;
 
@@ -144,6 +149,9 @@ const buttonPlaceholder = `
   letter-spacing: 0em;
   text-align: center;
 
+  transition: background-color ${animation};
+  cursor: pointer;
+
   @media screen and (min-width: 768px) {
     padding: 10px;
   }
@@ -153,12 +161,22 @@ const Button = styled.button`
   ${buttonPlaceholder}
   color: ${buttonColors.white};
   background-color: ${buttonColors.blue};
+
+  &:hover,
+  &:focus {
+    background-color: #2b78ef;
+  }
 `;
 
 const LightButton = styled.button`
   ${buttonPlaceholder}
   color: #111111;
   background-color: #efefef;
+
+  &:hover,
+  &:focus {
+    background-color: #e8e8e8;
+  }
 `;
 
 const Err = styled.p`
@@ -171,7 +189,8 @@ const Err = styled.p`
 `;
 
 const Svg = styled.svg`
-  stroke: #343434;
+  stroke: currentColor;
+  fill: ${buttonColors.white};
 `;
 
 export {
