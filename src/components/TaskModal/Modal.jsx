@@ -18,8 +18,20 @@ const Modal = ({ close, children }) => {
       }
     };
 
+    const clickOutHandler = evt => {
+      const withinBoundaries = evt
+        .composedPath()
+        .includes(containerRef.current);
+
+      if (!withinBoundaries) {
+        close();
+      }
+    };
+
     document.addEventListener('keydown', escHandler);
     document.body.style.overflow = 'hidden';
+
+    document.addEventListener('mousedown', clickOutHandler);
 
     setTimeout(() => {
       containerRef.current.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -28,6 +40,7 @@ const Modal = ({ close, children }) => {
     return () => {
       document.removeEventListener('keydown', escHandler);
       document.body.style.overflow = 'auto';
+      document.removeEventListener('mousedown', clickOutHandler);
     };
   }, [close]);
 
