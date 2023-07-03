@@ -50,8 +50,8 @@ export const Header = ({showSidebar}) => {
     title = 'User Profile';
   } else if (currentPath.startsWith('/calendar/')) {
     title = 'Calendar';
-  } else {
-    title = '';
+  }  else if (currentPath.startsWith('/statistics')) {
+    title = 'Statistics';
   }
 
   let motivate = false;

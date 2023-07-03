@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import {
   fontColors,
   iconColors,
-  backgroundColors,
   themeColors,
+  buttonColors,
+  animation,
 } from 'styles/variables';
 
 export const Wrapper = styled.header`
@@ -126,7 +127,8 @@ export const MotivationSpan = styled.span`
 `;
 
 export const FeedbackBtn = styled.button`
-  background: ${backgroundColors.blue};
+  // background-color: ${buttonColors.blue};
+  background-color: ${buttonColors.blue};
   border-radius: 10px;
   padding: 8px 20px;
   border: none;
@@ -136,6 +138,12 @@ export const FeedbackBtn = styled.button`
   font-family: Inter;
   font-weight: 600;
   line-height: 16px;
+  transition: background-color ${animation};
+
+  &:hover,
+  &:focus {
+    background-color: #2b78ef;
+  }
 
   @media screen and (min-width: 768px) {
     border-radius: 14px;
