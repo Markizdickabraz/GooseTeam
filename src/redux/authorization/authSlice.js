@@ -25,7 +25,7 @@ const authSlice = createSlice({
     user: INIT_STATE,
     token: null,
     isLoggedIn: false,
-    isRefreshing: false,
+    isRefreshing: true,
     resendEmain: null,
     theme: 'light',
   },

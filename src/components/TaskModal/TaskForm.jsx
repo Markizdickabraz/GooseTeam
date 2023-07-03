@@ -161,7 +161,7 @@ const TaskForm = ({ close, create, task }) => {
 
       {create ? (
         <ButtonContainer>
-          <Button type="submit" onClick={addHandler}>
+          <Button type="submit">
             {/* <AiOutlinePlus /> */}
             <Svg width="24px" height="24px">
               <use href={`${sprite}#plus`} />
@@ -173,7 +173,7 @@ const TaskForm = ({ close, create, task }) => {
           </LightButton>
         </ButtonContainer>
       ) : (
-        <Button type="submit" onClick={editHandler}>
+        <Button type="submit">
           {/* <BsPencil /> */}
           <Svg width="16px" height="16px">
             <use href={`${sprite}#pencil`} />
