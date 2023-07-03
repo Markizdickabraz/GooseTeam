@@ -41,22 +41,40 @@ const SideBar = ({ onToggle, opened }) => {
       }
     };
 
+    const handleResize = () => {
+      if (window.innerWidth < 1440) {
+        sidebarRef.current.style.transform = opened
+          ? 'translateX(0)'
+          : 'translateX(-290px)';
+      } else {
+        sidebarRef.current.style.transform = 'translateX(0)';
+      }
+    };
+
     document.addEventListener('mousedown', handleOutsideClick);
     document.addEventListener('keydown', handleEscapeKey);
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
 
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
       document.removeEventListener('keydown', handleEscapeKey);
+      window.removeEventListener('resize', handleResize);
     };
-  }, [onToggle]);
+  }, [onToggle, opened]);
 
-  useEffect(() => {
-    if (window.innerWidth < 1440) {
-      sidebarRef.current.style.transform = opened
-        ? 'translateX(0)'
-        : 'translateX(-290px)';
-    }
-  });
+  // useEffect(() => {
+  //   // console.log('hello');
+  //   if (window.innerWidth < 1440) {
+  //     sidebarRef.current.style.transform = opened
+  //       ? 'translateX(0)'
+  //       : 'translateX(-290px)';
+  //   } else {
+  //     sidebarRef.current.style.transform = 'translateX(0)';
+  //     // console.log('hello there');
+  //   }
+  // }, [opened]);
 
   const handleLinkClick = () => {
     if (window.innerWidth < 1440) {

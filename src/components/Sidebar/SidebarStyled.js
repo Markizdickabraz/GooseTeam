@@ -29,6 +29,7 @@ export const SidebarTitle = styled.h2`
 `;
 
 export const SidebarWrapper = styled.div`
+  position: static;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -37,6 +38,7 @@ export const SidebarWrapper = styled.div`
   padding: 24px 32px;
   background-color: ${themeColors.sidebarBackground};
   
+  transform: translateX(0);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (max-width: 1439px) {
