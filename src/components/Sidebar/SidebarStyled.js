@@ -36,10 +36,13 @@ export const SidebarWrapper = styled.div`
   max-width: 289px;
   padding: 24px 32px;
   background-color: ${themeColors.sidebarBackground};
+  
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (max-width: 1439px) {
     position: absolute;
     z-index: 5000;
+    transform: translateX(-290px);
   }
 `;
 

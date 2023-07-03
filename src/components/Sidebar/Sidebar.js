@@ -13,7 +13,7 @@ import {
   GooseImg,
   CloseIcon,
   SidebarSubTitle,
-  Overlay,
+  // Overlay,
 } from './SidebarStyled';
 
 const SideBar = ({ onToggle }) => {
@@ -47,10 +47,9 @@ const SideBar = ({ onToggle }) => {
   }
 };
 
- 
   return (
     <>
-      <Overlay onClick={onToggle} />
+      {/* <Overlay onClick={onToggle} /> */}
       <SidebarWrapper ref={sidebarRef}>
         <SidebarLogo>
           <GooseImg

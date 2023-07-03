@@ -94,7 +94,7 @@ export const Header = () => {
         </Container>
       </Wrapper>
       {modalIsOpened && <AddFeedbackModal close={closeModal} />}
-      {sidebarIsOpened && <MobileSidebar close={hideSidebar} />}
+      {/* {sidebarIsOpened && <MobileSidebar close={hideSidebar} />} */}
     </>
   );
 };
