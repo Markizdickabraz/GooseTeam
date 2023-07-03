@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Header from '../header/header';
@@ -33,15 +34,21 @@ export const Container = styled.div`
 `;
 
 export const MainLayout = () => {
+  const [sidebarIsOpened, setSidebarlIsOpened] = useState(false);
+
+  const showSidebar = () => {
+    setSidebarlIsOpened(true);
+  };
+
+  const hideSidebar = () => {
+    setSidebarlIsOpened(false);
+  };
+
   return (
     <Wrapper>
-      <SideBar
-        onToggle={() => {
-          console.log('Hello');
-        }}
-      />
+      <SideBar onToggle={hideSidebar} opened={sidebarIsOpened} />
       <Container>
-        <Header />
+        <Header showSidebar={showSidebar} />
         <Outlet />
       </Container>
     </Wrapper>

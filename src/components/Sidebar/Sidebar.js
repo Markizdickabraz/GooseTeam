@@ -16,17 +16,26 @@ import {
   // Overlay,
 } from './SidebarStyled';
 
-const SideBar = ({ onToggle }) => {
+const SideBar = ({ onToggle, opened }) => {
   const sidebarRef = useRef();
+  // if (window.innerWidth < 1440) {
+  //   sidebarRef.current.style.transform = opened
+  //     ? 'translateX(0)'
+  //     : 'translateX(-290px)';
+  // }
+
+  // sidebarRef.current.style.transform = opened
+  // ? 'translateX(0)'
+  // : 'translateX(-290px)';
 
   useEffect(() => {
-    const handleOutsideClick = (event) => {
+    const handleOutsideClick = event => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
         onToggle();
       }
     };
 
-    const handleEscapeKey = (event) => {
+    const handleEscapeKey = event => {
       if (event.key === 'Escape') {
         onToggle();
       }
@@ -41,11 +50,19 @@ const SideBar = ({ onToggle }) => {
     };
   }, [onToggle]);
 
- const handleLinkClick = () => {
-  if (window.innerWidth < 1440) {
-    onToggle();
-  }
-};
+  useEffect(() => {
+    if (window.innerWidth < 1440) {
+      sidebarRef.current.style.transform = opened
+        ? 'translateX(0)'
+        : 'translateX(-290px)';
+    }
+  });
+
+  const handleLinkClick = () => {
+    if (window.innerWidth < 1440) {
+      onToggle();
+    }
+  };
 
   return (
     <>

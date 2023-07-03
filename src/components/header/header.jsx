@@ -23,11 +23,11 @@ import {
 import AddFeedbackModal from './AddFeedbackModal/AddFeedbackModal';
 import { MobileSidebar } from './components/MobileSidebar/MobileSidebar';
 
-export const Header = () => {
+export const Header = ({showSidebar}) => {
   const location = useLocation();
   const currentPath = location.pathname;
   const [modalIsOpened, setModalIsOpened] = useState(false);
-  const [sidebarIsOpened, setSidebarlIsOpened] = useState(false);
+  // const [sidebarIsOpened, setSidebarlIsOpened] = useState(false);
 
   const openModal = () => {
     setModalIsOpened(true);
@@ -37,13 +37,13 @@ export const Header = () => {
     setModalIsOpened(false);
   };
 
-  const showSidebar = () => {
-    setSidebarlIsOpened(true);
-  };
+  // const showSidebar = () => {
+  //   setSidebarlIsOpened(true);
+  // };
 
-  const hideSidebar = () => {
-    setSidebarlIsOpened(false);
-  };
+  // const hideSidebar = () => {
+  //   setSidebarlIsOpened(false);
+  // };
 
   let title = '';
   if (currentPath.startsWith('/account')) {
