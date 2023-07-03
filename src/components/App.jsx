@@ -9,6 +9,7 @@ import { RestrictedRoute } from './routes/RestrictedRoute';
 import { PrivateRoute } from './routes/PrivateRoute';
 import { ResendEmainRoute } from './routes/ResendEmailRoute';
 import { Layout } from './Layout';
+import NotFound from 'pages/NotFound';
 
 const Start = lazy(() => import('../pages/Start'));
 const Register = lazy(() => import('../pages/Register'));
@@ -19,8 +20,6 @@ const ResendVerify = lazy(() => import('../pages/ResendVerify'));
 const CalendarPage = lazy(() => import('../pages/CalendarPage/CalendarPage'));
 const ChoosedMonth = lazy(() => import('../pages/CalendarPage/ChoosedMonth'));
 const ChoosedDay = lazy(() => import('../pages/CalendarPage/ChoosedDay'));
-
-const NotFound = lazy(() => import('../pages/NotFound'));
 const VerifyPage = lazy(() => import('../pages/VerifyPage'));
 
 const App = () => {
@@ -86,8 +85,8 @@ const App = () => {
           <Route path="day/:currentDay" element={<ChoosedDay />} />
         </Route>
 
-        <Route path="*" element={<NotFound />} />
       </Route>
+        <Route path="/*" element={<NotFound />} />
     </Routes>
   );
 };

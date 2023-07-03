@@ -2,6 +2,8 @@ export const themeColors = {
   main: ({ theme: { theme } }) => (theme === 'dark' ? '#FFF' : '#111'),
   label: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(250, 250, 250, 0.30)' : '#111',
+  color404: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#FFFFFF' : 'rgba(17, 17, 17, 0.7)',
 
   mainBackground: ({ theme: { theme } }) =>
     theme === 'dark' ? '#171820' : '#F7F6F9',
@@ -12,18 +14,17 @@ export const themeColors = {
 
   borderColor: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(17, 17, 17, 0.15)',
-  
+
   closeIconColor: ({ theme: { theme } }) =>
     theme === 'dark' ? '#ffffff' : '#343434',
   sidebarTitle: ({ theme: { theme } }) =>
     theme === 'dark' ? '#e3f3ff' : '#3e85f3',
   sidebarLabel: ({ theme: { theme } }) =>
     theme === 'dark' ? '#fff' : 'rgba(52, 52, 52, 0.5)',
-  sidebarSvg: ({ theme: { theme } }) =>
-    theme === 'dark' ? '#fff' : '#3e85f3',
-   sidebarSubTitle: ({ theme: { theme } }) =>
+  sidebarSvg: ({ theme: { theme } }) => (theme === 'dark' ? '#fff' : '#3e85f3'),
+  sidebarSubTitle: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(250, 250, 250, 0.30)' : 'rgba(52, 52, 52, 0.5)',
-    sidebarActiveBackground: ({ theme: { theme } }) =>
+  sidebarActiveBackground: ({ theme: { theme } }) =>
     theme === 'dark' ? '#3e85f3' : '#e3f3ff',
 };
 
