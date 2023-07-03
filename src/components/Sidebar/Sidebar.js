@@ -18,15 +18,6 @@ import {
 
 const SideBar = ({ onToggle, opened }) => {
   const sidebarRef = useRef();
-  // if (window.innerWidth < 1440) {
-  //   sidebarRef.current.style.transform = opened
-  //     ? 'translateX(0)'
-  //     : 'translateX(-290px)';
-  // }
-
-  // sidebarRef.current.style.transform = opened
-  // ? 'translateX(0)'
-  // : 'translateX(-290px)';
 
   useEffect(() => {
     const handleOutsideClick = event => {
@@ -63,18 +54,6 @@ const SideBar = ({ onToggle, opened }) => {
       window.removeEventListener('resize', handleResize);
     };
   }, [onToggle, opened]);
-
-  // useEffect(() => {
-  //   // console.log('hello');
-  //   if (window.innerWidth < 1440) {
-  //     sidebarRef.current.style.transform = opened
-  //       ? 'translateX(0)'
-  //       : 'translateX(-290px)';
-  //   } else {
-  //     sidebarRef.current.style.transform = 'translateX(0)';
-  //     // console.log('hello there');
-  //   }
-  // }, [opened]);
 
   const handleLinkClick = () => {
     if (window.innerWidth < 1440) {

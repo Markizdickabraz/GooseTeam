@@ -21,7 +21,7 @@ import {
 } from './Header.styled';
 
 import AddFeedbackModal from './AddFeedbackModal/AddFeedbackModal';
-import { MobileSidebar } from './components/MobileSidebar/MobileSidebar';
+// import { MobileSidebar } from './components/MobileSidebar/MobileSidebar';
 
 export const Header = ({showSidebar}) => {
   const location = useLocation();

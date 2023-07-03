@@ -6,15 +6,15 @@ import { themeColors } from 'styles/variables';
 
 const media = facepaint(BREAKPOINTS.map(bp => `@media (min-width: ${bp}px)`));
 
-export const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 1);
-  z-index: 990;
-`;
+// export const Overlay = styled.div`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(0, 0, 0, 1);
+//   z-index: 990;
+// `;
 
 export const SidebarTitle = styled.h2`
   font-family: Coolvetica;
