@@ -12,6 +12,8 @@ export const ContextMenu = ({
 }) => {
   const dispatch = useDispatch();
   const taskId = task._id;
+
+
   const selectCategories = category => {
     if (category === 'to-do') {
       return [
@@ -32,6 +34,25 @@ export const ContextMenu = ({
       ];
     }
   };
+
+const onMenuClick =  (newCategory) => {
+const { title, start, end, priority, date} = task; 
+
+  const updatedTask = {
+   title,
+    start,
+    end,
+    priority,
+    date,
+    category: newCategory,
+  };
+
+dispatch(updateTask({ taskId, newTask: updatedTask }));
+setIsContextMenu(false);
+  
+};
+
+
   useEffect(() => {
     function handler(e) {
       if (contextMenuRef.current) {
@@ -49,9 +70,9 @@ export const ContextMenu = ({
     <Menu ref={contextMenuRef}>
       <List>
         {selectCategories(category).map(({ title, newCategory }) => {
-          const newTask = { category: newCategory };
+          
           return (
-            <ListItem onClick={() => dispatch(updateTask({ taskId, newTask }))}>
+            <ListItem key={newCategory} onClick={()=>onMenuClick(newCategory)}>
               <p>{title}</p>
               <Svg>
                 <use href={sprite + '#arrow-circle'} />

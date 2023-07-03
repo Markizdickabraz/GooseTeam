@@ -7,12 +7,16 @@ import { useEffect } from 'react';
 import { Container } from './CalendarSection.styled';
 
 
+
+
 const CalendarPage = () => {
   const [currentDate, setCurrentDate] = useState(startOfToday());
   const [periodType, setPeriodType] = useState('month');
+ 
 
   useEffect(() => {
     redirect(`/calendar/month/${format(startOfToday(), 'd-MMM-yyyy')}`);
+   
   }, []);
 
   return (

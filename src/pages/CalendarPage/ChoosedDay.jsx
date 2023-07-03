@@ -3,6 +3,7 @@ import { TaskColumnsList } from '../../components/Сalendar/TaskColumnsList';
 
 
 const ChoosedDay = () => {
+ 
   return (
     <div>
       <DayCalendarHead />
