@@ -1,14 +1,14 @@
 import React from 'react';
 import PeriodPaginator from '../components/PeriodPaginator/PeriodPaginator';
 import StatisticsChart from '../components/StatisticsChart/StatisticsChart';
-import './StatisticsPage.css';
+import { StatisticContainer } from './Statistics.styled';
 
 const StatisticsPage = () => {
   return (
-    <div className="statistic__container">
+    <StatisticContainer>
       <PeriodPaginator />
       <StatisticsChart />
-    </div>
+    </StatisticContainer>
   );
 };
 
