@@ -37,7 +37,7 @@ export const SidebarWrapper = styled.div`
   max-width: 289px;
   padding: 24px 32px;
   background-color: ${themeColors.sidebarBackground};
-  
+
   transform: translateX(0);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -67,7 +67,7 @@ export const GooseImg = styled.img`
 `;
 
 export const CloseIcon = styled.svg`
-  fill: ${themeColors.closeIconColor};
+  stroke: ${themeColors.closeIconColor};
   margin-left: auto;
   height: 24px;
   width: 24px;
