@@ -13,6 +13,7 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { selectTasks } from 'redux/tasks/selectors';
+import { StatisticsContainer } from './StatisticsChart.styled';
 import './StatisticsChart.css';
 
 const StatisticsChart = () => {
@@ -88,7 +89,7 @@ const StatisticsChart = () => {
   ];
 
   return (
-    <div className="statistics__container">
+    <StatisticsContainer>
       <p className="statistics__title">Tasks</p>
       <div className="bar__chart">
         <ResponsiveContainer>
@@ -133,7 +134,7 @@ const StatisticsChart = () => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </StatisticsContainer>
   );
 };
 export default StatisticsChart;
