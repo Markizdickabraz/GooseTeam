@@ -11,7 +11,6 @@ export const TaskColumnsList = () => {
   const toDoTasks = tasks.filter(task => task.category === 'to-do');
   const inProgressTasks = tasks.filter(task => task.category === 'in-progress');
   const doneTasks = tasks.filter(task => task.category === 'done');
-  console.log(tasks);
   return (
     <OverlayScrollbarsComponent
       element="div"
