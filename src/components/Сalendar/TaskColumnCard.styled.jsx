@@ -11,8 +11,8 @@ export const TaskCard = styled.li`
   width: 100%;
   height: 108px;
   padding: 15px;
-  background-color: #f7f6f9;
-  border: 1px solid rgba(220, 227, 229, 0.8);
+  background-color: ${Variables.themeColors.mainBackground};
+  border: 1px solid ${Variables.themeColors.borderColor};
   border-radius: 8px;
 
   ${media.tablet} {
@@ -20,7 +20,7 @@ export const TaskCard = styled.li`
   }
 `;
 export const TaskTitle = styled.h3`
-  color: ${Variables.fontColors.black};
+  color: ${Variables.themeColors.main};
   font-size: 14px;
   font-weight: 500;
   line-height: 1.29;

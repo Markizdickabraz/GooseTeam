@@ -13,7 +13,9 @@ export const ListOfDays = styled.ul`
   width: 100%;
   margin-bottom: 14px;
   padding: 14px 18px;
-
+  background-color: ${Variables.themeColors.mainBackground};
+  border: 1px solid ${Variables.themeColors.borderColor};
+  border-radius: 8px;
   ${media.tablet} {
     gap: 69px;
     margin-bottom: 16px;
@@ -38,7 +40,7 @@ export const ListOfDaysItem = styled.li`
 `;
 
 export const Week = styled.p`
-  color: ${Variables.fontColors.black};
+  color: ${Variables.themeColors.label};
   font-size: 16px;
   font-family: ${Variables.fonts.primary};
   font-weight: 600;
@@ -52,7 +54,13 @@ export const Week = styled.p`
 
 export const Day = styled.p`
   padding: 4px 6px;
-  color: ${Variables.fontColors.black};
+  color: ${props => {
+    return props.isSameDay ? '#FFFFFF' : Variables.themeColors.main;
+  }};
+  background-color: ${props => {
+    return props.isSameDay ? '#3E85F3' : 'transparent';
+  }};
+
   font-size: 12px;
   font-family: ${Variables.fonts.primary};
   font-weight: 700;

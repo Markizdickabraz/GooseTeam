@@ -16,7 +16,6 @@ const CalendarPage = () => {
 
   useEffect(() => {
     redirect(`/calendar/month/${format(startOfToday(), 'd-MMM-yyyy')}`);
-   
   }, []);
 
   return (

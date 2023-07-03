@@ -45,7 +45,7 @@ const tasksSlice = createSlice({
     [deleteTask.pending]: handlePending,
     [deleteTask.fulfilled](state, { payload }) {
       handleFulfilled(state);
-      const idx = state.items.findIndex(({ id }) => id === payload.id);
+      const idx = state.items.findIndex(({ _id }) => _id === payload._id);
       state.items.splice(idx, 1);
     },
     [deleteTask.rejected]: handleRejected,

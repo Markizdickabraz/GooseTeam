@@ -17,7 +17,7 @@ export const TasksColumn = ({ title, tasks, category }) => {
   };
 
   return (
-    <TaskColumn>
+    <TaskColumn key={title}>
       <ColumnHeadBar setIsAddModalOpen={setIsAddModalOpen} title={title} />
       <ColumnTasksList
         tasks={tasks}

@@ -52,14 +52,7 @@ export const DayCalendarHead = () => {
             <Week>
               {windowWidth < 768 ? format(day, 'EEEEE') : format(day, 'EEE')}
             </Week>
-            <Day
-              style={{
-                color: isSameDay(day, parsedCurrentDay) ? '#FFFFFF' : '#343434',
-                backgroundColor: isSameDay(day, parsedCurrentDay)
-                  ? '#3E85F3'
-                  : '#FFFFFF',
-              }}
-            >
+            <Day isSameDay={isSameDay(day, parsedCurrentDay)}>
               {format(day, 'd')}
             </Day>
           </ListOfDaysItem>
