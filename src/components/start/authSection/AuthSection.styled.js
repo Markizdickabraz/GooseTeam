@@ -12,7 +12,7 @@ const media = {
 export const Section = styled.section`
   margin: 0;
   height: ${window.innerHeight};
-  width: 100vw;
+  width: 100%;
   background-color: ${Variables.backgroundColors.blue};
 `;
 export const Container = styled.div`
@@ -109,8 +109,8 @@ export const SignUp = styled(Link)`
     &:focus,
     &:hover {
       border: 1px solid ${Variables.fontColors.white};
-      -webkit-box-shadow: 0px 0px 36px 7px rgba(203, 207, 58, 0.91);
-      box-shadow: 0px 0px 36px 7px rgba(203, 207, 58, 0.91);
+      -webkit-box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
+      box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
     }
 
     &:focus::after,
@@ -157,8 +157,8 @@ export const LogIn = styled(Link)`
   &:focus,
   &:hover {
     border: 1px solid ${Variables.fontColors.white};
-    -webkit-box-shadow: 0px 0px 36px 7px rgba(203, 207, 58, 0.91);
-    box-shadow: 0px 0px 36px 7px rgba(203, 207, 58, 0.91);
+    -webkit-box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
+    box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
     background-color: ${Variables.backgroundColors.blue};
     color: ${Variables.fontColors.white};
   }
@@ -195,8 +195,8 @@ export const SignUpMob = styled(Link)`
   &:focus,
   &:hover {
     border: 1px solid ${Variables.fontColors.white};
-    -webkit-box-shadow: 0px 0px 36px 7px rgba(203, 207, 58, 0.91);
-    box-shadow: 0px 0px 36px 7px rgba(203, 207, 58, 0.91);
+    -webkit-box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
+    box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
   }
 
   &:focus::after,
