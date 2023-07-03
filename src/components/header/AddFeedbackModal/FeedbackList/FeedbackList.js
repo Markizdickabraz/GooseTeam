@@ -8,9 +8,7 @@ import {
   EditWrapper,
   BtnSvgWrapper,
   BtnPencil,
-  BtnPencilIcon,
   BtnTrash,
-  BtnTrashIcon,
   BtnWrapper,
   BtnEdit,
   BtnEditText,
@@ -21,15 +19,21 @@ import {
 
 import { RatingText, Label } from '../FeedbackForm/FeedbackForm.styled';
 
-const FeedbackList = ({
-  fetchData,
-  setReviewsList,
-  close,
-}) => {
+const FeedbackList = ({ fetchData, setReviewsList, close }) => {
+  
   const [isOpened, setIsOpened] = useState(false);
   const [isVisibleEdit, setIsVisibleEdit] = useState(false);
   const [newComment, setNewComment] = useState(setReviewsList.comment);
+  const [newRate, setNewRate] = useState(setReviewsList.rating);
   const modalRef = useRef(null);
+  
+  const onStarClickClick = nextValue => {
+    changeRate(nextValue);
+  };
+
+  const changeRate = value => {
+    setNewRate(value);
+  };
 
   const deleteReview = async (item) => {
     await axios.delete(
@@ -43,9 +47,10 @@ const FeedbackList = ({
   };
 
   const editReview = async (item) => {
-    if (newComment !== '') {
+    if ((!(newComment === '') && !(newRate === 0))) {
       let updateReview = {
         comment: newComment,
+        rating: newRate 
       };
 
       await axios.patch(
@@ -54,7 +59,7 @@ const FeedbackList = ({
       );
       fetchData();
       setIsVisibleEdit(false); // Close the edit section after submission
-    }
+    };
   };
 
   useEffect(() => {
@@ -81,54 +86,52 @@ const FeedbackList = ({
 
 return (
     <EditWrapper ref={modalRef}>
-      <Rating
-        initialValue={setReviewsList.rating}
-        iconsCount={5}
-        transition={true}
-        size={24}
-      />
+        <Rating
+          onClick={e => onStarClickClick(e)}
+          initialValue={newRate}
+          iconsCount={5}
+          transition={true}
+          size={24}
+        />
 
-      <BtnSvgWrapper>
-        <BtnPencil
-          type="button"
-          onClick={() => {
-            handleToggleModal();
-            setIsVisibleEdit(!isVisibleEdit);
-          }}
-        >
-          <BtnPencilIcon width="16" height="16">
-            <use href={`${Icons}#pencil`} />
-          </BtnPencilIcon>
-        </BtnPencil>
+        <BtnSvgWrapper>
+          <BtnPencil
+              isActive={isVisibleEdit}
+              type="button"
+              onClick={() => {
+                handleToggleModal();
+                setIsVisibleEdit(!isVisibleEdit);
+          }}>
+            <svg width="16" height="16">
+              <use href={`${Icons}#pencil`} />
+            </svg>
+          </BtnPencil>
 
-        <BtnTrash
-          type="button"
-          onClick={() => {
-            deleteReview(setReviewsList);
-            close();
-          }}
-        >
-          <BtnTrashIcon width="16" height="16">
-            <use href={`${Icons}#trash`} />
-          </BtnTrashIcon>
-        </BtnTrash>
-      </BtnSvgWrapper>
+          <BtnTrash
+              type="button"
+              onClick={() => {
+                deleteReview(setReviewsList);
+                close();
+          }}>
+            <svg width="16" height="16">
+              <use href={`${Icons}#trash`} />
+            </svg>
+          </BtnTrash>
+        </BtnSvgWrapper>
 
-      <Label>
-        <RatingText>Review</RatingText>
-        <CommentTextList
-          placeholder="Enter text"
-          value={newComment}
-          name=""
-          id="feedback-text"
-          cols="30"
-          rows="10"
-          onChange={(event) => {
-            setNewComment(event.target.value);
-          }}
-          readOnly={!isVisibleEdit}
-        ></CommentTextList>
-      </Label>
+        <Label>
+          <RatingText>Review</RatingText>
+          <CommentTextList
+              placeholder="Enter text"
+              value={newComment}
+              name=""
+              id="feedback-text"
+              cols="30"
+              rows="10"
+              onChange={(event) => {setNewComment(event.target.value)}}
+              readOnly={!isVisibleEdit}
+          ></CommentTextList>
+        </Label>
 
       {isVisibleEdit && (
         <BtnWrapper>

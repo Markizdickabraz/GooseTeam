@@ -37,16 +37,15 @@ const FeedbackForm = ({ close, fetchData, setOnModal }) => {
         newReview
       )
       .then(() => {
-        setNewComment('');
-        setNewRate(0);
+        // setNewComment('');
+        // setNewRate(0);
         fetchData();
       });
   };
 
   const sendReview = event => {
     event.preventDefault();
-    // console.log(newComment);
-    // console.log(newRate);
+  
     if (!(newComment === '') && !(newRate === 0)) {
       addReview();
       //setIsVisible(false);

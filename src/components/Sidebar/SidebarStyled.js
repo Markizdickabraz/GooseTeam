@@ -21,8 +21,7 @@ export const SidebarTitle = styled.h2`
   font-weight: 400;
   font-size: 18px;
   line-height: 1.33;
-  //тема біла
-  color: #3e85f3;
+  color: ${themeColors.sidebarTitle};
 
   @media (min-width: 1440px) {
     font-size: 24px;
@@ -36,11 +35,9 @@ export const SidebarWrapper = styled.div`
   width: 300px;
   max-width: 289px;
   padding: 24px 32px;
-  //тема біла
-  background-color: #fff;
+  background-color: ${themeColors.sidebarBackground};
 
   @media (max-width: 1439px) {
-    background-color: ${themeColors.sidebarBackground};
     position: absolute;
     z-index: 5000;
   }
@@ -65,8 +62,7 @@ export const GooseImg = styled.img`
 `;
 
 export const CloseIcon = styled.svg`
-  //тема біла
-  fill: #343434;
+  fill: ${themeColors.closeIconColor};
   margin-left: auto;
   height: 24px;
   width: 24px;
@@ -81,8 +77,7 @@ export const CloseIcon = styled.svg`
 `;
 
 export const SidebarSubTitle = styled.h3`
-  //тема біла
-  color: rgba(52, 52, 52, 0.5);
+  color: ${themeColors.sidebarSubTitle};
   font-family: Inter;
   font-weight: 600;
   line-height: 1.2;

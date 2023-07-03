@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+const media = {
+  tablet: '@media screen and (min-width: 768px)',
+  desktop: '@media screen and (min-width: 1440px)',
+};
+
 export const EditWrapper = styled.div`
  position: relative;
  width: 100%;
@@ -18,47 +23,33 @@ export const BtnPencil = styled.button`
   width: 30px;
   border-radius: 50%;
   border: none;
-  background: #DCEBF7;
+  background: ${({ isActive }) => (isActive ? "#3e85f3" : "#DCEBF7")};
+  stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#3E85F3")};
+  fill: transparent;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    background: #3e85f3;
+    background: ${({ isActive }) => (isActive ? "#3e85f3" : "#3e85f3")};
+    stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#FFFFFF")};
   }
 `;
   
-export const BtnPencilIcon = styled.svg`
-  width: 16px;
-  height: 16px;
-  fill: transparent;
-  stroke: #3E85F3;
-
-  &:hover,
-  &:focus {
-    stroke: #FFFFFF;
-  }
-`;
-
 export const BtnTrash = styled.button`
   height: 30px;
   width: 30px;
   border-radius: 50%;
   border: none;
   background: #FFD2DD;
-  cursor: pointer;
-`;
-
-export const BtnTrashIcon = styled.svg`
-  width: 16px;
-  height: 16px;
   fill: transparent;
   stroke: #EA3D65;
+  cursor: pointer;
 
   &:hover,
   &:focus {
     stroke: #EA3D65;
   }
-`;  
+`;
 
 export const BtnWrapper = styled.div`
   display: flex;
@@ -72,8 +63,8 @@ export const BtnEdit = styled.button`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  height: 48px;
-  width: 198px;
+  height: 96%;
+  width: 96%;
   margin-top: 18px;
   cursor: pointer;
   background: #3e85f3;
@@ -85,6 +76,15 @@ export const BtnEdit = styled.button`
   :focus {
     cursor: pointer;
     background-color: #3E85F3;
+  }
+
+  ${media.tablet} {
+    height: 48px;
+    width: 198px;
+  }
+  ${media.desktop} {
+    height: 48px;
+    width: 198px;
   }
 `;
 
@@ -104,8 +104,8 @@ export const BtnCancel = styled.button`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  height: 48px;
-  width: 198px;
+  height: 96%;
+  width: 96%;
   margin-top: 18px;
   cursor: pointer;
   background: #E5EDFA;
@@ -117,6 +117,15 @@ export const BtnCancel = styled.button`
   &:focus {
     cursor: pointer;
     background-color: #E5EDFA;
+  }
+
+  ${media.tablet} {
+    height: 48px;
+    width: 198px;
+  }
+  ${media.desktop} {
+    height: 48px;
+    width: 198px;
   }
 `;
 
@@ -131,7 +140,7 @@ export const BtnCancelText = styled.span`
 `;
 
 export const CommentTextList = styled.textarea`
-  width: 404px;
+  width: 96%;
   height: 127px;
   background-color: rgba(246, 246, 246, 1);
   border: 1px solid #343434;
@@ -148,5 +157,12 @@ export const CommentTextList = styled.textarea`
     font-size: 14px;
     line-height: 18px;
     color: #343434;
+  }
+
+  ${media.tablet} {
+    width: 404px;
+  }
+  ${media.desktop} {
+    width: 404px;
   }
 `;

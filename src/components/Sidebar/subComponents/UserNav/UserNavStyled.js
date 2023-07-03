@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { themeColors } from 'styles/variables';
 
 export const NavList = styled.nav`
   display: flex;
@@ -8,7 +9,7 @@ export const NavList = styled.nav`
 `;
 
 export const StyledLink = styled(NavLink)`
-  color: #111;
+  color: ${themeColors.sidebarLabel};
   width: 185px;
 
   font-weight: 600;
@@ -17,13 +18,17 @@ export const StyledLink = styled(NavLink)`
   border-radius: 8px;
   display: flex;
   align-items: center;
-  &.active {
-    color: #3e85f3;
-    background-color: #e3f3ff;
-
-    & > svg {
+  & > svg:not(:last-child) {
       fill: transparent;
-      stroke: #3e85f3;
+      stroke: ${themeColors.sidebarLabel};
+    }
+  &.active {
+    color: ${themeColors.sidebarSvg};
+    background-color: ${themeColors.sidebarActiveBackground};
+
+    & > svg:not(:last-child) {
+      fill: transparent;
+      stroke: ${themeColors.sidebarSvg};
     }
   }
 
@@ -39,8 +44,7 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const NavIcon = styled.svg`
-  fill: transparent;
-  stroke: #111;
+  stroke: ${themeColors.sidebarSvg};
 
   width: 20px;
   height: 20px;
@@ -50,5 +54,52 @@ export const NavIcon = styled.svg`
     width: 24px;
     height: 24px;
     margin-right: 12px;
+  }
+`;
+
+export const NavIconChart = styled.svg`
+
+  stroke: ${themeColors.sidebarSvg};
+
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+
+  @media (min-width: 765px) {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+  }
+`;
+
+export const StyledLinkStatistic = styled(NavLink)`
+  color: ${themeColors.sidebarLabel};
+  width: 185px;
+
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  & > svg {
+      fill: ${themeColors.sidebarLabel};
+    }
+  &.active {
+    color: ${themeColors.sidebarSvg};
+    background-color: ${themeColors.sidebarActiveBackground};
+
+    & > svg {
+      fill: ${themeColors.sidebarSvg};
+    }
+  }
+   @media (min-width: 765px) {
+    font-size: 16px;
+    padding: 16px 20px;
+    width: 225px;
+  }
+
+  @media (min-width: 1087px) {
+    width: 241px;
   }
 `;
