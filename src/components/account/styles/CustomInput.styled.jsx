@@ -13,8 +13,6 @@ export const InputContainer = styled.div`
 `;
 
 export const Input = styled(Field)`
-  width: 299px;
-  //height: 42px;
   padding: 12px 14px;
   border-radius: 8px;
   outline: none;
@@ -22,9 +20,8 @@ export const Input = styled(Field)`
   font-size: 14px;
 
   @media (min-width: 768px) {
-    width: 354px;
-    height: 46px;
     padding: 14px 18px;
+    font-size: 16px;
   }
 `;
 export const Label = styled.label`
