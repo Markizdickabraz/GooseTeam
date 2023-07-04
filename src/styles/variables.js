@@ -11,6 +11,11 @@ export const themeColors = {
     theme === 'dark' ? '#21222C' : '#fff',
   sidebarBackground: ({ theme: { theme } }) =>
     theme === 'dark' ? '#13151A' : '#fff',
+  
+  modalBackground: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#171820' : '#fff',
+  modalBoxShadow: ({ theme: { theme } }) =>
+    theme === 'dark' ? '0px 4px 57px 0px rgba(17, 17, 17, 0.05)' : '0px 4px 16px 0px #1111111a',
 
   borderColor: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(17, 17, 17, 0.15)',
@@ -30,6 +35,22 @@ export const themeColors = {
     theme === 'dark' ? 'rgba(227, 243, 255, 0.15)' : '#e3f3ff',
   paginatorBtnBorder: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 0.5)',
+  
+  feedbackText: ({ theme: { theme } }) =>
+    theme === 'dark' ? 'rgba(250, 250, 250, 0.30)' : 'rgba(52, 52, 52, 0.80)',
+  feedbackTextareaBg: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#171820' : 'rgba(246, 246, 246, 1)',
+  feedbackTextareaColor: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#fff' : '#343434',
+  feedbackBtnCancelBg: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#21222C' : '#E5EDFA',
+  feedbackBtnCancelColor: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#fff' : '#343434',
+  // feedbackBtnPencilBg: ({ theme: { theme } }) =>
+  //   theme === 'dark' ? '#353647' : '#DCEBF7',
+  feedbackBtnTrashBg: ({ theme: { theme } }) =>
+    theme === 'dark' ? 'rgba(234, 61, 101, 0.20)' : '#FFD2DD',
+  
 };
 
 export const buttonColors = {

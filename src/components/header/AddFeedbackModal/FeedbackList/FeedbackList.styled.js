@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { themeColors } from '../../../../styles/variables';
 
 const media = {
   tablet: '@media screen and (min-width: 768px)',
@@ -23,9 +24,13 @@ export const BtnPencil = styled.button`
   width: 30px;
   border-radius: 50%;
   border: none;
-  background: ${({ isActive }) => (isActive ? "#3e85f3" : "#DCEBF7")};
+  
+  background: ${({ isActive }) => (isActive ? "#3E85F3" : '#E3F3FF')};
   stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#3E85F3")};
   fill: transparent;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   cursor: pointer;
 
   &:hover,
@@ -40,7 +45,7 @@ export const BtnTrash = styled.button`
   width: 30px;
   border-radius: 50%;
   border: none;
-  background: #FFD2DD;
+  background: ${themeColors.feedbackBtnTrashBg};
   fill: transparent;
   stroke: #EA3D65;
   cursor: pointer;
@@ -108,7 +113,7 @@ export const BtnCancel = styled.button`
   width: 96%;
   margin-top: 18px;
   cursor: pointer;
-  background: #E5EDFA;
+  background: ${themeColors.feedbackBtnCancelBg};
   border: none;
   border-radius: 8px;
   /* transition: ; */
@@ -116,7 +121,7 @@ export const BtnCancel = styled.button`
   &:hover,
   &:focus {
     cursor: pointer;
-    background-color: #E5EDFA;
+    background-color: ${themeColors.feedbackBtnCancelBg};
   }
 
   ${media.tablet} {
@@ -136,27 +141,29 @@ export const BtnCancelText = styled.span`
   font-size: 14px;
   line-height: 18px;
   text-align: center;
-  color: #343434;
+  color: ${themeColors.feedbackBtnCancelColor};
 `;
 
 export const CommentTextList = styled.textarea`
   width: 96%;
   height: 127px;
-  background-color: rgba(246, 246, 246, 1);
+  background-color: ${themeColors.feedbackTextareaBg};
   border: 1px solid #343434;
   border-radius: 8px;
   margin-top: 8px;
   resize: none;
   padding-top: 14px;
+  padding-button: 14px;
   padding-left: 18px;
-  color: #343434;
+  padding-right: 18px;
+  color: ${themeColors.feedbackTextareaColor};
   ::placeholder {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 18px;
-    color: #343434;
+    color: ${themeColors.feedbackTextareaColor};
   }
 
   ${media.tablet} {
