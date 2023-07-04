@@ -68,7 +68,7 @@ const TaskForm = ({ close, create, task }) => {
       currentEnd = autocomplete(currentEnd);
       formik.values.end = currentEnd;
     }
-    prevEndRef.current = currentStart;
+    prevEndRef.current = currentEnd;
   });
 
   const closeHandler = evt => {
@@ -109,6 +109,7 @@ const TaskForm = ({ close, create, task }) => {
               onChange={formik.handleChange}
               value={formik.values.start}
               placeholder="XX:YY"
+              autocomplete="off"
             />
             {formik.errors.start && <Err>{formik.errors.start}</Err>}
           </Label>
@@ -121,6 +122,7 @@ const TaskForm = ({ close, create, task }) => {
               onChange={formik.handleChange}
               value={formik.values.end}
               placeholder="XX:YY"
+              autocomplete="off"
             />
             {formik.errors.end && <Err>{formik.errors.end}</Err>}
           </Label>

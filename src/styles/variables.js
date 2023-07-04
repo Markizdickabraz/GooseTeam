@@ -16,6 +16,8 @@ export const themeColors = {
     theme === 'dark' ? '#171820' : '#fff',
   modalBoxShadow: ({ theme: { theme } }) =>
     theme === 'dark' ? '0px 4px 57px 0px rgba(17, 17, 17, 0.05)' : '0px 4px 16px 0px #1111111a',
+  modalBorder: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#171820' : 'rgba(220, 227, 229, 0.8)',
 
   borderColor: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(17, 17, 17, 0.15)',
@@ -50,7 +52,15 @@ export const themeColors = {
   //   theme === 'dark' ? '#353647' : '#DCEBF7',
   feedbackBtnTrashBg: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(234, 61, 101, 0.20)' : '#FFD2DD',
-  
+
+  modalFormLabel: ({ theme: { theme } }) =>
+    theme === 'dark' ? 'rgba(250, 250, 250, 0.3)' : '#343434cc',
+  modalFormBg: ({ theme: { theme } }) =>
+    theme === 'dark' ? 'transparent' : '#f6f6f6',
+  modalFormText: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#FFFFFF' : '#343434',
+  modalFormBorder: ({ theme: { theme } }) =>
+    theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : '#f6f6f6',
 };
 
 export const buttonColors = {

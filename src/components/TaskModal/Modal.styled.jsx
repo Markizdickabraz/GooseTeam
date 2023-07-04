@@ -12,7 +12,7 @@ const Container = styled.div`
   padding-right: 18px;
   padding-top: 48px;
   padding-bottom: 40px;
-  border: 1px solid #dce3e5cc;
+  border: 1px solid ${themeColors.modalBorder};
   border-radius: 8px;
   box-shadow: ${themeColors.modalBoxShadow};
 
