@@ -56,7 +56,7 @@ const InputsForm = ({ isSingup }) => {
           }}
           className={style.showPasswordBtn}
         >
-          {isShow ? <Icon icon={eyeOff} /> : <Icon icon={eye} />}
+          {!isShow ? <Icon icon={eyeOff} /> : <Icon icon={eye} />}
         </span>
       </div>
     </div>
