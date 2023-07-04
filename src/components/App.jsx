@@ -10,6 +10,7 @@ import { PrivateRoute } from './routes/PrivateRoute';
 import { ResendEmainRoute } from './routes/ResendEmailRoute';
 import { Layout } from './Layout';
 import NotFound from 'pages/NotFound';
+import { ScrollToTop } from './scrollToTop/ScrollToTop';
 
 const Start = lazy(() => import('../pages/Start'));
 const Register = lazy(() => import('../pages/Register'));
@@ -38,7 +39,15 @@ const App = () => {
         <Route
           index
           element={
-            <RestrictedRoute redirectTo="/account" component={<Start />} />
+            <RestrictedRoute
+              redirectTo="/account"
+              component={
+                <>
+                  <ScrollToTop />
+                  <Start />
+                </>
+              }
+            />
           }
         />
         <Route
@@ -84,9 +93,8 @@ const App = () => {
           <Route path="month/:currentDate" element={<ChoosedMonth />} />
           <Route path="day/:currentDay" element={<ChoosedDay />} />
         </Route>
-
       </Route>
-        <Route path="/*" element={<NotFound />} />
+      <Route path="/*" element={<NotFound />} />
     </Routes>
   );
 };
