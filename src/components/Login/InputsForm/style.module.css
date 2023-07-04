@@ -11,7 +11,20 @@
   text-align: left;
   padding-left: 15px;
 }
-
+.passwordField {
+  display: flex;
+  flex-direction: row;
+}
+.showPasswordBtn {
+  position: fixed;
+  left: 63%;
+  border: none;
+  cursor: pointer;
+  background: none;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  color: black;
+}
 .fieldForm::placeholder {
   color: #dce3e5;
 }
