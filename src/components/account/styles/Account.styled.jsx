@@ -25,8 +25,32 @@ export const FormContainer = styled(Form)`
     }
   }
 `;
-
 export const FormWrapper = styled.div`
+ display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  > div {
+    position: relative;
+  @media (max-width: 767px) {
+    margin-bottom: 28px;
+  }
+  @media (min-width: 768px) {
+    margin-bottom: 26px;
+  }
+  } 
+
+  @media screen and (min-width: 768px) {
+    width: 354px;
+    min-height: 458px;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 758px;
+    min-height: 264px;
+  }
+`;
+/*export const FormWrapper = styled.div`
   display: flex;
   margin: 0 auto;
   gap: 18px;
@@ -57,7 +81,7 @@ export const FormWrapper = styled.div`
       width: 354px;
     }
   }
-`;
+`;*/
 
 export const UserInfo = styled.div`
   text-align: center;
