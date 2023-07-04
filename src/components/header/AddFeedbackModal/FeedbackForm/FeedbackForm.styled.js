@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { themeColors } from '../../../../styles/variables';
 
 const media = {
   tablet: '@media screen and (min-width: 768px)',
@@ -19,7 +20,7 @@ export const RatingText = styled.label`
   font-size: 12px;
   line-height: 14px;
   margin-bottom: 8px;
-  color: rgba(52, 52, 52, 0.80);
+  color: ${themeColors.feedbackText};
 `;
 
 export const Label = styled.label`
@@ -37,21 +38,23 @@ export const Label = styled.label`
 export const CommentText = styled.textarea`
   width: 100%;
   height: 127px;
-  background-color: rgba(246, 246, 246, 1);
+  background-color: ${themeColors.feedbackTextareaBg};
   border: 1px solid #343434;
   border-radius: 8px;
   margin-top: 8px;
   resize: none;
   padding-top: 14px;
+  padding-button: 14px;
   padding-left: 18px;
-  color: #343434;
+  padding-right: 18px;
+  color: ${themeColors.feedbackTextareaColor};
   ::placeholder {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 18px;
-    color: #343434;
+    color: ${themeColors.feedbackTextareaColor};
   }
 `;
 
@@ -112,7 +115,7 @@ export const BtnCancel = styled.button`
   width: 96%;
   margin-top: 18px;
   cursor: pointer;
-  background: #E5EDFA;
+  background: ${themeColors.feedbackTextareaBg};
   border: none;
   border-radius: 8px;
   /* transition: ; */
@@ -120,7 +123,7 @@ export const BtnCancel = styled.button`
   &:hover,
   &:focus {
     cursor: pointer;
-    background-color: #E5EDFA;
+    background-color: ${themeColors.feedbackTextareaBg};
   }
 
   ${media.tablet} {
@@ -140,5 +143,5 @@ export const BtnCancelText = styled.span`
   font-size: 14px;
   line-height: 18px;
   text-align: center;
-  color: #343434;
+  color: ${themeColors.feedbackBtnCancelColor};
 `;

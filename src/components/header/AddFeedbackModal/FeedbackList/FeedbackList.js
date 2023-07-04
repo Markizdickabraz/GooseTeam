@@ -86,6 +86,7 @@ const FeedbackList = ({ fetchData, setReviewsList, close }) => {
 
 return (
     <EditWrapper ref={modalRef}>
+        <RatingText>Rating</RatingText>
         <Rating
           onClick={e => onStarClickClick(e)}
           initialValue={newRate}
@@ -102,7 +103,7 @@ return (
                 handleToggleModal();
                 setIsVisibleEdit(!isVisibleEdit);
           }}>
-            <svg width="16" height="16">
+            <svg style={{padding: '0px'}} width="16" height="16">
               <use href={`${Icons}#pencil`} />
             </svg>
           </BtnPencil>
@@ -113,7 +114,7 @@ return (
                 deleteReview(setReviewsList);
                 close();
           }}>
-            <svg width="16" height="16">
+            <svg style={{padding: '0px'}} width="16" height="16">
               <use href={`${Icons}#trash`} />
             </svg>
           </BtnTrash>
