@@ -5,9 +5,19 @@ import { setFilterDate } from 'redux/filterdate/filterdate-slice';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './PeriodPaginator.css';
-import Icons from '../../images/svg/sprite.svg';
+import {
+  PaginatorBtnBox,
+  ArrowBtn,
+  Arrow,
+  ChartLegendBox,
+  ChartLegendList,
+  ChartLegendItem,
+  ChartLegendText,
+  PaginatorBox,
+} from './PeriodPaginator.styled';
+import sprite from '../../images/svg/sprite.svg';
 
-const PeriodPaginator = () => {
+export const PeriodPaginator = () => {
   const filterdate = useSelector(selectFilterDate);
   const dispatch = useDispatch();
 
@@ -46,7 +56,7 @@ const PeriodPaginator = () => {
   };
 
   return (
-    <div className="paginator__box">
+    <PaginatorBox>
       <DatePicker
         selected={filterdate}
         onChange={handleChange}
@@ -56,29 +66,29 @@ const PeriodPaginator = () => {
         formatWeekDay={nameOfDay => nameOfDay.substr(0, 1)}
         fixedHeight
       />
-      <div className="paginator__btn--box">
-        <button className="arrow__btn" onClick={() => previousDate()}>
-          <svg viewBox="0 0 18 18" className="arrow">
-            <use xlinkHref={`${Icons}#chevron-left`} />
-          </svg>
-        </button>
-        <button className="arrow__btn" onClick={() => nextDate()}>
-          <svg viewBox="0 0 18 18" className="arrow">
-            <use xlinkHref={`${Icons}#chevron-right`} />
-          </svg>
-        </button>
-      </div>
-      <div className="chart__legend--box">
-        <ul className="chart__legend--list">
-          <li className="chart__legend--item">
-            <p className="chart__legend--text">By Day</p>
-          </li>
-          <li className="chart__legend--item">
-            <p className="chart__legend--text other__color">By Month</p>
-          </li>
-        </ul>
-      </div>
-    </div>
+      <PaginatorBtnBox>
+        <ArrowBtn type="button" onClick={() => previousDate()}>
+          <Arrow width="16" height="16">
+            <use href={`${sprite}#chevron-left`}></use>
+          </Arrow>
+        </ArrowBtn>
+        <ArrowBtn type="button" onClick={() => nextDate()}>
+          <Arrow width="16" height="16">
+            <use href={`${sprite}#chevron-right`}></use>
+          </Arrow>
+        </ArrowBtn>
+      </PaginatorBtnBox>
+      <ChartLegendBox>
+        <ChartLegendList>
+          <ChartLegendItem>
+            <ChartLegendText>By Day</ChartLegendText>
+          </ChartLegendItem>
+          <ChartLegendItem>
+            <ChartLegendText className="other__color">By Month</ChartLegendText>
+          </ChartLegendItem>
+        </ChartLegendList>
+      </ChartLegendBox>
+    </PaginatorBox>
   );
 };
 

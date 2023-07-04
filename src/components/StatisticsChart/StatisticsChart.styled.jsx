@@ -8,7 +8,7 @@ const media = {
   desktop: `@media screen and (min-width: ${DEVICE_SIZE.desktop})`,
 };
 
-export const StatisticsContainer = styled.section`
+export const StatisticsContainer = styled.div`
   border: solid ${themeColors.statisticsBorder};
   margin-right: auto;
   margin-left: auto;
@@ -28,5 +28,26 @@ export const StatisticsContainer = styled.section`
     width: 860px;
     height: 440px;
     padding: 40px 40px;
+  }
+`;
+export const StatisticsTitle = styled.div`
+  color: ${themeColors.closeIconColor};
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  margin: 0;
+`;
+export const BarChartContainer = styled.div`
+  ${media.mobile} {
+    width: 279px;
+    height: 333px;
+  }
+  ${media.tablet} {
+    width: 576px;
+    height: 360px;
+  }
+  ${media.desktop} {
+    width: 780px;
+    height: 360px;
   }
 `;

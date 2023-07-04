@@ -28,6 +28,8 @@ export const themeColors = {
     theme === 'dark' ? '#3e85f3' : '#e3f3ff',
   statisticsBorder: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(227, 243, 255, 0.15)' : '#e3f3ff',
+  paginatorBtnBorder: ({ theme: { theme } }) =>
+    theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 0.5)',
 };
 
 export const buttonColors = {
