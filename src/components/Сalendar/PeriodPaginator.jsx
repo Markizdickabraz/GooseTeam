@@ -1,6 +1,6 @@
 import { CurrentDate, Paginator, ButtonsTab, Arrow, ArrowButton } from "./PeriodPaginator.styled";
 import sprite from '../../images/svg/sprite.svg';
-
+// import * as Variables from '../../styles/variables';
 
 export const PeriodPaginator = ({
   currentDateMonth,
@@ -57,7 +57,7 @@ if (periodType === 'month') {
       </CurrentDate>
       <ButtonsTab>
         <ArrowButton type="button" onClick={handleClickPrev()} disabled={isBackButtonDisabled()}>
-        <Arrow width="16" height="16" style={{ stroke: disabledButton ? 'rgba(220, 227, 229, 1)' : '' }}>
+          <Arrow width="16" height="16" style={{ stroke: disabledButton ? 'rgba(220, 227, 229, 1)' : '' }}>
             <use href={`${sprite}#chevron-left`}></use>
         </Arrow>
         </ArrowButton>

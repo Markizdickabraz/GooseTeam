@@ -30,6 +30,30 @@ export const themeColors = {
     theme === 'dark' ? 'rgba(227, 243, 255, 0.15)' : '#e3f3ff',
   paginatorBtnBorder: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 0.5)',
+  
+  
+  calendarPaginator: ({ theme: { theme } }) => 
+    theme === 'dark' ? '#21222C' : '#ffffff',
+  calendarPaginatorBorder: ({ theme: { theme } }) => 
+    theme === 'dark' ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(220, 227, 229, 0.80)',
+calendarPaginatorIcon: ({ theme: { theme } }) => 
+    theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'black',
+    disabledButton: ({ theme: { theme } }) => 
+    theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 1)',
+  periodButton: ({ theme: { theme } }) => 
+    theme === 'dark' ? '#21222C' : '#E3F3FF', 
+  periodButtonHover: ({ theme: { theme } }) => 
+    theme === 'dark' ? '#3E85F3' : '#CAE8FF',
+  periodButtonTextHover: ({ theme: { theme } }) => 
+    theme === 'dark' ? 'rgba(255, 255, 255, 1)' : '',
+   dayNames: ({ theme: { theme } }) => 
+    theme === 'dark' ? '#21222C' : '#ffffff',
+   dayNamesBorder: ({ theme: { theme } }) => 
+    theme === 'dark' ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(220, 227, 229, 0.80)',
+  dayName: ({ theme: { theme } }) => 
+    theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'black',
+  lineColor: ({ theme: { theme } }) => 
+    theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 0.8)',
 };
 
 export const buttonColors = {
