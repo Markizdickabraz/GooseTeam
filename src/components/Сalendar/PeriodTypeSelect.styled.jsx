@@ -38,8 +38,7 @@ font-weight: 500;
 line-height: 18px;
 color: ${Variables.fontColors.blue};
 &:hover{
-background-color: ${Variables.themeColors.periodButtonHover};
-color: ${Variables.themeColors.periodButtonTextHover}
+background-color: #CAE8FF;
 };
 &:active{
 background-color: #CAE8FF;
