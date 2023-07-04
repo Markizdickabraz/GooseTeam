@@ -13,8 +13,8 @@ width: 335px;
 height: 50px;
 flex-shrink: 0;
 border-radius: 8px;
-border: 1px solid ${Variables.backgroundColors.grey};
-background: ${Variables.backgroundColors.white};
+border:  ${Variables.themeColors.dayNamesBorder};
+background: ${Variables.themeColors.dayNames};
 position: relative;
 gap: 36px;
 padding: 16px;
@@ -38,4 +38,5 @@ font-size: 16px;
 font-weight: 600;
 line-height: 18px;
 text-transform: uppercase;
+color: ${Variables.themeColors.dayName}
 `

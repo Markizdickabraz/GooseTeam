@@ -4,18 +4,21 @@ export const themeColors = {
     theme === 'dark' ? 'rgba(250, 250, 250, 0.30)' : '#111',
   color404: ({ theme: { theme } }) =>
     theme === 'dark' ? '#FFFFFF' : 'rgba(17, 17, 17, 0.7)',
-
+  calendarBtnBackground: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#3E85F3' : '#E3F3FF',
   mainBackground: ({ theme: { theme } }) =>
     theme === 'dark' ? '#171820' : '#F7F6F9',
   secondBackground: ({ theme: { theme } }) =>
     theme === 'dark' ? '#21222C' : '#fff',
   sidebarBackground: ({ theme: { theme } }) =>
     theme === 'dark' ? '#13151A' : '#fff',
-  
+
   modalBackground: ({ theme: { theme } }) =>
     theme === 'dark' ? '#171820' : '#fff',
   modalBoxShadow: ({ theme: { theme } }) =>
-    theme === 'dark' ? '0px 4px 57px 0px rgba(17, 17, 17, 0.05)' : '0px 4px 16px 0px #1111111a',
+    theme === 'dark'
+      ? '0px 4px 57px 0px rgba(17, 17, 17, 0.05)'
+      : '0px 4px 16px 0px #1111111a',
   modalBorder: ({ theme: { theme } }) =>
     theme === 'dark' ? '#171820' : 'rgba(220, 227, 229, 0.8)',
 
@@ -37,7 +40,39 @@ export const themeColors = {
     theme === 'dark' ? 'rgba(227, 243, 255, 0.15)' : '#e3f3ff',
   paginatorBtnBorder: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 0.5)',
+
   
+  
+  calendarPaginator: ({ theme: { theme } }) => 
+    theme === 'dark' ? '#21222C' : '#ffffff',
+  calendarPaginatorBorder: ({ theme: { theme } }) => 
+    theme === 'dark' ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(220, 227, 229, 0.80)',
+calendarPaginatorIcon: ({ theme: { theme } }) => 
+    theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'black',
+    disabledButton: ({ theme: { theme } }) => 
+    theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 1)',
+  periodButton: ({ theme: { theme } }) => 
+    theme === 'dark' ? '#21222C' : '#E3F3FF', 
+  periodButtonHover: ({ theme: { theme } }) => 
+    theme === 'dark' ? '#3E85F3' : '#CAE8FF',
+  periodButtonTextHover: ({ theme: { theme } }) => 
+    theme === 'dark' ? 'rgba(255, 255, 255, 1)' : '',
+   dayNames: ({ theme: { theme } }) => 
+    theme === 'dark' ? '#21222C' : '#ffffff',
+   dayNamesBorder: ({ theme: { theme } }) => 
+    theme === 'dark' ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(220, 227, 229, 0.80)',
+  dayName: ({ theme: { theme } }) => 
+    theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'black',
+  lineColor: ({ theme: { theme } }) => 
+    theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 0.8)',
+  colorOfDay : ({ theme: { theme } }) => 
+    theme === 'dark' ? '#ffffff' : "black",
+  activeButton: ({ theme: { theme } }) => 
+    theme === 'dark' ? '#3E85F3' : '#CAE8FF',
+  buttonShadow: ({ theme: { theme } }) => 
+    theme === 'dark' ? '0 4px 4px 0 rgb(102, 102, 102)' : '0 4px 4px 0 rgba(0,0,0,.25)',
+
+
   feedbackText: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(250, 250, 250, 0.30)' : 'rgba(52, 52, 52, 0.80)',
   feedbackTextareaBg: ({ theme: { theme } }) =>

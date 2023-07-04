@@ -12,6 +12,7 @@ export const TaskColumn = styled.li`
   width: 335px;
   padding: 18px 18px 20px 18px;
   border-radius: 8px;
+  background-color: ${Variables.themeColors.secondBackground};
   border: 1px solid ${Variables.themeColors.borderColor};
 
   ${media.tablet} {

@@ -39,11 +39,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 border-radius: 8px;
-outline: 1px solid ${Variables.backgroundColors.grey};
-background: ${Variables.backgroundColors.white};
+outline: ${Variables.themeColors.calendarPaginatorBorder};
+background: ${Variables.themeColors.calendarPaginator};
 box-sizing: border-box;
 &:hover{
-box-shadow: 0 4px 4px 0 rgba(0,0,0,.25)};
+box-shadow: ${Variables.themeColors.buttonShadow}};
 height: 30px;
 ${media.tablet} {
   height: 34px;
@@ -56,7 +56,7 @@ border: none;
 cursor: pointer;
 &:not(:last-child) {
     border-bottom-right-radius: 0;
-    border-right: 1px solid #dce3e5;
+    border-right: ${Variables.themeColors.calendarPaginatorBorder};
     box-sizing: border-box;
 }
 display: flex;
@@ -73,7 +73,7 @@ height: 34px; }
 
 export const Arrow = styled.svg`
 fill: transparent;
-stroke: black;
+stroke: ${Variables.themeColors.calendarPaginatorIcon};
 ${media.tablet} {
     width: 18px;
     height: 18px;

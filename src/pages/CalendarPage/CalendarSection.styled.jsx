@@ -25,10 +25,11 @@ export const Container = styled.section`
     padding-right: 32px;
   }
   ${media.desktop} {
-    max-width: 1440px;
+    max-width: 1151px;
     padding-top: 33px;
     padding-bottom: 32px;
     padding-left: 32px;
     padding-right: 32px;
+    margin: 0;
   }
 `;

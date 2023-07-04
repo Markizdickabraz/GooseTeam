@@ -14,34 +14,41 @@ position: relative;
   list-style: none;
   margin: 0;
   padding: 0;
-  border-right: 1px solid #ddd;
-border-bottom: 1px solid #ddd;
+  border-right: 1px solid ${Variables.themeColors.lineColor};
+border-bottom: 1px solid ${Variables.themeColors.lineColor};
 border-radius: 8px;
   ${media.desktop} {
     width: 1087px;
+    
 }
 `
 
 export const CalendarItem = styled.li`
-background-color: ${Variables.backgroundColors.white};
+background-color: ${Variables.themeColors.dayNames};
   position: relative;
   width: calc(100% / 7);
   cursor: pointer;
   height: 94px;
+  border: 0px solid transparent;
+  transition: border 200ms linear 0s;
+&:hover{
+  border: 1px solid ${Variables.backgroundColors.blue};
+};
   &::before {
   content: ' ';
   position: absolute;
   width: 1px;
   height: 100%;
-  background-color: #ddd;
+  background-color: ${Variables.themeColors.lineColor};
 };
 &::after {
   content: ' ';
   position: absolute;
   width: 100%;
   height: 1px;
-  background-color: #ddd;
+  background-color: ${Variables.themeColors.lineColor};
 };
+
   ${media.tablet} {
     height: 144px;
 }
@@ -62,6 +69,7 @@ export const Day = styled.div`
   text-transform: uppercase;
   text-align: center;
   border-radius: 8px;
+ color: ${Variables.themeColors.colorOfDay};
     ${media.tablet} {
     top: 14px;
   right: 14px;
