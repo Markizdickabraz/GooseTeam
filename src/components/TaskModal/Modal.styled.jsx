@@ -32,6 +32,7 @@ const CloseBtn = styled.button`
   border: none;
   outline: none;
   background: none;
+  cursor: pointer;
 `;
 
 const Svg = styled.svg`

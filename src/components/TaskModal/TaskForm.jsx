@@ -1,14 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { useFormik } from 'formik';
 
 import { addTask, updateTask } from '../../redux/tasks/operations';
 import { validate } from './utility/validateTaskForm';
 import { autocomplete } from './utility/autocompleteTaskForm';
-
-// import { AiOutlinePlus } from 'react-icons/ai';
-// import { BsPencil } from 'react-icons/bs';
 import sprite from 'images/svg/sprite.svg';
 
 import {
@@ -48,11 +44,14 @@ const TaskForm = ({ close, create, task }) => {
     validate,
     onSubmit: values => {
       const newTask = { ...values, date, category };
+
       if (create) {
         addHandler(newTask);
       } else {
         editHandler(id, newTask);
       }
+
+      close();
     },
   });
 
@@ -162,8 +161,7 @@ const TaskForm = ({ close, create, task }) => {
       {create ? (
         <ButtonContainer>
           <Button type="submit">
-            {/* <AiOutlinePlus /> */}
-            <Svg width="24px" height="24px">
+            <Svg width="20px" height="20px">
               <use href={`${sprite}#plus`} />
             </Svg>
             Add
@@ -174,7 +172,6 @@ const TaskForm = ({ close, create, task }) => {
         </ButtonContainer>
       ) : (
         <Button type="submit">
-          {/* <BsPencil /> */}
           <Svg width="16px" height="16px">
             <use href={`${sprite}#pencil`} />
           </Svg>
