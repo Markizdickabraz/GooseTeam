@@ -35,9 +35,9 @@ const RegisterComponent = () => {
       >
         {({ isSubmitting, errors }) => (
           <FormContainer className={isErrorField(errors)}>
-            <TitleForm text={'Sing up'} />
+            <TitleForm text={'Sign Up'} />
             <InputsForm isSignUp={true} />
-            <BtnSubmit isSubmitting={isSubmitting} textBtn={'Sing up'} />
+            <BtnSubmit isSubmitting={isSubmitting} textBtn={'Sign Up'} />
           </FormContainer>
         )}
       </Formik>
