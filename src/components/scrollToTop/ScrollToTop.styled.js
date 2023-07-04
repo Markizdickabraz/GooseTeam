@@ -9,12 +9,11 @@ export const TopButton = styled.img`
   z-index: 999;
   cursor: pointer;
   width: 30px;
-  //   height: 56px;
+  transition: scale ${Variables.animation};
 
   &:hover,
   &:focus {
-    border-radius: 15px;
-    background-color: ${Variables.backgroundColors.lightBlue};
+    scale: 1.2;
   }
 
   @media screen and (min-width: 768px) {

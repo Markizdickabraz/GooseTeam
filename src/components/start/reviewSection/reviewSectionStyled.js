@@ -71,11 +71,6 @@ export const ReviewStyled = styled.div`
   color: ${Variables.fontColors.black};
   border: 1px solid ${Variables.iconColors.greyDisableStar};
   border-radius: 8px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  &::-webkit-scrollbar {
-    width: 0px;
-  }
 
   ${media.tablet} {
     width: 570px;
@@ -96,11 +91,6 @@ export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   gap: 25px;
-
-  ${media.tablet} {
-  }
-  ${media.desktop} {
-  }
 `;
 
 export const Arrow = styled.button`
@@ -114,10 +104,6 @@ export const Arrow = styled.button`
   }
   &:focus {
     scale: 1.1;
-  }
-  ${media.tablet} {
-  }
-  ${media.desktop} {
   }
 `;
 
@@ -133,6 +119,11 @@ export const Comment = styled.p`
   font-size: 14px;
   line-height: 1;
   margin-bottom: 13px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
 `;
 
 export const ImgContainer = styled.div`
