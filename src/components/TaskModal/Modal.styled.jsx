@@ -25,9 +25,10 @@ const Container = styled.div`
     padding-top: 40px;
   }
 
-  // @media screen and (max-width: 767px) {
-  //   width: 70%;
-  // }
+  
+   @media screen and (max-width: 767px) {
+   width: 80%;
+   }
 `;
 
 const CloseBtn = styled.button`
