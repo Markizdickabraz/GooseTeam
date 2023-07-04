@@ -54,6 +54,12 @@ calendarPaginatorIcon: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'black',
   lineColor: ({ theme: { theme } }) => 
     theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 0.8)',
+  colorOfDay : ({ theme: { theme } }) => 
+    theme === 'dark' ? '#ffffff' : "black",
+  activeButton: ({ theme: { theme } }) => 
+    theme === 'dark' ? '#3E85F3' : '#CAE8FF',
+  buttonShadow: ({ theme: { theme } }) => 
+    theme === 'dark' ? '0 4px 4px 0 rgb(102, 102, 102)' : '0 4px 4px 0 rgba(0,0,0,.25)',
 };
 
 export const buttonColors = {

@@ -43,7 +43,7 @@ outline: ${Variables.themeColors.calendarPaginatorBorder};
 background: ${Variables.themeColors.calendarPaginator};
 box-sizing: border-box;
 &:hover{
-box-shadow: 0 4px 4px 0 rgba(0,0,0,.25)};
+box-shadow: ${Variables.themeColors.buttonShadow}};
 height: 30px;
 ${media.tablet} {
   height: 34px;

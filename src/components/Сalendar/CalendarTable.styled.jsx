@@ -69,6 +69,7 @@ export const Day = styled.div`
   text-transform: uppercase;
   text-align: center;
   border-radius: 8px;
+ color: ${Variables.themeColors.colorOfDay};
     ${media.tablet} {
     top: 14px;
   right: 14px;

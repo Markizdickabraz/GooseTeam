@@ -16,7 +16,7 @@ import { useState, useEffect } from "react";
 
 import { CalendarItem, Day, Event, Calendar } from './CalendarTable.styled';
 import { selectTasks } from 'redux/tasks/selectors';
-import { useSelector } from 'react-redux';
+import { useSelector} from 'react-redux';
 
 
 export const CalendarTable = () => {
@@ -27,7 +27,8 @@ export const CalendarTable = () => {
     start: startOfWeek(startOfMonth(parsedCurrentDate), { weekStartsOn: 1 }),
     end: endOfWeek(endOfMonth(parsedCurrentDate), { weekStartsOn: 1 }),
   });
- 
+
+  
 
   const handleClickRedirect = e => {
     if (
@@ -114,10 +115,10 @@ export const CalendarTable = () => {
             {isSameMonth(day, parsedCurrentDate) && (
               <Day 
                 style={{
-                  color: isSameDay(day, parsedCurrentDate) ? '#FFFFFF' : '#343434',
+                  color: isSameDay(day, parsedCurrentDate) ? '#FFFFFF' : '',
                   backgroundColor: isSameDay(day, parsedCurrentDate)
                     ? '#3E85F3'
-                    : '#FFFFFF',
+                    : '',
                 }}
               >
                 {format(day, 'd')}
