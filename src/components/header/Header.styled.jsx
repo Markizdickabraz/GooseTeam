@@ -94,7 +94,7 @@ export const Toggler = styled.svg`
   fill: transparent;
   stroke: ${themeColors.closeIconColor};
   margin-right: 8px;
-
+  cursor: pointer;
   height: 24px;
   width: 24px;
 
