@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './style.module.css';
 import ErrorField from '../ErrorField';
+import { Icon } from 'react-icons-kit';
+import { eyeOff } from 'react-icons-kit/feather/eyeOff';
+import { eye } from 'react-icons-kit/feather/eye';
 import { Field, ErrorMessage } from 'formik';
 
 const InputsForm = ({ isSingup }) => {
+  const [isShow, setIsShow] = useState(false);
   return (
     <div>
       {isSingup && (
@@ -33,13 +37,28 @@ const InputsForm = ({ isSingup }) => {
       <label htmlFor="password" className={style.lableField}>
         Password
       </label>
-      <Field
-        name="password"
-        type="password"
-        placeholder="&#9679; &nbsp;&#9679; &nbsp;&#9679; &nbsp;&#9679; &nbsp;&#9679; &nbsp;&#9679; &nbsp;&#9679;"
-        className={style.fieldForm}
-      />
-      <ErrorMessage name="password" render={msg => <ErrorField msg={msg} />} />
+      <div className={style.passwordField}>
+        <div>
+          <Field
+            name="password"
+            type={isShow ? 'text' : 'password'}
+            placeholder="&#9679; &nbsp;&#9679; &nbsp;&#9679; &nbsp;&#9679; &nbsp;&#9679; &nbsp;&#9679; &nbsp;&#9679;"
+            className={style.fieldForm}
+          />
+          <ErrorMessage
+            name="password"
+            render={msg => <ErrorField msg={msg} />}
+          />
+        </div>
+        <span
+          onClick={() => {
+            setIsShow(!isShow);
+          }}
+          className={style.showPasswordBtn}
+        >
+          {isShow ? <Icon icon={eyeOff} /> : <Icon icon={eye} />}
+        </span>
+      </div>
     </div>
   );
 };

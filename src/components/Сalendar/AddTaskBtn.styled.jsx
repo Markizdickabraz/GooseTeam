@@ -16,7 +16,7 @@ export const Button = styled.button`
   padding: 12px 0px;
   border-radius: 8px;
   border: 1px dashed ${Variables.buttonColors.blue};
-  background: ${Variables.buttonColors.lightBlue};
+  background: ${Variables.themeColors.calendarBtnBackground};
   cursor: pointer;
   margin-top: 14px;
   ${media.tablet} {
@@ -26,9 +26,14 @@ export const Button = styled.button`
 
 export const ButtonText = styled.p`
   text-align: left;
-  color: ${Variables.fontColors.black};
+  color: ${Variables.themeColors.main};
   font-size: 14px;
   font-family: ${Variables.fonts.primary};
   font-weight: 600;
   line-height: 1.29;
+`;
+
+export const Svg = styled.div`
+  height: 24px;
+  color: ${Variables.themeColors.main};
 `;

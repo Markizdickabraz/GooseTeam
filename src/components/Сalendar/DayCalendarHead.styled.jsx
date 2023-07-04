@@ -13,7 +13,7 @@ export const ListOfDays = styled.ul`
   width: 100%;
   margin-bottom: 14px;
   padding: 14px 18px;
-  background-color: ${Variables.themeColors.mainBackground};
+  background-color: ${Variables.themeColors.secondBackground};
   border: 1px solid ${Variables.themeColors.borderColor};
   border-radius: 8px;
   ${media.tablet} {

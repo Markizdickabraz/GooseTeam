@@ -11,7 +11,20 @@
   text-align: left;
   padding-left: 15px;
 }
-
+.passwordField {
+  display: flex;
+  flex-direction: row;
+}
+.showPasswordBtn {
+  position: fixed;
+  left: 61%;
+  border: none;
+  cursor: pointer;
+  background: none;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  color: black;
+}
 .fieldForm::placeholder {
   color: #dce3e5;
 }
@@ -30,7 +43,29 @@
   .fieldForm {
     width: 287px;
   }
+  .showPasswordBtn {
+    position: fixed;
+    left: 78%;
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    color: black;
+  }
   .lableField {
     width: 287px;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .showPasswordBtn {
+    position: fixed;
+    left: 72%;
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    color: black;
   }
 }
