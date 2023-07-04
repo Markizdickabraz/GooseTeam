@@ -28,6 +28,11 @@ background-color: ${Variables.backgroundColors.white};
   width: calc(100% / 7);
   cursor: pointer;
   height: 94px;
+  border: 0px solid transparent;
+  transition: border 200ms linear 0s;
+&:hover{
+  border: 1px solid ${Variables.backgroundColors.blue};
+};
   &::before {
   content: ' ';
   position: absolute;
@@ -42,6 +47,7 @@ background-color: ${Variables.backgroundColors.white};
   height: 1px;
   background-color: #ddd;
 };
+
   ${media.tablet} {
     height: 144px;
 }
