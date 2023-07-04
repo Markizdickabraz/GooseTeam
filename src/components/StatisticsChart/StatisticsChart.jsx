@@ -13,8 +13,11 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 import { selectTasks } from 'redux/tasks/selectors';
-import { StatisticsContainer } from './StatisticsChart.styled';
-import './StatisticsChart.css';
+import {
+  StatisticsContainer,
+  StatisticsTitle,
+  BarChartContainer,
+} from './StatisticsChart.styled';
 
 const StatisticsChart = () => {
   const dispatch = useDispatch();
@@ -90,8 +93,8 @@ const StatisticsChart = () => {
 
   return (
     <StatisticsContainer>
-      <p className="statistics__title">Tasks</p>
-      <div className="bar__chart">
+      <StatisticsTitle>Tasks</StatisticsTitle>
+      <BarChartContainer>
         <ResponsiveContainer>
           <BarChart
             data={data}
@@ -133,7 +136,7 @@ const StatisticsChart = () => {
             </Bar>
           </BarChart>
         </ResponsiveContainer>
-      </div>
+      </BarChartContainer>
     </StatisticsContainer>
   );
 };
