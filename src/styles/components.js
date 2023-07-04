@@ -38,7 +38,7 @@ export const Button = styled.button`
   margin-top: 0.5rem;
 
   background-color: #3e85f3;
-  box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+  box-shadow: 1px 1px 4px rgba(136, 165, 191, 0.48);
   border-radius: 16px;
 
   border: none;
@@ -51,8 +51,14 @@ export const Button = styled.button`
   letter-spacing: -0.02em;
   color: #ffffff;
 
-  &:hover ${Svg} {
-    animation: ${scaleUpHorLeft} 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+ &:hover {
+    background-color: #2e73d9;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #2e73d9;
   }
 
   padding: 14px 28px;
