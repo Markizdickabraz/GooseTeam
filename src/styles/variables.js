@@ -26,6 +26,8 @@ export const themeColors = {
     theme === 'dark' ? 'rgba(250, 250, 250, 0.30)' : 'rgba(52, 52, 52, 0.5)',
   sidebarActiveBackground: ({ theme: { theme } }) =>
     theme === 'dark' ? '#3e85f3' : '#e3f3ff',
+  statisticsBorder: ({ theme: { theme } }) =>
+    theme === 'dark' ? 'rgba(227, 243, 255, 0.15)' : '#e3f3ff',
 };
 
 export const buttonColors = {

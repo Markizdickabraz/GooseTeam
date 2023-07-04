@@ -1,11 +1,3 @@
-.statistics__container {
-    border: solid #E3F3FF;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 20px;
-    padding: 40px 14px;
-}
-
 .statistics__title {
     color: #343434;
     font-size: 14px;
@@ -15,11 +7,6 @@
 }
 
 @media screen and (min-width: 375px) {
-    .statistics__container {
-        width: 307px;
-        height: 413px;
-    }
-
     .bar__chart {
         width: 279px;
         height: 333px;
@@ -27,13 +14,6 @@
 }
 
 @media screen and (min-width: 768px) {
-    .statistics__container {
-        width: 640px;
-        height: 424px;
-        border-radius: 29px;
-        padding: 32px 32px;
-    }
-
     .bar__chart {
         width: 576px;
         height: 360px;
@@ -41,12 +21,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .statistics__container {
-        width: 860px;
-        height: 440px;
-        padding: 40px 40px;
-    }
-
     .bar__chart {
         width: 780px;
         height: 360px;

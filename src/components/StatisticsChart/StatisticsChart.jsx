@@ -1,6 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { selectFilterDate } from 'redux/filterdate/filterdate-selector';
+import { getTasks } from 'redux/tasks/operations';
 import {
   BarChart,
   Bar,
@@ -11,14 +12,17 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
+import { selectTasks } from 'redux/tasks/selectors';
+import { StatisticsContainer } from './StatisticsChart.styled';
 import './StatisticsChart.css';
 
-// Для прикладу створив json
-import { getTasks } from '../../exampleTask';
-
 const StatisticsChart = () => {
+  const dispatch = useDispatch();
   const toDay = useSelector(selectFilterDate);
-  const tasks = getTasks();
+  const tasks = useSelector(selectTasks);
+  useEffect(() => {
+    dispatch(getTasks());
+  }, [dispatch]);
 
   let filteredTasksByDay = null;
   let filteredTasksByMonth = null;
@@ -85,7 +89,7 @@ const StatisticsChart = () => {
   ];
 
   return (
-    <div className="statistics__container">
+    <StatisticsContainer>
       <p className="statistics__title">Tasks</p>
       <div className="bar__chart">
         <ResponsiveContainer>
@@ -130,7 +134,7 @@ const StatisticsChart = () => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </StatisticsContainer>
   );
 };
 export default StatisticsChart;
