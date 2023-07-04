@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-import { taskColors, buttonColors, animation } from '../../styles/variables';
+import {
+  themeColors,
+  taskColors,
+  buttonColors,
+  animation,
+} from '../../styles/variables';
 
 const Label = styled.label`
   display: block;
@@ -10,7 +15,7 @@ const Label = styled.label`
   font-weight: 500;
   line-height: 14px;
   letter-spacing: 0em;
-  color: #343434cc;
+  color: ${themeColors.modalFormLabel};
 `;
 
 const Input = styled.input`
@@ -22,17 +27,17 @@ const Input = styled.input`
   padding-bottom: 12px;
   padding-left: 14px;
   padding-right: 14px;
+  background-color: ${themeColors.modalFormBg};
+  border: 1px solid ${themeColors.modalFormBorder};
   border-radius: 8px;
-  background-color: #f6f6f6;
 
   font-family: Inter;
   font-size: 14px;
   font-weight: 600;
   line-height: 18px;
   letter-spacing: 0em;
-  color: #343434;
+  color: ${themeColors.modalFormText};
 
-  border: none;
   outline: none;
 
   margin-top: 8px;
@@ -98,6 +103,7 @@ const RadioLabel = styled.label`
   line-height: 18px;
   letter-spacing: 0em;
   color: #343434;
+  cursor: pointer;
 
   &::before {
     content: '';
@@ -106,7 +112,7 @@ const RadioLabel = styled.label`
     height: 9px;
     border-radius: 50%;
     background-color: ${taskColors.priorityLow};
-    border: 1px solid white;
+    border: 1px solid transparent;
     margin-right: 5px;
 
     @media screen and (min-width: 768px) {
