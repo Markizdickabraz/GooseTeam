@@ -1,12 +1,12 @@
 import { FiPlus } from 'react-icons/fi';
-import { Button, ButtonText } from './AddTaskBtn.styled';
+import { Button, ButtonText,Svg } from './AddTaskBtn.styled';
 
 export const AddTaskBtn = ({ setIsAddModalOpen }) => {
   return (
     <Button onClick={() => setIsAddModalOpen(true)} type="button">
-      <div style={{ height: 24 }}>
+      <Svg>
         <FiPlus size={24} />
-      </div>
+      </Svg>
       <ButtonText>Add task</ButtonText>
     </Button>
   );
