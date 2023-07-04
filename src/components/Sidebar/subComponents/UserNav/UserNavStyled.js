@@ -18,7 +18,19 @@ export const StyledLink = styled(NavLink)`
   border-radius: 8px;
   display: flex;
   align-items: center;
-  & > svg:not(:last-child) {
+
+   &:hover,
+  &:focus {
+    color: ${themeColors.sidebarSvg};
+    
+
+    & > svg {
+      fill: transparent;
+      stroke: ${themeColors.sidebarSvg};
+    }
+  }
+
+  & > svg {
       fill: transparent;
       stroke: ${themeColors.sidebarLabel};
     }
@@ -26,7 +38,7 @@ export const StyledLink = styled(NavLink)`
     color: ${themeColors.sidebarSvg};
     background-color: ${themeColors.sidebarActiveBackground};
 
-    & > svg:not(:last-child) {
+    & > svg {
       fill: transparent;
       stroke: ${themeColors.sidebarSvg};
     }
@@ -59,8 +71,6 @@ export const NavIcon = styled.svg`
 
 export const NavIconChart = styled.svg`
 
-  stroke: ${themeColors.sidebarSvg};
-
   width: 20px;
   height: 20px;
   margin-right: 10px;
@@ -82,6 +92,17 @@ export const StyledLinkStatistic = styled(NavLink)`
   border-radius: 8px;
   display: flex;
   align-items: center;
+
+  &:hover,
+  &:focus {
+    color: ${themeColors.sidebarSvg};
+    
+
+    & > svg {
+      fill: ${themeColors.sidebarSvg};
+    }
+  }
+
   & > svg {
       fill: ${themeColors.sidebarLabel};
     }
