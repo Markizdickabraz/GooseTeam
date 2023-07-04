@@ -14,7 +14,7 @@ display: flex;
 `
 
 export const PeriodButton = styled.button`
-background-color: #E3F3FF;
+background-color: ${Variables.themeColors.periodButton};
 border: none;
 cursor: pointer;
 width: 76px;
@@ -38,7 +38,8 @@ font-weight: 500;
 line-height: 18px;
 color: ${Variables.fontColors.blue};
 &:hover{
-background-color: #CAE8FF;
+background-color: ${Variables.themeColors.periodButtonHover};
+color: ${Variables.themeColors.periodButtonTextHover}
 };
 &:active{
 background-color: #CAE8FF;
