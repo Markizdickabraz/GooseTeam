@@ -18,9 +18,8 @@ export const Input = styled(Field)`
   font-size: 14px;
 
   @media (min-width: 768px) {
-    width: 354px;
-    height: 46px;
     padding: 14px 18px;
+    font-size: 16px;
   }
 `;
 export const Label = styled.label`
