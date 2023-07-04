@@ -5,7 +5,7 @@ import {
 } from './RegisterComponent.styled';
 import { Formik } from 'formik';
 import { useNavigate } from 'react-router-dom';
-import { validateFormSingup } from '../Login/helper';
+import { validateFormSignUp } from '../Login/helper';
 import { isErrorField } from './helper/IsErrorField';
 import { register } from '../../redux/authorization/operations';
 import { setResendEmail } from '../../redux/authorization/authSlice';
@@ -30,13 +30,13 @@ const RegisterComponent = () => {
     <Container>
       <Formik
         initialValues={initialValues}
-        validate={validateFormSingup}
+        validate={validateFormSignUp}
         onSubmit={onSubmit}
       >
         {({ isSubmitting, errors }) => (
           <FormContainer className={isErrorField(errors)}>
             <TitleForm text={'Sing up'} />
-            <InputsForm isSingup={true} />
+            <InputsForm isSignUp={true} />
             <BtnSubmit isSubmitting={isSubmitting} textBtn={'Sing up'} />
           </FormContainer>
         )}

@@ -18,7 +18,7 @@ export const validateFormLogin = values => {
 
   return errors;
 };
-export const validateFormSignup = values => {
+export const validateFormSignUp = values => {
   const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
   const nameRegex = /^[A-Za-z]{2,}$/;
   const passwordRegex = /^.{6,}$/;
