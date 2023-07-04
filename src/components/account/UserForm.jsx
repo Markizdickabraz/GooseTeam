@@ -7,7 +7,6 @@ import { DatePickerField } from './Calendar';
 import { Button } from 'styles/components';
 import { useState } from 'react';
 import { useAuth } from 'hooks/useAuth';
-import { Input } from './styles/CustomInput.styled';
 import { useDispatch } from 'react-redux';
 import { updateUser } from 'redux/authorization/operations';
 
@@ -85,7 +84,7 @@ export const UserForm = () => {
                     setIsFormDirty={setIsFormDirty}
                   />
 
-                  <Input name="email" type="email" disabled />
+                  <CustomInput label="Email" name="email" type="email" disabled />
                 </div>
 
                 <div>

@@ -83,7 +83,7 @@ export const Error = styled.div`
   color: ${themeColors.color404};
   text-align: center;
   margin-left: auto;
-  margin-right: autox;
+  margin-right: auto;
   margin-top: 28px;
   padding: 0px 40px;
   ${media.tablet} {

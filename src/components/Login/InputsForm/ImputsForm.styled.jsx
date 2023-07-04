@@ -21,7 +21,7 @@ export const FieldForm = styled(Field)`
   }
 `;
 
-export const LableField = styled.label`
+export const LabelField = styled.label`
   display: flex;
   font-family: Inter;
   color: #111111;
@@ -34,5 +34,4 @@ export const LableField = styled.label`
     width: 287px;
   }
 `;
-/* style for mobile */
 

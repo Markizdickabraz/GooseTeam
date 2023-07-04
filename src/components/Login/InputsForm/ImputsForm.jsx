@@ -1,22 +1,22 @@
 import React from 'react';
-import { FieldForm, LableField } from './ImputsForm.styled';
+import { FieldForm, LabelField } from './InputsForm.styled';
 import ErrorField from '../ErrorField';
 import { ErrorMessage } from 'formik';
 
-const InputsForm = ({ isSingup }) => {
+const InputsForm = ({ isSignUp }) => {
   return (
     <div>
-      {isSingup && (
+      {isSignUp && (
         <>
-          <LableField htmlFor="name">Name</LableField>
+          <LabelField htmlFor="name">Name</LabelField>
           <FieldForm name="name" type="text" placeholder="Enter your name" />
           <ErrorMessage name="name" render={msg => <ErrorField msg={msg} />} />
         </>
       )}
-      <LableField htmlFor="email">Email</LableField>
+      <LabelField htmlFor="email">Email</LabelField>
       <FieldForm name="email" type="email" placeholder="nadiia@gmail.com" />
       <ErrorMessage name="email" render={msg => <ErrorField msg={msg} />} />
-      <LableField htmlFor="password">Password</LableField>
+      <LabelField htmlFor="password">Password</LabelField>
       <FieldForm
         name="password"
         type="password"

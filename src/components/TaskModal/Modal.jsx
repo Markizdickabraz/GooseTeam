@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-// import { GrClose } from 'react-icons/gr';
+
 import sprite from 'images/svg/sprite.svg';
 import { Container, CloseBtn, Svg } from './Modal.styled';
 

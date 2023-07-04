@@ -44,7 +44,7 @@ export const CommentText = styled.textarea`
   margin-top: 8px;
   resize: none;
   padding-top: 14px;
-  padding-button: 14px;
+  padding-bottom: 14px;
   padding-left: 18px;
   padding-right: 18px;
   color: ${themeColors.feedbackTextareaColor};

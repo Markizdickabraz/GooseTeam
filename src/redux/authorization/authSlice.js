@@ -26,12 +26,12 @@ const authSlice = createSlice({
     token: null,
     isLoggedIn: false,
     isRefreshing: true,
-    resendEmain: null,
+    resendEmail: null,
     theme: 'light',
   },
   reducers: {
     setResendEmail: (state, action) => {
-      state.resendEmain = action.payload;
+      state.resendEmail = action.payload;
     },
     toggleTheme: state => {
       state.theme = state.theme === 'light' ? 'dark' : 'light';
@@ -49,7 +49,7 @@ const authSlice = createSlice({
       state.isLoggedIn = true;
     },
     [resendEmail.fulfilled](state, { payload }) {
-      state.resendEmain = payload.resendEmain;
+      state.resendEmail = payload.resendEmail;
     },
 
     [updateUser.fulfilled](state, { payload }) {

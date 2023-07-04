@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import facepaint from 'facepaint';
-
 import { BREAKPOINTS } from './deviceWidth';
+import { themeColors } from 'styles/variables';
 
 const media = facepaint(BREAKPOINTS.map(bp => `@media (min-width: ${bp}px)`));
 
@@ -69,8 +69,7 @@ export const Button = styled.button`
 `;
 
 export const MainWrapper = styled.div`
-  //тема світла
-  background-color: #f7f6f9;
+  background-color: ${themeColors.mainBackground};
   ${media({
     padding: [
       '24px 20px 40px',

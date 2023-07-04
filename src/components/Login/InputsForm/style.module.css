@@ -28,7 +28,7 @@
 .fieldForm::placeholder {
   color: #dce3e5;
 }
-.lableField {
+.labelField {
   display: flex;
   font-family: Inter;
   color: #111111;
@@ -38,7 +38,7 @@
   font-weight: 600;
   line-height: 30.94px;
 }
-/* style for mobile */
+
 @media only screen and (max-width: 600px) {
   .fieldForm {
     width: 287px;
@@ -53,7 +53,7 @@
     padding-bottom: 18px;
     color: black;
   }
-  .lableField {
+  .labelField {
     width: 287px;
   }
 }
