@@ -17,7 +17,7 @@
 }
 .showPasswordBtn {
   position: fixed;
-  left: 63%;
+  left: 61%;
   border: none;
   cursor: pointer;
   background: none;
@@ -43,7 +43,29 @@
   .fieldForm {
     width: 287px;
   }
+  .showPasswordBtn {
+    position: fixed;
+    left: 78%;
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    color: black;
+  }
   .lableField {
     width: 287px;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .showPasswordBtn {
+    position: fixed;
+    left: 72%;
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    color: black;
   }
 }
