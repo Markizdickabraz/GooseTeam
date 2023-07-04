@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import * as Variables from '../../styles/variables';
 
 export const Wrapper = styled.div`
   position: relative;
@@ -13,14 +14,14 @@ export const Button = styled.button`
   background-color: transparent;
   border: none;
   padding: 0;
+  cursor: pointer;
 `;
 
 export const Svg = styled.svg`
-  stroke: #212121;
-  fill: transparent;
   width: 16px;
   height: 16px;
-  cursor: pointer;
+  fill: transparent;
+  stroke: ${Variables.themeColors.main};
   transition: stroke 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
   &:hover,
   &:focus {

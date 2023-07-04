@@ -1,4 +1,4 @@
-import { format } from 'date-fns';
+import { format, isBefore, isSameDay, startOfToday } from 'date-fns';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import TaskModal from '../TaskModal/TaskModal';
@@ -25,7 +25,10 @@ export const TasksColumn = ({ title, tasks, category }) => {
         isAddModalOpen={isAddModalOpen}
         setIsAddModalOpen={setIsAddModalOpen}
       />
-      <AddTaskBtn setIsAddModalOpen={setIsAddModalOpen} />
+      {(isBefore(startOfToday(), new Date(currentDay)) ||
+        isSameDay(startOfToday(), new Date(currentDay))) && (
+        <AddTaskBtn setIsAddModalOpen={setIsAddModalOpen} />
+      )}
       {isAddModalOpen && (
         <TaskModal
           close={() => setIsAddModalOpen(false)}

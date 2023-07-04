@@ -22,7 +22,7 @@ export const ColumnHead = styled.div`
 
 export const Title = styled.h2`
   padding: 7px 0;
-  color: ${Variables.fontColors.black};
+  color: ${Variables.themeColors.main};
   text-align: center;
   font-size: 18px;
   font-family: ${Variables.fonts.primary};
@@ -45,6 +45,7 @@ export const Button = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
+  color: ${Variables.themeColors.main};
   transition: color 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
   &:hover,
   &:focus {

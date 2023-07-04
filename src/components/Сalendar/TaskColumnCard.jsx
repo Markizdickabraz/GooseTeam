@@ -17,9 +17,17 @@ import { useState } from 'react';
 export const TaskColumnCard = ({ task, category }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { avatarURL } = useSelector(selectUser);
+
+  const shortTitle = (title, maxLength) => {
+    if (title.length <= maxLength) {
+      return title;
+    }
+
+    return title.substring(0, maxLength) + '...';
+  };
   return (
     <TaskCard>
-      <TaskTitle>{task.title}</TaskTitle>
+      <TaskTitle>{shortTitle(task.title, 30)}</TaskTitle>
       <Box>
         <Wrapper>
           <AvatarWrapper>
