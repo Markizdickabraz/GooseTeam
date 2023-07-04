@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/GooseTeam/static/css/main.7cda0caf.css",
-    "main.js": "/GooseTeam/static/js/main.79917851.js",
+    "main.js": "/GooseTeam/static/js/main.be45b36d.js",
     "static/js/655.3ce59e9a.chunk.js": "/GooseTeam/static/js/655.3ce59e9a.chunk.js",
     "static/css/695.ad3dc3df.chunk.css": "/GooseTeam/static/css/695.ad3dc3df.chunk.css",
     "static/js/695.764143b7.chunk.js": "/GooseTeam/static/js/695.764143b7.chunk.js",
@@ -74,7 +74,7 @@
     "static/media/goose_logoMobile@2x.webp": "/GooseTeam/static/media/goose_logoMobile@2x.5f70c58e1f58a89b53d5.webp",
     "static/media/goose_login@1x.png": "/GooseTeam/static/media/goose_login@1x.2db418b6ba73c6033221.png",
     "static/media/sidebarDesktop@1x.webp": "/GooseTeam/static/media/sidebarDesktop@1x.d397ed017cb6e278cc07.webp",
-    "static/media/sprite.svg": "/GooseTeam/static/media/sprite.7cdf1b1a2e92f41e24217766458affde.svg",
+    "static/media/sprite.svg": "/GooseTeam/static/media/sprite.7cca41ff95497c285f20dfea4da901ec.svg",
     "static/media/goose_logoDesktop@1x.webp": "/GooseTeam/static/media/goose_logoDesktop@1x.31d1db9624bfae3cf0ac.webp",
     "static/media/goose_logoTablet@1x.webp": "/GooseTeam/static/media/goose_logoTablet@1x.31d1db9624bfae3cf0ac.webp",
     "static/media/goose_logoMobile@1x.webp": "/GooseTeam/static/media/goose_logoMobile@1x.dee24e9d3954194968ec.webp",
@@ -82,7 +82,7 @@
     "static/media/right-arrow.svg": "/GooseTeam/static/media/right-arrow.62c7d2841eb455270577c4018ec49767.svg",
     "static/media/left-arrow.svg": "/GooseTeam/static/media/left-arrow.d4ae80c5786e333a8c15dbf3d4787026.svg",
     "main.7cda0caf.css.map": "/GooseTeam/static/css/main.7cda0caf.css.map",
-    "main.79917851.js.map": "/GooseTeam/static/js/main.79917851.js.map",
+    "main.be45b36d.js.map": "/GooseTeam/static/js/main.be45b36d.js.map",
     "655.3ce59e9a.chunk.js.map": "/GooseTeam/static/js/655.3ce59e9a.chunk.js.map",
     "695.ad3dc3df.chunk.css.map": "/GooseTeam/static/css/695.ad3dc3df.chunk.css.map",
     "695.764143b7.chunk.js.map": "/GooseTeam/static/js/695.764143b7.chunk.js.map",
@@ -115,6 +115,6 @@
   },
   "entrypoints": [
     "static/css/main.7cda0caf.css",
-    "static/js/main.79917851.js"
+    "static/js/main.be45b36d.js"
   ]
 }
