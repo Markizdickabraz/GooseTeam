@@ -28,6 +28,7 @@ font-size: 14px;
 font-weight: 700;
 line-height: 18px;
 text-transform: uppercase;
+text-align: center;
 ${media.tablet} {
     width: 131px;
   padding: 8px 12px;
