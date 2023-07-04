@@ -14,17 +14,17 @@ export const EditWrapper = styled.div`
 export const BtnSvgWrapper = styled.div`
  display: flex;
  position: absolute;
- top: 36px;
+ top: 58px;
  right: 15px;
  gap: 8px;
 `;
 
 export const BtnPencil = styled.button`
+  display: flex;
   height: 30px;
   width: 30px;
   border-radius: 50%;
   border: none;
-  
   background: ${({ isActive }) => (isActive ? "#3E85F3" : '#E3F3FF')};
   stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#3E85F3")};
   fill: transparent;
@@ -41,12 +41,15 @@ export const BtnPencil = styled.button`
 `;
   
 export const BtnTrash = styled.button`
+  display: flex;
   height: 30px;
   width: 30px;
   border-radius: 50%;
   border: none;
   background: ${themeColors.feedbackBtnTrashBg};
   fill: transparent;
+  align-items: center;
+  justify-content: center;
   stroke: #EA3D65;
   cursor: pointer;
 
