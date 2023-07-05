@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { buttonColors } from '../../../styles/variables';
+import { buttonColors, themeColors } from '../../../styles/variables';
 
 export const UpdateAvatarButton = styled.button`
   background-color: ${buttonColors.blue};
@@ -22,7 +22,7 @@ export const UpdateAvatarButton = styled.button`
   bottom: -4px;
   right: 22px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     position: absolute;
     bottom: -25px;
     right: -22px;
@@ -43,8 +43,9 @@ export const AvatarContainer = styled.div`
 
 export const AvatarImg = styled.img`
   max-width: none;
+  background-color: ${themeColors.mainBackground};
 
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     position: absolute;
     top: -50px;
     left: -35px;

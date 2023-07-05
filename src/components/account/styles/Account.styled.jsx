@@ -1,5 +1,6 @@
 import { Form } from 'formik';
 import styled from 'styled-components';
+import { Button } from 'styles/components';
 import { themeColors } from 'styles/variables';
 
 export const FormContainer = styled(Form)`
@@ -31,7 +32,7 @@ export const FormWrapper = styled.div`
   margin: 0 auto;
   gap: 18px;
 
-  @media (max-width: 1440px) {
+  @media (max-width: 1439px) {
     flex-direction: column;
     max-width: 354px;
     width: 100%;
@@ -43,7 +44,7 @@ export const FormWrapper = styled.div`
     }
   }
 
-  @media (min-width: 1439px) {
+  @media (min-width: 1440px) {
     flex-direction: row;
     align-items: start;
     gap: 50px;
@@ -74,5 +75,31 @@ export const UserInfo = styled.div`
     @media (min-width: 768px) {
       margin-top: 8px;
     }
+  }
+`;
+
+export const SaveButton = styled(Button)`
+  margin: 0 auto;
+
+  width: 195px;
+  @media (min-width: 1440px) {
+    width: 262px;
+  }
+`;
+
+export const Role = styled.p`
+  color: ${themeColors.label};
+  font-weight: 600;
+
+  font-size: 12px;
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+`;
+
+export const Name = styled.p`
+  font-size: 14px;
+  @media (min-width: 768px) {
+    font-size: 18px;
   }
 `;

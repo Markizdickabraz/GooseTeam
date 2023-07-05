@@ -41,33 +41,36 @@ export const themeColors = {
   paginatorBtnBorder: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 0.5)',
 
-  
-  
-  calendarPaginator: ({ theme: { theme } }) => 
+  calendarPaginator: ({ theme: { theme } }) =>
     theme === 'dark' ? '#21222C' : '#ffffff',
-  calendarPaginatorBorder: ({ theme: { theme } }) => 
-    theme === 'dark' ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(220, 227, 229, 0.80)',
-calendarPaginatorIcon: ({ theme: { theme } }) => 
+  calendarPaginatorBorder: ({ theme: { theme } }) =>
+    theme === 'dark'
+      ? '1px solid rgba(255, 255, 255, 0.15)'
+      : '1px solid rgba(220, 227, 229, 0.80)',
+  calendarPaginatorIcon: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'black',
-    disabledButton: ({ theme: { theme } }) => 
+  disabledButton: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 1)',
-  periodButton: ({ theme: { theme } }) => 
-    theme === 'dark' ? '#21222C' : '#E3F3FF', 
-   dayNames: ({ theme: { theme } }) => 
+  periodButton: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#21222C' : '#E3F3FF',
+  dayNames: ({ theme: { theme } }) =>
     theme === 'dark' ? '#21222C' : '#ffffff',
-   dayNamesBorder: ({ theme: { theme } }) => 
-    theme === 'dark' ? '1px solid rgba(255, 255, 255, 0.15)' : '1px solid rgba(220, 227, 229, 0.80)',
-  dayName: ({ theme: { theme } }) => 
+  dayNamesBorder: ({ theme: { theme } }) =>
+    theme === 'dark'
+      ? '1px solid rgba(255, 255, 255, 0.15)'
+      : '1px solid rgba(220, 227, 229, 0.80)',
+  dayName: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'black',
-  lineColor: ({ theme: { theme } }) => 
+  lineColor: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : 'rgba(220, 227, 229, 0.8)',
-  colorOfDay : ({ theme: { theme } }) => 
-    theme === 'dark' ? '#ffffff' : "black",
-  activeButton: ({ theme: { theme } }) => 
+  colorOfDay: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#ffffff' : 'black',
+  activeButton: ({ theme: { theme } }) =>
     theme === 'dark' ? '#3E85F3' : '#CAE8FF',
-  buttonShadow: ({ theme: { theme } }) => 
-    theme === 'dark' ? '0 4px 4px 0 rgb(102, 102, 102)' : '0 4px 4px 0 rgba(0,0,0,.25)',
-
+  buttonShadow: ({ theme: { theme } }) =>
+    theme === 'dark'
+      ? '0 4px 4px 0 rgb(102, 102, 102)'
+      : '0 4px 4px 0 rgba(0,0,0,.25)',
 
   feedbackText: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(250, 250, 250, 0.30)' : 'rgba(52, 52, 52, 0.80)',
@@ -79,7 +82,7 @@ calendarPaginatorIcon: ({ theme: { theme } }) =>
     theme === 'dark' ? '#21222C' : '#E5EDFA',
   feedbackBtnCancelColor: ({ theme: { theme } }) =>
     theme === 'dark' ? '#fff' : '#343434',
-  
+
   feedbackBtnTrashBg: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(234, 61, 101, 0.20)' : '#FFD2DD',
 
