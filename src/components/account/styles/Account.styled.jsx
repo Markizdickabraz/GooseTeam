@@ -31,7 +31,7 @@ export const FormWrapper = styled.div`
   margin: 0 auto;
   gap: 18px;
 
-  @media (max-width: 1144px) {
+  @media (max-width: 1440px) {
     flex-direction: column;
     max-width: 354px;
     width: 100%;
@@ -43,7 +43,7 @@ export const FormWrapper = styled.div`
     }
   }
 
-  @media (min-width: 1144px) {
+  @media (min-width: 1439px) {
     flex-direction: row;
     align-items: start;
     gap: 50px;

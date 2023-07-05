@@ -79,8 +79,7 @@ calendarPaginatorIcon: ({ theme: { theme } }) =>
     theme === 'dark' ? '#21222C' : '#E5EDFA',
   feedbackBtnCancelColor: ({ theme: { theme } }) =>
     theme === 'dark' ? '#fff' : '#343434',
-  // feedbackBtnPencilBg: ({ theme: { theme } }) =>
-  //   theme === 'dark' ? '#353647' : '#DCEBF7',
+  
   feedbackBtnTrashBg: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(234, 61, 101, 0.20)' : '#FFD2DD',
 

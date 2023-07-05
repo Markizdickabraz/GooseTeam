@@ -1,5 +1,5 @@
-import { DayCalendarHead } from '../../components/Сalendar/DayCalendarHead';
-import { TaskColumnsList } from '../../components/Сalendar/TaskColumnsList';
+import { DayCalendarHead } from '../../components/Calendar/DayCalendarHead';
+import { TaskColumnsList } from '../../components/Calendar/TaskColumnsList';
 
 
 const ChoosedDay = () => {

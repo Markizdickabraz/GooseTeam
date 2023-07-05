@@ -16,7 +16,7 @@ import {
 const FeedbackForm = ({ close, fetchData, setOnModal }) => {
   const [newComment, setNewComment] = useState('');
   const [newRate, setNewRate] = useState(0);
- // const [isVisible, setIsVisible] = useState(false);
+ 
 
   const onStarClickClick = nextValue => {
     changeRate(nextValue);
@@ -37,8 +37,6 @@ const FeedbackForm = ({ close, fetchData, setOnModal }) => {
         newReview
       )
       .then(() => {
-        // setNewComment('');
-        // setNewRate(0);
         fetchData();
       });
   };

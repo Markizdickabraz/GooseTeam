@@ -27,9 +27,6 @@ const TaskForm = ({ close, create, task }) => {
   const prevStartRef = useRef('');
   const prevEndRef = useRef('');
 
-  // const date = task.date || '2023-06-23';
-  // const category = task.category || 'to-do';
-  // const id = task.id || '64956a30022ac250ec769b01';
   const date = task.date;
   const category = task.category;
   const id = task._id;
@@ -169,7 +166,7 @@ const TaskForm = ({ close, create, task }) => {
             Add
           </Button>
           <LightButton type="button" onClick={closeHandler}>
-            Cansel
+            Cancel
           </LightButton>
         </ButtonContainer>
       ) : (

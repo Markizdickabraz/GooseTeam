@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import {
   fontColors,
-  iconColors,
   themeColors,
   buttonColors,
   animation,
@@ -93,9 +92,9 @@ export const SectionTitle = styled.h1`
 
 export const Toggler = styled.svg`
   fill: transparent;
-  stroke: ${iconColors.black};
+  stroke: ${themeColors.closeIconColor};
   margin-right: 8px;
-
+  cursor: pointer;
   height: 24px;
   width: 24px;
 
@@ -110,7 +109,7 @@ export const Toggler = styled.svg`
 `;
 
 export const MotivationTask = styled.strong`
-  color: ${fontColors.black};
+  color: ${themeColors.closeIconColor};
 
   display: block;
   font-family: 'Inter';
@@ -127,7 +126,6 @@ export const MotivationSpan = styled.span`
 `;
 
 export const FeedbackBtn = styled.button`
-  // background-color: ${buttonColors.blue};
   background-color: ${buttonColors.blue};
   border-radius: 10px;
   padding: 8px 20px;

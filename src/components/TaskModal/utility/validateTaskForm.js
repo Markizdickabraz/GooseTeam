@@ -52,7 +52,3 @@ const validate = values => {
 };
 
 export { validate };
-
-// date: формат YYYY-MM-DD | обов'язково
-// category: [to-do | in-progress | done] | обов'язково"
-// ймовірно це валідується в календарі

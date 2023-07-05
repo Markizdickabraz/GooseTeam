@@ -1,7 +1,7 @@
 import { useAuth } from 'hooks/useAuth';
 import { Navigate } from 'react-router-dom';
 
-export const ResendEmainRoute = ({
+export const ResendEmailRoute = ({
   component: Component,
   redirectTo = '/',
 }) => {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { themeColors } from 'styles/variables';
+import { themeColors, iconColors } from 'styles/variables';
 
 export const NavList = styled.nav`
   display: flex;
@@ -21,12 +21,12 @@ export const StyledLink = styled(NavLink)`
 
    &:hover,
   &:focus {
-    color: ${themeColors.sidebarSvg};
+    color: ${iconColors.blue};
     
 
     & > svg {
       fill: transparent;
-      stroke: ${themeColors.sidebarSvg};
+      stroke: ${iconColors.blue};
     }
   }
 
@@ -95,11 +95,11 @@ export const StyledLinkStatistic = styled(NavLink)`
 
   &:hover,
   &:focus {
-    color: ${themeColors.sidebarSvg};
+    color: ${iconColors.blue};
     
 
     & > svg {
-      fill: ${themeColors.sidebarSvg};
+      fill: ${iconColors.blue};
     }
   }
 

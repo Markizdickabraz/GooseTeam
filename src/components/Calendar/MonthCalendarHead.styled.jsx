@@ -31,7 +31,7 @@ width: 1087px;
 margin-bottom: 15px;
 padding: 14px 60px;
 gap: 122px;
-`
+}`
 
 export const DayName = styled.li`
 font-size: 16px;

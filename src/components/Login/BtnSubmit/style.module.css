@@ -24,7 +24,7 @@
   box-shadow: 4px 2px 16px 0 #88a5bf7a;
   border: none;
 }
-/* for modile */
+
 @media only screen and (max-width: 600px) {
   .btnSubmit {
     width: 287px;

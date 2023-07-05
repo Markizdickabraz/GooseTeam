@@ -2,7 +2,7 @@ import React from 'react';
 import style from './style.module.css';
 import { Formik, Form } from 'formik';
 import { useNavigate } from 'react-router-dom';
-import { validateFormSingup } from '../Login/helper';
+import { validateFormSignUp } from '../Login/helper';
 import { isErrorField } from './helper';
 import { register } from '../../redux/authorization/operations';
 import { setResendEmail } from '../../redux/authorization/authSlice';
@@ -29,14 +29,14 @@ const RegisterComponent = () => {
     <div className={[style.container]}>
       <Formik
         initialValues={initialValues}
-        validate={validateFormSingup}
+        validate={validateFormSignUp}
         onSubmit={onSubmit}
       >
         {({ isSubmitting, errors }) => (
           <Form className={isErrorField(errors, style)}>
-            <TitleForm text={'Sing up'} />
-            <InputsForm isSingup={true} />
-            <BtnSubmit isSubmitting={isSubmitting} textBtn={'Sing up'} />
+            <TitleForm text={'Sign Up'} />
+            <InputsForm isSignup={true} />
+            <BtnSubmit isSubmitting={isSubmitting} textBtn={'Sign Up'} />
           </Form>
         )}
       </Formik>

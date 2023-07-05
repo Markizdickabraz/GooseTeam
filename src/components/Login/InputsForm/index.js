@@ -6,13 +6,13 @@ import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye';
 import { Field, ErrorMessage } from 'formik';
 
-const InputsForm = ({ isSingup }) => {
+const InputsForm = ({ isSignUp }) => {
   const [isShow, setIsShow] = useState(false);
   return (
     <div>
-      {isSingup && (
+      {isSignUp && (
         <>
-          <label htmlFor="name" className={style.lableField}>
+          <label htmlFor="name" className={style.labelField}>
             Name
           </label>
           <Field
@@ -24,7 +24,7 @@ const InputsForm = ({ isSingup }) => {
           <ErrorMessage name="name" render={msg => <ErrorField msg={msg} />} />
         </>
       )}
-      <label htmlFor="email" className={style.lableField}>
+      <label htmlFor="email" className={style.labelField}>
         Email
       </label>
       <Field
@@ -34,7 +34,7 @@ const InputsForm = ({ isSingup }) => {
         className={style.fieldForm}
       />
       <ErrorMessage name="email" render={msg => <ErrorField msg={msg} />} />
-      <label htmlFor="password" className={style.lableField}>
+      <label htmlFor="password" className={style.labelField}>
         Password
       </label>
       <div className={style.passwordField}>

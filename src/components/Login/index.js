@@ -39,7 +39,7 @@ const LoginComponent = () => {
           </Form>
         )}
       </Formik>
-      <LinkForm path={'/register'} text={'Sing up'} />
+      <LinkForm path={'/register'} text={'Sign up'} />
     </div>
   );
 };

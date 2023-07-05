@@ -4,19 +4,17 @@ import { themeColors } from 'styles/variables';
 
 export const InputContainer = styled.div`
   position: relative;
-
-  display: flex;
   flex-direction: column;
   gap: 8px;
   max-width: 354px;
   flex: 1;
+  display: flex;
 `;
 
 export const Input = styled(Field)`
   padding: 12px 14px;
   border-radius: 8px;
   outline: none;
-
   font-size: 14px;
 
   @media (min-width: 768px) {

@@ -9,13 +9,13 @@ export const ThemeToggler = () => {
 
   const dispatch = useDispatch();
 
-  const handletoggleTheme = () => {
+  const handleTogglerTheme = () => {
     dispatch(toggleTheme());
   };
 
   return (
     <div>
-      <ToggleButton onClick={handletoggleTheme}>
+      <ToggleButton onClick={handleTogglerTheme}>
         <ThemeIcon>
           {theme === 'light' ? (
             <use href={`${sprite}#moon`} />

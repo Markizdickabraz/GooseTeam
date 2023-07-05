@@ -7,7 +7,7 @@ import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/authorization/operations';
 import { RestrictedRoute } from './routes/RestrictedRoute';
 import { PrivateRoute } from './routes/PrivateRoute';
-import { ResendEmainRoute } from './routes/ResendEmailRoute';
+import { ResendEmailRoute } from './routes/ResendEmailRoute';
 import { Layout } from './Layout';
 import NotFound from 'pages/NotFound';
 import { ScrollToTop } from './scrollToTop/ScrollToTop';
@@ -67,7 +67,7 @@ const App = () => {
         <Route
           path="/register/resend-email"
           element={
-            <ResendEmainRoute
+            <ResendEmailRoute
               redirectTo="/register"
               component={<ResendVerify />}
             />

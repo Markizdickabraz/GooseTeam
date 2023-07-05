@@ -23,16 +23,18 @@ export const SidebarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 300px;
   max-width: 289px;
   padding: 24px 32px;
   background-color: ${themeColors.sidebarBackground};
 
   transform: translateX(0);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @media (min-width: 1440px) {
+    
+  }
 
   @media (max-width: 1439px) {
-    position: absolute;
+    position: fixed;
     z-index: 5000;
     transform: translateX(-290px);
   }

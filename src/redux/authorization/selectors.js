@@ -6,4 +6,4 @@ export const selectAccessToken = state => state.auth.token;
 export const tokenUser = state => state.auth.token;
 export const selectTheme = state => state.auth.theme;
 
-export const emailUser = state => state.auth.resendEmain;
+export const emailUser = state => state.auth.resendEmail;
