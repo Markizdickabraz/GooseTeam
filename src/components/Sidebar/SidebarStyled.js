@@ -28,15 +28,14 @@ export const SidebarWrapper = styled.div`
   background-color: ${themeColors.sidebarBackground};
 
   transform: translateX(0);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  @media (min-width: 1440px) {
-    
-  }
+  opacity: 1;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (max-width: 1439px) {
-    position: fixed;
+    position: absolute;
     z-index: 5000;
-    transform: translateX(-290px);
+    transform: translateX(-600px);
+    opacity: 0;
   }
 `;
 
