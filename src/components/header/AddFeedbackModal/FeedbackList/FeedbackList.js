@@ -39,7 +39,6 @@ const FeedbackList = ({ fetchData, setReviewsList, close }) => {
     await axios.delete(
       `https://goosetrack-backend-2lsp.onrender.com/api/reviews/${item._id}`
     );
-    fetchData();
   };
 
   const handleToggleModal = () => {
