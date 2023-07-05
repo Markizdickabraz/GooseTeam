@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 
-
 import sprite from 'images/svg/sprite.svg';
 import { Container, CloseBtn, Svg } from './Modal.styled';
 
@@ -47,7 +46,6 @@ const Modal = ({ close, children }) => {
   return (
     <Container ref={containerRef}>
       <CloseBtn onClick={closeHandler}>
-        {/* <GrClose size={12} /> */}
         <Svg width="24px" height="24px">
           <use href={`${sprite}#x-close`} />
         </Svg>

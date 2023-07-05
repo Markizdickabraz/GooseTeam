@@ -3,7 +3,7 @@ import { animation } from '../../styles/variables';
 import { themeColors } from '../../styles/variables';
 
 const Container = styled.div`
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   z-index: 1000;
@@ -25,10 +25,9 @@ const Container = styled.div`
     padding-top: 40px;
   }
 
-  
-   @media screen and (max-width: 767px) {
-   width: 80%;
-   }
+  @media screen and (max-width: 767px) {
+    width: 80%;
+  }
 `;
 
 const CloseBtn = styled.button`
