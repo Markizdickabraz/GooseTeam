@@ -1,14 +1,11 @@
 import { UserForm } from '../components/account/UserForm';
+import { UserSection } from './User.styled';
 
 const User = () => {
   return (
-    <div
-      style={{
-        padding: 18,
-      }}
-    >
+    <UserSection>
       <UserForm />
-    </div>
+    </UserSection>
   );
 };
 
