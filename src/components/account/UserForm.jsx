@@ -1,10 +1,16 @@
 import { CustomInput } from 'components/account/CustomInput';
 import { Formik } from 'formik';
-import { FormContainer, FormWrapper, UserInfo } from './styles/Account.styled';
+import {
+  FormContainer,
+  FormWrapper,
+  Name,
+  Role,
+  SaveButton,
+  UserInfo,
+} from './styles/Account.styled';
 import { UserSchema } from './UserSchema';
 import Thumb from './Avatar';
 import { DatePickerField } from './Calendar';
-import { Button } from 'styles/components';
 import { useState } from 'react';
 import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
@@ -29,10 +35,6 @@ export const UserForm = () => {
     }
 
     dispatch(updateUser(formData));
-
-    // for (const pair of formData.entries()) {
-    //   console.log(`${pair[0]}, ${pair[1]}`);
-    // }
 
     setIsFormDirty(false);
   };
@@ -65,8 +67,8 @@ export const UserForm = () => {
                   setIsFormDirty={setIsFormDirty}
                 />
 
-                <p>{name}</p>
-                <p>User</p>
+                <Name>{name}</Name>
+                <Role>User</Role>
               </UserInfo>
 
               <FormWrapper>
@@ -84,7 +86,12 @@ export const UserForm = () => {
                     setIsFormDirty={setIsFormDirty}
                   />
 
-                  <CustomInput label="Email" name="email" type="email" disabled />
+                  <CustomInput
+                    label="Email"
+                    name="email"
+                    type="email"
+                    disabled
+                  />
                 </div>
 
                 <div>
@@ -103,16 +110,15 @@ export const UserForm = () => {
                 </div>
               </FormWrapper>
 
-              <Button
+              <SaveButton
                 style={{
                   cursor: isFormDirty ? 'pointer' : 'auto',
-                  margin: '0 auto',
                 }}
                 type={isFormDirty ? 'submit' : 'button'}
                 disabled={!isFormDirty}
               >
                 Save changes
-              </Button>
+              </SaveButton>
             </FormContainer>
           )}
         </Formik>
