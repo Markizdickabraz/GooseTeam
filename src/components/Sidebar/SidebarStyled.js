@@ -32,7 +32,7 @@ export const SidebarWrapper = styled.div`
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @media (max-width: 1439px) {
-    position: absolute;
+    position: fixed;
     z-index: 5000;
     transform: translateX(-600px);
     opacity: 0;
