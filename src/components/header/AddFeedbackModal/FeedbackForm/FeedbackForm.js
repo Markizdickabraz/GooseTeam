@@ -17,7 +17,6 @@ const FeedbackForm = ({ close, fetchData, setOnModal }) => {
   const [newComment, setNewComment] = useState('');
   const [newRate, setNewRate] = useState(0);
  
-
   const onStarClickClick = nextValue => {
     changeRate(nextValue);
   };
@@ -43,13 +42,13 @@ const FeedbackForm = ({ close, fetchData, setOnModal }) => {
 
   const sendReview = event => {
     event.preventDefault();
-  
     if (!(newComment === '') && !(newRate === 0)) {
       addReview();
       //setIsVisible(false);
     } else {
       //setIsVisible(true);
     }
+    close();
   };
 
   const handleSubmit = () => {
@@ -72,8 +71,6 @@ const FeedbackForm = ({ close, fetchData, setOnModal }) => {
           size={24}
         />
 
-        {/* { (newRate === 0) && <p>Rating is a required field</p>} */}
-
         <Label>
           <RatingText>Review</RatingText>
           <CommentText
@@ -88,7 +85,6 @@ const FeedbackForm = ({ close, fetchData, setOnModal }) => {
             }}></CommentText>
         </Label>
 
-    {/* {((newComment === '') )     && <p>Comment is a required field</p>} */}
         <BtnWrapper>
           <BtnSave type="submit" onClick={sendReview}>
             <BtnSaveText>Save</BtnSaveText>

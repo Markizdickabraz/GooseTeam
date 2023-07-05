@@ -94,7 +94,25 @@ export const themeColors = {
     theme === 'dark' ? '#FFFFFF' : '#343434',
   modalFormBorder: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : '#f6f6f6',
+
+    btnPencilBackground: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#353647' : ' #E3F3FF',
+    
+    btnPencilStroke: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#3E85F3' : '#3E85F3',
+  
+    btnPencilBackgroundHover: ({ theme: { theme } }) =>
+    theme === 'dark' ? ' #3E85F3' : ' #3E85F3',
+    
+    btnPencilStrokeHover: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#fff' : '#fff',
+
+
+
 };
+
+
+
 
 export const buttonColors = {
   blue: '#3e85f3',

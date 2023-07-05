@@ -41,6 +41,7 @@ export const Container = styled.div`
 
   @media screen and (min-width: 1440px) {
     width: 1151px;
+    padding-left: 32px;
   }
 `;
 
@@ -97,6 +98,7 @@ export const Toggler = styled.svg`
   cursor: pointer;
   height: 24px;
   width: 24px;
+  cursor: pointer;
 
   @media (min-width: 765px) {
     height: 34px;

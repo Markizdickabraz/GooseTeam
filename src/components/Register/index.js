@@ -35,7 +35,7 @@ const RegisterComponent = () => {
         {({ isSubmitting, errors }) => (
           <Form className={isErrorField(errors, style)}>
             <TitleForm text={'Sign Up'} />
-            <InputsForm isSignup={true} />
+            <InputsForm isSignUp={true} />
             <BtnSubmit isSubmitting={isSubmitting} textBtn={'Sign Up'} />
           </Form>
         )}
