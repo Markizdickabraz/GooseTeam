@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { themeColors } from '../../../../styles/variables';
+import { themeColors, animation } from '../../../../styles/variables';
 
 const media = {
   tablet: '@media screen and (min-width: 768px)',
@@ -25,12 +25,8 @@ export const BtnPencil = styled.button`
   width: 30px;
   border-radius: 50%;
   border: none;
-  // background: ${({ isActive }) => (isActive ? "#3E85F3" : '#E3F3FF')};
-  // stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#3E85F3")};
-
   background: ${themeColors.btnPencilBackground};
   stroke: ${themeColors.btnPencilStroke};
-
   fill: transparent;
   align-items: center;
   justify-content: center;
@@ -41,9 +37,6 @@ export const BtnPencil = styled.button`
   &:focus {
     background: ${themeColors.btnPencilBackgroundHover};
     stroke: ${themeColors.btnPencilStrokeHover};
-
-    // background: ${({ isActive }) => (isActive ? "#3e85f3" : "#3e85f3")};
-    // stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#FFFFFF")};
   }
 `;
   
@@ -86,12 +79,15 @@ export const BtnEdit = styled.button`
   background: #3e85f3;
   border: none;
   border-radius: 8px;
-  /* transition: ; */
+  transition: background ${animation};
 
   &:hover,
   :focus {
     cursor: pointer;
     background-color: #3E85F3;
+    border: 1px solid #fff;
+      -webkit-box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
+      box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
   }
 
   ${media.tablet} {
@@ -127,12 +123,15 @@ export const BtnCancel = styled.button`
   background: ${themeColors.feedbackBtnCancelBg};
   border: none;
   border-radius: 8px;
-  /* transition: ; */
+  transition: background ${animation};
 
   &:hover,
   &:focus {
     cursor: pointer;
     background-color: ${themeColors.feedbackBtnCancelBg};
+     border: 1px solid #fff;
+      -webkit-box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
+      box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
   }
 
   ${media.tablet} {
