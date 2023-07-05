@@ -33,8 +33,10 @@ export const SidebarWrapper = styled.div`
 
   @media (max-width: 1439px) {
     position: fixed;
+    top 0;
+    left 0;
     z-index: 5000;
-    transform: translateX(-600px);
+    transform: translateX(-300px);
     opacity: 0;
   }
 `;
