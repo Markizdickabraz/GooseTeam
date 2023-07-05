@@ -35,9 +35,13 @@ const SideBar = ({ onToggle, opened }) => {
       if (window.innerWidth < 1440) {
         sidebarRef.current.style.transform = opened
           ? 'translateX(0)'
-          : 'translateX(-290px)';
+          : 'translateX(-600px)';
+          sidebarRef.current.style.opacity = opened
+          ? '1'
+          : '0';
       } else {
         sidebarRef.current.style.transform = 'translateX(0)';
+        sidebarRef.current.style.opacity = '1';
       }
     };
 
