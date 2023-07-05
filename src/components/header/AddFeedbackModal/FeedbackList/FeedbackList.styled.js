@@ -41,6 +41,7 @@ export const BtnPencil = styled.button`
 `;
   
 export const BtnTrash = styled.button`
+  padding: 0;
   display: flex;
   height: 30px;
   width: 30px;
