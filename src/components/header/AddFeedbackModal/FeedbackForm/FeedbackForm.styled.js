@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { themeColors } from '../../../../styles/variables';
+import { themeColors, animation } from '../../../../styles/variables';
 
 const media = {
   tablet: '@media screen and (min-width: 768px)',
@@ -32,7 +32,6 @@ export const Label = styled.label`
   font-size: 12px;
   margin-top: 18px;
   line-height: 14px;
-  /* color: ; */
 `;
 
 export const CommentText = styled.textarea`
@@ -77,12 +76,15 @@ export const BtnSave = styled.button`
   background: #3e85f3;
   border: none;
   border-radius: 8px;
-  /* transition: ; */
+  transition: background ${animation}; 
 
   &:hover,
   :focus {
     cursor: pointer;
     background-color: #3E85F3;
+    border: 1px solid #fff;
+      -webkit-box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
+      box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
   }
 
   ${media.tablet} {
@@ -118,12 +120,15 @@ export const BtnCancel = styled.button`
   background: ${themeColors.feedbackTextareaBg};
   border: none;
   border-radius: 8px;
-  /* transition: ; */
+  transition: background ${animation};
 
   &:hover,
   &:focus {
     cursor: pointer;
     background-color: ${themeColors.feedbackTextareaBg};
+    border: 1px solid #fff;
+      -webkit-box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
+      box-shadow: 0px 0px 36px 7px rgba(255, 255, 255, 0.91);
   }
 
   ${media.tablet} {
