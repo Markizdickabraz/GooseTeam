@@ -25,8 +25,12 @@ export const BtnPencil = styled.button`
   width: 30px;
   border-radius: 50%;
   border: none;
-  background: ${({ isActive }) => (isActive ? "#3E85F3" : '#E3F3FF')};
-  stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#3E85F3")};
+  // background: ${({ isActive }) => (isActive ? "#3E85F3" : '#E3F3FF')};
+  // stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#3E85F3")};
+
+  background: ${themeColors.btnPencilBackground};
+  stroke: ${themeColors.btnPencilStroke};
+
   fill: transparent;
   align-items: center;
   justify-content: center;
@@ -35,8 +39,11 @@ export const BtnPencil = styled.button`
 
   &:hover,
   &:focus {
-    background: ${({ isActive }) => (isActive ? "#3e85f3" : "#3e85f3")};
-    stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#FFFFFF")};
+    background: ${themeColors.btnPencilBackgroundHover};
+    stroke: ${themeColors.btnPencilStrokeHover};
+
+    // background: ${({ isActive }) => (isActive ? "#3e85f3" : "#3e85f3")};
+    // stroke: ${({ isActive }) => (isActive ? "#FFFFFF" : "#FFFFFF")};
   }
 `;
   
