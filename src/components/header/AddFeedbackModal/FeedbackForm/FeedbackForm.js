@@ -12,6 +12,7 @@ import {
   BtnCancelText,
   BtnWrapper,
 } from './FeedbackForm.styled';
+import toast from 'react-hot-toast';
 
 const FeedbackForm = ({ close, fetchData, setOnModal }) => {
   const [newComment, setNewComment] = useState('');
@@ -44,9 +45,8 @@ const FeedbackForm = ({ close, fetchData, setOnModal }) => {
     event.preventDefault();
     if (!(newComment === '') && !(newRate === 0)) {
       addReview();
-      //setIsVisible(false);
     } else {
-      //setIsVisible(true);
+      toast.error('No review written🤔🤔🤔');
     }
     close();
   };
