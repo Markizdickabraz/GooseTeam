@@ -48,8 +48,9 @@ export const MainLayout = () => {
 
   return (
     <Wrapper>
+      <SideBar onToggle={hideSidebar} opened={sidebarIsOpened} />
       <Container>
-        <SideBar onToggle={hideSidebar} opened={sidebarIsOpened} />
+        
         <div>
         <Header showSidebar={showSidebar} />
           <Outlet />
