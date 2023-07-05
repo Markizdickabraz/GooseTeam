@@ -29,7 +29,9 @@ export const Container = styled.div`
   }
 
   @media screen and (min-width: 1440px) {
-    width: 1151px;
+    width: 1440px;
+    display: flex;
+    
   }
 `;
 
@@ -46,10 +48,12 @@ export const MainLayout = () => {
 
   return (
     <Wrapper>
-      <SideBar onToggle={hideSidebar} opened={sidebarIsOpened} />
       <Container>
+        <SideBar onToggle={hideSidebar} opened={sidebarIsOpened} />
+        <div>
         <Header showSidebar={showSidebar} />
-        <Outlet />
+          <Outlet />
+          </div>
       </Container>
     </Wrapper>
   );
