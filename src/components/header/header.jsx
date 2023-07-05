@@ -84,7 +84,6 @@ export const Header = ({showSidebar}) => {
         </Container>
       </Wrapper>
       {modalIsOpened && <AddFeedbackModal close={closeModal} />}
-      {/* {sidebarIsOpened && <MobileSidebar close={hideSidebar} />} */}
     </>
   );
 };

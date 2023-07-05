@@ -97,6 +97,7 @@ export const Toggler = styled.svg`
   cursor: pointer;
   height: 24px;
   width: 24px;
+  cursor: pointer;
 
   @media (min-width: 765px) {
     height: 34px;
