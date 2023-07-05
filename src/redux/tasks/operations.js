@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import toast from 'react-hot-toast';
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://goosetrack-backend-2lsp.onrender.com/api';
@@ -20,8 +21,10 @@ export const addTask = createAsyncThunk(
   async (newTask, thunkAPI) => {
     try {
       const response = await axios.post('/tasks', newTask);
+      toast.success('Task was successfully added');
       return response.data;
     } catch (error) {
+      toast.error(error.response.data.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -32,8 +35,10 @@ export const updateTask = createAsyncThunk(
   async ({ taskId, newTask }, thunkAPI) => {
     try {
       const response = await axios.patch(`/tasks/${taskId}`, newTask);
+      toast.success('Updated');
       return response.data;
     } catch (error) {
+      toast.error(error.response.data.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -44,8 +49,10 @@ export const deleteTask = createAsyncThunk(
   async (taskId, thunkAPI) => {
     try {
       const response = await axios.delete(`/tasks/${taskId}`);
+      toast.success('Task was deleted');
       return response.data;
     } catch (error) {
+      toast.error(error.response.data.message);
       return thunkAPI.rejectWithValue(error.message);
     }
   }
