@@ -82,9 +82,14 @@ export const themeColors = {
     theme === 'dark' ? '#21222C' : '#E5EDFA',
   feedbackBtnCancelColor: ({ theme: { theme } }) =>
     theme === 'dark' ? '#fff' : '#343434',
-
   feedbackBtnTrashBg: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(234, 61, 101, 0.20)' : '#FFD2DD',
+  btnPencilBackground: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#353647' : ' #E3F3FF',
+  btnPencilStroke: ({ theme: { theme } }) =>
+    theme === 'dark' ? '#3E85F3' : '#3E85F3',
+  btnPencilBackgroundHover: ({ theme: { theme } }) =>
+    theme === 'dark' ? ' #3E85F3' : ' #3E85F3',
 
   modalFormLabel: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(250, 250, 250, 0.3)' : '#343434cc',
@@ -93,26 +98,8 @@ export const themeColors = {
   modalFormText: ({ theme: { theme } }) =>
     theme === 'dark' ? '#FFFFFF' : '#343434',
   modalFormBorder: ({ theme: { theme } }) =>
-    theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : '#f6f6f6',
-
-    btnPencilBackground: ({ theme: { theme } }) =>
-    theme === 'dark' ? '#353647' : ' #E3F3FF',
-    
-    btnPencilStroke: ({ theme: { theme } }) =>
-    theme === 'dark' ? '#3E85F3' : '#3E85F3',
-  
-    btnPencilBackgroundHover: ({ theme: { theme } }) =>
-    theme === 'dark' ? ' #3E85F3' : ' #3E85F3',
-    
-    btnPencilStrokeHover: ({ theme: { theme } }) =>
-    theme === 'dark' ? '#fff' : '#fff',
-
-
-
+    theme === 'dark' ? 'rgba(255, 255, 255, 0.15)' : '#f6f6f6', 
 };
-
-
-
 
 export const buttonColors = {
   blue: '#3e85f3',
