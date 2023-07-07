@@ -35,8 +35,7 @@ export const BtnPencil = styled.button`
 
   &:hover,
   &:focus {
-    background: ${themeColors.btnPencilBackgroundHover};
-    stroke: ${themeColors.btnPencilStrokeHover};
+    scale: 1.1;
   }
 `;
   
@@ -56,7 +55,7 @@ export const BtnTrash = styled.button`
 
   &:hover,
   &:focus {
-    stroke: #EA3D65;
+    scale: 1.1;
   }
 `;
 

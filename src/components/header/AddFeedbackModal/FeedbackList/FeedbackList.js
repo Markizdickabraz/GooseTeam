@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Rating } from 'react-simple-star-rating';
-
+import { themeColors } from '../../../../styles/variables';
 import Icons from '../../../../images/svg/sprite.svg';
 
 import {
@@ -96,6 +96,7 @@ return (
 
         <BtnSvgWrapper>
           <BtnPencil
+              style={{ background: isVisibleEdit ? "#3e85f3" : `${themeColors.btnPencilBackground}`, stroke: isVisibleEdit ? "#fff" : "#3e85f3" }}
               isActive={isVisibleEdit}
               type="button"
               onClick={() => {
