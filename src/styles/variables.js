@@ -85,11 +85,11 @@ export const themeColors = {
   feedbackBtnTrashBg: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(234, 61, 101, 0.20)' : '#FFD2DD',
   btnPencilBackground: ({ theme: { theme } }) =>
-    theme === 'dark' ? '#353647' : ' #E3F3FF',
+    theme === 'dark' ? '#353647' : '#e3f3ff',
   btnPencilStroke: ({ theme: { theme } }) =>
     theme === 'dark' ? '#3E85F3' : '#3E85F3',
   btnPencilBackgroundHover: ({ theme: { theme } }) =>
-    theme === 'dark' ? ' #3E85F3' : ' #3E85F3',
+    theme === 'dark' ? '#3E85F3' : '#3E85F3',
 
   modalFormLabel: ({ theme: { theme } }) =>
     theme === 'dark' ? 'rgba(250, 250, 250, 0.3)' : '#343434cc',

@@ -14,7 +14,7 @@ import {
   BtnEditText,
   BtnCancel,
   BtnCancelText,
-  CommentTextList,
+  CommentTextList,  
 } from './FeedbackList.styled';
 
 import { RatingText, Label } from '../FeedbackForm/FeedbackForm.styled';
@@ -95,19 +95,24 @@ return (
         />
 
         <BtnSvgWrapper>
-          <BtnPencil
-              style={{ background: isVisibleEdit ? "#3e85f3" : `${themeColors.btnPencilBackground}`, stroke: isVisibleEdit ? "#fff" : "#3e85f3" }}
+            <BtnPencil
+              key={isVisibleEdit ? 'edit' : 'view'}
+              style={{
+                background: isVisibleEdit ? "#3e85f3" : themeColors.btnPencilBackground,
+                stroke: isVisibleEdit ? "#fff" : themeColors.btnPencilStroke
+              }}
               isActive={isVisibleEdit}
               type="button"
               onClick={() => {
                 handleToggleModal();
                 setIsVisibleEdit(!isVisibleEdit);
-          }}>
-            <svg style={{padding: '0px'}} width="16" height="16">
-              <use href={`${Icons}#pencil`} />
-            </svg>
-          </BtnPencil>
-
+              }}
+            >
+              <svg style={{ padding: '0px' }} width="16" height="16">
+                <use href={`${Icons}#pencil`} />
+              </svg>
+      </BtnPencil>
+      
           <BtnTrash
               type="button"
               onClick={() => {
